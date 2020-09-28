@@ -1,0 +1,95 @@
+[
+  {
+    "decade": "1940s",
+    "white": 89.8,
+    "black": 9.8,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "1950s",
+    "white": 89.5,
+    "black": 10.0,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "1960s",
+    "white": 88.6,
+    "black": 10.5,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "1970s",
+    "white": 87.5,
+    "black": 11.1,
+    "hispanic": 4.5,
+    "nonHispanic": 95.5,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "1980s",
+    "white": 83.0,
+    "black": 11.7,
+    "americanIndian": 0.8,
+    "asianPacificIslander": 1.5,
+    "other": 3.0,
+    "hispanic": 6.4,
+    "nonHispanic": 93.6,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "1990s",
+    "white": 80.3,
+    "black": 12.1,
+    "americanIndian": 0.8,
+    "asianPacificIslander": 2.9,
+    "other": 3.9,
+    "hispanic": 9.0,
+    "nonHispanic": 91.0,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "2000s",
+    "white": 75.1,
+    "black": 12.3,
+    "americanIndian": 0.9,
+    "asianPacificIslander": 3.8,
+    "other": 5.5,
+    "twoOrMoreRaces": 2.4,
+    "hispanic": 12.5,
+    "nonHispanic": 87.5,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "2010s",
+    "white": 72.4,
+    "black": 12.6,
+    "americanIndian": 0.9,
+    "asianPacificIslander": 5.0,
+    "other": 6.2,
+    "twoOrMoreRaces": 2.9,
+    "hispanic": 16.3,
+    "nonHispanic": 83.7,
+    "men": 50,
+    "women": 50
+  },
+  {
+    "decade": "2020",
+    "white": 72.4,
+    "black": 12.6,
+    "americanIndian": 0.9,
+    "asianPacificIslander": 5.0,
+    "other": 6.2,
+    "twoOrMoreRaces": 2.9,
+    "hispanic": 16.3,
+    "nonHispanic": 83.7,
+    "men": 50,
+    "women": 50
+  }
+]

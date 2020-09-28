@@ -1,0 +1,74 @@
+[
+  {
+    "decade": "1940s",
+    "white": 96.32,
+    "poc": 3.68,
+    "men": 89.94,
+    "women": 10.06,
+    "whiteMen": 86.4
+  },
+  {
+    "decade": "1950s",
+    "white": 94.84,
+    "poc": 5.16,
+    "men": 84.13,
+    "women": 15.87,
+    "whiteMen": 79.44
+  },
+  {
+    "decade": "1960s",
+    "white": 95.18,
+    "poc": 4.82,
+    "men": 85.09,
+    "women": 14.91,
+    "whiteMen": 81.17
+  },
+  {
+    "decade": "1970s",
+    "white": 93.87,
+    "poc": 5.98,
+    "men": 79.67,
+    "women": 20.33,
+    "whiteMen": 75.19
+  },
+  {
+    "decade": "1980s",
+    "white": 94.62,
+    "poc": 5.38,
+    "men": 83.14,
+    "women": 16.86,
+    "whiteMen": 79.04
+  },
+  {
+    "decade": "1990s",
+    "white": 90.8,
+    "poc": 9.05,
+    "men": 77.6,
+    "women": 22.4,
+    "whiteMen": 70.47
+  },
+  {
+    "decade": "2000s",
+    "white": 87.59,
+    "poc": 12.41,
+    "men": 72.35,
+    "women": 27.65,
+    "whiteMen": 64.72
+  },
+  {
+    "decade": "2010s",
+    "white": 83.72,
+    "poc": 16.28,
+    "men": 72.69,
+    "women": 27.31,
+    "whiteMen": 62.18
+  },
+  {
+    "decade": "2020",
+    "white": 75.95,
+    "poc": 24.05,
+    "men": 63.92,
+    "women": 36.08,
+    "whiteMen": 50
+  }
+]
