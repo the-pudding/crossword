@@ -4,21 +4,24 @@
     "white": 89.8,
     "black": 9.8,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 9.8
   },
   {
     "decade": "1950s",
     "white": 89.5,
-    "black": 10.0,
+    "black": 10,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 10
   },
   {
     "decade": "1960s",
     "white": 88.6,
     "black": 10.5,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 10.5
   },
   {
     "decade": "1970s",
@@ -27,19 +30,21 @@
     "hispanic": 4.5,
     "nonHispanic": 95.5,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 11.1
   },
   {
     "decade": "1980s",
-    "white": 83.0,
+    "white": 83,
     "black": 11.7,
     "americanIndian": 0.8,
     "asianPacificIslander": 1.5,
-    "other": 3.0,
+    "other": 3,
     "hispanic": 6.4,
     "nonHispanic": 93.6,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 17
   },
   {
     "decade": "1990s",
@@ -48,10 +53,11 @@
     "americanIndian": 0.8,
     "asianPacificIslander": 2.9,
     "other": 3.9,
-    "hispanic": 9.0,
-    "nonHispanic": 91.0,
+    "hispanic": 9,
+    "nonHispanic": 91,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 19.7
   },
   {
     "decade": "2000s",
@@ -64,32 +70,35 @@
     "hispanic": 12.5,
     "nonHispanic": 87.5,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 24.9
   },
   {
     "decade": "2010s",
     "white": 72.4,
     "black": 12.6,
     "americanIndian": 0.9,
-    "asianPacificIslander": 5.0,
+    "asianPacificIslander": 5,
     "other": 6.2,
     "twoOrMoreRaces": 2.9,
     "hispanic": 16.3,
     "nonHispanic": 83.7,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 27.599999999999998
   },
   {
     "decade": "2020",
     "white": 72.4,
     "black": 12.6,
     "americanIndian": 0.9,
-    "asianPacificIslander": 5.0,
+    "asianPacificIslander": 5,
     "other": 6.2,
     "twoOrMoreRaces": 2.9,
     "hispanic": 16.3,
     "nonHispanic": 83.7,
     "men": 50,
-    "women": 50
+    "women": 50,
+    "poc": 27.599999999999998
   }
 ]

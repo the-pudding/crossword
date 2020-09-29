@@ -52,9 +52,10 @@ const LineChart = ({ dataSources }) => {
         value={metric}
         onChange={(e) => setMetric(e.target.value)}
       >
-        <option value="men">Men</option>
-        <option value="women">Women</option>
-        <option value="white">White</option>
+        <option value="men">men</option>
+        <option value="women">women</option>
+        <option value="white">white</option>
+        <option value="poc">poc</option>
       </select>
     </>
   );
