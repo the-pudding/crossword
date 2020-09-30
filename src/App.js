@@ -1,15 +1,10 @@
 import React from "react";
-import LineChart from "./components/LineChart.jsx";
-import raceGenderBreakdown from "./data/raceGenderBreakdownByDecade.json";
-import censusData from "./data/usCensusData.json";
-import copy from "./data/copy.json";
+import IntroPuzzle from "./components/story-sections/IntroPuzzle.jsx";
 
 function App() {
   return (
     <div>
-      <h2>{copy.title}</h2>
-      <div>{copy.description}</div>
-      <LineChart dataSources={[raceGenderBreakdown, censusData]} />
+      <IntroPuzzle />
     </div>
   );
 }

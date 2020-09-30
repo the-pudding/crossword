@@ -11,3 +11,13 @@ export const GlobalStyle = createGlobalStyle`
 export const LineChartWrapper = styled.div`
   height: 500px;
 `;
+
+export const StoryTitle = styled.h1`
+  text-align: center;
+`;
+
+export const Prose = styled.p`
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+`;
