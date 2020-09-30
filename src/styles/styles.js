@@ -21,3 +21,19 @@ export const Prose = styled.p`
   margin: 0 auto;
   padding: 1rem;
 `;
+
+export const ScrollyStep = styled.div`
+  margin: 50vh 0;
+  border: 1px solid gray;
+  padding: 15px;
+  z-index: 1000;
+  background: white;
+`;
+
+export const CrosswordWrapper = styled.div`
+  width: 60%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  position: sticky;
+  top: 100px;
+`;

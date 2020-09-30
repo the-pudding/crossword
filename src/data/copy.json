@@ -1,1 +1,13 @@
-{"title":"Who’s in the crossword?","introPuzzle":[{"type":"text","value":"This is a crossword puzzle of people, made from clues from NYT crosswords in 2020."}]}
+{
+  "title": "Who’s in the crossword?",
+  "introSteps": [
+    {
+      "step": "0",
+      "text": "This is a crossword puzzle of people, made from clues from NYT crosswords in 2020."
+    },
+    {
+      "step": "1",
+      "text": "This is the same puzzle, color coded by race. To see it color coded by gender, click the waffle chart on the right."
+    }
+  ]
+}
