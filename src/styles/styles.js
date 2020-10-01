@@ -42,13 +42,17 @@ export const CrosswordWaffleWrapper = styled.div`
 
 export const WaffleChartWrapper = styled.div`
   display: flex;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   flex-wrap: wrap;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Block = styled.div`
   height: 10px;
   width: 10px;
-  margin: 2px;
+  margin: 1px;
+  background: ${(props) => props.color};
 `;

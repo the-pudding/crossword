@@ -5,9 +5,13 @@ import {
   ScrollyStep,
   CrosswordWaffleWrapper,
 } from "../../styles/styles.js";
+import _ from "lodash";
 import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
 import WaffleChart from "../charts/WaffleChart.jsx";
+import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
 import { Scrollama, Step } from "react-scrollama";
+import { addColorsToData } from "../utils.js";
+import { COLORS } from "../../styles/colors.js";
 
 const tempData = {
   across: {
@@ -16,14 +20,16 @@ const tempData = {
       answer: "MICHELLE",
       row: 4,
       col: 0,
-      color: "cornflowerblue",
+      race: "poc",
+      gender: "woman",
     },
     2: {
       clue: "The proof is in the __",
       answer: "PUDDING",
       row: 1,
       col: 3,
-      color: "gold",
+      race: "white",
+      gender: "man",
     },
   },
   down: {
@@ -32,21 +38,25 @@ const tempData = {
       answer: "RUSSELL",
       row: 0,
       col: 4,
-      color: "cornflowerblue",
+      race: "white",
+      gender: "man",
     },
     4: {
       clue: "Jan",
       answer: "DIEHM",
       row: 3,
       col: 1,
-      color: "cornflowerblue",
+      race: "white",
+      gender: "woman",
     },
   },
 };
 
 const IntroPuzzle = () => {
   const [stepIndex, setStepIndex] = useState(null);
+  const [metric, setMetric] = useState("gender");
 
+  // advancing scrollytelling steps
   const onStepEnter = ({ data }) => {
     setStepIndex(data);
   };
@@ -60,13 +70,29 @@ const IntroPuzzle = () => {
 
       <CrosswordWaffleWrapper>
         <CrosswordChart
-          data={tempData}
+          data={addColorsToData(tempData, metric)}
           colorCode={stepIndex === 1}
           showAnswers={stepIndex === 1}
         />
         <div style={{ opacity: stepIndex === 1 ? 1 : 0 }}>
-          <WaffleChart title={"Race"} />
-          <WaffleChart title={"Gender"} />
+          <WaffleChart
+            title={"Gender"}
+            data={_.pick(
+              _.first(raceGenderBreakdown.filter((d) => d.decade === "2020")),
+              ["men", "women"]
+            )}
+            colors={[COLORS.woman, COLORS.man]}
+            changeMetric={() => setMetric("gender")}
+          />
+          <WaffleChart
+            title={"Race"}
+            data={_.pick(
+              _.first(raceGenderBreakdown.filter((d) => d.decade === "2020")),
+              ["white", "poc"]
+            )}
+            colors={[COLORS.poc, COLORS.white]}
+            changeMetric={() => setMetric("race")}
+          />
         </div>
       </CrosswordWaffleWrapper>
 

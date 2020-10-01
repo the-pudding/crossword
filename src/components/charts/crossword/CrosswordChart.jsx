@@ -1,14 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Crossword from "./Crossword.js";
 import confetti from "canvas-confetti";
 
 const CrosswordChart = ({ data, colorCode, showAnswers }) => {
   const crosswordRef = useRef(null);
 
+  // start puzzle blank
   useEffect(() => {
     crosswordRef.current.reset();
   }, []);
 
+  // fill in answers if asked to
   useEffect(() => {
     if (showAnswers) {
       crosswordRef.current.fillAllAnswers();
