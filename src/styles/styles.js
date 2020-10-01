@@ -28,6 +28,8 @@ export const ScrollyStep = styled.div`
   padding: 15px;
   z-index: 1000;
   background: white;
+  width: 600px;
+  text-align: center;
 `;
 
 export const CrosswordWaffleWrapper = styled.div`
@@ -40,7 +42,7 @@ export const CrosswordWaffleWrapper = styled.div`
   align-items: center;
 `;
 
-export const WaffleChartWrapper = styled.div`
+export const WaffleChartBounds = styled.div`
   display: flex;
   width: 120px;
   height: 120px;
@@ -50,9 +52,24 @@ export const WaffleChartWrapper = styled.div`
   }
 `;
 
+export const WaffleChartWrapper = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+`;
+
 export const Block = styled.div`
   height: 10px;
   width: 10px;
   margin: 1px;
   background: ${(props) => props.color};
+`;
+
+export const WaffleChartLabel = styled.div`
+  color: ${(props) => props.color};
+`;
+
+export const Percentage = styled.div`
+  font-weight: bold;
+  font-size: 36px;
 `;

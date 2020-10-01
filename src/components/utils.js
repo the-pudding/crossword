@@ -1,6 +1,11 @@
 import _ from "lodash";
 import { COLORS } from "../styles/colors.js";
 
+// workaround for react so links work
+export const createMarkup = (content) => {
+  return { __html: content };
+};
+
 // rounds an array of percentages so that they add up to 100, minimizing error
 export const roundData = (arr, target = 100) => {
   const off =

@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { WaffleChartWrapper, Block } from "../../styles/styles.js";
+import {
+  WaffleChartWrapper,
+  WaffleChartBounds,
+  WaffleChartLabel,
+  Block,
+  Percentage,
+} from "../../styles/styles.js";
 import _ from "lodash";
 import { roundData } from "../utils.js";
 
 const WaffleChart = ({ title, data, colors, changeMetric }) => {
   const [colorLookup, setColorLookup] = useState(null);
+  const [roundedData, setRoundedData] = useState(null);
+
+  // round data to whole numbers
+  useEffect(() => {
+    setRoundedData(roundData(data));
+  }, [data]);
 
   // when we get colors, create a color map from i (0-99) -> color of square
   useEffect(() => {
-    const roundedData = roundData(data);
     const colorOptions = colors
       ? colors
       : roundedData.map(
@@ -28,15 +39,28 @@ const WaffleChart = ({ title, data, colors, changeMetric }) => {
   }, [colors]);
 
   return (
-    colorLookup && (
-      <div style={{ marginTop: "10px", marginBottom: "10px" }}>
-        <div>{title}</div>
-        <WaffleChartWrapper onClick={changeMetric}>
-          {_.range(0, 100).map((i) => (
-            <Block key={i} color={colorLookup[i]} />
-          ))}
-        </WaffleChartWrapper>
-      </div>
+    colorLookup &&
+    roundedData && (
+      <WaffleChartWrapper>
+        <div>
+          <div style={{ marginBottom: "5px" }}>{title}</div>
+          <WaffleChartBounds onClick={changeMetric}>
+            {_.range(0, 100).map((i) => (
+              <Block key={i} color={colorLookup[i]} />
+            ))}
+          </WaffleChartBounds>
+        </div>
+        <div style={{ marginLeft: "10px", marginTop: "18px" }}>
+          <WaffleChartLabel color={colors[0]}>
+            <Percentage>{roundedData[0]}%</Percentage>
+            {title.toLowerCase() === "gender" ? "women" : "POC"}
+          </WaffleChartLabel>
+          <WaffleChartLabel color={colors[1]}>
+            <Percentage>{roundedData[1]}%</Percentage>
+            {title.toLowerCase() === "gender" ? "men" : "white"}
+          </WaffleChartLabel>
+        </div>
+      </WaffleChartWrapper>
     )
   );
 };

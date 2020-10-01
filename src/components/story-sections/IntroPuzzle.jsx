@@ -10,7 +10,7 @@ import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
 import WaffleChart from "../charts/WaffleChart.jsx";
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
 import { Scrollama, Step } from "react-scrollama";
-import { addColorsToData } from "../utils.js";
+import { addColorsToData, createMarkup } from "../utils.js";
 import { COLORS } from "../../styles/colors.js";
 
 const tempData = {
@@ -97,9 +97,9 @@ const IntroPuzzle = () => {
       </CrosswordWaffleWrapper>
 
       <Scrollama onStepEnter={onStepEnter} debug offset={0.8}>
-        {copy.introSteps.map((step, i) => (
+        {copy.introSteps.map(({ text }, i) => (
           <Step data={i} key={i}>
-            <ScrollyStep>{step.text}</ScrollyStep>
+            <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
           </Step>
         ))}
       </Scrollama>
