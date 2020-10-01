@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Crossword from "./Crossword.js";
-import { CrosswordWrapper } from "../../../styles/styles.js";
 import confetti from "canvas-confetti";
 
 const CrosswordChart = ({ data, colorCode, showAnswers }) => {
-  const [confettiUsed, setConfettiUsed] = useState(false);
   const crosswordRef = useRef(null);
 
   useEffect(() => {
@@ -13,13 +11,12 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
 
   useEffect(() => {
     if (showAnswers) {
-      setConfettiUsed(true); // stop confetti in advance
       crosswordRef.current.fillAllAnswers();
     }
   }, [showAnswers]);
 
   return (
-    <CrosswordWrapper>
+    <div>
       <Crossword
         ref={crosswordRef}
         theme={{
@@ -28,10 +25,9 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
           highlightBackground: "#72cefc",
         }}
         data={data}
-        onCrosswordCorrect={() => {
-          if (crosswordRef.current.isCrosswordCorrect() && !confettiUsed) {
+        onCorrect={() => {
+          if (crosswordRef.current.isCrosswordCorrect()) {
             confetti();
-            setConfettiUsed(true);
           }
         }}
         colorCode={colorCode ? true : false}
@@ -43,7 +39,6 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
           </button>
           <button
             onClick={() => {
-              setConfettiUsed(false);
               crosswordRef.current.reset();
             }}
           >
@@ -51,7 +46,7 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
           </button>
         </>
       )}
-    </CrosswordWrapper>
+    </div>
   );
 };
 

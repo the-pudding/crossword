@@ -1,3 +1,5 @@
+// ADAPTED FROM @jaredreisinger/react-crossword
+
 const directionInfo = {
   across: {
     primary: "col",

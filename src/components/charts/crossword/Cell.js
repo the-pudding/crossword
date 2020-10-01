@@ -1,3 +1,5 @@
+// ADAPTED FROM @jaredreisinger/react-crossword
+
 import React, { useCallback, useContext } from "react";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components";

@@ -1,3 +1,5 @@
+// ADAPTED FROM @jaredreisinger/react-crossword
+
 import React, {
   useCallback,
   useContext,
@@ -179,15 +181,15 @@ const Crossword = React.forwardRef(
         if (onCorrect) {
           // We *used* to need a timeout workaround to ensure this happened
           // *after* the state had updated and the DOM rendered.... do we still?
-          onCorrect(direction, number, answer);
+          //nCorrect(direction, number, answer);
 
           // For future reference, the call looked like:
           //
-          // setTimeout(() => {
-          //   window.requestAnimationFrame(() => {
-          //     onCorrect(direction, number, answer);
-          //   });
-          // });
+          setTimeout(() => {
+            window.requestAnimationFrame(() => {
+              onCorrect(direction, number, answer);
+            });
+          });
         }
       },
       [onCorrect]

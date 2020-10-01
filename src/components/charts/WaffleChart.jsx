@@ -1,18 +1,19 @@
 import React from "react";
-import * as d3 from "d3";
-import "./WaffleChart.css";
+import { WaffleChartWrapper, Block } from "../../styles/styles.js";
 import _ from "lodash";
 
-const WaffleChart = ({ data }) => {
+const WaffleChart = ({ title }) => {
   return (
-    <div className="waffle-chart-wrapper">
-      {_.range(0, 100).map((i) => (
-        <div
-          key={i}
-          class="block"
-          style={{ background: i < 5 ? "cornflowerblue" : "lightgrey" }}
-        />
-      ))}
+    <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+      <div>{title}</div>
+      <WaffleChartWrapper>
+        {_.range(0, 100).map((i) => (
+          <Block
+            key={i}
+            style={{ background: i < 5 ? "cornflowerblue" : "lightgrey" }}
+          />
+        ))}
+      </WaffleChartWrapper>
     </div>
   );
 };

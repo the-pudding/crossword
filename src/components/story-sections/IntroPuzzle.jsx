@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import copy from "../../data/copy.json";
-import { StoryTitle, ScrollyStep } from "../../styles/styles.js";
+import {
+  StoryTitle,
+  ScrollyStep,
+  CrosswordWaffleWrapper,
+} from "../../styles/styles.js";
 import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
+import WaffleChart from "../charts/WaffleChart.jsx";
 import { Scrollama, Step } from "react-scrollama";
 
 const tempData = {
@@ -52,11 +57,18 @@ const IntroPuzzle = () => {
     >
       <StoryTitle>{copy.title}</StoryTitle>
       <div>By Michelle McGhee and Russell Goldenberg</div>
-      <CrosswordChart
-        data={tempData}
-        colorCode={stepIndex === 1}
-        showAnswers={stepIndex === 1}
-      />
+
+      <CrosswordWaffleWrapper>
+        <CrosswordChart
+          data={tempData}
+          colorCode={stepIndex === 1}
+          showAnswers={stepIndex === 1}
+        />
+        <div style={{ opacity: stepIndex === 1 ? 1 : 0 }}>
+          <WaffleChart title={"Race"} />
+          <WaffleChart title={"Gender"} />
+        </div>
+      </CrosswordWaffleWrapper>
 
       <Scrollama onStepEnter={onStepEnter} debug offset={0.8}>
         {copy.introSteps.map((step, i) => (

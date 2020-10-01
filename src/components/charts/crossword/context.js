@@ -1,3 +1,5 @@
+// ADAPTED FROM @jaredreisinger/react-crossword
+
 import React from "react";
 
 // To pass focus/highlight/etc., it's cleaner to use a context.

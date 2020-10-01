@@ -30,10 +30,25 @@ export const ScrollyStep = styled.div`
   background: white;
 `;
 
-export const CrosswordWrapper = styled.div`
-  width: 60%;
+export const CrosswordWaffleWrapper = styled.div`
   margin-top: 100px;
   margin-bottom: 100px;
   position: sticky;
   top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const WaffleChartWrapper = styled.div`
+  display: flex;
+  width: 140px;
+  height: 140px;
+  flex-wrap: wrap;
+`;
+
+export const Block = styled.div`
+  height: 10px;
+  width: 10px;
+  margin: 2px;
 `;
