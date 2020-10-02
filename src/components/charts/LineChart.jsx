@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import * as d3 from "d3";
-import useChartDimensions from "../hooks/useChartDimensions.js";
+import useChartDimensions from "../../hooks/useChartDimensions.js";
 import Chart from "./chart-elements/Chart.jsx";
 import Line from "./chart-elements/Line.jsx";
 import Axis from "./chart-elements/Axis.jsx";
-import { LineChartWrapper } from "../styles/styles.js";
+import { LineChartWrapper } from "../../styles/styles.js";
 
 const LineChart = ({ dataSources }) => {
   const [metric, setMetric] = useState("men");

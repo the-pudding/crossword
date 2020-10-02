@@ -73,3 +73,7 @@ export const Percentage = styled.div`
   font-weight: bold;
   font-size: 36px;
 `;
+
+export const SlopeChartWrapper = styled.div`
+  height: 80vh;
+`;
