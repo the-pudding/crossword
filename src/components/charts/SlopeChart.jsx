@@ -6,7 +6,6 @@ import { SlopeChartWrapper } from "../../styles/styles.js";
 import rankedByNumAppearances from "../../data/rankedByNumAppearances.json";
 import rankedByScore from "../../data/rankedByScore.json";
 import _ from "lodash";
-import { geoArea } from "d3";
 
 const SlopeChart = () => {
   const initialDimensions = {
@@ -102,24 +101,3 @@ const SlopeChartCircles = ({
 };
 
 export default SlopeChart;
-
-/*const Circles = ({
-  data,
-  xScale,
-  yScale,
-  colorScale,
-  xAccessor,
-  yAccessor,
-  colorAccessor,
-  radius,
-}) => {
-  return data.map((d, i) => (
-    <circle
-      key={i}
-      cx={xScale(xAccessor(d))}
-      cy={yScale(yAccessor(d))}
-      r={radius}
-      fill={colorScale(colorAccessor(d))}
-    />
-  ));
-};*/
