@@ -46,8 +46,6 @@ const WaffleChart = ({
     setColorLookup(updatedColorLookup);
   }, [colors, roundedData]);
 
-  console.log({ roundedData });
-
   return (
     colorLookup &&
     roundedData && (
