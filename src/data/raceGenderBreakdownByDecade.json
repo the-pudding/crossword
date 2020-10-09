@@ -1,74 +1,171 @@
 [
   {
+    "decade": "2020",
+    "publication": "lat",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "24.63" },
+      { "group": "nonHispanicWhite", "percent": "75.37" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.15" },
+      { "group": "women", "percent": "31.64" },
+      { "group": "men", "percent": "68.21" }
+    ]
+  },
+  {
     "decade": "1940s",
-    "white": 96.32,
-    "poc": 3.68,
-    "men": 89.94,
-    "women": 10.06,
-    "whiteMen": 86.4
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "5.81" },
+      { "group": "nonHispanicWhite", "percent": "94.19" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "10.20" },
+      { "group": "men", "percent": "89.80" }
+    ]
   },
   {
     "decade": "1950s",
-    "white": 94.84,
-    "poc": 5.16,
-    "men": 84.13,
-    "women": 15.87,
-    "whiteMen": 79.44
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "8.84" },
+      { "group": "nonHispanicWhite", "percent": "91.16" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "15.87" },
+      { "group": "men", "percent": "84.13" }
+    ]
   },
   {
     "decade": "1960s",
-    "white": 95.18,
-    "poc": 4.82,
-    "men": 85.09,
-    "women": 14.91,
-    "whiteMen": 81.17
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "7.38" },
+      { "group": "nonHispanicWhite", "percent": "92.62" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "14.91" },
+      { "group": "men", "percent": "85.09" }
+    ]
   },
   {
     "decade": "1970s",
-    "white": 93.87,
-    "poc": 5.98,
-    "men": 79.67,
-    "women": 20.33,
-    "whiteMen": 75.19
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "9.27" },
+      { "group": "nonHispanicWhite", "percent": "90.73" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "20.33" },
+      { "group": "men", "percent": "79.67" }
+    ]
   },
   {
     "decade": "1980s",
-    "white": 94.62,
-    "poc": 5.38,
-    "men": 83.14,
-    "women": 16.86,
-    "whiteMen": 79.04
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "6.94" },
+      { "group": "nonHispanicWhite", "percent": "93.06" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "16.86" },
+      { "group": "men", "percent": "83.14" }
+    ]
   },
   {
     "decade": "1990s",
-    "white": 90.8,
-    "poc": 9.05,
-    "men": 77.6,
-    "women": 22.4,
-    "whiteMen": 70.47
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "11.42" },
+      { "group": "nonHispanicWhite", "percent": "88.58" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "22.40" },
+      { "group": "men", "percent": "77.60" }
+    ]
   },
   {
     "decade": "2000s",
-    "white": 87.59,
-    "poc": 12.41,
-    "men": 72.35,
-    "women": 27.65,
-    "whiteMen": 64.72
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "15.25" },
+      { "group": "nonHispanicWhite", "percent": "84.75" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "27.65" },
+      { "group": "men", "percent": "72.35" }
+    ]
   },
   {
     "decade": "2010s",
-    "white": 83.72,
-    "poc": 16.28,
-    "men": 72.69,
-    "women": 27.31,
-    "whiteMen": 62.18
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "19.85" },
+      { "group": "nonHispanicWhite", "percent": "80.15" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "27.31" },
+      { "group": "men", "percent": "72.69" }
+    ]
   },
   {
     "decade": "2020",
-    "white": 75.95,
-    "poc": 24.05,
-    "men": 63.92,
-    "women": 36.08,
-    "whiteMen": 50
+    "publication": "nyt",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "28.32" },
+      { "group": "nonHispanicWhite", "percent": "71.68" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "36.08" },
+      { "group": "men", "percent": "63.92" }
+    ]
+  },
+  {
+    "decade": "2020",
+    "publication": "up",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "29.10" },
+      { "group": "nonHispanicWhite", "percent": "70.90" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.30" },
+      { "group": "women", "percent": "45.67" },
+      { "group": "men", "percent": "54.03" }
+    ]
+  },
+  {
+    "decade": "2020",
+    "publication": "usa",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "48.28" },
+      { "group": "nonHispanicWhite", "percent": "51.72" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.60" },
+      { "group": "women", "percent": "71.75" },
+      { "group": "men", "percent": "27.65" }
+    ]
+  },
+  {
+    "decade": "2020",
+    "publication": "wsj",
+    "raceBreakdown": [
+      { "group": "minority", "percent": "24.48" },
+      { "group": "nonHispanicWhite", "percent": "75.52" }
+    ],
+    "genderBreakdown": [
+      { "group": "nonbinary", "percent": "0.00" },
+      { "group": "women", "percent": "30.90" },
+      { "group": "men", "percent": "69.10" }
+    ]
   }
 ]

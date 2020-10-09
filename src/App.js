@@ -1,16 +1,22 @@
 import React from "react";
 import IntroPuzzle from "./components/story-sections/IntroPuzzle.jsx";
 import Intro from "./components/story-sections/Intro.jsx";
-import SlopeChart from "./components/charts/SlopeChart.jsx";
+import LineChart from "./components/charts/LineChart.jsx";
+import SmallMultipleWaffles from "./components/story-sections/SmallMultipleWaffles.jsx";
 import Experiment from "./Experiment.jsx";
+import { EssayWrapper } from "./styles/styles.js";
+import copy from "./data/copy.json";
 
 function App() {
   return (
-    <div>
+    <EssayWrapper>
+      <h1>{copy.title}</h1>
+      <div>By Michelle McGhee and Russell Goldenberg</div>
+
       <IntroPuzzle />
       <Intro />
-      {/* <Experiment /> */}
-    </div>
+      <SmallMultipleWaffles />
+    </EssayWrapper>
   );
 }
 

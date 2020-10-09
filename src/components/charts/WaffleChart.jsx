@@ -5,11 +5,19 @@ import {
   WaffleChartLabel,
   Block,
   Percentage,
+  WaffleTitle,
 } from "../../styles/styles.js";
 import _ from "lodash";
 import { roundData } from "../utils.js";
 
-const WaffleChart = ({ title, data, colors, changeMetric }) => {
+const WaffleChart = ({
+  title,
+  data,
+  colors,
+  labels,
+  clickable = false,
+  changeMetric = null,
+}) => {
   const [colorLookup, setColorLookup] = useState(null);
   const [roundedData, setRoundedData] = useState(null);
 
@@ -28,37 +36,41 @@ const WaffleChart = ({ title, data, colors, changeMetric }) => {
 
     const updatedColorLookup = {};
     let countTo100 = 0;
-    _.forEach(roundedData, (groupPercent, groupNum) => {
-      _.forEach(_.range(0, groupPercent), (i) => {
+    _.forEach(roundedData, ({ percent }, groupNum) => {
+      _.forEach(_.range(0, percent), (_) => {
         updatedColorLookup[countTo100] = colorOptions[groupNum];
         countTo100 += 1;
       });
     });
 
     setColorLookup(updatedColorLookup);
-  }, [colors]);
+  }, [colors, roundedData]);
+
+  console.log({ roundedData });
 
   return (
     colorLookup &&
     roundedData && (
       <WaffleChartWrapper>
         <div>
-          <div style={{ marginBottom: "5px" }}>{title}</div>
-          <WaffleChartBounds onClick={changeMetric}>
+          <WaffleTitle>{title}</WaffleTitle>
+          <WaffleChartBounds onClick={changeMetric} clickable={clickable}>
             {_.range(0, 100).map((i) => (
               <Block key={i} color={colorLookup[i]} />
             ))}
           </WaffleChartBounds>
         </div>
         <div style={{ marginLeft: "10px", marginTop: "18px" }}>
-          <WaffleChartLabel color={colors[0]}>
-            <Percentage>{roundedData[0]}%</Percentage>
-            {title.toLowerCase() === "gender" ? "women" : "POC"}
-          </WaffleChartLabel>
-          <WaffleChartLabel color={colors[1]}>
-            <Percentage>{roundedData[1]}%</Percentage>
-            {title.toLowerCase() === "gender" ? "men" : "white"}
-          </WaffleChartLabel>
+          {roundedData.map(({ percent }, i) => (
+            <WaffleChartLabel key={i} color={colors[i]}>
+              <Percentage numLabels={roundedData.length}>{percent}%</Percentage>
+              <div
+                style={{ dipslay: "flex", flexWrap: "wrap", width: "100px" }}
+              >
+                {labels[i]}
+              </div>
+            </WaffleChartLabel>
+          ))}
         </div>
       </WaffleChartWrapper>
     )

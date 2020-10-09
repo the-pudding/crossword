@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import copy from "../../data/copy.json";
 import {
-  StoryTitle,
   ScrollyStep,
   CrosswordWaffleWrapper,
+  Section,
 } from "../../styles/styles.js";
 import _ from "lodash";
 import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
@@ -62,12 +62,7 @@ const IntroPuzzle = () => {
   };
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <StoryTitle>{copy.title}</StoryTitle>
-      <div>By Michelle McGhee and Russell Goldenberg</div>
-
+    <Section>
       <CrosswordWaffleWrapper>
         <CrosswordChart
           data={addColorsToData(tempData, metric)}
@@ -77,33 +72,43 @@ const IntroPuzzle = () => {
         <div style={{ opacity: stepIndex === 1 ? 1 : 0 }}>
           <WaffleChart
             title={"Gender"}
-            data={_.pick(
-              _.first(raceGenderBreakdown.filter((d) => d.decade === "2020")),
-              ["men", "women"]
-            )}
-            colors={[COLORS.woman, COLORS.man]}
+            data={
+              _.first(
+                raceGenderBreakdown.filter(
+                  (d) => d.decade === "2020" && d.publication === "nyt"
+                )
+              ).genderBreakdown
+            }
+            colors={[COLORS.nonbinary, COLORS.woman, COLORS.man]}
+            labels={["non-binary", "women", "men"]}
             changeMetric={() => setMetric("gender")}
+            clickable={true}
           />
           <WaffleChart
             title={"Race"}
-            data={_.pick(
-              _.first(raceGenderBreakdown.filter((d) => d.decade === "2020")),
-              ["white", "poc"]
-            )}
+            data={
+              _.first(
+                raceGenderBreakdown.filter(
+                  (d) => d.decade === "2020" && d.publication === "nyt"
+                )
+              ).raceBreakdown
+            }
             colors={[COLORS.poc, COLORS.white]}
+            labels={["minority", "non-hispanic white"]}
             changeMetric={() => setMetric("race")}
+            clickable={true}
           />
         </div>
       </CrosswordWaffleWrapper>
 
-      <Scrollama onStepEnter={onStepEnter} debug offset={0.8}>
+      <Scrollama onStepEnter={onStepEnter} offset={0.8}>
         {copy.introSteps.map(({ text }, i) => (
           <Step data={i} key={i}>
             <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
           </Step>
         ))}
       </Scrollama>
-    </div>
+    </Section>
   );
 };
 

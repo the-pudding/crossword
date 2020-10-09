@@ -27,7 +27,7 @@ const Line = ({
         d={lineGenerator(data)}
         fill="none"
         stroke={color}
-        strokeWidth={2}
+        strokeWidth={5}
       />
       {fillArea && <path d={areaGenerator(data)} fill={color} />}
     </>

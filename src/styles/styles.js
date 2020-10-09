@@ -8,16 +8,26 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const EssayWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+`;
+
 export const LineChartWrapper = styled.div`
   height: 500px;
 `;
 
-export const StoryTitle = styled.h1`
-  text-align: center;
-`;
-
 export const Prose = styled.p`
-  max-width: 40rem;
+  width: 40rem;
   margin: 0 auto;
   padding: 1rem;
 `;
@@ -48,7 +58,7 @@ export const WaffleChartBounds = styled.div`
   height: 120px;
   flex-wrap: wrap;
   &:hover {
-    cursor: pointer;
+    cursor: ${(props) => (props.clickable ? "pointer" : "auto")};
   }
 `;
 
@@ -71,9 +81,25 @@ export const WaffleChartLabel = styled.div`
 
 export const Percentage = styled.div`
   font-weight: bold;
-  font-size: 36px;
+  font-size: ${(props) => (props.numLabels === 2 ? "36px" : "26px")};
+`;
+
+export const WaffleTitle = styled.div`
+  margin-bottom: 10px;
 `;
 
 export const SlopeChartWrapper = styled.div`
   height: 80vh;
+`;
+
+export const WaffleMultiplesWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 15px;
+  margin-right: 15px;
+`;
+
+export const TitledWaffle = styled.div`
+  margin: 10px;
 `;

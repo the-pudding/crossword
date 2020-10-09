@@ -7,24 +7,25 @@ export const createMarkup = (content) => {
 };
 
 // rounds an array of percentages so that they add up to 100, minimizing error
-export const roundData = (arr, target = 100) => {
-  const off =
-    target -
-    _.reduce(
-      arr,
-      function (acc, x) {
-        return acc + Math.round(x);
-      },
-      0
-    );
-  return _.chain(arr)
-    .sortBy(function (x) {
-      return Math.round(x) - x;
-    })
-    .map(function (x, i) {
-      return Math.round(x) + (off > i) - (i >= arr.length + off);
-    })
+export const roundData = (data, target = 100) => {
+  const originalOrder = data.map((d) => d.group);
+  const naiveRoundSum = data.reduce((acc, currentValue) => {
+    return acc + Math.round(currentValue.percent);
+  }, 0);
+  const off = target - naiveRoundSum;
+
+  const rounded = _.chain(data)
+    .sortBy(({ percent }) => Math.round(percent) - percent)
+    .map(({ group, percent }, i) => ({
+      percent: Math.round(percent) + (off > i) - (i >= data.length + off),
+      group,
+    }))
     .value();
+
+  const inOriginalOrder = _.sortBy(rounded, (d) => {
+    return _.findIndex(originalOrder, (original) => original === d.group);
+  });
+  return inOriginalOrder;
 };
 
 // adds a field 'color' to crossword data based on the metric (gender or race) that's being displayed
