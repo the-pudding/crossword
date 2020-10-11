@@ -3,17 +3,23 @@ import copy from "../../data/copy.json";
 import _ from "lodash";
 import { Prose, Section } from "../../styles/styles.js";
 import { createMarkup } from "../utils.js";
+import StackedBarChart from "../charts/StackedBarChart.jsx";
+import chess from "../../data/CHESS.json";
 
-const UsaTodayProse = () => {
+const UsaTodayDeepDive = () => {
   return (
     <>
       <Section>
         {copy.usaTodayProse.map(({ value }, i) => (
           <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
         ))}
+        {/* <Prose
+          dangerouslySetInnerHTML={createMarkup(copy.usaTodayProse[0].value)}
+        /> */}
+        <StackedBarChart data={chess} word={"chess"} />
       </Section>
     </>
   );
 };
 
-export default UsaTodayProse;
+export default UsaTodayDeepDive;

@@ -4,7 +4,7 @@ import Intro from "./components/story-sections/Intro.jsx";
 import LineChart from "./components/charts/LineChart.jsx";
 import SmallMultipleWaffles from "./components/story-sections/SmallMultipleWaffles.jsx";
 import Experiment from "./Experiment.jsx";
-import UsaTodayProse from "./components/story-sections/UsaTodayProse.jsx";
+import UsaTodayDeepDive from "./components/story-sections/UsaTodayDeepDive.jsx";
 import { EssayWrapper } from "./styles/styles.js";
 import copy from "./data/copy.json";
 
@@ -17,7 +17,7 @@ function App() {
       <IntroPuzzle />
       <Intro />
       <SmallMultipleWaffles />
-      <UsaTodayProse />
+      <UsaTodayDeepDive />
     </EssayWrapper>
   );
 }

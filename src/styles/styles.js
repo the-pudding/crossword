@@ -20,6 +20,7 @@ export const Section = styled.div`
   align-items: center;
   margin-top: 50px;
   margin-bottom: 50px;
+  width: 100%;
 `;
 
 export const LineChartWrapper = styled.div`
@@ -102,4 +103,9 @@ export const WaffleMultiplesWrapper = styled.div`
 
 export const TitledWaffle = styled.div`
   margin: 10px;
+`;
+
+export const StackedBarChartWrapper = styled.div`
+  height: 400px;
+  width: 80%;
 `;

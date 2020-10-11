@@ -1,6 +1,6 @@
 import React from "react";
 
-const Axis = ({ dms, dimension, scale, label, labelAccessor }) => {
+const Axis = ({ dms, dimension, scale, label, labelAccessor, numTicks }) => {
   const Component = axisComponentsByDimension[dimension];
   if (!Component) return null;
 
@@ -10,13 +10,18 @@ const Axis = ({ dms, dimension, scale, label, labelAccessor }) => {
       scale={scale}
       label={label}
       labelAccessor={labelAccessor}
+      numTicks={numTicks}
     />
   );
 };
 
-const AxisHorizontal = ({ dms, scale, label, labelAccessor }) => {
+const AxisHorizontal = ({ dms, scale, label, labelAccessor, numTicks }) => {
+  const pixelsPerTick = 50;
+  const numberOfTicks = numTicks
+    ? numTicks
+    : Math.max(1, Math.floor(dms.width / pixelsPerTick));
   const ticks = scale
-    .domain()
+    .ticks(numberOfTicks)
     .map((value) => ({ value, xOffset: scale(value) }));
 
   return (

@@ -1,7 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
 import _ from "lodash";
-import "./Bars.css";
 
 const barPadding = 1;
 
@@ -14,7 +13,7 @@ const Bars = ({
   xScale,
   yScale,
 }) => {
-  const mean = d3.mean(data, metricAccessor);
+  console.log({ data });
 
   return (
     <>
@@ -46,20 +45,6 @@ const Bars = ({
           </text>
         </g>
       ))}
-      {/* Mean line */}
-      <g transform={`translate(${xScale(mean)}, 0)`} className="meanLine">
-        <line
-          x1={0}
-          y1={dms.boundedHeight}
-          x2={0}
-          y2={-15}
-          stroke="maroon"
-          strokeDasharray="2px 4px"
-        />
-        <text x={0} y={0} fill="maroon" style={{ textAnchor: "middle" }}>
-          mean: {_.round(mean, 1)}
-        </text>
-      </g>
     </>
   );
 };
