@@ -21,6 +21,7 @@ const StackedSquares = ({
   xScale,
   yScale,
   setHoveredData,
+  compare,
 }) => {
   const [personColorLookup, setPersonColorLookup] = useState(null);
 
@@ -60,14 +61,25 @@ const StackedSquares = ({
             })`}
           >
             {yearData.clues.map((squareData, clueI) => {
-              const { name, binaryRace, publication } = squareData;
-              const y =
-                binaryRace === "white" ? nextBelowYValue : nextAboveYValue;
-              if (binaryRace === "white") {
-                nextBelowYValue += squareHeight;
-              } else {
-                nextAboveYValue -= squareHeight;
+              const { name, binaryRace, gender, publication } = squareData;
+              let y = 0;
+
+              if (compare === "race") {
+                y = binaryRace === "white" ? nextBelowYValue : nextAboveYValue;
+                if (binaryRace === "white") {
+                  nextBelowYValue += squareHeight;
+                } else {
+                  nextAboveYValue -= squareHeight;
+                }
+              } else if (compare === "gender") {
+                y = gender === "man" ? nextBelowYValue : nextAboveYValue;
+                if (gender === "man") {
+                  nextBelowYValue += squareHeight;
+                } else {
+                  nextAboveYValue -= squareHeight;
+                }
               }
+
               return (
                 <rect
                   key={clueI}
@@ -76,14 +88,6 @@ const StackedSquares = ({
                   height={squareHeight}
                   width={squareHeight}
                   fill={publicationColorLookup[publication]}
-                  // fill={
-                  //   personColorLookup
-                  //     ? personColorLookup.filter((d) => d.name === name)[0]
-                  //         .color
-                  //     : "black"
-                  // }
-                  // stroke={publicationColorLookup[publication]}
-                  // strokeWidth={5}
                   onMouseEnter={() => setHoveredData(squareData)}
                 />
               );

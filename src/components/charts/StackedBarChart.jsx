@@ -7,7 +7,7 @@ import { StackedBarChartWrapper } from "../../styles/styles.js";
 import StackedSquares from "./chart-elements/StackedSquares.jsx";
 import _ from "lodash";
 
-const StackedBarChart = ({ data, word }) => {
+const StackedBarChart = ({ data, word, compare }) => {
   const initialDimensions = {
     marginTop: 100,
     marginRight: 100,
@@ -65,6 +65,7 @@ const StackedBarChart = ({ data, word }) => {
             xScale={xScale}
             yScale={yScale}
             setHoveredData={setHoveredData}
+            compare={compare}
           />
           <Axis
             dimension="x"
@@ -74,10 +75,10 @@ const StackedBarChart = ({ data, word }) => {
             numTicks={2}
           />
           <text x={-50} y={dms.boundedHeight * 0.5}>
-            URM
+            {compare === "race" ? "URM" : "Women"}
           </text>
           <text x={-50} y={dms.boundedHeight * 1.5}>
-            White
+            {compare === "race" ? "White" : "Men"}
           </text>
         </Chart>
       </StackedBarChartWrapper>

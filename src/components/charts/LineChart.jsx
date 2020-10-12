@@ -5,9 +5,8 @@ import Chart from "./chart-elements/Chart.jsx";
 import Line from "./chart-elements/Line.jsx";
 import Axis from "./chart-elements/Axis.jsx";
 import { LineChartWrapper } from "../../styles/styles.js";
-import theeData from "../../data/THEE.json";
 
-const LineChart = () => {
+const LineChart = ({ data }) => {
   const initialDimensions = {
     marginTop: 60,
     marginRight: 200,
@@ -20,16 +19,16 @@ const LineChart = () => {
     .scaleLinear()
     .domain(
       d3.extent([
-        ...theeData.map((d) => d.oldTimeyYou),
-        ...theeData.map((d) => d.meganTheeStallion),
-        ...theeData.map((d) => d.lyric),
+        ...data.map((d) => d.oldTimeyYou),
+        ...data.map((d) => d.meganTheeStallion),
+        ...data.map((d) => d.lyric),
       ])
     )
     .range([dms.boundedHeight, 0])
     .nice();
   const xScale = d3
     .scalePoint()
-    .domain(theeData.map((d) => d.year))
+    .domain(data.map((d) => d.year))
     .range([0, dms.boundedWidth]);
 
   return (
@@ -41,7 +40,7 @@ const LineChart = () => {
         </h1>
         <Chart dms={dms}>
           <Line
-            data={theeData}
+            data={data}
             xAccessor={(d) => d.year}
             yAccessor={(d) => (d.meganTheeStallion ? d.meganTheeStallion : 0)}
             xScale={xScale}
@@ -50,7 +49,7 @@ const LineChart = () => {
             fillArea={false}
           />
           <Line
-            data={theeData}
+            data={data}
             xAccessor={(d) => d.year}
             yAccessor={(d) => d.oldTimeyYou}
             xScale={xScale}
@@ -59,7 +58,7 @@ const LineChart = () => {
             fillArea={false}
           />
           <Line
-            data={theeData}
+            data={data}
             xAccessor={(d) => d.year}
             yAccessor={(d) => (d.lyric ? d.lyric : 0)}
             xScale={xScale}
