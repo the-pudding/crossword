@@ -14,6 +14,9 @@ const StackedBarChart = ({ data, word }) => {
     marginBottom: 200,
     marginLeft: 100,
   };
+
+  const [hoveredData, setHoveredData] = useState(null);
+
   const [ref, dms] = useChartDimensions(initialDimensions);
 
   const metricAccessor = (d) => d.year;
@@ -45,11 +48,12 @@ const StackedBarChart = ({ data, word }) => {
 
   return (
     <>
+      <h1 style={{ textAlign: "center" }}>
+        How <span style={{ background: "yellow" }}>{word.toUpperCase()}</span>{" "}
+        is clued across the big 5 crosswords
+      </h1>
+      <div>{hoveredData ? hoveredData.name : ""}</div>
       <StackedBarChartWrapper ref={ref}>
-        <h1 style={{ textAlign: "center" }}>
-          How <span style={{ background: "yellow" }}>{word.toUpperCase()}</span>{" "}
-          is clued across the big 5 crosswords
-        </h1>
         <Chart dms={dms}>
           <StackedSquares
             data={data}
@@ -60,6 +64,7 @@ const StackedBarChart = ({ data, word }) => {
             yAccessor={yAccessor}
             xScale={xScale}
             yScale={yScale}
+            setHoveredData={setHoveredData}
           />
           <Axis
             dimension="x"
