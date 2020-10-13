@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import copy from "../../data/copy.json";
-import { CrosswordWaffleWrapper, Section } from "../../styles/styles.js";
-import _ from "lodash";
-import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
-import WaffleChart from "../charts/WaffleChart.jsx";
-import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
-import { Scrollama } from "react-scrollama";
-import { addColorsToData, createHtmlForCopy } from "../utils.js";
-import { COLORS } from "../../styles/colors.js";
+import React, { useState } from "react"
+import copy from "../../data/copy.json"
+import { CrosswordWaffleWrapper, Section } from "../../styles/styles.js"
+import _ from "lodash"
+import CrosswordChart from "../charts/crossword/CrosswordChart.jsx"
+import WaffleChart from "../charts/WaffleChart.jsx"
+import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
+import { Scrollama } from "react-scrollama"
+import { addColorsToData, createHtmlForCopy } from "../utils.js"
+import { COLORS } from "../../styles/colors.js"
 
 const tempData = {
   across: {
@@ -46,16 +46,16 @@ const tempData = {
       gender: "woman",
     },
   },
-};
+}
 
 const IntroPuzzle = () => {
-  const [stepIndex, setStepIndex] = useState(null);
-  const [metric, setMetric] = useState("gender");
+  const [stepIndex, setStepIndex] = useState(null)
+  const [metric, setMetric] = useState("gender")
 
   // advancing scrollytelling steps
   const onStepEnter = ({ data }) => {
-    setStepIndex(data);
-  };
+    setStepIndex(data)
+  }
 
   return (
     <Section>
@@ -71,7 +71,7 @@ const IntroPuzzle = () => {
             data={
               _.first(
                 raceGenderBreakdown.filter(
-                  (d) => d.decade === "2020" && d.publication === "nyt"
+                  d => d.decade === "2020" && d.publication === "nyt"
                 )
               ).genderBreakdown
             }
@@ -85,7 +85,7 @@ const IntroPuzzle = () => {
             data={
               _.first(
                 raceGenderBreakdown.filter(
-                  (d) => d.decade === "2020" && d.publication === "nyt"
+                  d => d.decade === "2020" && d.publication === "nyt"
                 )
               ).raceBreakdown
             }
@@ -97,11 +97,13 @@ const IntroPuzzle = () => {
         </div>
       </CrosswordWaffleWrapper>
 
-      <Scrollama onStepEnter={onStepEnter} offset={0.8}>
-        {createHtmlForCopy(copy.introSteps)}
-      </Scrollama>
+      {typeof window !== "undefined" && (
+        <Scrollama onStepEnter={onStepEnter} offset={0.8}>
+          {createHtmlForCopy(copy.introSteps)}
+        </Scrollama>
+      )}
     </Section>
-  );
-};
+  )
+}
 
-export default IntroPuzzle;
+export default IntroPuzzle

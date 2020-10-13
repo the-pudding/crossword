@@ -1,21 +1,21 @@
-import React, { useRef, useEffect } from "react";
-import Crossword from "./Crossword.js";
-import confetti from "canvas-confetti";
+import React, { useRef, useEffect } from "react"
+import Crossword from "./Crossword.js"
+import confetti from "canvas-confetti"
 
 const CrosswordChart = ({ data, colorCode, showAnswers }) => {
-  const crosswordRef = useRef(null);
+  const crosswordRef = useRef(null)
 
   // start puzzle blank
   useEffect(() => {
-    crosswordRef.current.reset();
-  }, []);
+    crosswordRef.current.reset()
+  }, [])
 
   // fill in answers if asked to
   useEffect(() => {
     if (showAnswers) {
-      crosswordRef.current.fillAllAnswers();
+      crosswordRef.current.fillAllAnswers()
     }
-  }, [showAnswers]);
+  }, [showAnswers])
 
   return (
     <div>
@@ -28,8 +28,11 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
         }}
         data={data}
         onCorrect={() => {
-          if (crosswordRef.current.isCrosswordCorrect()) {
-            confetti();
+          if (
+            crosswordRef.current.isCrosswordCorrect() &&
+            typeof window !== "undefined"
+          ) {
+            confetti()
           }
         }}
         colorCode={colorCode ? true : false}
@@ -41,7 +44,7 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
           </button>
           <button
             onClick={() => {
-              crosswordRef.current.reset();
+              crosswordRef.current.reset()
             }}
           >
             clear
@@ -49,7 +52,7 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CrosswordChart;
+export default CrosswordChart
