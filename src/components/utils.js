@@ -1,9 +1,44 @@
+import React from "react";
 import _ from "lodash";
+import { Step } from "react-scrollama";
 import { COLORS } from "../styles/colors.js";
+import { Prose, Image, ImageWrapper, ScrollyStep } from "../styles/styles.js";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 // workaround for react so links work
 export const createMarkup = (content) => {
   return { __html: content };
+};
+
+export const createHtmlForCopy = (copy) => {
+  return copy.map(
+    ({ step, text, type, value, source, caption, tweetId }, i) => {
+      if (step) {
+        return (
+          <Step data={i} key={i}>
+            <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
+          </Step>
+        );
+      }
+
+      if (type === "text") {
+        return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />;
+      } else if (type === "image") {
+        return (
+          <ImageWrapper key={i}>
+            <Image src={require(`../images/${source}`)} />
+            <p style={{ fontSize: "12px" }}>{caption}</p>
+          </ImageWrapper>
+        );
+      } else if (type === "tweet") {
+        return (
+          <div style={{ width: "500px" }}>
+            <TwitterTweetEmbed tweetId={"1303360662450601986"} />
+          </div>
+        );
+      }
+    }
+  );
 };
 
 // rounds an array of percentages so that they add up to 100, minimizing error

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import copy from "../../data/copy.json";
 import _ from "lodash";
 import { Prose, Section, TitledWaffle } from "../../styles/styles.js";
-import { createMarkup } from "../utils.js";
 import WaffleChart from "../charts/WaffleChart.jsx";
 import { Slider } from "antd";
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
@@ -40,12 +39,6 @@ const NytLongView = () => {
   return (
     <>
       <Section>
-        {copy.nytLongView.map(({ value }, i) => (
-          <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
-        ))}
-      </Section>
-
-      <Section>
         <Slider
           marks={sliderMarks}
           min={1940}
@@ -60,7 +53,7 @@ const NytLongView = () => {
 
         <div style={{ display: "flex", marginTop: "40px" }}>
           <div style={{ margin: "20px" }}>
-            <h3>Popular clued people</h3>
+            <h3>Popular names (in clues and answers)</h3>
             {_.take(
               topPeopleNyt.filter((d) =>
                 d.decade.includes(decade.toString())

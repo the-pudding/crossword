@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import copy from "../../data/copy.json";
-import {
-  ScrollyStep,
-  CrosswordWaffleWrapper,
-  Section,
-} from "../../styles/styles.js";
+import { CrosswordWaffleWrapper, Section } from "../../styles/styles.js";
 import _ from "lodash";
 import CrosswordChart from "../charts/crossword/CrosswordChart.jsx";
 import WaffleChart from "../charts/WaffleChart.jsx";
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
-import { Scrollama, Step } from "react-scrollama";
-import { addColorsToData, createMarkup } from "../utils.js";
+import { Scrollama } from "react-scrollama";
+import { addColorsToData, createHtmlForCopy } from "../utils.js";
 import { COLORS } from "../../styles/colors.js";
 
 const tempData = {
@@ -102,11 +98,7 @@ const IntroPuzzle = () => {
       </CrosswordWaffleWrapper>
 
       <Scrollama onStepEnter={onStepEnter} offset={0.8}>
-        {copy.introSteps.map(({ text }, i) => (
-          <Step data={i} key={i}>
-            <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
-          </Step>
-        ))}
+        {createHtmlForCopy(copy.introSteps)}
       </Scrollama>
     </Section>
   );

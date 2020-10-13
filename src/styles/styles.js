@@ -109,3 +109,15 @@ export const StackedBarChartWrapper = styled.div`
   height: 400px;
   width: 80%;
 `;
+
+export const ImageWrapper = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Image = styled.img`
+  height: 450px;
+`;

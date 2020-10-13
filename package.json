@@ -17,6 +17,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-scrollama": "^2.2.12",
+    "react-twitter-embed": "^3.0.3",
     "request": "^2.88.2",
     "styled-components": "^5.2.0"
   },

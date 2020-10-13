@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import WaffleChart from "../charts/WaffleChart.jsx";
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json";
+import copy from "../../data/copy.json";
+import { createHtmlForCopy } from "../utils.js";
 import _ from "lodash";
 import {
   WaffleMultiplesWrapper,
@@ -12,44 +14,48 @@ import { COLORS } from "../../styles/colors.js";
 const SmallMultipleWaffles = () => {
   const [metric, setMetric] = useState("gender");
   return (
-    <Section>
-      <div>
-        <button onClick={() => setMetric("race")}>Race</button>
-        <button onClick={() => setMetric("gender")}>Gender</button>
-      </div>
-      <WaffleMultiplesWrapper>
-        <PublicationWaffle
-          shortPublicationName="nyt"
-          decade="2020"
-          title="NY Times"
-          metric={metric}
-        />
-        <PublicationWaffle
-          shortPublicationName="lat"
-          decade="2020"
-          title="LA Times"
-          metric={metric}
-        />
-        <PublicationWaffle
-          shortPublicationName="usa"
-          decade="2020"
-          title="USA Today"
-          metric={metric}
-        />
-        <PublicationWaffle
-          shortPublicationName="wsj"
-          decade="2020"
-          title="WSJ"
-          metric={metric}
-        />
-        <PublicationWaffle
-          shortPublicationName="up"
-          decade="2020"
-          title="Universal"
-          metric={metric}
-        />
-      </WaffleMultiplesWrapper>
-    </Section>
+    <>
+      <Section>{createHtmlForCopy(copy.introduceWaffles)}</Section>
+
+      <Section>
+        <div>
+          <button onClick={() => setMetric("race")}>Race</button>
+          <button onClick={() => setMetric("gender")}>Gender</button>
+        </div>
+        <WaffleMultiplesWrapper>
+          <PublicationWaffle
+            shortPublicationName="usa"
+            decade="2020"
+            title="USA Today"
+            metric={metric}
+          />
+          <PublicationWaffle
+            shortPublicationName="up"
+            decade="2020"
+            title="Universal"
+            metric={metric}
+          />
+          <PublicationWaffle
+            shortPublicationName="nyt"
+            decade="2020"
+            title="NY Times"
+            metric={metric}
+          />
+          <PublicationWaffle
+            shortPublicationName="lat"
+            decade="2020"
+            title="LA Times"
+            metric={metric}
+          />
+          <PublicationWaffle
+            shortPublicationName="wsj"
+            decade="2020"
+            title="WSJ"
+            metric={metric}
+          />
+        </WaffleMultiplesWrapper>
+      </Section>
+    </>
   );
 };
 

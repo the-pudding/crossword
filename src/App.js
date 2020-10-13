@@ -12,14 +12,16 @@ import "./App.css";
 function App() {
   return (
     <EssayWrapper>
-      <h1>{copy.title}</h1>
-      <div>By Michelle McGhee and Russell Goldenberg</div>
+      <div style={{ marginTop: "50px" }}>
+        <h1>{copy.title}</h1>
+        <div>By Michelle McGhee and Russell Goldenberg</div>
+      </div>
 
       <IntroPuzzle />
       <Intro />
+      <NytLongView />
       <SmallMultipleWaffles />
       <UsaTodayDeepDive />
-      <NytLongView />
     </EssayWrapper>
   );
 }
