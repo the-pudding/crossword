@@ -4,6 +4,7 @@ import { Step } from "react-scrollama"
 import { COLORS } from "../styles/colors.js"
 import { Prose, Image, ImageWrapper, ScrollyStep } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
+import twitter from "../images/twitter.png"
 
 // workaround for react so links work
 export const createMarkup = content => {
@@ -26,7 +27,7 @@ export const createHtmlForCopy = copy => {
       } else if (type === "image") {
         return (
           <ImageWrapper key={i}>
-            {/* <Image src={require(`../images/${source}`)} /> */}
+            <Image src={twitter} />
             <p style={{ fontSize: "12px" }}>{caption}</p>
           </ImageWrapper>
         )
@@ -36,6 +37,8 @@ export const createHtmlForCopy = copy => {
             <TwitterTweetEmbed tweetId={"1303360662450601986"} />
           </div>
         )
+      } else if (type === "header") {
+        return <h2 key={i} dangerouslySetInnerHTML={createMarkup(value)}></h2>
       }
     }
   )
@@ -48,14 +51,6 @@ export const roundData = (data, target = 100) => {
     return acc + Math.round(currentValue.percent)
   }, 0)
   const off = target - naiveRoundSum
-
-  // const rounded = _.chain(data)
-  //   .sortBy(({ percent }) => Math.round(percent) - percent)
-  //   .map(({ group, percent }, i) => ({
-  //     percent: Math.round(percent) + (off > i) - (i >= data.length + off),
-  //     group,
-  //   }))
-  //   .value()
 
   const rounded = _.sortBy(
     data,

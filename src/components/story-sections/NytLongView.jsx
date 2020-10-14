@@ -56,19 +56,6 @@ const NytLongView = () => {
         </div>
 
         <div style={{ display: "flex", marginTop: "40px" }}>
-          <div style={{ margin: "20px" }}>
-            <h3>Popular names (in clues and answers)</h3>
-            {_.take(
-              topPeopleNyt.filter(d => d.decade.includes(decade.toString()))[0]
-                .topPeople,
-              5
-            ).map(({ name, frequency }) => (
-              <div>
-                {name} ({frequency})
-              </div>
-            ))}
-          </div>
-
           <TitledWaffle>
             <WaffleChart
               title={"Race"}
