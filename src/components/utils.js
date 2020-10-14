@@ -40,6 +40,7 @@ export const createHtmlForCopy = copy => {
       } else if (type === "header") {
         return <h2 key={i} dangerouslySetInnerHTML={createMarkup(value)}></h2>
       }
+      return ""
     }
   )
 }
@@ -84,4 +85,31 @@ export const addColorsToData = (data, metric) => {
     }
   })
   return updatedData
+}
+
+export const prepareCrosswordData = data => {
+  const result = { across: {}, down: {} }
+
+  _.forEach(data, ({ id, dir, clue, answer, row, col, binaryRace, gender }) => {
+    if (dir === "across") {
+      result.across[id] = {
+        clue,
+        answer,
+        row: row - 1,
+        col: col - 1,
+        race: binaryRace,
+        gender,
+      }
+    } else if (dir === "down") {
+      result.down[id] = {
+        clue,
+        answer,
+        row: row - 1,
+        col: col - 1,
+        race: binaryRace,
+        gender,
+      }
+    }
+  })
+  return result
 }

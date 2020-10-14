@@ -15,7 +15,7 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
     if (showAnswers) {
       crosswordRef.current.fillAllAnswers()
     }
-  }, [showAnswers])
+  }, [showAnswers, colorCode])
 
   return (
     <div>

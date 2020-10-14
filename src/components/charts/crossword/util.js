@@ -135,23 +135,27 @@ export function byNumber(a, b) {
 }
 
 export function clearGuesses(storageKey) {
-  // if (!window.localStorage) {
-  //   return;
-  // }
-  // window.localStorage.removeItem(storageKey);
+  if (typeof window !== "undefined") {
+    if (!window.localStorage) {
+      return
+    }
+    window.localStorage.removeItem(storageKey)
+  }
 }
 
 export function saveGuesses(gridData, storageKey) {
-  // const { localStorage } = window;
-  // if (!localStorage) {
-  //   return;
-  // }
-  // const guesses = serializeGuesses(gridData);
-  // const saveData = {
-  //   date: Date.now(),
-  //   guesses,
-  // };
-  // localStorage.setItem(storageKey, JSON.stringify(saveData));
+  if (typeof window !== "undefined") {
+    const { localStorage } = window
+    if (!localStorage) {
+      return
+    }
+    const guesses = serializeGuesses(gridData)
+    const saveData = {
+      date: Date.now(),
+      guesses,
+    }
+    localStorage.setItem(storageKey, JSON.stringify(saveData))
+  }
 }
 
 export function serializeGuesses(gridData) {
@@ -169,17 +173,19 @@ export function serializeGuesses(gridData) {
 }
 
 export function loadGuesses(gridData, storageKey) {
-  // const { localStorage } = window;
-  // if (!localStorage) {
-  //   return;
-  // }
-  // const saveRaw = localStorage.getItem(storageKey);
-  // if (!saveRaw) {
-  //   return;
-  // }
-  // const saveData = JSON.parse(saveRaw);
-  // // TODO: check date for expiration?
-  // deserializeGuesses(gridData, saveData.guesses);
+  if (typeof window !== "undefined") {
+    const { localStorage } = window
+    if (!localStorage) {
+      return
+    }
+    const saveRaw = localStorage.getItem(storageKey)
+    if (!saveRaw) {
+      return
+    }
+    const saveData = JSON.parse(saveRaw)
+    // TODO: check date for expiration?
+    deserializeGuesses(gridData, saveData.guesses)
+  }
 }
 
 export function deserializeGuesses(gridData, guesses) {

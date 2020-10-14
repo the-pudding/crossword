@@ -6,8 +6,13 @@ import CrosswordChart from "../charts/crossword/CrosswordChart.jsx"
 import WaffleChart from "../charts/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
 import { Scrollama } from "react-scrollama"
-import { addColorsToData, createHtmlForCopy } from "../utils.js"
+import {
+  addColorsToData,
+  createHtmlForCopy,
+  prepareCrosswordData,
+} from "../utils.js"
 import { COLORS } from "../../styles/colors.js"
+import crosswordData from "../../data/nyt-2020-with-pos.json"
 
 const tempData = {
   across: {
@@ -57,11 +62,12 @@ const IntroPuzzle = () => {
     setStepIndex(data)
   }
 
+  console.log({ stepIndex })
   return (
     <Section>
       <CrosswordWaffleWrapper>
         <CrosswordChart
-          data={addColorsToData(tempData, metric)}
+          data={addColorsToData(prepareCrosswordData(crosswordData), metric)}
           colorCode={stepIndex === 1}
           showAnswers={stepIndex === 1}
         />

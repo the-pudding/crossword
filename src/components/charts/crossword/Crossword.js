@@ -76,6 +76,9 @@ const CluesWrapper = styled.div.attrs(props => ({
   padding: 0 1em;
   flex: 1 2 25%;
 
+  overflow: scroll;
+  height: 500px;
+
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     margin-top: 2em;
   }
