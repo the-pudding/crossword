@@ -62,7 +62,6 @@ const IntroPuzzle = () => {
     setStepIndex(data)
   }
 
-  console.log({ stepIndex })
   return (
     <Section>
       <CrosswordWaffleWrapper>

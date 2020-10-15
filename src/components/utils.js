@@ -2,7 +2,13 @@ import React from "react"
 import _ from "lodash"
 import { Step } from "react-scrollama"
 import { COLORS } from "../styles/colors.js"
-import { Prose, Image, ImageWrapper, ScrollyStep } from "../styles/styles.js"
+import {
+  Prose,
+  Heading,
+  Image,
+  ImageWrapper,
+  ScrollyStep,
+} from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import twitter from "../images/twitter.png"
 
@@ -38,7 +44,7 @@ export const createHtmlForCopy = copy => {
           </div>
         )
       } else if (type === "header") {
-        return <h2 key={i} dangerouslySetInnerHTML={createMarkup(value)}></h2>
+        return <Heading key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       }
       return ""
     }

@@ -7,21 +7,11 @@ import { Slider } from "antd"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
 import topPeopleNyt from "../../data/topPeopleNyt.json"
 import { COLORS } from "../../styles/colors.js"
+import DecadeSlider from "../charts/chart-elements/DecadeSlider.jsx"
 
 const NytLongView = () => {
   const [decade, setDecade] = useState(1940)
 
-  const sliderMarks = {
-    1940: "1940s",
-    1950: "1950s",
-    1960: "1960s",
-    1970: "1970s",
-    1980: "1980s",
-    1990: "1990s",
-    2000: "2000s",
-    2010: "2010s",
-    2020: "2020",
-  }
   const allData = _.first(
     raceGenderBreakdown.filter(d => {
       if (decade !== 2020) return d.decade === `${decade}s`
@@ -39,21 +29,7 @@ const NytLongView = () => {
   return (
     <>
       <Section>
-        <div>
-          {typeof window !== "undefined" ? (
-            <Slider
-              marks={sliderMarks}
-              min={1940}
-              max={2020}
-              step={10}
-              defaultValue={1940}
-              style={{ width: "500px" }}
-              tooltipVisible={false}
-              value={decade}
-              onChange={value => setDecade(value)}
-            />
-          ) : null}
-        </div>
+        <DecadeSlider decade={decade} setDecade={setDecade} />
 
         <div style={{ display: "flex", marginTop: "40px" }}>
           <TitledWaffle>

@@ -1,5 +1,5 @@
-import React from "react";
-import * as d3 from "d3";
+import React from "react"
+import * as d3 from "d3"
 
 const Line = ({
   data,
@@ -12,14 +12,14 @@ const Line = ({
 }) => {
   const lineGenerator = d3
     .line()
-    .x((d) => xScale(xAccessor(d)))
-    .y((d) => yScale(yAccessor(d)));
+    .x(d => xScale(xAccessor(d)))
+    .y(d => yScale(yAccessor(d)))
 
   const areaGenerator = d3
     .area()
-    .x((d) => xScale(xAccessor(d)))
-    .y1((d) => yScale(yAccessor(d)))
-    .y0(yScale(0));
+    .x(d => xScale(xAccessor(d)))
+    .y1(d => yScale(yAccessor(d)))
+    .y0(yScale(0))
 
   return (
     <>
@@ -27,11 +27,11 @@ const Line = ({
         d={lineGenerator(data)}
         fill="none"
         stroke={color}
-        strokeWidth={5}
+        strokeWidth={3}
       />
       {fillArea && <path d={areaGenerator(data)} fill={color} />}
     </>
-  );
-};
+  )
+}
 
-export default Line;
+export default Line
