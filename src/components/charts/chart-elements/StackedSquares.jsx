@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import * as d3 from "d3";
-import _ from "lodash";
+import React, { useState, useEffect } from "react"
+import * as d3 from "d3"
+import _ from "lodash"
 
-const barPadding = 1;
+const barPadding = 1
 
 const publicationColorLookup = {
   wsj: "red",
@@ -10,7 +10,11 @@ const publicationColorLookup = {
   universal: "yellow",
   nytimes: "purple",
   latimes: "orange",
-};
+}
+const colorLookup = {
+  above: "tomato",
+  below: "grey",
+}
 const StackedSquares = ({
   data,
   squareHeight,
@@ -20,38 +24,35 @@ const StackedSquares = ({
   yAccessor,
   xScale,
   yScale,
-  setHoveredData,
   compare,
 }) => {
-  const [personColorLookup, setPersonColorLookup] = useState(null);
+  const [personColorLookup, setPersonColorLookup] = useState(null)
 
   useEffect(() => {
     const uniqueNames = _.uniq(
       data.reduce(
         (accumulator, currentValue) => [
           ...accumulator,
-          ...currentValue.clues.map((clue) => clue.name),
+          ...currentValue.clues.map(clue => clue.name),
         ],
         []
       )
-    );
-    const lookup = uniqueNames.map((name) => ({
+    )
+    const lookup = uniqueNames.map(name => ({
       name,
       color: "#" + Math.floor(Math.random() * 16777215).toString(16),
-    }));
-    setPersonColorLookup(lookup);
-  }, []);
+    }))
+    setPersonColorLookup(lookup)
+  }, [])
 
   return (
     <>
       {bins.map((bin, i) => {
-        const yearData = _.first(
-          data.filter((d) => parseInt(d.year) === bin.x0)
-        );
-        if (!yearData) return null;
+        const yearData = _.first(data.filter(d => parseInt(d.year) === bin.x0))
+        if (!yearData) return null
 
-        let nextAboveYValue = -squareHeight;
-        let nextBelowYValue = 0;
+        let nextAboveYValue = -squareHeight
+        let nextBelowYValue = 0
 
         return (
           <g
@@ -61,22 +62,22 @@ const StackedSquares = ({
             })`}
           >
             {yearData.clues.map((squareData, clueI) => {
-              const { name, binaryRace, gender, publication } = squareData;
-              let y = 0;
+              const { name, binaryRace, gender, publication } = squareData
+              let y = 0
 
               if (compare === "race") {
-                y = binaryRace === "white" ? nextBelowYValue : nextAboveYValue;
+                y = binaryRace === "white" ? nextBelowYValue : nextAboveYValue
                 if (binaryRace === "white") {
-                  nextBelowYValue += squareHeight;
+                  nextBelowYValue += squareHeight
                 } else {
-                  nextAboveYValue -= squareHeight;
+                  nextAboveYValue -= squareHeight
                 }
               } else if (compare === "gender") {
-                y = gender === "man" ? nextBelowYValue : nextAboveYValue;
+                y = gender === "man" ? nextBelowYValue : nextAboveYValue
                 if (gender === "man") {
-                  nextBelowYValue += squareHeight;
+                  nextBelowYValue += squareHeight
                 } else {
-                  nextAboveYValue -= squareHeight;
+                  nextAboveYValue -= squareHeight
                 }
               }
 
@@ -87,16 +88,15 @@ const StackedSquares = ({
                   y={y}
                   height={squareHeight}
                   width={squareHeight}
-                  fill={publicationColorLookup[publication]}
-                  onMouseEnter={() => setHoveredData(squareData)}
+                  fill={y < 0 ? colorLookup.above : colorLookup.below}
                 />
-              );
+              )
             })}
           </g>
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
-export default StackedSquares;
+export default StackedSquares

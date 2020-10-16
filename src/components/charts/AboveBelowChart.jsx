@@ -1,59 +1,56 @@
-import React, { useState } from "react";
-import * as d3 from "d3";
-import useChartDimensions from "../../hooks/useChartDimensions.js";
-import Chart from "./chart-elements/Chart.jsx";
-import Axis from "./chart-elements/Axis.jsx";
-import { StackedBarChartWrapper } from "../../styles/styles.js";
-import StackedSquares from "./chart-elements/StackedSquares.jsx";
-import _ from "lodash";
+import React, { useState } from "react"
+import * as d3 from "d3"
+import useChartDimensions from "../../hooks/useChartDimensions.js"
+import Chart from "./chart-elements/Chart.jsx"
+import Axis from "./chart-elements/Axis.jsx"
+import { AboveBelowChartWrapper } from "../../styles/styles.js"
+import StackedSquares from "./chart-elements/StackedSquares.jsx"
+import _ from "lodash"
 
-const StackedBarChart = ({ data, word, compare }) => {
+const AboveBelowChart = ({ data, word, compare }) => {
   const initialDimensions = {
     marginTop: 100,
     marginRight: 100,
     marginBottom: 200,
     marginLeft: 100,
-  };
+  }
 
-  const [hoveredData, setHoveredData] = useState(null);
+  const [ref, dms] = useChartDimensions(initialDimensions)
 
-  const [ref, dms] = useChartDimensions(initialDimensions);
-
-  const metricAccessor = (d) => d.year;
-  const yAccessor = (d) => {
-    if (d.length === 0) return 0;
-    return d[0].clues.length;
-  };
+  const metricAccessor = d => d.year
+  const yAccessor = d => {
+    if (d.length === 0) return 0
+    return d[0].clues.length
+  }
 
   // Scales
   const xScale = d3
     .scaleLinear()
     .domain([2000, 2020])
     .range([0, dms.boundedWidth])
-    .nice();
+    .nice()
 
   const binGenerator = d3
     .histogram()
     .domain(xScale.domain())
     .value(metricAccessor)
-    .thresholds(_.range(2000, 2021));
-  const bins = binGenerator(data);
+    .thresholds(_.range(2000, 2021))
+  const bins = binGenerator(data)
 
-  const squareHeight = 25;
+  const squareHeight = 25
   const yScale = d3
     .scaleLinear()
     .domain([0, d3.max(bins, yAccessor) * squareHeight])
     .range([dms.boundedHeight, 0])
-    .nice();
+    .nice()
 
   return (
     <>
       <h1 style={{ textAlign: "center" }}>
-        How <span style={{ background: "yellow" }}>{word.toUpperCase()}</span>{" "}
-        is clued across the big 5 crosswords
+        Where a person was used to clue{" "}
+        <span style={{ fontWeight: "bold" }}>{word.toUpperCase()}</span>{" "}
       </h1>
-      <div>{hoveredData ? hoveredData.name : ""}</div>
-      <StackedBarChartWrapper ref={ref}>
+      <AboveBelowChartWrapper ref={ref}>
         <Chart dms={dms}>
           <StackedSquares
             data={data}
@@ -64,7 +61,6 @@ const StackedBarChart = ({ data, word, compare }) => {
             yAccessor={yAccessor}
             xScale={xScale}
             yScale={yScale}
-            setHoveredData={setHoveredData}
             compare={compare}
           />
           <Axis
@@ -81,9 +77,9 @@ const StackedBarChart = ({ data, word, compare }) => {
             {compare === "race" ? "White" : "Men"}
           </text>
         </Chart>
-      </StackedBarChartWrapper>
+      </AboveBelowChartWrapper>
     </>
-  );
-};
+  )
+}
 
-export default StackedBarChart;
+export default AboveBelowChart
