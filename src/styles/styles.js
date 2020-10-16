@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Rubik, sans-serif;
     background-color: white;
     color: black;
-  }
+  }  
 `
 
 export const EssayWrapper = styled.div`
@@ -127,4 +127,18 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   height: 450px;
+`
+// sankey diagram
+export const Word = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+export const Letter = styled.div`
+  outline: 2px solid black;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

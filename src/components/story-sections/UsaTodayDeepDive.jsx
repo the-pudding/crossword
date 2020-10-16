@@ -11,15 +11,16 @@ import LineChart from "../charts/LineChart.jsx"
 import PopularNamesTable from "../charts/PopularNamesTable.jsx"
 import NameOverTime from "../charts/NameOverTime.jsx"
 import ava from "../../data/AVA.json"
+import SankeyChart from "../charts/SankeyChart.jsx"
 
 const UsaTodayDeepDive = () => {
   return (
     <>
       <Section>{createHtmlForCopy(copy.introduceDeepDive)}</Section>
       <Section>
-        {/* Too old */}
-        {createHtmlForCopy(copy.tooOld)}
+        <h2>Too Old</h2>
         <PopularNamesTable />
+        {createHtmlForCopy(copy.tooOld)}
 
         <NameOverTime
           data={ava.filter(d => parseInt(d.year) >= 2000)}
@@ -44,6 +45,9 @@ const UsaTodayDeepDive = () => {
             },
           ]}
         />
+
+        <h2>Too White</h2>
+        {createHtmlForCopy(copy.tooWhite)}
 
         {/* <LineChart data={_.sortBy(ava, "year")} metric="nytGardner" /> */}
         {/* <StackedBarChart data={chess} word={"chess"} compare="race" />

@@ -11,7 +11,6 @@ const NameOverTime = ({
   nameForBarChart,
   extraAnnotations,
 }) => {
-  console.log({ data })
   const frameProps = {
     lines: names.map(name => ({
       coordinates: data.map(d => ({
