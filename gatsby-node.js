@@ -17,6 +17,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /antd/,
             use: loaders.null(),
           },
+          {
+            test: /semiotic/,
+            use: loaders.null(),
+          },
         ],
       },
     })

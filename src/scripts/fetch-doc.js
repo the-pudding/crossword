@@ -1,7 +1,6 @@
 const fs = require("fs")
 const archieml = require("archieml")
 const request = require("request")
-
 const CWD = process.cwd()
 const CONFIG_PATH = `${CWD}/config.json`
 const CONFIG = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"))

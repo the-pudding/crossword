@@ -1,7 +1,7 @@
 import React from "react"
 import _ from "lodash"
 import XYFrame from "semiotic/lib/XYFrame"
-import ResponsiveOrdinalFrame from "semiotic/lib/ResponsiveOrdinalFrame"
+import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 
 const NameOverTime = ({
   data,
@@ -77,14 +77,22 @@ const NameOverTime = ({
     disable: "connector",
   }))
 
+  const publications = ["nyt", "uni", "wsj", "lat", "usa"]
+
   return (
     <div style={{ width: "90%", display: "flex", alignItems: "center" }}>
       <XYFrame
         {...frameProps}
         annotations={[...annotations, ...extraAnnotations]}
       />
-      <StackedBar
-        data={data}
+      <PublicationBars
+        data={publications.map(publication => ({
+          publication,
+          duVernay:
+            data.filter(d => d.year === "2020")[0][
+              `${publication}AvaDuVernay`
+            ] || 0,
+        }))}
         name={nameForBarChart}
         title={`What publications are cluing modern ${answer}s in 2020`}
       />
@@ -92,29 +100,22 @@ const NameOverTime = ({
   )
 }
 
-const StackedBar = ({ data, name, title }) => {
+const PublicationBars = ({ data, name, title }) => {
   const colorHash = {
-    [`${_.camelCase("usa" + name)}`]: "#ac58e5",
-    [`${_.camelCase("nyt" + name)}`]: "#9fd0cb",
-    [`${_.camelCase("uni" + name)}`]: "#E0488B",
-    [`${_.camelCase("wsj" + name)}`]: "cornflowerblue",
-    [`${_.camelCase("lat" + name)}`]: "gold",
+    usa: "#ac58e5",
+    nyt: "#9fd0cb",
+    uni: "#E0488B",
+    wsj: "cornflowerblue",
+    lat: "gold",
   }
-  const rAccessor = [
-    `${_.camelCase("usa" + name)}`,
-    `${_.camelCase("nyt" + name)}`,
-    `${_.camelCase("uni" + name)}`,
-    `${_.camelCase("wsj" + name)}`,
-    `${_.camelCase("lat" + name)}`,
-  ]
+
   const frameProps = {
-    data: data.filter(d => d.year === "2020"),
-    size: [300, 300],
-    responsiveWidth: true,
+    data: _.orderBy(data, ["duVernay"], ["desc"]),
+    size: [400, 400],
     type: "bar",
-    oAccessor: "year",
-    rAccessor,
-    style: d => ({ fill: colorHash[rAccessor[d.rIndex]], stroke: "white" }),
+    oAccessor: "publication",
+    rAccessor: "duVernay",
+    style: d => ({ fill: colorHash[d.publication], stroke: "white" }),
     title,
     axes: [
       {
@@ -122,28 +123,9 @@ const StackedBar = ({ data, name, title }) => {
         label: <text textAnchor="middle"># of clues</text>,
       },
     ],
-    pieceHoverAnnotation: true,
-    tooltipContent: d => {
-      return (
-        <div
-          style={{
-            height: "50px",
-            width: "100px",
-            background: "white",
-            zIndex: 1000,
-          }}
-        >
-          {d.rName} ({d[d.rName]})
-        </div>
-      )
-    },
     oLabel: true,
   }
-  return (
-    <div style={{ width: "50%" }}>
-      <ResponsiveOrdinalFrame {...frameProps} />
-    </div>
-  )
+  return <OrdinalFrame {...frameProps} />
 }
 
 export default NameOverTime
