@@ -68,12 +68,10 @@ const PublicationWaffle = ({ shortPublicationName, decade, title, metric }) => {
   const data = allData[`${metric}Breakdown`]
   const colors =
     metric === "gender"
-      ? [COLORS.nonbinary, COLORS.woman, COLORS.man]
+      ? [COLORS.woman, COLORS.man]
       : [COLORS.poc, COLORS.white]
   const labels =
-    metric === "gender"
-      ? ["non-binary", "women", "men"]
-      : ["minority", "non-hispanic white"]
+    metric === "gender" ? ["women", "men"] : ["minority", "non-hispanic white"]
 
   return (
     <TitledWaffle>

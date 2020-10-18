@@ -33,9 +33,14 @@ const NytLongView = () => {
   const raceData = allData.raceBreakdown
   const genderData = allData.genderBreakdown
   const raceColors = [COLORS.poc, COLORS.white]
-  const genderColors = [COLORS.nonbinary, COLORS.woman, COLORS.man]
+  const genderColors = [COLORS.woman, COLORS.man]
   const raceLabels = ["minority", "non-hispanic white"]
-  const genderLabels = ["non-binary", "women", "men"]
+  const genderLabels = ["women", "men"]
+
+  const race2020Data = raceGenderBreakdown.filter(d => d.decade === "2020")[0]
+    .raceBreakdown
+  const gender2020Data = raceGenderBreakdown.filter(d => d.decade === "2020")[0]
+    .genderBreakdown
 
   return (
     <>
@@ -44,22 +49,52 @@ const NytLongView = () => {
         <DecadeSlider decade={decade} setDecade={setDecade} />
 
         <div style={{ display: "flex", marginTop: "40px" }}>
-          <TitledWaffle>
-            <WaffleChart
-              title={"Race"}
-              data={raceData}
-              colors={raceColors}
-              labels={raceLabels}
-            />
-          </TitledWaffle>
-          <TitledWaffle>
-            <WaffleChart
-              title={"Gender"}
-              data={genderData}
-              colors={genderColors}
-              labels={genderLabels}
-            />
-          </TitledWaffle>
+          {/* Animated over all decades */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <h2>NYT over time</h2>
+            <TitledWaffle>
+              <WaffleChart
+                title={"Race"}
+                data={raceData}
+                colors={raceColors}
+                labels={raceLabels}
+              />
+            </TitledWaffle>
+            <TitledWaffle>
+              <WaffleChart
+                title={"Gender"}
+                data={genderData}
+                colors={genderColors}
+                labels={genderLabels}
+              />
+            </TitledWaffle>
+          </div>
+
+          {/* 2020 numbers */}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <h2>2020</h2>
+            <TitledWaffle>
+              <WaffleChart
+                title={"Race"}
+                data={race2020Data}
+                colors={raceColors}
+                labels={raceLabels}
+              />
+            </TitledWaffle>
+            <TitledWaffle>
+              <WaffleChart
+                title={"Gender"}
+                data={gender2020Data}
+                colors={genderColors}
+                labels={genderLabels}
+              />
+            </TitledWaffle>
+          </div>
         </div>
       </Section>
     </>

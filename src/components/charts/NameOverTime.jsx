@@ -80,7 +80,14 @@ const NameOverTime = ({
   const publications = ["nyt", "uni", "wsj", "lat", "usa"]
 
   return (
-    <div style={{ width: "90%", display: "flex", alignItems: "center" }}>
+    <div
+      style={{
+        width: "90%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <XYFrame
         {...frameProps}
         annotations={[...annotations, ...extraAnnotations]}

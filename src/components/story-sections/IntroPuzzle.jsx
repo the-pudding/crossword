@@ -80,8 +80,8 @@ const IntroPuzzle = () => {
                 )
               ).genderBreakdown
             }
-            colors={[COLORS.nonbinary, COLORS.woman, COLORS.man]}
-            labels={["non-binary", "women", "men"]}
+            colors={[COLORS.woman, COLORS.man]}
+            labels={["women", "men"]}
             changeMetric={() => setMetric("gender")}
             clickable={true}
           />

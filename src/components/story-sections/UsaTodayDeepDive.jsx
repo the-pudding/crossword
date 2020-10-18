@@ -9,6 +9,7 @@ import poem from "../../data/POEM.json"
 import mit from "../../data/MIT.json"
 import mitWithNeutral from "../../data/MIT-including-neutral.json"
 import poemWithNeutral from "../../data/POEM-including-neutral.json"
+import chessWithNeutral from "../../data/CHESS-including-neutral.json"
 import LineChart from "../charts/LineChart.jsx"
 import PopularNamesTable from "../charts/PopularNamesTable.jsx"
 import StackedBar from "../charts/StackedBar.jsx"
@@ -61,11 +62,16 @@ const UsaTodayDeepDive = () => {
         <AboveBelowChart data={mit} word={"mit"} compare="gender" />
       </Section>
       <Section>
-        {/* data needs to be an array to work w semiotic */}
         <StackedBar data={[poemWithNeutral]} word={"poem"} compare="race" />
       </Section>
       <Section>
         <AboveBelowChart data={poem} word={"poem"} compare="race" />
+      </Section>
+      <Section>
+        <StackedBar data={[chessWithNeutral]} word={"chess"} compare="race" />
+      </Section>
+      <Section>
+        <AboveBelowChart data={chess} word={"chess"} compare="race" />
       </Section>
     </>
   )
