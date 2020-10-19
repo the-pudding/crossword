@@ -26,7 +26,9 @@ const PopularNamesTable = () => {
     <>
       <h3>Popular clued people in NYT by decade</h3>
       <DecadeSlider decade={decade} setDecade={setDecade} />
-      <Table dataSource={dataSource} columns={columns} pagination={false} />
+      {typeof window !== "undefined" ? (
+        <Table dataSource={dataSource} columns={columns} pagination={false} />
+      ) : null}
     </>
   )
 }

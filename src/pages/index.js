@@ -6,7 +6,7 @@ import UsaTodayDeepDive from "../components/story-sections/UsaTodayDeepDive.jsx"
 import NytLongView from "../components/story-sections/NytLongView.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
 import copy from "../data/copy.json"
-import "./index.css"
+import "../styles/index.css"
 
 function Home() {
   return (

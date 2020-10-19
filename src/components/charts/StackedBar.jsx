@@ -1,5 +1,4 @@
 import React from "react"
-import _ from "lodash"
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 
 const StackedBar = ({ data, word, compare }) => {
@@ -53,7 +52,7 @@ const StackedBar = ({ data, word, compare }) => {
 
       <div>2000-2020: {total} clues total</div>
 
-      <OrdinalFrame {...frameProps} />
+      {typeof window !== "undefined" ? <OrdinalFrame {...frameProps} /> : null}
     </div>
   )
 }

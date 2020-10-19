@@ -1,6 +1,5 @@
 import React from "react"
 import copy from "../../data/copy.json"
-import _ from "lodash"
 import { Section } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import AboveBelowChart from "../charts/AboveBelowChart.jsx"
@@ -54,7 +53,7 @@ const UsaTodayDeepDive = () => {
         {createHtmlForCopy(copy.deepDivePart2)}
       </Section>
       <Section>
-        {/* data needs to be an array to work w semiotic */}
+        data needs to be an array to work w semiotic
         <StackedBar data={[mitWithNeutral]} word={"mit"} compare="gender" />
       </Section>
       <Section>

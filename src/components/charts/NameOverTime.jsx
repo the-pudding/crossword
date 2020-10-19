@@ -88,10 +88,12 @@ const NameOverTime = ({
         alignItems: "center",
       }}
     >
-      <XYFrame
-        {...frameProps}
-        annotations={[...annotations, ...extraAnnotations]}
-      />
+      {typeof window !== "undefined" ? (
+        <XYFrame
+          {...frameProps}
+          annotations={[...annotations, ...extraAnnotations]}
+        />
+      ) : null}
       <PublicationBars
         data={publications.map(publication => ({
           publication,
@@ -137,7 +139,7 @@ const PublicationBars = ({ data, title }) => {
     ],
     oLabel: true,
   }
-  return <OrdinalFrame {...frameProps} />
+  return typeof window !== "undefined" ? <OrdinalFrame {...frameProps} /> : null
 }
 
 export default NameOverTime

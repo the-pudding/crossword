@@ -34,7 +34,8 @@
     "react-twitter-embed": "^3.0.3",
     "request": "^2.88.2",
     "semiotic": "^1.20.5",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "2.1.2"
