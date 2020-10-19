@@ -84,6 +84,7 @@ const NytLongView = () => {
                 data={race2020Data}
                 colors={raceColors}
                 labels={raceLabels}
+                censusAnnotation={true}
               />
             </TitledWaffle>
             <TitledWaffle>
@@ -92,6 +93,7 @@ const NytLongView = () => {
                 data={gender2020Data}
                 colors={genderColors}
                 labels={genderLabels}
+                censusAnnotation={true}
               />
             </TitledWaffle>
           </div>

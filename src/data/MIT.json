@@ -1,1 +1,201 @@
-[{"year":"2005","clues":[{"publication":"nytimes","year":"2005","clue":"Benjamin Netanyahu's alma mater, for short","answer":"MIT","name":"Benjamin Netanyahu","binaryRace":"white","gender":"man"}]},{"year":"2006","clues":[{"publication":"nytimes","year":"2006","clue":"Alma mater of NPR's Tom and Ray Magliozzi: Abbr.","answer":"MIT","name":"Tom and Ray Magliozzi","binaryRace":"white","gender":"man"},{"publication":"nytimes","year":"2006","clue":"Where Kofi Annan received an M.B.A.","answer":"MIT","name":"Kofi Annan","binaryRace":"poc","gender":"man"}]},{"year":"2008","clues":[{"publication":"nytimes","year":"2008","clue":"Where Kofi Annan earned his master's deg.","answer":"MIT","name":"Kofi Annan","binaryRace":"poc","gender":"man"}]},{"year":"2009","clues":[{"publication":"latimes","year":"2009","clue":"Where Ben Bernanke got his Ph.D.","answer":"MIT","name":"Ben Bernanke","binaryRace":"white","gender":"man"}]},{"year":"2010","clues":[{"publication":"latimes","year":"2010","clue":"Sch. where Buzz Aldrin got a doctorate","answer":"MIT","name":"Buzz Aldrin","binaryRace":"white","gender":"man"},{"publication":"latimes","year":"2010","clue":"49-Across from which Buzz Aldrin turned down a full scholarship","answer":"MIT","name":"Buzz Aldrin","binaryRace":"white","gender":"man"},{"publication":"nytimes","year":"2010","clue":"Alma mater for Buzz Aldrin and Kofi Annan: Abbr.","answer":"MIT","name":"Buzz Aldrin","binaryRace":"white","gender":"man"}]},{"year":"2011","clues":[{"publication":"nytimes","year":"2011","clue":"I. M. Pei's alma mater, for short","answer":"MIT","name":"I. M. Pei","binaryRace":"poc","gender":"man"}]},{"year":"2013","clues":[{"publication":"nytimes","year":"2013","clue":"Alma mater for McDonnell and Douglas of McDonnell Douglas","answer":"MIT","name":"James Smith McDonnell","binaryRace":"white","gender":"man"},{"publication":"nytimes","year":"2013","clue":"Alma mater for McDonnell and Douglas of McDonnell Douglas","answer":"MIT","name":"James Smith McDonnell","binaryRace":"white","gender":"man"}]},{"year":"2014","clues":[{"publication":"nytimes","year":"2014","clue":"Cambridge sch. from which I. M. Pei graduated","answer":"MIT","name":"I. M. Pei","binaryRace":"poc","gender":"man"}]},{"year":"2015","clues":[{"publication":"nytimes","year":"2015","clue":"Alma mater for Benjamin Netanyahu","answer":"MIT","name":"Benjamin Netanyahu","binaryRace":"white","gender":"man"}]},{"year":"2018","clues":[{"publication":"universal","year":"2018","clue":"William Barton Rogers' school","answer":"MIT","name":"William Barton Rogers","binaryRace":"white","gender":"man"},{"publication":"nytimes","year":"2018","clue":"Alma mater of Wm. Hewlett of Hewlett-Packard","answer":"MIT","name":"Bill Hewlett","binaryRace":"white","gender":"man"}]},{"year":"2020","clues":[{"publication":"usatoday","year":"2020","clue":"Shirley Ann Jackson's alma mater","answer":"MIT","name":"Shirley Ann Jackson","binaryRace":"poc","gender":"woman"}]}]
+[
+  {
+    "year": "2005",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2005",
+        "clue": "Benjamin Netanyahu's alma mater, for short",
+        "answer": "MIT",
+        "name": "Benjamin Netanyahu",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2006",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2006",
+        "clue": "Alma mater of NPR's Tom and Ray Magliozzi: Abbr.",
+        "answer": "MIT",
+        "name": "Tom and Ray Magliozzi",
+        "binaryRace": "white",
+        "gender": "man"
+      },
+      {
+        "publication": "nytimes",
+        "year": "2006",
+        "clue": "Where Kofi Annan received an M.B.A.",
+        "answer": "MIT",
+        "name": "Kofi Annan",
+        "binaryRace": "poc",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2008",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2008",
+        "clue": "Where Kofi Annan earned his master's deg.",
+        "answer": "MIT",
+        "name": "Kofi Annan",
+        "binaryRace": "poc",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2009",
+    "clues": [
+      {
+        "publication": "latimes",
+        "year": "2009",
+        "clue": "Where Ben Bernanke got his Ph.D.",
+        "answer": "MIT",
+        "name": "Ben Bernanke",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2010",
+    "clues": [
+      {
+        "publication": "latimes",
+        "year": "2010",
+        "clue": "Sch. where Buzz Aldrin got a doctorate",
+        "answer": "MIT",
+        "name": "Buzz Aldrin",
+        "binaryRace": "white",
+        "gender": "man"
+      },
+      {
+        "publication": "latimes",
+        "year": "2010",
+        "clue": "49-Across from which Buzz Aldrin turned down a full scholarship",
+        "answer": "MIT",
+        "name": "Buzz Aldrin",
+        "binaryRace": "white",
+        "gender": "man"
+      },
+      {
+        "publication": "nytimes",
+        "year": "2010",
+        "clue": "Alma mater for Buzz Aldrin and Kofi Annan: Abbr.",
+        "answer": "MIT",
+        "name": "Buzz Aldrin",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2011",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2011",
+        "clue": "I. M. Pei's alma mater, for short",
+        "answer": "MIT",
+        "name": "I. M. Pei",
+        "binaryRace": "poc",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2013",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2013",
+        "clue": "Alma mater for McDonnell and Douglas of McDonnell Douglas",
+        "answer": "MIT",
+        "name": "James Smith McDonnell",
+        "binaryRace": "white",
+        "gender": "man"
+      },
+      {
+        "publication": "nytimes",
+        "year": "2013",
+        "clue": "Alma mater for McDonnell and Douglas of McDonnell Douglas",
+        "answer": "MIT",
+        "name": "James Smith McDonnell",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2014",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2014",
+        "clue": "Cambridge sch. from which I. M. Pei graduated",
+        "answer": "MIT",
+        "name": "I. M. Pei",
+        "binaryRace": "poc",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2015",
+    "clues": [
+      {
+        "publication": "nytimes",
+        "year": "2015",
+        "clue": "Alma mater for Benjamin Netanyahu",
+        "answer": "MIT",
+        "name": "Benjamin Netanyahu",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2018",
+    "clues": [
+      {
+        "publication": "universal",
+        "year": "2018",
+        "clue": "William Barton Rogers' school",
+        "answer": "MIT",
+        "name": "William Barton Rogers",
+        "binaryRace": "white",
+        "gender": "man"
+      },
+      {
+        "publication": "nytimes",
+        "year": "2018",
+        "clue": "Alma mater of Wm. Hewlett of Hewlett-Packard",
+        "answer": "MIT",
+        "name": "Bill Hewlett",
+        "binaryRace": "white",
+        "gender": "man"
+      }
+    ]
+  },
+  {
+    "year": "2020",
+    "clues": [
+      {
+        "publication": "usatoday",
+        "year": "2020",
+        "clue": "Shirley Ann Jackson's alma mater",
+        "answer": "MIT",
+        "name": "Shirley Ann Jackson",
+        "binaryRace": "poc",
+        "gender": "woman"
+      }
+    ]
+  }
+]

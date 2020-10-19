@@ -78,6 +78,7 @@ const NameOverTime = ({
   }))
 
   const publications = ["nyt", "uni", "wsj", "lat", "usa"]
+  const data2020 = data.filter(d => d.year === "2020")[0]
 
   return (
     <div
@@ -95,19 +96,24 @@ const NameOverTime = ({
       <PublicationBars
         data={publications.map(publication => ({
           publication,
-          duVernay:
-            data.filter(d => d.year === "2020")[0][
-              `${publication}AvaDuVernay`
-            ] || 0,
+          count: _.sum(
+            _.keys(data2020)
+              .filter(
+                key =>
+                  key.includes(publication) &&
+                  !key.includes("Gardner") &&
+                  !key.includes("Other")
+              )
+              .map(key => data2020[key])
+          ),
         }))}
-        name={nameForBarChart}
         title={`What publications are cluing modern ${answer}s in 2020`}
       />
     </div>
   )
 }
 
-const PublicationBars = ({ data, name, title }) => {
+const PublicationBars = ({ data, title }) => {
   const colorHash = {
     usa: "#ac58e5",
     nyt: "#9fd0cb",
@@ -117,11 +123,11 @@ const PublicationBars = ({ data, name, title }) => {
   }
 
   const frameProps = {
-    data: _.orderBy(data, ["duVernay"], ["desc"]),
+    data: _.orderBy(data, ["count"], ["desc"]),
     size: [400, 400],
     type: "bar",
     oAccessor: "publication",
-    rAccessor: "duVernay",
+    rAccessor: "count",
     style: d => ({ fill: colorHash[d.publication], stroke: "white" }),
     title,
     axes: [

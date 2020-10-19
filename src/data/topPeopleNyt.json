@@ -50,7 +50,8 @@
       {
         "name": "Charles Dickens",
         "frequency": 5,
-        "answers": ["CHARLES", "ALDERMAN", "PASTIES"]
+        "answers": ["CHARLES", "ALDERMAN", "PASTIES"],
+        "birthYear": "1812"
       },
       {
         "name": "John Wesley Snyder",
@@ -129,7 +130,8 @@
       {
         "name": "Dwight D. Eisenhower",
         "frequency": 6,
-        "answers": ["IKE", "EISENHOWER", "SMILE"]
+        "answers": ["IKE", "EISENHOWER", "SMILE"],
+        "birthYear": "1890"
       },
       {
         "name": "Mao Zedong",
@@ -144,7 +146,8 @@
       {
         "name": "William Shakespeare",
         "frequency": 5,
-        "answers": ["TOUCHSTONE", "ALONSO", "SLY"]
+        "answers": ["TOUCHSTONE", "ALONSO", "SLY"],
+        "birthYear": "1564"
       },
       {
         "name": "Douglas MacArthur",
@@ -174,7 +177,8 @@
       {
         "name": "Josip Broz Tito",
         "frequency": 5,
-        "answers": ["TITO", "CROAT", "CROATIAN"]
+        "answers": ["TITO", "CROAT", "CROATIAN"],
+        "birthYear": "1892"
       },
       { "name": "Anthony Eden", "frequency": 5, "answers": ["EDEN", "EDENS"] },
       { "name": "Elmo Roper", "frequency": 5, "answers": ["ELMO", "ROPER"] },
@@ -290,7 +294,7 @@
         "name": "Livy",
         "frequency": 4,
         "answers": ["LIVY", "LEX", "LATIN"],
-        "birthYear": "64 BC"
+        "birthYear": "1904"
       },
       {
         "name": "A. A. Milne",
@@ -308,14 +312,15 @@
         "name": "Warner Oland",
         "frequency": 3,
         "answers": ["OLAND"],
-        "birthYear": "1879"
+        "birthYear": "1876"
       },
       { "name": "Mao Zedong", "frequency": 3, "answers": ["MAO", "TSE"] },
       { "name": "Isaac Stern", "frequency": 3, "answers": ["STERN", "ISAAC"] },
       {
         "name": "René Descartes",
         "frequency": 3,
-        "answers": ["RENE", "DESCARTES"]
+        "answers": ["RENE", "DESCARTES"],
+        "birthYear": "1596"
       },
       { "name": "Erle Stanley Gardner", "frequency": 3, "answers": ["ERLE"] },
       { "name": "Ella Grasso", "frequency": 3, "answers": ["ELLA", "GRASSO"] },
@@ -325,7 +330,8 @@
       {
         "name": "Giuseppe Verdi",
         "frequency": 3,
-        "answers": ["VERDI", "RITORNA"]
+        "answers": ["VERDI", "RITORNA"],
+        "birthYear": "1813"
       },
       { "name": "Arte Johnson", "frequency": 3, "answers": ["ARTE"] },
       { "name": "Che Guevara", "frequency": 3, "answers": ["CHE"] },
@@ -334,11 +340,17 @@
         "frequency": 3,
         "answers": ["BORG", "ACE", "SWEDE"]
       },
-      { "name": "Elihu Yale", "frequency": 3, "answers": ["YALE", "ELIS"] },
+      {
+        "name": "Elihu Yale",
+        "frequency": 3,
+        "answers": ["YALE", "ELIS"],
+        "birthYear": "1649"
+      },
       {
         "name": "Julius Caesar",
         "frequency": 3,
-        "answers": ["SIDS", "ROMAN", "ATRIA"]
+        "answers": ["SIDS", "ROMAN", "ATRIA"],
+        "birthYear": "100 BC"
       },
       { "name": "Anwar Sadat", "frequency": 2, "answers": ["CAIRO", "ANWAR"] }
     ]
@@ -419,7 +431,8 @@
       {
         "name": "Ava Gardner",
         "frequency": 4,
-        "answers": ["AVA", "ONETOUCHOFVENUS"]
+        "answers": ["AVA", "ONETOUCHOFVENUS"],
+        "birthYear": "1922"
       },
       {
         "name": "Harriet Beecher Stowe",
@@ -475,7 +488,8 @@
       {
         "name": "Rudyard Kipling",
         "frequency": 4,
-        "answers": ["ISAT", "KIM", "MANDALAY"]
+        "answers": ["ISAT", "KIM", "MANDALAY"],
+        "birthYear": "1865"
       },
       {
         "name": "Percy Bysshe Shelley",
@@ -506,7 +520,12 @@
       },
       { "name": "Anaïs Nin", "frequency": 3, "answers": ["NIN"] },
       { "name": "Buddy Ebsen", "frequency": 3, "answers": ["EBSEN"] },
-      { "name": "Josip Broz Tito", "frequency": 3, "answers": ["TITO"] },
+      {
+        "name": "Josip Broz Tito",
+        "frequency": 3,
+        "answers": ["TITO"],
+        "birthYear": "1892"
+      },
       {
         "name": "Zsa Zsa Gabor",
         "frequency": 3,
@@ -568,7 +587,8 @@
       {
         "name": "Edgar Allan Poe",
         "frequency": 3,
-        "answers": ["POE", "EERIE", "RAVENIMAGES"]
+        "answers": ["POE", "EERIE", "RAVENIMAGES"],
+        "birthYear": "1809"
       },
       { "name": "Peter Fonda", "frequency": 3, "answers": ["ULEE"] },
       {
@@ -618,8 +638,18 @@
         "answers": ["ALS", "LOU", "FIRST"],
         "birthYear": "1903"
       },
-      { "name": "Ovid", "frequency": 4, "answers": ["OVID", "ALII"] },
-      { "name": "William Inge", "frequency": 4, "answers": ["INGE"] },
+      {
+        "name": "Ovid",
+        "frequency": 4,
+        "answers": ["OVID", "ALII"],
+        "birthYear": "43 BC"
+      },
+      {
+        "name": "William Inge",
+        "frequency": 4,
+        "answers": ["INGE"],
+        "birthYear": "1913"
+      },
       {
         "name": "Barack Obama",
         "frequency": 4,
@@ -701,26 +731,39 @@
       {
         "name": "Dwight D. Eisenhower",
         "frequency": 4,
-        "answers": ["ETO", "DDE", "IKE"]
+        "answers": ["ETO", "DDE", "IKE"],
+        "birthYear": "1890"
       },
       {
         "name": "Julius Caesar",
         "frequency": 3,
-        "answers": ["VENI", "APES", "AVE"]
+        "answers": ["VENI", "APES", "AVE"],
+        "birthYear": "100 BC"
       },
       { "name": "Anne Hathaway", "frequency": 3, "answers": ["ANNE"] },
       { "name": "Yoko Ono", "frequency": 3, "answers": ["ONO", "YOKO"] },
       { "name": "Spike Lee", "frequency": 3, "answers": ["LEE", "SCH8LDAZE"] },
       { "name": "Adele", "frequency": 3, "answers": ["ADELE"] },
-      { "name": "Etta James", "frequency": 3, "answers": ["ETTA"] },
+      {
+        "name": "Etta James",
+        "frequency": 3,
+        "answers": ["ETTA"],
+        "birthYear": "1938"
+      },
       { "name": "Brad Pitt", "frequency": 3, "answers": ["BRAD", "PITT"] },
       {
         "name": "A. A. Milne",
         "frequency": 3,
-        "answers": ["AAMILNE", "MILNE"]
+        "answers": ["AAMILNE", "MILNE"],
+        "birthYear": "1882"
       },
       { "name": "Lucy Liu", "frequency": 3, "answers": ["LIU", "JOAN"] },
-      { "name": "Ovid", "frequency": 2, "answers": ["OVID"] },
+      {
+        "name": "Ovid",
+        "frequency": 2,
+        "answers": ["OVID"],
+        "birthYear": "43 BC"
+      },
       {
         "name": "Lorena Ochoa",
         "frequency": 2,

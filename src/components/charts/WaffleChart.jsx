@@ -8,6 +8,7 @@ import {
   WaffleTitle,
 } from "../../styles/styles.js"
 import _ from "lodash"
+import CensusAnnotation from "./CensusAnnotation.jsx"
 import { roundData } from "../utils.js"
 
 const WaffleChart = ({
@@ -17,6 +18,7 @@ const WaffleChart = ({
   labels,
   clickable = false,
   changeMetric = null,
+  censusAnnotation = false,
 }) => {
   const [colorLookup, setColorLookup] = useState(null)
   const [roundedData, setRoundedData] = useState(null)
@@ -74,6 +76,8 @@ const WaffleChart = ({
               </WaffleChartLabel>
             ))}
         </div>
+
+        {censusAnnotation && <CensusAnnotation />}
       </WaffleChartWrapper>
     )
   )

@@ -243,12 +243,15 @@
   },
   {
     "year": "2020",
-    "usaAvaDuVernay": 6,
+    "usaAvaDuVernay": 8,
+    "usaAvaMichelle": 1,
     "uniAvaDuVernay": 9,
-    "wsjAvaGardner": 1,
-    "wsjAvaDuVernay": 1,
-    "latAvaDuVernay": 3,
+    "wsjAvaGardner": 3,
+    "wsjAvaDuVernay": 2,
+    "latAvaDuVernay": 4,
     "latAvaGardner": 2,
-    "nytAvaGardner": 1
+    "nytAvaDuVernay": 5,
+    "nytAvaGardner": 2,
+    "nytOther": 1
   }
 ]
