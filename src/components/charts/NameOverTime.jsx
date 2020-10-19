@@ -8,7 +8,6 @@ const NameOverTime = ({
   answer,
   lineColors,
   names,
-  nameForBarChart,
   extraAnnotations,
 }) => {
   const frameProps = {

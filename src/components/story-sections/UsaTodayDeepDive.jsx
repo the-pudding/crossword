@@ -30,7 +30,6 @@ const UsaTodayDeepDive = () => {
           answer="AVA"
           lineColors={["cornflowerblue", "red", "darkgrey"]}
           names={["Ava Gardner", "Ava DuVernay", "Other"]}
-          nameForBarChart="Ava DuVernay"
           extraAnnotations={[
             {
               type: "x",
