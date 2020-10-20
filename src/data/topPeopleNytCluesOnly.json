@@ -1,0 +1,1197 @@
+[
+  {
+    "decade": "1940s",
+    "topPeople": [
+      {
+        "name": "William Shakespeare",
+        "frequency": 9,
+        "randomClue": "Scram: Shakespearean.",
+        "answers": ["AROINT", "HATHAWAY", "EARLS"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Walter Scott",
+        "frequency": 8,
+        "randomClue": "\"Fortunes of ___\" by Scott.",
+        "answers": ["MONASTERY", "TIE", "NIGEL"],
+        "birthYear": "1771"
+      },
+      {
+        "name": "Edmund Spenser",
+        "frequency": 7,
+        "randomClue": "\"To ___ thy soul with crosses\"—Spenser.",
+        "answers": ["UNA", "LOVE", "UNDER"],
+        "birthYear": "1552"
+      },
+      {
+        "name": "Alfred, Lord Tennyson",
+        "frequency": 7,
+        "randomClue": "\"The old ___ changeth.\"—Tennyson.",
+        "answers": ["MARIANA", "ORDER", "ADIT"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "John Milton",
+        "frequency": 6,
+        "randomClue": "\"The rule of ___ too much.\"—Milton.",
+        "answers": ["NOT", "ALSO", "MOTES"],
+        "birthYear": "1608"
+      },
+      {
+        "name": "Charles Dickens",
+        "frequency": 5,
+        "randomClue": "\"Apple ___.\" Dickens.",
+        "answers": ["CHARLES", "ALDERMAN", "PASTIES"],
+        "birthYear": "1812"
+      },
+      {
+        "name": "John Keats",
+        "frequency": 5,
+        "randomClue": "Poem by Keats.",
+        "answers": ["LAMIA", "STAR", "ODE"]
+      },
+      {
+        "name": "Napoleon",
+        "frequency": 4,
+        "randomClue": "Battle of the ___, 1798, Napoleonic defeat.",
+        "answers": ["ELISE", "ARMEE", "NILE"]
+      },
+      {
+        "name": "Douglas MacArthur",
+        "frequency": 4,
+        "randomClue": "Southern guardian of MacArthur objective.",
+        "answers": ["SAMAR", "HALMAHERA", "LAE"]
+      },
+      {
+        "name": "George Eliot",
+        "frequency": 3,
+        "randomClue": "\"___ From Clerical Life,\" by George Eliot.",
+        "answers": ["SCENES", "ROMOLA", "SUCH"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Geoffrey Chaucer",
+        "frequency": 3,
+        "randomClue": "Heroine of Chaucer's \"Second Nun's Tale.\"",
+        "answers": ["EARS", "CECILY", "NUN"]
+      },
+      {
+        "name": "Émile Zola",
+        "frequency": 3,
+        "randomClue": "Fired in Zola's Attack on the Mill.",
+        "answers": ["NANA", "GUNS", "ADELAIDE"]
+      },
+      {
+        "name": "H. G. Wells",
+        "frequency": 3,
+        "randomClue": "A being in H. G. Wells' War of the Worlds.",
+        "answers": ["ANTS", "MARTIAN", "AMANDA"]
+      },
+      {
+        "name": "James Fenimore Cooper",
+        "frequency": 3,
+        "randomClue": "A savage in Cooper's Pathfinder.",
+        "answers": ["TURKEYS", "MINGO", "DEERSLAYER"],
+        "birthYear": "1789"
+      },
+      {
+        "name": "Giacomo Puccini",
+        "frequency": 3,
+        "randomClue": "Puccini heroine.",
+        "answers": ["MANON", "BOHEME", "TOSCA"]
+      },
+      {
+        "name": "Guido of Arezzo",
+        "frequency": 3,
+        "randomClue": "Note in Guido's scale.",
+        "answers": ["ELA", "ELAMI", "ARE"]
+      },
+      {
+        "name": "Alexandre Dumas",
+        "frequency": 2,
+        "randomClue": "Shroud of Dumas' Camille.",
+        "answers": ["CHEMISE", "CRISTO"]
+      },
+      {
+        "name": "Christopher Columbus",
+        "frequency": 2,
+        "randomClue": "Birthplace of Columbus.",
+        "answers": ["GENOA", "ISABELA"]
+      },
+      {
+        "name": "Margaret Truman",
+        "frequency": 2,
+        "randomClue": "Margaret Truman's objective.",
+        "answers": ["OPERA", "SOPRANO"]
+      },
+      {
+        "name": "Karel Čapek",
+        "frequency": 2,
+        "randomClue": "Capek's robot play.",
+        "answers": ["RUR"]
+      }
+    ]
+  },
+  {
+    "decade": "1950s",
+    "topPeople": [
+      {
+        "name": "Julius Caesar",
+        "frequency": 7,
+        "randomClue": "Part of Caesar's last words.",
+        "answers": ["ETTU", "TOGA", "ETTUBRUTE"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "Charles Dickens",
+        "frequency": 6,
+        "randomClue": "Dickens character.",
+        "answers": ["TWIST", "FAGIN", "TIM"],
+        "birthYear": "1812"
+      },
+      {
+        "name": "Rudyard Kipling",
+        "frequency": 5,
+        "randomClue": "Kipling poem.",
+        "answers": ["AHANK", "WAS", "DEEVER"],
+        "birthYear": "1865"
+      },
+      {
+        "name": "Harry S. Truman",
+        "frequency": 5,
+        "randomClue": "Subject of Truman's December speech.",
+        "answers": ["SENATOR", "MASONS", "EMERGENCY"],
+        "birthYear": "1884"
+      },
+      {
+        "name": "William Shakespeare",
+        "frequency": 5,
+        "randomClue": "Character in a Shakespeare play.",
+        "answers": ["TOUCHSTONE", "ALONSO", "SLY"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Douglas MacArthur",
+        "frequency": 5,
+        "randomClue": "MacArthur's base.",
+        "answers": ["SCAP", "JAPAN", "RAINBOWDIVISION"]
+      },
+      {
+        "name": "Sinclair Lewis",
+        "frequency": 4,
+        "randomClue": "S. Lewis hero.",
+        "answers": ["CASS", "FREEAIR", "SATIRIST"]
+      },
+      {
+        "name": "Carol Channing",
+        "frequency": 3,
+        "randomClue": "Carol Channing's role.",
+        "answers": ["LORELEI", "CAROL"]
+      },
+      {
+        "name": "John Dos Passos",
+        "frequency": 3,
+        "randomClue": "John Dos ___.",
+        "answers": ["USA", "DOS", "PASSOS"]
+      },
+      {
+        "name": "Stendhal",
+        "frequency": 3,
+        "randomClue": "Hero of Stendhal's \"The Red and the Black.\"",
+        "answers": ["SOREL", "BEYLE"]
+      },
+      {
+        "name": "Victor Hugo",
+        "frequency": 3,
+        "randomClue": "Hugo's Blas and others.",
+        "answers": ["BLAS", "RUYS", "HERNANI"],
+        "birthYear": "1802"
+      },
+      {
+        "name": "Douglas McKay",
+        "frequency": 3,
+        "randomClue": "Gov. McKay's capital.",
+        "answers": ["ORE", "SALEM"]
+      },
+      {
+        "name": "Guido of Arezzo",
+        "frequency": 3,
+        "randomClue": "Note of Guido's scale.",
+        "answers": ["ELA"]
+      },
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 3,
+        "randomClue": "Poe's storied \"house.\"",
+        "answers": ["IRENE", "SCARABS", "USHER"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "John Brown",
+        "frequency": 3,
+        "randomClue": "___ Ferry, site of John Brown's raid.",
+        "answers": ["HARPERS", "SLAVERS", "POEM"]
+      },
+      {
+        "name": "Percy Bysshe Shelley",
+        "frequency": 3,
+        "randomClue": "Shelley's school.",
+        "answers": ["CENCI", "ETON"]
+      },
+      {
+        "name": "Elizabeth II",
+        "frequency": 3,
+        "randomClue": "Queen Elizabeth's favorite.",
+        "answers": ["HRH", "ESSEX", "PEERESSES"]
+      },
+      {
+        "name": "Mao Zedong",
+        "frequency": 3,
+        "randomClue": "Mao's men.",
+        "answers": ["CHINESE", "PEIPING", "CEASEFIRE"],
+        "birthYear": "1893"
+      },
+      {
+        "name": "Richard Wagner",
+        "frequency": 3,
+        "randomClue": "Wagner's earth goddess.",
+        "answers": ["ELSA", "ERDA"]
+      },
+      {
+        "name": "John Foster Dulles",
+        "frequency": 2,
+        "randomClue": "Adjective for Mr. Dulles.",
+        "answers": ["TRAVELED", "DULLES"]
+      }
+    ]
+  },
+  {
+    "decade": "1960s",
+    "topPeople": [
+      {
+        "name": "Rudyard Kipling",
+        "frequency": 5,
+        "randomClue": "\"Under the ___.\"—Kipling.",
+        "answers": ["BALOO", "DEODARS", "DEEVER"],
+        "birthYear": "1865"
+      },
+      {
+        "name": "Louis XIV",
+        "frequency": 2,
+        "randomClue": "Louis XIV, so he said",
+        "answers": ["LETAT", "FRONDE"],
+        "birthYear": "1638"
+      },
+      {
+        "name": "Victor Hugo",
+        "frequency": 2,
+        "randomClue": "Opera based on Hugo novel.",
+        "answers": ["JEAN", "ERNANI"],
+        "birthYear": "1802"
+      },
+      {
+        "name": "Winston Churchill",
+        "frequency": 2,
+        "randomClue": "One of Churchill's leisure roles.",
+        "answers": ["MASON", "AFAR"],
+        "birthYear": "1874"
+      },
+      {
+        "name": "James Fenimore Cooper",
+        "frequency": 2,
+        "randomClue": "J. F. Cooper hero.",
+        "answers": ["CORA", "UNCAS"],
+        "birthYear": "1789"
+      },
+      {
+        "name": "Marcus Junius Brutus",
+        "frequency": 2,
+        "randomClue": "\"___, Brute!\"",
+        "answers": ["ETTU"]
+      },
+      {
+        "name": "Colette",
+        "frequency": 2,
+        "randomClue": "Colette novel.",
+        "answers": ["CHERI"]
+      },
+      {
+        "name": "William the Conqueror",
+        "frequency": 2,
+        "randomClue": "William the Conqueror was one.",
+        "answers": ["MLI", "NORMAN"]
+      },
+      {
+        "name": "Abraham Lincoln",
+        "frequency": 2,
+        "randomClue": "Young Abe's milieu.",
+        "answers": ["PRAIRIE", "STOVEPIPE"]
+      },
+      {
+        "name": "Julius Caesar",
+        "frequency": 2,
+        "randomClue": "Part of Caesar saying.",
+        "answers": ["TUNIC", "VIDI"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "Joseph Conrad",
+        "frequency": 2,
+        "randomClue": "Conrad, as a young man.",
+        "answers": ["SEAFARER", "TYPHOON"]
+      },
+      {
+        "name": "Jean-Paul Sartre",
+        "frequency": 2,
+        "randomClue": "Sartre novel.",
+        "answers": ["NAUSEA"]
+      },
+      {
+        "name": "Giuseppe Verdi",
+        "frequency": 2,
+        "randomClue": "Verdi villain.",
+        "answers": ["ERNANI", "IAGO"],
+        "birthYear": "1813"
+      },
+      {
+        "name": "Johannes Brahms",
+        "frequency": 2,
+        "randomClue": "Brahms work.",
+        "answers": ["REQUIEM"]
+      },
+      {
+        "name": "Nostradamus",
+        "frequency": 2,
+        "randomClue": "Nostradamus and others.",
+        "answers": ["SEERS", "FORECASTERS"]
+      },
+      {
+        "name": "Ovid",
+        "frequency": 1,
+        "randomClue": "Date in Ovid's time.",
+        "answers": ["XIV"],
+        "birthYear": "43 BC"
+      },
+      {
+        "name": "Pope Benedict XV",
+        "frequency": 1,
+        "randomClue": "Benedict's destination.",
+        "answers": ["ALTAR"]
+      },
+      {
+        "name": "George Eliot",
+        "frequency": 1,
+        "randomClue": "George Eliot heroine.",
+        "answers": ["ROMOLA"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Vernon Duke",
+        "frequency": 1,
+        "randomClue": "Vernon Duke song hit.",
+        "answers": ["APRILINPARIS"]
+      },
+      {
+        "name": "Anthony van Dyck",
+        "frequency": 1,
+        "randomClue": "Vandyke or imperial.",
+        "answers": ["BEARD"]
+      }
+    ]
+  },
+  {
+    "decade": "1970s",
+    "topPeople": [
+      {
+        "name": "Julius Caesar",
+        "frequency": 3,
+        "randomClue": "Co-star with Caesar?",
+        "answers": ["SIDS", "ROMAN", "ATRIA"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "Ludwig van Beethoven",
+        "frequency": 2,
+        "randomClue": "Beethoven symphony",
+        "answers": ["PASTORAL", "EROICA"],
+        "birthYear": "1770"
+      },
+      {
+        "name": "Vladimir Nabokov",
+        "frequency": 2,
+        "randomClue": "Nabokov heroine",
+        "answers": ["ADA"],
+        "birthYear": "1899"
+      },
+      {
+        "name": "William Jennings Bryan",
+        "frequency": 2,
+        "randomClue": "W. J. Bryan",
+        "answers": ["ORATE", "ORATOR"],
+        "birthYear": "1860"
+      },
+      {
+        "name": "Herman Melville",
+        "frequency": 2,
+        "randomClue": "Melville novel",
+        "answers": ["TYPEE"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Pericles",
+        "frequency": 2,
+        "randomClue": "Walkway for Pericles",
+        "answers": ["STOAS", "STOA"]
+      },
+      {
+        "name": "Joseph Conrad",
+        "frequency": 2,
+        "randomClue": "Joseph Conrad's forte",
+        "answers": ["LENA", "SEALORE"]
+      },
+      {
+        "name": "Björn Borg",
+        "frequency": 2,
+        "randomClue": "Borg specialty",
+        "answers": ["ACE", "SWEDE"]
+      },
+      {
+        "name": "John Keats",
+        "frequency": 2,
+        "randomClue": "Keatsian form",
+        "answers": ["ODE"]
+      },
+      {
+        "name": "Livy",
+        "frequency": 2,
+        "randomClue": "Law, to Livy",
+        "answers": ["LEX", "LATIN"],
+        "birthYear": "1904"
+      },
+      {
+        "name": "Johnny Bench",
+        "frequency": 2,
+        "randomClue": "Johnny Bench's station",
+        "answers": ["MITT", "PLATE"]
+      },
+      {
+        "name": "Anwar Sadat",
+        "frequency": 1,
+        "randomClue": "Sadat's H.Q.",
+        "answers": ["CAIRO"]
+      },
+      {
+        "name": "Tiny Tim",
+        "frequency": 1,
+        "randomClue": "Tim's tune",
+        "answers": ["IPOEHROUGHHEULIPS"]
+      },
+      {
+        "name": "Ed Koch",
+        "frequency": 1,
+        "randomClue": "Koch and Bradley",
+        "answers": ["MAYORS"]
+      },
+      {
+        "name": "Marianne Moore",
+        "frequency": 1,
+        "randomClue": "Moore or Riley",
+        "answers": ["POET"]
+      },
+      {
+        "name": "Saki",
+        "frequency": 1,
+        "randomClue": "H. H. Munro",
+        "answers": ["SAKI"]
+      },
+      {
+        "name": "Bobby Riggs",
+        "frequency": 1,
+        "randomClue": "Bobby Riggs's racket",
+        "answers": ["TENNIS"]
+      },
+      {
+        "name": "Joseph C. Lincoln",
+        "frequency": 1,
+        "randomClue": "Joseph C. Lincoln's Cap'n",
+        "answers": ["ERI"]
+      },
+      {
+        "name": "Val Kilmer",
+        "frequency": 1,
+        "randomClue": "Kilmer's \"The ___ Work\"",
+        "answers": ["DAYS"]
+      },
+      {
+        "name": "Anthony McAuliffe",
+        "frequency": 1,
+        "randomClue": "McAuliffe's reply",
+        "answers": ["NUTS"]
+      }
+    ]
+  },
+  {
+    "decade": "1980s",
+    "topPeople": [
+      {
+        "name": "Julius Caesar",
+        "frequency": 10,
+        "randomClue": "Caesar's urbs",
+        "answers": ["ITER", "IDES", "OSTIA"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "William Shakespeare",
+        "frequency": 10,
+        "randomClue": "\"And, will you, ___ you . . . \": Shak.",
+        "answers": ["TIMON", "MAB", "MARRY"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Rudyard Kipling",
+        "frequency": 9,
+        "randomClue": "Kipling classic",
+        "answers": ["SHANT", "CAPTAINSCOURAGEOUS", "OFHAIR"],
+        "birthYear": "1865"
+      },
+      {
+        "name": "Robert Burns",
+        "frequency": 7,
+        "randomClue": "\"___ Shanter,\" Burns poem",
+        "answers": ["THAT", "SMA", "TWA"],
+        "birthYear": "1759"
+      },
+      {
+        "name": "Eugene O'Neill",
+        "frequency": 7,
+        "randomClue": "O'Neill's \"The Hairy ___\"",
+        "answers": ["THEEMPERORJONES", "APE", "COMETH"],
+        "birthYear": "1888"
+      },
+      {
+        "name": "Ovid",
+        "frequency": 6,
+        "randomClue": "Ovid topic",
+        "answers": ["OCTO", "ERAS", "AMOR"],
+        "birthYear": "43 BC"
+      },
+      {
+        "name": "Cicero",
+        "frequency": 4,
+        "randomClue": "Ciceronian products",
+        "answers": ["STO", "ERAS", "TIRO"]
+      },
+      {
+        "name": "Cato the Younger",
+        "frequency": 4,
+        "randomClue": "Saturn and Neptune, to Cato",
+        "answers": ["ERAS", "OVA", "LVII"]
+      },
+      {
+        "name": "John Keats",
+        "frequency": 4,
+        "randomClue": "\"My heart ___ . . . \": Keats",
+        "answers": ["ONA", "ENDYMION", "ACHES"]
+      },
+      {
+        "name": "Alexander Pope",
+        "frequency": 4,
+        "randomClue": "\"Just ___ twig is bent . . . \": Pope",
+        "answers": ["ONA", "BELINDAS", "ILIAD"]
+      },
+      {
+        "name": "Herman Melville",
+        "frequency": 4,
+        "randomClue": "Melville title",
+        "answers": ["OMOO"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Aristotle",
+        "frequency": 3,
+        "randomClue": "Aristotle's Aurora",
+        "answers": ["EOS", "UNITIES"]
+      },
+      {
+        "name": "Irving Berlin",
+        "frequency": 3,
+        "randomClue": "Berlin's Christmas-eve dream?",
+        "answers": ["SAYIT", "PUTTINONTHERITZ", "WHITENIGHT"]
+      },
+      {
+        "name": "O. Henry",
+        "frequency": 3,
+        "randomClue": "O. Henry's monogram",
+        "answers": ["TALE", "WSP", "IRONY"]
+      },
+      {
+        "name": "Winston Churchill",
+        "frequency": 3,
+        "randomClue": "Churchill's \"enigma\"",
+        "answers": ["AFAR", "RUSSIA", "WHILE"],
+        "birthYear": "1874"
+      },
+      {
+        "name": "John F. Kennedy",
+        "frequency": 3,
+        "randomClue": "J.F.K.'s favorite chair",
+        "answers": ["ROCKER", "ETA", "SEN"]
+      },
+      {
+        "name": "Giacomo Puccini",
+        "frequency": 3,
+        "randomClue": "Tragic Puccini heroine",
+        "answers": ["TOSCA", "MIMI", "VIENE"]
+      },
+      {
+        "name": "John Steinbeck",
+        "frequency": 3,
+        "randomClue": "Steinbeck novel",
+        "answers": ["ARON", "SWEETTHURSDAY", "OKIE"]
+      },
+      {
+        "name": "Harriet Beecher Stowe",
+        "frequency": 3,
+        "randomClue": "Stowe book",
+        "answers": ["DRED", "ORRS"]
+      },
+      {
+        "name": "Christopher Columbus",
+        "frequency": 3,
+        "randomClue": "Columbus, e.g.",
+        "answers": ["GENOESE", "NINA"]
+      }
+    ]
+  },
+  {
+    "decade": "1990s",
+    "topPeople": [
+      {
+        "name": "William Shakespeare",
+        "frequency": 12,
+        "randomClue": "Shakespeare title start",
+        "answers": ["ICOME", "DOTH", "PARD"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "George Gershwin",
+        "frequency": 6,
+        "randomClue": "Gershwin's \"Of Thee ___\"",
+        "answers": ["ITA", "OUR", "NELL"],
+        "birthYear": "1898"
+      },
+      {
+        "name": "Giuseppe Verdi",
+        "frequency": 4,
+        "randomClue": "Verdi's \"La Forza del ___\"",
+        "answers": ["ERI", "NOME", "DESTINO"],
+        "birthYear": "1813"
+      },
+      {
+        "name": "Wolfgang Amadeus Mozart",
+        "frequency": 4,
+        "randomClue": "Key of Mozart's Symphony No. 25",
+        "answers": ["OPERAS", "AMAJ", "COSI"],
+        "birthYear": "1756"
+      },
+      {
+        "name": "Rudyard Kipling",
+        "frequency": 4,
+        "randomClue": "Kipling favorite",
+        "answers": ["ISAT", "KIM", "MANDALAY"],
+        "birthYear": "1865"
+      },
+      {
+        "name": "Percy Bysshe Shelley",
+        "frequency": 4,
+        "randomClue": "School Shelley attended",
+        "answers": ["ORBS", "ISSWEET", "EENS"]
+      },
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 4,
+        "randomClue": "Poe refrain",
+        "answers": ["ULALUME", "NEVERMORE", "ANNIE"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "John Donne",
+        "frequency": 3,
+        "randomClue": "Dusks, to Donne",
+        "answers": ["ETERNALLY", "EBON", "EENS"]
+      },
+      {
+        "name": "Mark Twain",
+        "frequency": 3,
+        "randomClue": "Twain's boyhood home",
+        "answers": ["HANNIBAL", "ELMIRA", "PENNAME"]
+      },
+      {
+        "name": "Alfred Hitchcock",
+        "frequency": 3,
+        "randomClue": "Hitchcock's \"_____ Window\"",
+        "answers": ["EERIE", "BIRDS", "REAR"]
+      },
+      {
+        "name": "William Faulkner",
+        "frequency": 3,
+        "randomClue": "Faulkner's ___ Rivers",
+        "answers": ["REBA", "EULA", "ASI"]
+      },
+      {
+        "name": "Zsa Zsa Gabor",
+        "frequency": 3,
+        "randomClue": "Zsa Zsa's name at birth",
+        "answers": ["SLAP", "REWED", "SARI"]
+      },
+      {
+        "name": "Charles Dickens",
+        "frequency": 3,
+        "randomClue": "Dickensian chill",
+        "answers": ["AGUE", "NELL", "ROSA"],
+        "birthYear": "1812"
+      },
+      {
+        "name": "Alfred, Lord Tennyson",
+        "frequency": 3,
+        "randomClue": "\"___ and gap-tooth'd man . . . \": Tennyson",
+        "answers": ["ADOG", "AGRAY", "DESERTISLE"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "Elvis Presley",
+        "frequency": 3,
+        "randomClue": "Elvis's \"___ Not You\"",
+        "answers": ["SHES", "ITSNOWORNEVER", "IWAS"],
+        "birthYear": "1935"
+      },
+      {
+        "name": "Ludwig van Beethoven",
+        "frequency": 3,
+        "randomClue": "Beethoven's \"___ Sonata\"",
+        "answers": ["SIXTH", "BONN", "KREUTZER"],
+        "birthYear": "1770"
+      },
+      {
+        "name": "John Wayne",
+        "frequency": 3,
+        "randomClue": "John Wayne film, e.g.",
+        "answers": ["HATARI", "SHOOTEMUP", "NORTH"]
+      },
+      {
+        "name": "George Burns",
+        "frequency": 2,
+        "randomClue": "\"Say good night, ___\": G. Burns",
+        "answers": ["GRACIE", "GRACIEHOWSYOURBROTHER"]
+      },
+      {
+        "name": "John F. Kennedy",
+        "frequency": 2,
+        "randomClue": "J.F.K.'s favorite chair",
+        "answers": ["ROCKER", "SSTS"]
+      },
+      {
+        "name": "Robert Burns",
+        "frequency": 2,
+        "randomClue": "\"Gin a body ___ body\": Burns",
+        "answers": ["MEETA", "AFTON"],
+        "birthYear": "1759"
+      }
+    ]
+  },
+  {
+    "decade": "2000s",
+    "topPeople": [
+      {
+        "name": "Julius Caesar",
+        "frequency": 6,
+        "randomClue": "Path of Caesar",
+        "answers": ["ETTU", "ITER", "ICAME"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "William Shakespeare",
+        "frequency": 5,
+        "randomClue": "Queen of France in Shakespeare's \"Henry V\"",
+        "answers": ["REGAN", "ISABEL", "SONNET"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Elvis Presley",
+        "frequency": 4,
+        "randomClue": "Subtitle of \"Elvis: The Army Years\"?",
+        "answers": ["KITSCH", "ASIDE", "THEKINGANDGI"],
+        "birthYear": "1935"
+      },
+      {
+        "name": "George Washington",
+        "frequency": 3,
+        "randomClue": "Stories like Washington chopping down the cherry tree",
+        "answers": ["LORE", "EPISCOPAL", "ONE"],
+        "birthYear": "1732"
+      },
+      {
+        "name": "Anton Chekhov",
+        "frequency": 3,
+        "randomClue": "Sister in Chekhov's \"Three Sisters\"",
+        "answers": ["OLGA", "VANYA"],
+        "birthYear": "1860"
+      },
+      {
+        "name": "Peter Fonda",
+        "frequency": 3,
+        "randomClue": "Peter Fonda title role",
+        "answers": ["ULEE"]
+      },
+      {
+        "name": "Vincent Lopez",
+        "frequency": 2,
+        "randomClue": "Vincent Lopez's theme song",
+        "answers": ["NOLA"]
+      },
+      {
+        "name": "William Wordsworth",
+        "frequency": 2,
+        "randomClue": "\"Pleasant\" place in a Wordsworth poem",
+        "answers": ["LEA", "DAFFODIL"]
+      },
+      {
+        "name": "Billy Joel",
+        "frequency": 2,
+        "randomClue": "Billy Joel's \"___ to Extremes\"",
+        "answers": ["ALEXA", "IGO"]
+      },
+      {
+        "name": "George W. Bush",
+        "frequency": 2,
+        "randomClue": "Bush's alma mater",
+        "answers": ["YALIE", "YALE"]
+      },
+      {
+        "name": "Herman Melville",
+        "frequency": 2,
+        "randomClue": "Melville novel",
+        "answers": ["OMOO"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 2,
+        "randomClue": "Like much of Poe's work",
+        "answers": ["EERIE", "RAVENIMAGES"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "Benjamin Disraeli",
+        "frequency": 2,
+        "randomClue": "Benjamin Disraeli, e.g.",
+        "answers": ["TACT", "EARL"]
+      },
+      {
+        "name": "Claude Monet",
+        "frequency": 2,
+        "randomClue": "Object in a Monet painting",
+        "answers": ["IRIS", "LILIES"],
+        "birthYear": "1840"
+      },
+      {
+        "name": "Ross Perot",
+        "frequency": 2,
+        "randomClue": "Co. founded by Ross Perot",
+        "answers": ["EDS"]
+      },
+      {
+        "name": "Vincent van Gogh",
+        "frequency": 2,
+        "randomClue": "Setting of Van Gogh's \"Bedroom\"",
+        "answers": ["MOON", "ARLES"]
+      },
+      {
+        "name": "Ella Fitzgerald",
+        "frequency": 2,
+        "randomClue": "Ella Fitzgerald specialty",
+        "answers": ["SCAT"],
+        "birthYear": "1917"
+      },
+      {
+        "name": "Harry Belafonte",
+        "frequency": 2,
+        "randomClue": "Belafonte catchword",
+        "answers": ["DAYO"]
+      },
+      {
+        "name": "Sue Grafton",
+        "frequency": 2,
+        "randomClue": "Sue Grafton's \"___ for Lawless\"",
+        "answers": ["LIS", "AIS"]
+      },
+      {
+        "name": "Sigmund Freud",
+        "frequency": 2,
+        "randomClue": "Freud's ego",
+        "answers": ["SLIP", "ICH"]
+      }
+    ]
+  },
+  {
+    "decade": "2010s",
+    "topPeople": [
+      {
+        "name": "William Shakespeare",
+        "frequency": 9,
+        "randomClue": "Like Shakespeare's Othello",
+        "answers": ["ORSINO", "ACTIII", "MOORISH"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Julius Caesar",
+        "frequency": 8,
+        "randomClue": "91, to Caesar",
+        "answers": ["ICAME", "STABBED", "AVE"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "Bill Clinton",
+        "frequency": 4,
+        "randomClue": "Bill Clinton's Arkansas birthplace",
+        "answers": ["ALUM", "SAX", "HOPE"],
+        "birthYear": "1946"
+      },
+      {
+        "name": "Cole Porter",
+        "frequency": 3,
+        "randomClue": "Capital in a Cole Porter song",
+        "answers": ["KISSME", "PAREE", "KATE"],
+        "birthYear": "1891"
+      },
+      {
+        "name": "Frank Sinatra",
+        "frequency": 3,
+        "randomClue": "Try Sinatra at karaoke, say",
+        "answers": ["CROON", "ASI", "FEDORA"],
+        "birthYear": "1915"
+      },
+      {
+        "name": "Lou Gehrig",
+        "frequency": 3,
+        "randomClue": "What Lou Gehrig played",
+        "answers": ["ALS", "FIRST"],
+        "birthYear": "1903"
+      },
+      {
+        "name": "Sigmund Freud",
+        "frequency": 3,
+        "randomClue": "Concern of Freud",
+        "answers": ["EGO", "EIN", "OEDIPAL"]
+      },
+      {
+        "name": "Homer",
+        "frequency": 2,
+        "randomClue": "Original opening to Homer's \"Odyssey\"?",
+        "answers": ["OMICRON", "IOS"]
+      },
+      {
+        "name": "Horace",
+        "frequency": 2,
+        "randomClue": "Horace's \"___ Poetica\"",
+        "answers": ["ERAT", "ARS"]
+      },
+      {
+        "name": "Pablo Neruda",
+        "frequency": 2,
+        "randomClue": "Nobelist poet Neruda",
+        "answers": ["PABLO", "ODES"]
+      },
+      {
+        "name": "A. A. Milne",
+        "frequency": 2,
+        "randomClue": "Milne's \"Mr. ___ Passes By\"",
+        "answers": ["ROO", "PIM"],
+        "birthYear": "1882"
+      },
+      {
+        "name": "Andy Warhol",
+        "frequency": 2,
+        "randomClue": "\"What you can get away with,\" according to Andy Warhol",
+        "answers": ["ART", "SOUPCAN"]
+      },
+      {
+        "name": "Barack Obama",
+        "frequency": 2,
+        "randomClue": "Greeting for Obama returning home?",
+        "answers": ["ACA", "ALOHA"]
+      },
+      {
+        "name": "Don Ho",
+        "frequency": 2,
+        "randomClue": "Don Ho adornment",
+        "answers": ["ALOHA", "LEI"]
+      },
+      {
+        "name": "Eli Manning",
+        "frequency": 2,
+        "randomClue": "Eli Manning's team, on scoreboards",
+        "answers": ["OLEMISS", "NYG"]
+      },
+      {
+        "name": "Elvis Presley",
+        "frequency": 2,
+        "randomClue": "Like early Elvis recordings",
+        "answers": ["DONTBECRUEL", "MONO"],
+        "birthYear": "1935"
+      },
+      {
+        "name": "Ernest Hemingway",
+        "frequency": 2,
+        "randomClue": "Santiago's milieu in a Hemingway novel",
+        "answers": ["TERSE", "THESEA"]
+      },
+      {
+        "name": "Leigh Hunt",
+        "frequency": 2,
+        "randomClue": "\"___ Ben Adhem\" (Leigh Hunt poem)",
+        "answers": ["ADHEM", "ABOU"]
+      },
+      {
+        "name": "Mark Twain",
+        "frequency": 2,
+        "randomClue": "Twain boy",
+        "answers": ["TOM", "WIT"]
+      },
+      {
+        "name": "Michael Jackson",
+        "frequency": 2,
+        "randomClue": "Early Michael Jackson hairstyle",
+        "answers": ["ISIT", "AFRO"]
+      }
+    ]
+  },
+  {
+    "decade": "2020",
+    "topPeople": [
+      {
+        "name": "William Shakespeare",
+        "frequency": 11,
+        "randomClue": "Minor role in many a Shakespeare play",
+        "answers": ["SERVANT", "MONTAGUE", "CAPULET"],
+        "birthYear": "1564"
+      },
+      {
+        "name": "Julius Caesar",
+        "frequency": 3,
+        "randomClue": "\"Hail!,\" to Caesar",
+        "answers": ["VENI", "APES", "AVE"],
+        "birthYear": "100 BC"
+      },
+      {
+        "name": "Boris Johnson",
+        "frequency": 2,
+        "randomClue": "Boris Johnson, for one",
+        "answers": ["TORY", "BREXIT"]
+      },
+      {
+        "name": "Napoleon",
+        "frequency": 2,
+        "randomClue": "Place of banishment for Napoleon",
+        "answers": ["ELBA", "HONEYBEE"]
+      },
+      {
+        "name": "Thomas Jefferson",
+        "frequency": 2,
+        "randomClue": "Kind of column seen on the Jefferson Memorial",
+        "answers": ["WAR", "IONIC"]
+      },
+      {
+        "name": "Robin Williams",
+        "frequency": 2,
+        "randomClue": "Breakout role for Robin Williams",
+        "answers": ["MORK", "CADILLACMAN"]
+      },
+      {
+        "name": "Martin Luther King Jr.",
+        "frequency": 2,
+        "randomClue": "Final words of Martin Luther King Jr.'s \"I Have a Dream\" speech",
+        "answers": ["REV", "FREEATLAST"]
+      },
+      {
+        "name": "Dwight D. Eisenhower",
+        "frequency": 2,
+        "randomClue": "Ike's W.W. II command: Abbr.",
+        "answers": ["ETO", "ABILENE"],
+        "birthYear": "1890"
+      },
+      {
+        "name": "Horace",
+        "frequency": 1,
+        "randomClue": "\"Sweet and healing medicine of troubles,\" per Horace",
+        "answers": ["MUSIC"]
+      },
+      {
+        "name": "Martial",
+        "frequency": 1,
+        "randomClue": "Classic works by the poet Martial",
+        "answers": ["EPIGRAMS"]
+      },
+      {
+        "name": "Homer",
+        "frequency": 1,
+        "randomClue": "Homer's H",
+        "answers": ["ETA"]
+      },
+      {
+        "name": "Pablo Neruda",
+        "frequency": 1,
+        "randomClue": "Frequent topic for Pablo Neruda",
+        "answers": ["AMOR"]
+      },
+      {
+        "name": "Diego Velázquez",
+        "frequency": 1,
+        "randomClue": "Home of Velázquez's \"Las Meninas\"",
+        "answers": ["ELPRADO"]
+      },
+      {
+        "name": "Timur",
+        "frequency": 1,
+        "randomClue": "The conqueror Tamerlane, for one",
+        "answers": ["EMIR"]
+      },
+      {
+        "name": "Martin Sheen",
+        "frequency": 1,
+        "randomClue": "Martin Sheen's real first name",
+        "answers": ["RAMON"]
+      },
+      {
+        "name": "Sarah Drew",
+        "frequency": 1,
+        "randomClue": "Sarah Drew, on \"Grey's Anatomy\"",
+        "answers": ["APRILKEPNER"]
+      },
+      {
+        "name": "Carmen Miranda",
+        "frequency": 1,
+        "randomClue": "Signature accessory of Carmen Miranda",
+        "answers": ["FRUITHAT"]
+      },
+      {
+        "name": "Lee Ratner",
+        "frequency": 1,
+        "randomClue": "Pest control brand founded by Lee Ratner (!) in the 1950s",
+        "answers": ["DCON"]
+      },
+      {
+        "name": "Benjamin Hoff",
+        "frequency": 1,
+        "randomClue": "\"The ___ of Pooh\" (Benjamin Hoff book)",
+        "answers": ["TAO"]
+      },
+      {
+        "name": "Albert Camus",
+        "frequency": 1,
+        "randomClue": "\"Aujourd'hui, ___ est morte\" (opening line of Camus's \"L'Étranger\")",
+        "answers": ["MAMAN"]
+      }
+    ]
+  }
+]

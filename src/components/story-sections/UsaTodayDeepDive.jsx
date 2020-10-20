@@ -3,6 +3,8 @@ import copy from "../../data/copy.json"
 import { Section } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import AboveBelowChart from "../charts/AboveBelowChart.jsx"
+import popularAnswerNames from "../../data/topPeopleNytAnswersOnly.json"
+import popularClueNames from "../../data/topPeopleNytCluesOnly.json"
 import chess from "../../data/CHESS.json"
 import poem from "../../data/POEM.json"
 import mit from "../../data/MIT.json"
@@ -20,8 +22,12 @@ const UsaTodayDeepDive = () => {
     <>
       <Section>{createHtmlForCopy(copy.introduceDeepDive)}</Section>
       <Section>
-        <h2>Angle 1: Modernizing</h2>
-        <PopularNamesTable />
+        <h2>Angle 1: Names in Answers</h2>
+        <PopularNamesTable
+          data={popularAnswerNames}
+          featuredColumn="answers"
+          columnTitle="Common Answers"
+        />
         {createHtmlForCopy(copy.deepDivePart1)}
 
         <NameOverTime
@@ -49,7 +55,13 @@ const UsaTodayDeepDive = () => {
       </Section>
 
       <Section>
-        <h2>Angle 2: Smashing Cliches/Stereotypes</h2>
+        <h2>Angle 2: Names in Clues</h2>
+        <PopularNamesTable
+          data={popularClueNames}
+          featuredColumn="randomClue"
+          columnTitle="Clue Example"
+        />
+
         {createHtmlForCopy(copy.deepDivePart2)}
       </Section>
       <Section>

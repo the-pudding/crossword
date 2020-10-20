@@ -25,25 +25,6 @@ const StackedSquares = ({
   yScale,
   compare,
 }) => {
-  const [personColorLookup, setPersonColorLookup] = useState(null)
-
-  useEffect(() => {
-    const uniqueNames = _.uniq(
-      data.reduce(
-        (accumulator, currentValue) => [
-          ...accumulator,
-          ...currentValue.clues.map(clue => clue.name),
-        ],
-        []
-      )
-    )
-    const lookup = uniqueNames.map(name => ({
-      name,
-      color: "#" + Math.floor(Math.random() * 16777215).toString(16),
-    }))
-    setPersonColorLookup(lookup)
-  }, [])
-
   return (
     <>
       {bins.map((bin, i) => {

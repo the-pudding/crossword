@@ -1,0 +1,660 @@
+[
+  {
+    "decade": "1940s",
+    "topPeople": [
+      {
+        "name": "Josip Broz Tito",
+        "frequency": 9,
+        "answers": ["TITO"],
+        "birthYear": "1892"
+      },
+      {
+        "name": "Jawaharlal Nehru",
+        "frequency": 7,
+        "answers": ["NEHRU"],
+        "birthYear": "1889"
+      },
+      {
+        "name": "Erwin Rommel",
+        "frequency": 5,
+        "answers": ["ROMMEL"],
+        "birthYear": "1891"
+      },
+      {
+        "name": "John Wesley Snyder",
+        "frequency": 5,
+        "answers": ["SNYDER", "SNYDERS"],
+        "birthYear": "1895"
+      },
+      {
+        "name": "Vladimir Lenin",
+        "frequency": 4,
+        "answers": ["LENIN"],
+        "birthYear": "1870"
+      },
+      { "name": "Chester Bowles", "frequency": 4, "answers": ["BOWLES"] },
+      { "name": "Dean Acheson", "frequency": 3, "answers": ["ACHESON"] },
+      { "name": "Alan Ladd", "frequency": 3, "answers": ["ALAN"] },
+      {
+        "name": "Thomas E. Dewey",
+        "frequency": 3,
+        "answers": ["MICH", "DEWEY", "EDMUND"]
+      },
+      { "name": "Henry L. Stimson", "frequency": 3, "answers": ["STIMSON"] },
+      { "name": "Eurico Gaspar Dutra", "frequency": 2, "answers": ["DUTRA"] },
+      { "name": "Osvaldo Aranha", "frequency": 2, "answers": ["ARANHA"] },
+      {
+        "name": "William Inge",
+        "frequency": 2,
+        "answers": ["INGE"],
+        "birthYear": "1913"
+      },
+      { "name": "Robert Peary", "frequency": 2, "answers": ["PEARY"] },
+      { "name": "David Ben-Gurion", "frequency": 2, "answers": ["BENGURION"] },
+      { "name": "Alfred Binet", "frequency": 2, "answers": ["BINET"] },
+      {
+        "name": "John Milton",
+        "frequency": 2,
+        "answers": ["MILTON"],
+        "birthYear": "1608"
+      },
+      { "name": "Vyacheslav Molotov", "frequency": 2, "answers": ["MOLOTOV"] },
+      { "name": "Jacob Riis", "frequency": 2, "answers": ["RIIS"] },
+      { "name": "Guido Reni", "frequency": 2, "answers": ["RENI"] }
+    ]
+  },
+  {
+    "decade": "1950s",
+    "topPeople": [
+      {
+        "name": "Elihu Yale",
+        "frequency": 5,
+        "answers": ["ELI", "ELIS"],
+        "birthYear": "1649"
+      },
+      {
+        "name": "Sam Snead",
+        "frequency": 5,
+        "answers": ["SNEAD", "SAMMY", "SAMSNEAD"],
+        "birthYear": "1912"
+      },
+      {
+        "name": "Omar Bradley",
+        "frequency": 5,
+        "answers": ["OMAR", "BRADLEY"],
+        "birthYear": "1893"
+      },
+      {
+        "name": "Anthony Eden",
+        "frequency": 5,
+        "answers": ["EDEN", "EDENS"],
+        "birthYear": "1897"
+      },
+      {
+        "name": "Elmo Roper",
+        "frequency": 5,
+        "answers": ["ELMO", "ROPER"],
+        "birthYear": "1900"
+      },
+      { "name": "James Chuter Ede", "frequency": 4, "answers": ["EDE"] },
+      { "name": "René Coty", "frequency": 4, "answers": ["RENE"] },
+      { "name": "Peter Arno", "frequency": 4, "answers": ["ARNO", "ARNOS"] },
+      {
+        "name": "Bảo Đại",
+        "frequency": 4,
+        "answers": ["BAODAI", "BAO", "DAI"]
+      },
+      { "name": "Josep Maria Sert", "frequency": 4, "answers": ["SERT"] },
+      { "name": "Stan Musial", "frequency": 4, "answers": ["STAN", "MUSIAL"] },
+      {
+        "name": "Dwight D. Eisenhower",
+        "frequency": 4,
+        "answers": ["IKE", "EISENHOWER", "DDE"],
+        "birthYear": "1890"
+      },
+      { "name": "Lin Yutang", "frequency": 4, "answers": ["LIN"] },
+      { "name": "Edward F. Arn", "frequency": 4, "answers": ["ARN"] },
+      { "name": "Omar Khayyam", "frequency": 4, "answers": ["OMAR"] },
+      { "name": "Milton Berle", "frequency": 4, "answers": ["BERLE"] },
+      { "name": "Al Capp", "frequency": 4, "answers": ["CAPP"] },
+      {
+        "name": "Adlai Stevenson II",
+        "frequency": 3,
+        "answers": ["AES", "EWING", "STEVENSON"]
+      },
+      {
+        "name": "Mamie Eisenhower",
+        "frequency": 3,
+        "answers": ["MAMIE", "MRSIKE"]
+      },
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 3,
+        "answers": ["POE", "POES"],
+        "birthYear": "1809"
+      }
+    ]
+  },
+  {
+    "decade": "1960s",
+    "topPeople": [
+      {
+        "name": "René Descartes",
+        "frequency": 5,
+        "answers": ["RENE", "RENES"],
+        "birthYear": "1596"
+      },
+      {
+        "name": "Dwight D. Eisenhower",
+        "frequency": 5,
+        "answers": ["IKE", "IKES", "DDE"],
+        "birthYear": "1890"
+      },
+      {
+        "name": "William Inge",
+        "frequency": 4,
+        "answers": ["INGE"],
+        "birthYear": "1913"
+      },
+      {
+        "name": "Bret Harte",
+        "frequency": 4,
+        "answers": ["BRET", "HARTE"],
+        "birthYear": "1836"
+      },
+      {
+        "name": "U Thant",
+        "frequency": 3,
+        "answers": ["THANT"],
+        "birthYear": "1909"
+      },
+      {
+        "name": "Seán O'Casey",
+        "frequency": 3,
+        "answers": ["SEANOCASEY", "SEAN", "OCASEY"]
+      },
+      {
+        "name": "Claude Monet",
+        "frequency": 3,
+        "answers": ["MONET"],
+        "birthYear": "1840"
+      },
+      { "name": "Charles Reade", "frequency": 3, "answers": ["READE"] },
+      {
+        "name": "George Ade",
+        "frequency": 3,
+        "answers": ["ADES", "GEORGEADE", "ADE"]
+      },
+      { "name": "Robert E. Lee", "frequency": 3, "answers": ["ELEE", "RELEE"] },
+      {
+        "name": "Sam Snead",
+        "frequency": 3,
+        "answers": ["SNEAD", "SAMS"],
+        "birthYear": "1912"
+      },
+      {
+        "name": "Harry S. Truman",
+        "frequency": 3,
+        "answers": ["TRUMAN", "HST"]
+      },
+      { "name": "Elisha Otis", "frequency": 3, "answers": ["OTIS"] },
+      { "name": "Cleopatra", "frequency": 2, "answers": ["CLEO"] },
+      {
+        "name": "Victoria Eugenie of Battenberg",
+        "frequency": 2,
+        "answers": ["ENA"]
+      },
+      { "name": "Christian Herter", "frequency": 2, "answers": ["HERTER"] },
+      {
+        "name": "Alexandre Dumas",
+        "frequency": 2,
+        "answers": ["PERE", "FILS"]
+      },
+      { "name": "Erik Satie", "frequency": 2, "answers": ["ERIK"] },
+      { "name": "James Agee", "frequency": 2, "answers": ["AGEE"] },
+      {
+        "name": "Grandma Moses",
+        "frequency": 2,
+        "answers": ["MOSES", "GRANDMAMOSES"]
+      }
+    ]
+  },
+  {
+    "decade": "1970s",
+    "topPeople": [
+      {
+        "name": "Salvador Dalí",
+        "frequency": 4,
+        "answers": ["DALI"],
+        "birthYear": "1904"
+      },
+      {
+        "name": "Ava Gardner",
+        "frequency": 3,
+        "answers": ["AVA"],
+        "birthYear": "1922"
+      },
+      {
+        "name": "Warner Oland",
+        "frequency": 3,
+        "answers": ["OLAND"],
+        "birthYear": "1876"
+      },
+      {
+        "name": "Mao Zedong",
+        "frequency": 3,
+        "answers": ["MAO", "TSE"],
+        "birthYear": "1893"
+      },
+      {
+        "name": "Isaac Stern",
+        "frequency": 3,
+        "answers": ["STERN", "ISAAC"],
+        "birthYear": "1920"
+      },
+      {
+        "name": "René Descartes",
+        "frequency": 3,
+        "answers": ["RENE", "DESCARTES"],
+        "birthYear": "1596"
+      },
+      { "name": "Erle Stanley Gardner", "frequency": 3, "answers": ["ERLE"] },
+      { "name": "Ella Grasso", "frequency": 3, "answers": ["ELLA", "GRASSO"] },
+      { "name": "Elias Howe", "frequency": 3, "answers": ["HOWE", "ELIAS"] },
+      { "name": "Josep Maria Sert", "frequency": 3, "answers": ["SERT"] },
+      { "name": "Arte Johnson", "frequency": 3, "answers": ["ARTE"] },
+      {
+        "name": "A. A. Milne",
+        "frequency": 3,
+        "answers": ["MILNE"],
+        "birthYear": "1882"
+      },
+      { "name": "Che Guevara", "frequency": 3, "answers": ["CHE"] },
+      {
+        "name": "Elihu Yale",
+        "frequency": 3,
+        "answers": ["YALE", "ELIS"],
+        "birthYear": "1649"
+      },
+      { "name": "Max Baer", "frequency": 2, "answers": ["BAER", "BAERS"] },
+      { "name": "Ogden Nash", "frequency": 2, "answers": ["NASH"] },
+      {
+        "name": "Wolfgang Amadeus Mozart",
+        "frequency": 2,
+        "answers": ["WOLFGANGAMADEUSMOZART", "WOLFGANGAMADEUS"],
+        "birthYear": "1756"
+      },
+      {
+        "name": "Richard I of England",
+        "frequency": 2,
+        "answers": ["RICHARDTHELIONHEARTED", "RICHARDI"]
+      },
+      { "name": "Belle Starr", "frequency": 2, "answers": ["STARR"] },
+      { "name": "Emil Ludwig", "frequency": 2, "answers": ["EMIL"] }
+    ]
+  },
+  {
+    "decade": "1980s",
+    "topPeople": [
+      {
+        "name": "George Eliot",
+        "frequency": 4,
+        "answers": ["EVANS", "ELIOT"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Maximilian von Spee",
+        "frequency": 4,
+        "answers": ["SPEE"],
+        "birthYear": "1861"
+      },
+      {
+        "name": "T. S. Eliot",
+        "frequency": 4,
+        "answers": ["ELIOT", "TSE"],
+        "birthYear": "1888"
+      },
+      {
+        "name": "Alec Guinness",
+        "frequency": 4,
+        "answers": ["ALEC"],
+        "birthYear": "1914"
+      },
+      {
+        "name": "Christian Dior",
+        "frequency": 4,
+        "answers": ["DIOR"],
+        "birthYear": "1905"
+      },
+      { "name": "Loretta Swit", "frequency": 3, "answers": ["SWIT"] },
+      { "name": "Franz Lehár", "frequency": 3, "answers": ["LEHAR"] },
+      { "name": "Elke Sommer", "frequency": 3, "answers": ["ELKE", "ELKES"] },
+      {
+        "name": "Bette Midler",
+        "frequency": 3,
+        "answers": ["BETTE", "MIDLER"]
+      },
+      {
+        "name": "Ava Gardner",
+        "frequency": 3,
+        "answers": ["AVA"],
+        "birthYear": "1922"
+      },
+      { "name": "Charles Lamb", "frequency": 3, "answers": ["ELIA", "LAMB"] },
+      {
+        "name": "John Philip Sousa",
+        "frequency": 2,
+        "answers": ["JOHNFILLUPSOUSA", "SOUSA"]
+      },
+      { "name": "Leon Uris", "frequency": 2, "answers": ["URIS"] },
+      {
+        "name": "Aimee Semple McPherson",
+        "frequency": 2,
+        "answers": ["AIMEE"]
+      },
+      {
+        "name": "William Inge",
+        "frequency": 2,
+        "answers": ["INGE"],
+        "birthYear": "1913"
+      },
+      { "name": "Clark Gable", "frequency": 2, "answers": ["GABLE"] },
+      { "name": "Ron Howard", "frequency": 2, "answers": ["RON"] },
+      { "name": "Paul Anka", "frequency": 2, "answers": ["ANKA"] },
+      { "name": "Della Reese", "frequency": 2, "answers": ["REESE"] },
+      { "name": "Desi Arnaz", "frequency": 2, "answers": ["DESI", "DESIS"] }
+    ]
+  },
+  {
+    "decade": "1990s",
+    "topPeople": [
+      {
+        "name": "Eero Saarinen",
+        "frequency": 4,
+        "answers": ["EERO"],
+        "birthYear": "1910"
+      },
+      {
+        "name": "Idi Amin",
+        "frequency": 4,
+        "answers": ["IDI"],
+        "birthYear": "1925"
+      },
+      {
+        "name": "Claude Monet",
+        "frequency": 3,
+        "answers": ["MONET"],
+        "birthYear": "1840"
+      },
+      {
+        "name": "Anaïs Nin",
+        "frequency": 3,
+        "answers": ["NIN"],
+        "birthYear": "1903"
+      },
+      {
+        "name": "Buddy Ebsen",
+        "frequency": 3,
+        "answers": ["EBSEN"],
+        "birthYear": "1908"
+      },
+      {
+        "name": "Josip Broz Tito",
+        "frequency": 3,
+        "answers": ["TITO"],
+        "birthYear": "1892"
+      },
+      { "name": "James Agee", "frequency": 3, "answers": ["AGEE"] },
+      { "name": "Reba McEntire", "frequency": 3, "answers": ["REBA"] },
+      { "name": "Richard Gere", "frequency": 3, "answers": ["GERE"] },
+      { "name": "Mel Ott", "frequency": 3, "answers": ["OTT", "OTTS"] },
+      { "name": "Arte Johnson", "frequency": 2, "answers": ["ARTE"] },
+      { "name": "Janis Ian", "frequency": 2, "answers": ["IAN"] },
+      { "name": "Stephen Rea", "frequency": 2, "answers": ["REA"] },
+      { "name": "Adele Simpson", "frequency": 2, "answers": ["ADELE"] },
+      { "name": "Elton John", "frequency": 2, "answers": ["ELTON"] },
+      { "name": "Ole Bull", "frequency": 2, "answers": ["OLE"] },
+      { "name": "Igor Stravinsky", "frequency": 2, "answers": ["IGOR"] },
+      { "name": "Horatio Alger", "frequency": 2, "answers": ["ALGER"] },
+      { "name": "Toni Morrison", "frequency": 2, "answers": ["TONI"] },
+      {
+        "name": "Dom DeLuise",
+        "frequency": 2,
+        "answers": ["DELUISE", "DOMDELUISE"]
+      }
+    ]
+  },
+  {
+    "decade": "2000s",
+    "topPeople": [
+      {
+        "name": "Etta James",
+        "frequency": 5,
+        "answers": ["ETTA", "ETTAS"],
+        "birthYear": "1938"
+      },
+      {
+        "name": "Oona Chaplin",
+        "frequency": 4,
+        "answers": ["OONA"],
+        "birthYear": "1986"
+      },
+      {
+        "name": "Jay Leno",
+        "frequency": 4,
+        "answers": ["LENO"],
+        "birthYear": "1950"
+      },
+      {
+        "name": "Arlo Guthrie",
+        "frequency": 4,
+        "answers": ["ARLO"],
+        "birthYear": "1947"
+      },
+      {
+        "name": "Teri Hatcher",
+        "frequency": 3,
+        "answers": ["TERI"],
+        "birthYear": "1964"
+      },
+      { "name": "Uri Geller", "frequency": 3, "answers": ["URI"] },
+      {
+        "name": "J. M. Barrie",
+        "frequency": 3,
+        "answers": ["SIRJAMESMBARRIE", "JMBARRIE", "BARRIE"]
+      },
+      {
+        "name": "Ella Fitzgerald",
+        "frequency": 3,
+        "answers": ["ELLA", "FITZGERALD"],
+        "birthYear": "1917"
+      },
+      { "name": "Renée Zellweger", "frequency": 3, "answers": ["RENEE"] },
+      { "name": "Paul Anka", "frequency": 3, "answers": ["ANKA"] },
+      {
+        "name": "Salvador Dalí",
+        "frequency": 3,
+        "answers": ["DALI"],
+        "birthYear": "1904"
+      },
+      {
+        "name": "George Eliot",
+        "frequency": 2,
+        "answers": ["ELIOT"],
+        "birthYear": "1819"
+      },
+      {
+        "name": "Elmo Roper",
+        "frequency": 2,
+        "answers": ["ELMO"],
+        "birthYear": "1900"
+      },
+      {
+        "name": "Julius Caesar",
+        "frequency": 2,
+        "answers": ["CAESARS", "CAESAR"],
+        "birthYear": "100 BC"
+      },
+      { "name": "Mira Sorvino", "frequency": 2, "answers": ["MIRA"] },
+      { "name": "Sade", "frequency": 2, "answers": ["SADE"] },
+      { "name": "Edwin Meese", "frequency": 2, "answers": ["MEESE"] },
+      { "name": "Wes Unseld", "frequency": 2, "answers": ["WES"] },
+      { "name": "Abe Fortas", "frequency": 2, "answers": ["ABE"] },
+      {
+        "name": "Evel Knievel",
+        "frequency": 2,
+        "answers": ["EVEL", "EVELKNIEVEL"]
+      }
+    ]
+  },
+  {
+    "decade": "2010s",
+    "topPeople": [
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 5,
+        "answers": ["POE", "ALLAN", "EDGAR"],
+        "birthYear": "1809"
+      },
+      {
+        "name": "Etta James",
+        "frequency": 5,
+        "answers": ["ETTA"],
+        "birthYear": "1938"
+      },
+      {
+        "name": "William Inge",
+        "frequency": 4,
+        "answers": ["INGE"],
+        "birthYear": "1913"
+      },
+      {
+        "name": "Dr. Dre",
+        "frequency": 4,
+        "answers": ["DRE"],
+        "birthYear": "1965"
+      },
+      {
+        "name": "Joe Pesci",
+        "frequency": 4,
+        "answers": ["PESCI"],
+        "birthYear": "1943"
+      },
+      { "name": "Mr. T", "frequency": 4, "answers": ["MRT"] },
+      { "name": "Uma Thurman", "frequency": 4, "answers": ["UMA"] },
+      {
+        "name": "Ovid",
+        "frequency": 3,
+        "answers": ["OVID"],
+        "birthYear": "43 BC"
+      },
+      { "name": "Cher", "frequency": 3, "answers": ["CHER", "SNAKECHER"] },
+      { "name": "Anwar Sadat", "frequency": 3, "answers": ["ANWAR", "SADAT"] },
+      {
+        "name": "Arnold Schwarzenegger",
+        "frequency": 3,
+        "answers": ["ARNIE", "AHNOLD"]
+      },
+      {
+        "name": "Christian Dior",
+        "frequency": 3,
+        "answers": ["DIOR"],
+        "birthYear": "1905"
+      },
+      { "name": "Enya", "frequency": 3, "answers": ["ENYA"] },
+      { "name": "Ernie Els", "frequency": 3, "answers": ["ELS"] },
+      {
+        "name": "Georges Bizet",
+        "frequency": 3,
+        "answers": ["BIZET", "BIZETASABEAVER"]
+      },
+      { "name": "Isao Aoki", "frequency": 3, "answers": ["ISAO"] },
+      { "name": "James Agee", "frequency": 3, "answers": ["AGEE"] },
+      { "name": "La Toya Jackson", "frequency": 3, "answers": ["LATOYA"] },
+      {
+        "name": "Mao Zedong",
+        "frequency": 3,
+        "answers": ["MAO", "MAOISM"],
+        "birthYear": "1893"
+      },
+      { "name": "Nia Long", "frequency": 3, "answers": ["NIA"] }
+    ]
+  },
+  {
+    "decade": "2020",
+    "topPeople": [
+      {
+        "name": "Issa Rae",
+        "frequency": 6,
+        "answers": ["RAE", "ISSARAE", "ISSA"],
+        "birthYear": "1985"
+      },
+      {
+        "name": "Elie Wiesel",
+        "frequency": 4,
+        "answers": ["ELIE"],
+        "birthYear": "1928"
+      },
+      {
+        "name": "Tina Fey",
+        "frequency": 4,
+        "answers": ["TINA", "FEY"],
+        "birthYear": "1970"
+      },
+      {
+        "name": "Elena Kagan",
+        "frequency": 4,
+        "answers": ["ELENA", "KAGAN"],
+        "birthYear": "1960"
+      },
+      { "name": "Ayn Rand", "frequency": 4, "answers": ["AYN"] },
+      {
+        "name": "Muhammad Ali",
+        "frequency": 4,
+        "answers": ["ALI", "MUHAMMADALI"]
+      },
+      { "name": "Anne Hathaway", "frequency": 3, "answers": ["ANNE"] },
+      { "name": "Yoko Ono", "frequency": 3, "answers": ["ONO", "YOKO"] },
+      { "name": "Adele", "frequency": 3, "answers": ["ADELE"] },
+      {
+        "name": "Etta James",
+        "frequency": 3,
+        "answers": ["ETTA"],
+        "birthYear": "1938"
+      },
+      { "name": "Brad Pitt", "frequency": 3, "answers": ["BRAD", "PITT"] },
+      {
+        "name": "A. A. Milne",
+        "frequency": 3,
+        "answers": ["AAMILNE", "MILNE"],
+        "birthYear": "1882"
+      },
+      {
+        "name": "Ovid",
+        "frequency": 2,
+        "answers": ["OVID"],
+        "birthYear": "43 BC"
+      },
+      {
+        "name": "Lorena Ochoa",
+        "frequency": 2,
+        "answers": ["OCHOA", "LORENA"]
+      },
+      {
+        "name": "Alexandria Ocasio-Cortez",
+        "frequency": 2,
+        "answers": ["OCASIO", "AOC"]
+      },
+      { "name": "Stan Lee", "frequency": 2, "answers": ["STAN"] },
+      { "name": "Loretta Swit", "frequency": 2, "answers": ["SWIT"] },
+      {
+        "name": "Edgar Allan Poe",
+        "frequency": 2,
+        "answers": ["POE"],
+        "birthYear": "1809"
+      },
+      { "name": "Spike Lee", "frequency": 2, "answers": ["LEE"] },
+      { "name": "Eli Lilly", "frequency": 2, "answers": ["ELI"] }
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Chart = ({ dms, children }) => {
   return (
@@ -7,7 +7,7 @@ const Chart = ({ dms, children }) => {
         {children}
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default Chart;
+export default Chart
