@@ -10,10 +10,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             use: loaders.null(),
           },
           {
-            test: /react-scrollama/,
-            use: loaders.null(),
-          },
-          {
             test: /antd/,
             use: loaders.null(),
           },

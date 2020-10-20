@@ -5,7 +5,6 @@ import _ from "lodash"
 import CrosswordChart from "../charts/crossword/CrosswordChart.jsx"
 import WaffleChart from "../charts/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
-import { Scrollama } from "react-scrollama"
 import {
   addColorsToData,
   createHtmlForCopy,
@@ -54,23 +53,16 @@ const tempData = {
 }
 
 const IntroPuzzle = () => {
-  const [stepIndex, setStepIndex] = useState(null)
   const [metric, setMetric] = useState("gender")
-
-  // advancing scrollytelling steps
-  const onStepEnter = ({ data }) => {
-    setStepIndex(data)
-  }
 
   return (
     <Section>
       <CrosswordWaffleWrapper>
         <CrosswordChart
           data={addColorsToData(prepareCrosswordData(crosswordData), metric)}
-          colorCode={stepIndex === 1}
-          showAnswers={stepIndex === 1}
+          colorCode={true}
         />
-        <div style={{ opacity: stepIndex === 1 ? 1 : 0 }}>
+        <div>
           <WaffleChart
             title={"Gender"}
             data={
@@ -101,12 +93,6 @@ const IntroPuzzle = () => {
           />
         </div>
       </CrosswordWaffleWrapper>
-
-      {typeof window !== "undefined" && (
-        <Scrollama onStepEnter={onStepEnter} offset={0.8}>
-          {createHtmlForCopy(copy.introSteps)}
-        </Scrollama>
-      )}
     </Section>
   )
 }

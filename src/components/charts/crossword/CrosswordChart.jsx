@@ -2,20 +2,13 @@ import React, { useRef, useEffect } from "react"
 import Crossword from "./Crossword.js"
 import confetti from "canvas-confetti"
 
-const CrosswordChart = ({ data, colorCode, showAnswers }) => {
+const CrosswordChart = ({ data, colorCode }) => {
   const crosswordRef = useRef(null)
 
   // start puzzle blank
   useEffect(() => {
     crosswordRef.current.reset()
   }, [])
-
-  // fill in answers if asked to
-  useEffect(() => {
-    if (showAnswers) {
-      crosswordRef.current.fillAllAnswers()
-    }
-  }, [showAnswers, colorCode])
 
   return (
     <div>
@@ -37,20 +30,16 @@ const CrosswordChart = ({ data, colorCode, showAnswers }) => {
         }}
         colorCode={colorCode ? true : false}
       />
-      {!showAnswers && (
-        <>
-          <button onClick={() => crosswordRef.current.fillAllAnswers()}>
-            skip to results
-          </button>
-          <button
-            onClick={() => {
-              crosswordRef.current.reset()
-            }}
-          >
-            clear
-          </button>
-        </>
-      )}
+      <button onClick={() => crosswordRef.current.fillAllAnswers()}>
+        skip to results
+      </button>
+      <button
+        onClick={() => {
+          crosswordRef.current.reset()
+        }}
+      >
+        clear
+      </button>
     </div>
   )
 }

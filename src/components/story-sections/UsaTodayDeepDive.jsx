@@ -20,7 +20,7 @@ const UsaTodayDeepDive = () => {
     <>
       <Section>{createHtmlForCopy(copy.introduceDeepDive)}</Section>
       <Section>
-        <h2>Angle 1: Names in Answers</h2>
+        <h2>Angle 1: Modernizing</h2>
         <PopularNamesTable />
         {createHtmlForCopy(copy.deepDivePart1)}
 
@@ -49,11 +49,11 @@ const UsaTodayDeepDive = () => {
       </Section>
 
       <Section>
-        <h2>Angle 2: Names in Clues</h2>
+        <h2>Angle 2: Smashing Cliches/Stereotypes</h2>
         {createHtmlForCopy(copy.deepDivePart2)}
       </Section>
       <Section>
-        data needs to be an array to work w semiotic
+        {/* data needs to be an array to work w semiotic */}
         <StackedBar data={[mitWithNeutral]} word={"mit"} compare="gender" />
       </Section>
       <Section>

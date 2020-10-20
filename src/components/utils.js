@@ -1,6 +1,5 @@
 import React from "react"
 import _ from "lodash"
-import { Step } from "react-scrollama"
 import { COLORS } from "../styles/colors.js"
 import {
   Prose,
@@ -20,13 +19,13 @@ export const createMarkup = content => {
 export const createHtmlForCopy = copy => {
   return copy.map(
     ({ step, text, type, value, source, caption, tweetId }, i) => {
-      if (step) {
-        return (
-          <Step data={i} key={i}>
-            <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
-          </Step>
-        )
-      }
+      // if (step) {
+      //   return (
+      //     <Step data={i} key={i}>
+      //       <ScrollyStep dangerouslySetInnerHTML={createMarkup(text)} />
+      //     </Step>
+      //   )
+      // }
 
       if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />

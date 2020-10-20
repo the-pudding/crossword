@@ -20,33 +20,50 @@ const WaffleChart = ({
   changeMetric = null,
   censusAnnotation = false,
 }) => {
-  const [colorLookup, setColorLookup] = useState(null)
-  const [roundedData, setRoundedData] = useState(null)
+  // const [colorLookup, setColorLookup] = useState(null)
+  // const [roundedData, setRoundedData] = useState(null)
 
   // round data to whole numbers
-  useEffect(() => {
-    setRoundedData(roundData(data).filter(d => d.percent >= 1))
-  }, [data])
+  // useEffect(() => {
+  //   setRoundedData(roundData(data).filter(d => d.percent >= 1))
+  // }, [data])
+
+  const roundedData = roundData(data).filter(d => d.percent >= 1)
 
   // when we get colors, create a color map from i (0-99) -> color of square
-  useEffect(() => {
-    const colorOptions = colors
-      ? colors
-      : roundedData.map(
-          d => "#" + Math.floor(Math.random() * 16777215).toString(16)
-        )
+  // useEffect(() => {
+  //   const colorOptions = colors
+  //     ? colors
+  //     : roundedData.map(
+  //         d => "#" + Math.floor(Math.random() * 16777215).toString(16)
+  //       )
 
-    const updatedColorLookup = {}
-    let countTo100 = 0
-    _.forEach(roundedData, ({ percent }, groupNum) => {
-      _.forEach(_.range(0, percent), _ => {
-        updatedColorLookup[countTo100] = colorOptions[groupNum]
-        countTo100 += 1
-      })
+  //   const updatedColorLookup = {}
+  //   let countTo100 = 0
+  //   _.forEach(roundedData, ({ percent }, groupNum) => {
+  //     _.forEach(_.range(0, percent), _ => {
+  //       updatedColorLookup[countTo100] = colorOptions[groupNum]
+  //       countTo100 += 1
+  //     })
+  //   })
+
+  //   setColorLookup(updatedColorLookup)
+  // }, [colors, roundedData])
+
+  const colorOptions = colors
+    ? colors
+    : roundedData.map(
+        d => "#" + Math.floor(Math.random() * 16777215).toString(16)
+      )
+
+  const colorLookup = {}
+  let countTo100 = 0
+  _.forEach(roundedData, ({ percent }, groupNum) => {
+    _.forEach(_.range(0, percent), _ => {
+      colorLookup[countTo100] = colorOptions[groupNum]
+      countTo100 += 1
     })
-
-    setColorLookup(updatedColorLookup)
-  }, [colors, roundedData])
+  })
 
   return (
     colorLookup &&

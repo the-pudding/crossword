@@ -13,21 +13,23 @@ const DecadeSlider = ({ decade, setDecade }) => {
     2010: "2010s",
   }
 
-  return typeof window !== "undefined" ? (
+  return (
     <div>
-      <Slider
-        marks={sliderMarks}
-        min={1940}
-        max={2010}
-        step={10}
-        defaultValue={1940}
-        style={{ width: "500px", margin: "50px" }}
-        tooltipVisible={false}
-        value={decade}
-        onChange={value => setDecade(value)}
-      />
+      {typeof window !== "undefined" ? (
+        <Slider
+          marks={sliderMarks}
+          min={1940}
+          max={2010}
+          step={10}
+          defaultValue={1940}
+          style={{ width: "500px", margin: "50px" }}
+          tooltipVisible={false}
+          value={decade}
+          onChange={value => setDecade(value)}
+        />
+      ) : null}
     </div>
-  ) : null
+  )
 }
 
 export default DecadeSlider
