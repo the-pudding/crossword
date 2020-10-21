@@ -1,16 +1,19 @@
 // ADAPTED FROM @jaredreisinger/react-crossword
 
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
+import PropTypes from "prop-types"
+import { Fade } from "../../../styles/styles.js"
 // import styled from 'styled-components';
 
-import Clue from "./Clue";
+import Clue from "./Clue"
 
 export default function DirectionClues({ direction, clues }) {
   return (
     <div className="direction">
       {/* use something other than h3? */}
-      <h3 className="header">{direction.toUpperCase()}</h3>
+      <h3 className="header">
+        <strong>{direction.toUpperCase()}</strong>
+      </h3>
       {clues.map(({ number, clue, correct }) => (
         <Clue
           key={number}
@@ -21,8 +24,9 @@ export default function DirectionClues({ direction, clues }) {
           {clue}
         </Clue>
       ))}
+      <Fade />
     </div>
-  );
+  )
 }
 
 DirectionClues.propTypes = {
@@ -39,6 +43,6 @@ DirectionClues.propTypes = {
       correct: PropTypes.bool,
     })
   ).isRequired,
-};
+}
 
-DirectionClues.defaultProps = {};
+DirectionClues.defaultProps = {}

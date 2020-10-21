@@ -4,5 +4,5 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`],
+  plugins: ["gatsby-plugin-styled-components"],
 }

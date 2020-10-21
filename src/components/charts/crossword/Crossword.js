@@ -54,6 +54,7 @@ const OuterWrapper = styled.div.attrs(props => ({
   /* width: 40%; */
   display: flex;
   flex-direction: row;
+  height: 100%;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     flex-direction: column;
@@ -76,8 +77,7 @@ const CluesWrapper = styled.div.attrs(props => ({
   padding: 0 1em;
   flex: 1 2 25%;
 
-  overflow: scroll;
-  height: 500px;
+  height: 100%;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     margin-top: 2em;
@@ -87,6 +87,10 @@ const CluesWrapper = styled.div.attrs(props => ({
     margin-bottom: 2em;
     /* padding: 0 1em;
     flex: 1 1 20%; */
+
+    height: 50%;
+    overflow: scroll;
+    position: relative;
 
     .header {
       margin-top: 0;

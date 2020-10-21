@@ -8,7 +8,6 @@ import {
   WaffleTitle,
 } from "../../styles/styles.js"
 import _ from "lodash"
-import CensusAnnotation from "./CensusAnnotation.jsx"
 import { roundData } from "../utils.js"
 
 const WaffleChart = ({
@@ -61,8 +60,6 @@ const WaffleChart = ({
             </WaffleChartLabel>
           ))}
       </div>
-
-      {censusAnnotation && <CensusAnnotation />}
     </WaffleChartWrapper>
   )
 }

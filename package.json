@@ -31,13 +31,13 @@
     "lodash-contrib": "^4.1200.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-rough-notation": "^1.0.0",
     "react-scripts": "3.4.3",
     "react-scrollama": "^2.2.12",
     "react-twitter-embed": "^3.0.3",
     "request": "^2.88.2",
     "semiotic": "^1.20.5",
-    "styled-components": "^5.2.0",
-    "theme-ui": "^0.3.1"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "2.1.2"

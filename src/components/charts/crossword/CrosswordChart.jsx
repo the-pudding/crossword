@@ -11,7 +11,7 @@ const CrosswordChart = ({ data, colorCode }) => {
   }, [])
 
   return (
-    <div>
+    <div style={{ height: "600px" }}>
       <Crossword
         ref={crosswordRef}
         theme={{

@@ -1,19 +1,20 @@
 // ADAPTED FROM @jaredreisinger/react-crossword
 
-import React, { useCallback, useContext } from "react";
-import PropTypes from "prop-types";
+import React, { useCallback, useContext } from "react"
+import PropTypes from "prop-types"
 
-import styled, { ThemeContext } from "styled-components";
+import styled, { ThemeContext } from "styled-components"
 
-import { CrosswordContext } from "./context";
+import { CrosswordContext } from "./context"
 
-const ClueWrapper = styled.div.attrs((props) => ({
+const ClueWrapper = styled.div.attrs(props => ({
   className: `clue${props.correct ? " correct" : ""}`,
 }))`
   cursor: default;
-  background-color: ${(props) =>
+  background-color: ${props =>
     props.highlight ? props.highlightBackground : "transparent"};
-`;
+  display: flex;
+`
 
 export default function Clue({
   direction,
@@ -22,23 +23,23 @@ export default function Clue({
   correct,
   ...props
 }) {
-  const { highlightBackground } = useContext(ThemeContext);
+  const { highlightBackground } = useContext(ThemeContext)
   const {
     focused,
     selectedDirection,
     selectedNumber,
     onClueSelected,
-  } = useContext(CrosswordContext);
+  } = useContext(CrosswordContext)
 
   const handleClick = useCallback(
-    (event) => {
-      event.preventDefault();
+    event => {
+      event.preventDefault()
       if (onClueSelected) {
-        onClueSelected(direction, number);
+        onClueSelected(direction, number)
       }
     },
     [direction, number, onClueSelected]
-  );
+  )
 
   return (
     <ClueWrapper
@@ -51,9 +52,12 @@ export default function Clue({
       onClick={handleClick}
       aria-label={`clue-${number}-${direction}`}
     >
-      {number}: {children}
+      <div style={{ marginRight: "10px" }}>
+        <strong>{number}</strong>
+      </div>
+      <div>{children}</div>
     </ClueWrapper>
-  );
+  )
 }
 
 Clue.propTypes = {
@@ -65,9 +69,9 @@ Clue.propTypes = {
   children: PropTypes.node,
   /** whether the answer/guess is correct */
   correct: PropTypes.bool,
-};
+}
 
 Clue.defaultProps = {
   children: undefined,
   correct: undefined,
-};
+}
