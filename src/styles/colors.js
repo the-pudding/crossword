@@ -1,7 +1,7 @@
 export const COLORS = {
-  white: "#F2D0A4",
-  poc: "#DB7C26",
-  man: "#CBC5EA",
-  woman: "#8A7090",
+  white: "#FFEA2A",
+  poc: "#0094FF",
+  man: "#FFEA2A",
+  woman: "#0094FF",
   nonbinary: "#8D3B72",
-};
+}
