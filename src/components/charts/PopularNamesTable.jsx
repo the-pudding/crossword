@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Table } from "antd"
 import _ from "lodash-contrib"
-import DecadeSlider from "../charts/chart-elements/DecadeSlider.jsx"
+import DecadeSlider from "../charts/slider/DecadeSlider.jsx"
 
 const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
   const [decade, setDecade] = useState(1940)

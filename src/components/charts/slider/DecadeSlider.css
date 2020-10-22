@@ -1,0 +1,26 @@
+.ant-slider-handle {
+  display: none !important;
+}
+
+.ant-slider-dot {
+  border-radius: 0 !important;
+  height: 13px !important;
+  width: 13px !important;
+  border: solid 2px black !important;
+  top: -5px !important;
+}
+
+.ant-slider-dot-active {
+  background: #fe3cb0 !important;
+  height: 18px !important;
+  width: 18px !important;
+  top: -7px !important;
+}
+
+.ant-slider-mark-text {
+  margin-top: 12px !important;
+}
+
+.ant-slider-mark-text-active {
+  font-family: "National 2 Web Bold";
+}

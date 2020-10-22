@@ -19,8 +19,8 @@ function Home() {
         <Header />
 
         <IntroPuzzle />
-        {/* <NytLongView />
-      <WhyThisMatters />
+        <NytLongView />
+        {/*<WhyThisMatters />
       <SmallMultipleWaffles />
       <UsaTodayDeepDive /> */}
       </EssayWrapper>

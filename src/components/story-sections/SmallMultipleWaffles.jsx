@@ -9,7 +9,7 @@ import {
   TitledWaffle,
   Section,
 } from "../../styles/styles.js"
-import { COLORS } from "../../styles/colors.js"
+import COLORS from "../../styles/colors.js"
 
 const SmallMultipleWaffles = () => {
   const [metric, setMetric] = useState("gender")

@@ -9,7 +9,7 @@ import {
   createHtmlForCopy,
   prepareCrosswordData,
 } from "../utils.js"
-import { COLORS } from "../../styles/colors.js"
+import COLORS from "../../styles/colors.js"
 import crosswordData from "../../data/nyt-2020-with-pos.json"
 import Crossword from "../charts/crossword/Crossword.js"
 import confetti from "canvas-confetti"

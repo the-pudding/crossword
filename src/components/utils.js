@@ -1,6 +1,6 @@
 import React from "react"
 import _ from "lodash"
-import { COLORS } from "../styles/colors.js"
+import COLORS from "../styles/colors.js"
 import {
   Prose,
   SmallNote,

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import COLORS from "./colors.js"
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -177,10 +178,44 @@ export const Image = styled.img`
 `
 
 export const Callout = styled.div`
-  background: #fe3cb0;
+  background: ${COLORS.accent};
   outline: 4px black solid;
   display: flex;
   align-items: center;
   padding: 15px;
   margin-top: 50px;
+`
+
+// DecadeSlider
+
+export const SlideContainer = styled.div`
+  width: 70%;
+`
+
+export const Slider = styled.input`
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 70%;
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  height: 1px;
+  background: black;
+
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 12px; /* Set a specific slider handle width */
+    height: 12px; /* Slider handle height */
+    background: ${COLORS.accent};
+    outline: 2px solid black;
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  ::-moz-range-thumb {
+    width: 12px; /* Set a specific slider handle width */
+    height: 12px; /* Slider handle height */
+    background: ${COLORS.accent};
+    cursor: pointer; /* Cursor on hover */
+  }
 `
