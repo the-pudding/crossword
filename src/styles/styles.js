@@ -39,6 +39,16 @@ export const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
   }
+
+  a {
+    text-decoration: underline;
+    color: inherit;
+
+    &:hover {
+      color: ${COLORS.accent};
+      text-decoration: underline;
+    }
+  }
 `
 
 export const EssayWrapper = styled.main`
@@ -64,6 +74,12 @@ export const Prose = styled.p`
   width: 100%;
 `
 
+export const Emphasis = styled.div`
+  width: 100%;
+  border: 4px solid black;
+  margin: 2rem auto;
+`
+
 export const SmallNote = styled.p`
   font-size: 0.8rem;
   max-width: 620px;
@@ -86,6 +102,7 @@ export const Fade = styled.div`
 `
 
 export const Line = styled.hr`
+  width: 100%;
   background-color: black;
   border-width: 0px;
   height: 1px;
@@ -184,7 +201,7 @@ export const WaffleLabelText = styled.div`
 export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
   -webkit-text-stroke: 1.5px black;
-  font-size: 36px;
+  font-size: 2rem;
   color: ${props => (props.color ? props.color : "inherit")};
 `
 

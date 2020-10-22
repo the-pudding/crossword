@@ -20,8 +20,8 @@ function Home() {
 
         <IntroPuzzle />
         <NytLongView />
-        {/*<WhyThisMatters />
-      <SmallMultipleWaffles />
+        <WhyThisMatters />
+        {/*<SmallMultipleWaffles />
       <UsaTodayDeepDive /> */}
       </EssayWrapper>
     </>

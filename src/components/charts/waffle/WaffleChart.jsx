@@ -42,7 +42,9 @@ const WaffleChart = ({
     <WaffleChartWrapper margin={margin}>
       {title && (
         <>
-          <h3>{title.toUpperCase()}</h3>
+          <h3 style={{ alignSelf: "flex-start", margin: "0" }}>
+            {title.toUpperCase()}
+          </h3>
           <Line marginBottom="20px" />
         </>
       )}
@@ -75,7 +77,7 @@ const WaffleChart = ({
         })}
       </WaffleChartBounds>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", width: "100%" }}>
         {roundedData
           .filter(d => d.percent !== 0)
           .map(({ percent }, i) => (

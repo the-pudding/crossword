@@ -7,7 +7,7 @@ import {
   Heading,
   Image,
   ImageWrapper,
-  ScrollyStep,
+  Emphasis,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import twitter from "../images/twitter.png"
@@ -22,6 +22,12 @@ export const createHtmlForCopy = copy => {
     ({ step, text, type, value, source, caption, tweetId }, i) => {
       if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+      } else if (type === "emphasized-text") {
+        return (
+          <Emphasis>
+            <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+          </Emphasis>
+        )
       } else if (type === "small") {
         return (
           <SmallNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
