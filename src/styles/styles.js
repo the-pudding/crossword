@@ -56,6 +56,12 @@ export const Fade = styled.div`
   );
 `
 
+export const Line = styled.hr`
+  background-color: black;
+  border-width: 0px;
+  height: 1px;
+`
+
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,15 +107,15 @@ export const ScrollyStep = styled.div`
   text-align: center;
 `
 
-export const CrosswordWaffleWrapper = styled.div`
-  margin-top: 100px;
-  margin-bottom: 100px;
-  position: sticky;
-  top: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`
+// export const CrosswordWaffleWrapper = styled.div`
+//   margin-top: 100px;
+//   margin-bottom: 100px;
+//   position: sticky;
+//   top: 100px;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// `
 
 export const WaffleChartBounds = styled.div`
   display: flex;

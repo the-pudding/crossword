@@ -55,6 +55,7 @@ const OuterWrapper = styled.div.attrs(props => ({
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     flex-direction: column;
@@ -65,17 +66,18 @@ const GridWrapper = styled.div.attrs(props => ({
   className: "grid",
 }))`
   /* position: relative; */
-  min-width: 20rem;
-  max-width: 60rem; /* Should the size matter? */
-  width: auto;
-  flex: 2 1 50%;
+  // min-width: 20rem;
+  // max-width: 60rem; /* Should the size matter? */
+  width: 65%;
+  // flex: 2 1 50%;
 `
 
 const CluesWrapper = styled.div.attrs(props => ({
   className: "clues",
 }))`
   padding: 0 1em;
-  flex: 1 2 25%;
+  // flex: 1 2 25%;
+  width: 25%;
 
   height: 100%;
 
@@ -118,12 +120,20 @@ const Crossword = React.forwardRef(
       useStorage,
       theme,
       colorCode,
+      waffles,
     },
     ref
   ) => {
-    const [size, setSize] = useState(null)
-    const [gridData, setGridData] = useState(null)
-    const [clues, setClues] = useState(null)
+    const {
+      size: startingSize,
+      gridData: startingGridData,
+      clues: startingClues,
+    } = createGridData(data)
+
+    const [size, setSize] = useState(startingSize)
+    const [gridData, setGridData] = useState(startingGridData)
+    const [clues, setClues] = useState(startingClues)
+
     const [focused, setFocused] = useState(false)
     const [focusedRow, setFocusedRow] = useState(0)
     const [focusedCol, setFocusedCol] = useState(0)
@@ -474,7 +484,7 @@ const Crossword = React.forwardRef(
     }, [bulkChange, handleSingleCharacter])
 
     // When the data changes, recalculate the gridData, size, etc.
-    useEffect(() => {
+    /*useEffect(() => {
       // eslint-disable-next-line no-shadow
       const { size, gridData, clues } = createGridData(data)
 
@@ -508,7 +518,8 @@ const Crossword = React.forwardRef(
       if (loadedCorrect && loadedCorrect.length > 0 && onLoadedCorrect) {
         onLoadedCorrect(loadedCorrect)
       }
-    }, [data, onLoadedCorrect, useStorage])
+    }, [data, onLoadedCorrect, useStorage])*/
+    // ^ got rid of this because it was clearing the answers
 
     useEffect(() => {
       if (gridData === null || !useStorage) {
@@ -686,7 +697,7 @@ const Crossword = React.forwardRef(
     // cells, rather than have them as independent properties.  (Or should they
     // stay separate? Or be passed as "spread" values?)
     const cellSize = 100 / size
-    const cellPadding = 0.125
+    const cellPadding = 0.005
     const cellInner = cellSize - cellPadding * 2
     const cellHalf = cellSize / 2
     const fontSize = cellInner * 0.7
@@ -794,7 +805,8 @@ const Crossword = React.forwardRef(
                 </div>
               </GridWrapper>
               <CluesWrapper>
-                {clues &&
+                {!colorCode &&
+                  clues &&
                   bothDirections.map(direction => (
                     <DirectionClues
                       key={direction}
@@ -802,6 +814,8 @@ const Crossword = React.forwardRef(
                       clues={clues[direction]}
                     />
                   ))}
+
+                {colorCode ? waffles : null}
               </CluesWrapper>
             </OuterWrapper>
           </ThemeProvider>
@@ -873,6 +887,7 @@ Crossword.propTypes = {
   onCellChange: PropTypes.func,
 
   colorCode: PropTypes.bool,
+  waffles: PropTypes.instanceOf(Object),
 }
 
 Crossword.defaultProps = {
@@ -884,6 +899,7 @@ Crossword.defaultProps = {
   onCrosswordCorrect: null,
   onCellChange: null,
   colorCode: false,
+  waffles: null,
 }
 
 export default Crossword

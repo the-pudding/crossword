@@ -1,4 +1,5 @@
 // ADAPTED FROM @jaredreisinger/react-crossword
+import _ from "lodash"
 
 const directionInfo = {
   across: {
@@ -89,7 +90,10 @@ export function fillClues(gridData, clues, data, direction) {
       cellData.used = true
       cellData.answer = answer[i]
       cellData[direction] = number
-      cellData.color = color
+
+      cellData.color = cellData.color
+        ? _.uniq([...cellData.color, color])
+        : [color]
 
       if (i === 0) {
         // TODO?: check to ensure the number is the same if it's already set?

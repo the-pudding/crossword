@@ -2,7 +2,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Fade } from "../../../styles/styles.js"
+import { Fade, Line } from "../../../styles/styles.js"
 // import styled from 'styled-components';
 
 import Clue from "./Clue"
@@ -14,6 +14,7 @@ export default function DirectionClues({ direction, clues }) {
       <h3 className="header">
         <strong>{direction.toUpperCase()}</strong>
       </h3>
+      <Line />
       {clues.map(({ number, clue, correct }) => (
         <Clue
           key={number}
