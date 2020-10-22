@@ -9,8 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: "Tiempos Headline";
-    font-size: 64px;
-    line-height: 77px;
+    font-size: 4rem;
     text-align: center;
   }
 
@@ -19,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    font-size: 14px;
+    font-size: 0.8rem;
     padding: 5px;
     margin: 5px;
     background: white;
@@ -31,17 +30,35 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const EssayWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px;
+export const EssayWrapper = styled.main`
+  max-width: 743px;
+  margin: 0 auto;
+  font-size: 18px;
 `
 
-export const HeaderWrapper = styled.div`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+`
+
+export const Prose = styled.p`
+  font-family: "Tiempos Text";
+  max-width: 620px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  width: 100%;
+`
+
+export const SmallNote = styled.p`
+  font-size: 0.8rem;
+  max-width: 620px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  width: 100%;
 `
 
 export const Fade = styled.div`
@@ -64,33 +81,9 @@ export const Line = styled.hr`
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
 `
 
-export const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 100%;
-`
-
 export const LineChartWrapper = styled.div`
   width: 80%;
   height: 500px;
-`
-
-export const SmallNote = styled.p`
-  font-size: 14px;
-  width: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
-`
-
-export const Prose = styled.p`
-  font-family: "Tiempos Text";
-  font-size: 18px;
-  width: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
 `
 
 export const Heading = styled.h2`
@@ -108,16 +101,6 @@ export const ScrollyStep = styled.div`
   width: 600px;
   text-align: center;
 `
-
-// export const CrosswordWaffleWrapper = styled.div`
-//   margin-top: 100px;
-//   margin-bottom: 100px;
-//   position: sticky;
-//   top: 100px;
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// `
 
 export const WaffleChartWrapper = styled.div`
   margin-bottom: 10px;
@@ -191,4 +174,13 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   height: 450px;
+`
+
+export const Callout = styled.div`
+  background: #fe3cb0;
+  outline: 4px black solid;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-top: 50px;
 `

@@ -1,10 +1,10 @@
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
-import { HeaderWrapper } from "../../styles/styles.js"
+import { Section } from "../../styles/styles.js"
 
 const Header = () => {
   return (
-    <HeaderWrapper>
+    <Section>
       <h1>
         1.
         <RoughNotation
@@ -18,13 +18,13 @@ const Header = () => {
         </RoughNotation>
         in the crossword?
       </h1>
-      <div style={{ fontSize: "16px" }}>
+      <div>
         By <strong>Michelle McGhee</strong>
       </div>
-      <div style={{ color: "grey" }}>
+      <div style={{ fontSize: "0.8rem", color: "grey" }}>
         with <strong>Russell Goldenberg</strong> and <strong>Jan Diehm</strong>
       </div>
-    </HeaderWrapper>
+    </Section>
   )
 }
 

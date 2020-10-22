@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import copy from "../../data/copy.json"
-import { Section, SmallNote } from "../../styles/styles.js"
+import { Section, SmallNote, Callout } from "../../styles/styles.js"
 import _ from "lodash"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
@@ -82,7 +82,7 @@ const IntroPuzzle = () => {
         </>
       )}
 
-      <div style={{ height: "70vh", width: "100%", marginTop: "100px" }}>
+      <div style={{ height: "600px", width: "100%", marginTop: "100px" }}>
         <Crossword
           ref={crosswordRef}
           useStorage={false}
@@ -104,15 +104,23 @@ const IntroPuzzle = () => {
           colorCode={showAnswers}
           waffles={showAnswers ? waffles : null}
         />
-        <button
+
+        {/* <button
           onClick={() => {
             crosswordRef.current.reset()
             setShowAnswers(false)
           }}
         >
           clear
-        </button>
+        </button> */}
       </div>
+
+      <Callout>
+        <strong style={{ marginRight: "0.3rem" }}>
+          Want some more puzzles?
+        </strong>
+        Check out the others we've generated with our data.
+      </Callout>
     </Section>
   )
 }
