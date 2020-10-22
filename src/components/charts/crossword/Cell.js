@@ -139,7 +139,7 @@ Cell.propTypes = {
   onClick: PropTypes.func,
 
   // color coding
-  colorOverride: PropTypes.string,
+  colorOverride: PropTypes.array,
 }
 
 Cell.defaultProps = {

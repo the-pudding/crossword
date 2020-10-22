@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Tiempos Headline";
     font-size: 64px;
     line-height: 77px;
+    text-align: center;
   }
 
   strong {
@@ -60,6 +61,7 @@ export const Line = styled.hr`
   background-color: black;
   border-width: 0px;
   height: 1px;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
 `
 
 export const Section = styled.div`
@@ -117,40 +119,45 @@ export const ScrollyStep = styled.div`
 //   align-items: center;
 // `
 
+export const WaffleChartWrapper = styled.div`
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+`
+
 export const WaffleChartBounds = styled.div`
   display: flex;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   flex-wrap: wrap;
+  flex-direction: column;
+  outline: 4px black solid;
+  margin-left: 4px;
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
 `
 
-export const WaffleChartWrapper = styled.div`
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-`
-
 export const Block = styled.div`
-  height: 10px;
-  width: 10px;
-  margin: 1px;
+  height: 15px;
+  width: 15px;
+  border: 1px solid black;
   background: ${props => props.color};
 `
 
 export const WaffleChartLabel = styled.div`
-  color: ${props => props.color};
+  width: 50%;
 `
 
 export const Percentage = styled.div`
-  font-weight: bold;
-  font-size: ${props => (props.numLabels === 2 ? "36px" : "26px")};
+  font-family: "National 2 Web Bold";
+  -webkit-text-stroke: 1.5px black;
+  font-size: 36px;
+  color: ${props => (props.color ? props.color : "inherit")};
 `
 
 export const WaffleTitle = styled.div`
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
 `
 
 export const SlopeChartWrapper = styled.div`

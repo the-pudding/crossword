@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import WaffleChart from "../charts/WaffleChart.jsx"
+import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
 import copy from "../../data/copy.json"
 import { createHtmlForCopy } from "../utils.js"

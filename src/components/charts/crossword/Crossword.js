@@ -198,7 +198,7 @@ const Crossword = React.forwardRef(
         if (onCorrect) {
           // We *used* to need a timeout workaround to ensure this happened
           // *after* the state had updated and the DOM rendered.... do we still?
-          //nCorrect(direction, number, answer);
+          // nCorrect(direction, number, answer);
 
           // For future reference, the call looked like:
           //
@@ -484,7 +484,7 @@ const Crossword = React.forwardRef(
     }, [bulkChange, handleSingleCharacter])
 
     // When the data changes, recalculate the gridData, size, etc.
-    /*useEffect(() => {
+    useEffect(() => {
       // eslint-disable-next-line no-shadow
       const { size, gridData, clues } = createGridData(data)
 
@@ -518,8 +518,7 @@ const Crossword = React.forwardRef(
       if (loadedCorrect && loadedCorrect.length > 0 && onLoadedCorrect) {
         onLoadedCorrect(loadedCorrect)
       }
-    }, [data, onLoadedCorrect, useStorage])*/
-    // ^ got rid of this because it was clearing the answers
+    }, [data, onLoadedCorrect, useStorage])
 
     useEffect(() => {
       if (gridData === null || !useStorage) {

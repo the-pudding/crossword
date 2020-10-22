@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import copy from "../../data/copy.json"
 import { Section, SmallNote } from "../../styles/styles.js"
 import _ from "lodash"
-import WaffleChart from "../charts/WaffleChart.jsx"
+import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
 import {
   addColorsToData,
@@ -42,7 +42,7 @@ const IntroPuzzle = () => {
         clickable={true}
       />
       <WaffleChart
-        title={"Race"}
+        title={"Race & Ethnicity"}
         data={
           _.first(
             raceGenderBreakdown.filter(
@@ -51,7 +51,7 @@ const IntroPuzzle = () => {
           ).raceBreakdown
         }
         colors={[COLORS.poc, COLORS.white]}
-        labels={["minority", "non-hispanic white"]}
+        labels={["under-represented minorities", "non-hispanic white"]}
         changeMetric={() => setMetric("race")}
         clickable={true}
       />
@@ -62,19 +62,25 @@ const IntroPuzzle = () => {
 
   return (
     <Section>
-      {createHtmlForCopy(copy.introPuzzleBefore)}
+      {showAnswers ? (
+        createHtmlForCopy(copy.introPuzzleAfter)
+      ) : (
+        <>
+          {createHtmlForCopy(copy.introPuzzleBefore)}
 
-      <SmallNote>
-        If you're stumped or don't want to play, you can{" "}
-        <button
-          onClick={() => {
-            crosswordRef.current.fillAllAnswers()
-            setShowAnswers(true)
-          }}
-        >
-          Skip to results
-        </button>
-      </SmallNote>
+          <SmallNote>
+            If you're stumped or don't want to play, you can{" "}
+            <button
+              onClick={() => {
+                crosswordRef.current.fillAllAnswers()
+                setShowAnswers(true)
+              }}
+            >
+              Skip to results
+            </button>
+          </SmallNote>
+        </>
+      )}
 
       <div style={{ height: "70vh", width: "100%", marginTop: "100px" }}>
         <Crossword

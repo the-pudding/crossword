@@ -6,9 +6,10 @@ import {
   Block,
   Percentage,
   WaffleTitle,
-} from "../../styles/styles.js"
+  Line,
+} from "../../../styles/styles.js"
 import _ from "lodash"
-import { roundData } from "../utils.js"
+import { roundData } from "../../utils.js"
 
 const WaffleChart = ({
   title,
@@ -39,24 +40,23 @@ const WaffleChart = ({
   return (
     <WaffleChartWrapper>
       <div>
-        <WaffleTitle>{title}</WaffleTitle>
+        <strong>{title.toUpperCase()}</strong>
+        <Line marginBottom="20px" />
         <WaffleChartBounds onClick={changeMetric} clickable={clickable}>
           {_.range(0, 100).map(i => (
             <Block key={i} color={colorLookup[i]} />
           ))}
         </WaffleChartBounds>
       </div>
-      <div style={{ marginLeft: "10px", marginTop: "18px" }}>
+      <div style={{ display: "flex" }}>
         {roundedData
           .filter(d => d.percent !== 0)
           .map(({ percent }, i) => (
-            <WaffleChartLabel key={i} color={colors[i]}>
-              <Percentage numLabels={roundedData.length}>{percent}%</Percentage>
-              <div
-                style={{ dipslay: "flex", flexWrap: "wrap", width: "100px" }}
-              >
-                {labels[i]}
-              </div>
+            <WaffleChartLabel key={i}>
+              <Percentage numLabels={roundedData.length} color={colors[i]}>
+                {percent}%
+              </Percentage>
+              <div>{labels[i]}</div>
             </WaffleChartLabel>
           ))}
       </div>
