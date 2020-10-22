@@ -40,6 +40,7 @@ const IntroPuzzle = () => {
         labels={["women", "men"]}
         changeMetric={() => setMetric("gender")}
         clickable={true}
+        margin="0 0 10px 0"
       />
       <WaffleChart
         title={"Race & Ethnicity"}
@@ -51,9 +52,10 @@ const IntroPuzzle = () => {
           ).raceBreakdown
         }
         colors={[COLORS.poc, COLORS.white]}
-        labels={["under-represented minorities", "non-hispanic white"]}
+        labels={["under-represented minorities", "non-Hispanic white"]}
         changeMetric={() => setMetric("race")}
         clickable={true}
+        margin="0 0 10px 0"
       />
     </div>
   )

@@ -14,6 +14,16 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
+  h2 {
+    font-family: "Tiempos Headline";
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-family: "National 2 Web Bold";
+    font-size: 0.8em;
+  }
+
   strong {
     font-family: "National 2 Web Bold";
   }
@@ -104,9 +114,11 @@ export const ScrollyStep = styled.div`
 `
 
 export const WaffleChartWrapper = styled.div`
-  margin-bottom: 10px;
+  margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 158px; // 150 + outline
 `
 
 export const WaffleChartBounds = styled.div`
@@ -122,15 +134,51 @@ export const WaffleChartBounds = styled.div`
   }
 `
 
+export const WafflesWithTitles = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+`
+
+export const LinedTitle = styled.div`
+  position: absolute;
+  width: 100%;
+  top: ${props => (props.top ? props.top : "0")};
+`
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 export const Block = styled.div`
   height: 15px;
   width: 15px;
-  border: 1px solid black;
+  border-bottom: ${props =>
+    props.borderBottom ? "4px solid black" : "1px solid black"};
+  border-right: ${props =>
+    props.borderRight ? "4px solid black" : "1px solid black"};
+  border-left: ${props =>
+    props.borderLeft ? "4px solid black" : "1px solid black"};
+  border-top: ${props =>
+    props.borderTop ? "4px solid black" : "1px solid black"};
+
   background: ${props => props.color};
 `
 
 export const WaffleChartLabel = styled.div`
-  width: 50%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: ${props => (props.i === 0 ? "flex-start" : "flex-end")};
+`
+
+export const WaffleLabelText = styled.div`
+  font-size: 0.8rem;
+  text-align: ${props => (props.i === 0 ? "start" : "end")};
 `
 
 export const Percentage = styled.div`
@@ -188,34 +236,34 @@ export const Callout = styled.div`
 
 // DecadeSlider
 
-export const SlideContainer = styled.div`
-  width: 70%;
-`
+// export const SlideContainer = styled.div`
+//   width: 70%;
+// `
 
-export const Slider = styled.input`
-  -webkit-appearance: none; /* Override default CSS styles */
-  appearance: none;
-  width: 70%;
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
-  transition: opacity 0.2s;
-  height: 1px;
-  background: black;
+// export const Slider = styled.input`
+//   -webkit-appearance: none; /* Override default CSS styles */
+//   appearance: none;
+//   width: 70%;
+//   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+//   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+//   transition: opacity 0.2s;
+//   height: 1px;
+//   background: black;
 
-  ::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 12px; /* Set a specific slider handle width */
-    height: 12px; /* Slider handle height */
-    background: ${COLORS.accent};
-    outline: 2px solid black;
-    cursor: pointer; /* Cursor on hover */
-  }
+//   ::-webkit-slider-thumb {
+//     -webkit-appearance: none; /* Override default look */
+//     appearance: none;
+//     width: 12px; /* Set a specific slider handle width */
+//     height: 12px; /* Slider handle height */
+//     background: ${COLORS.accent};
+//     outline: 2px solid black;
+//     cursor: pointer; /* Cursor on hover */
+//   }
 
-  ::-moz-range-thumb {
-    width: 12px; /* Set a specific slider handle width */
-    height: 12px; /* Slider handle height */
-    background: ${COLORS.accent};
-    cursor: pointer; /* Cursor on hover */
-  }
-`
+//   ::-moz-range-thumb {
+//     width: 12px; /* Set a specific slider handle width */
+//     height: 12px; /* Slider handle height */
+//     background: ${COLORS.accent};
+//     cursor: pointer; /* Cursor on hover */
+//   }
+// `
