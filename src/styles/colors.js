@@ -5,6 +5,12 @@ export default {
   woman: "#0094FF",
   nonbinary: "#8D3B72",
 
+  uni: "#FE3CB0",
+  usa: "#0074FF",
+  lat: "#FFEA2A",
+  wsj: "#C9C9C9",
+  nyt: "#282828",
+
   pink: "#FE3CB0",
   blue: "#0094FF",
   yellow: "#FFEA2A",
