@@ -7,6 +7,8 @@ import {
   LinedTitle,
   WafflesWithTitles,
   Column,
+  WaffleRow,
+  WaffleRowItem,
 } from "../../styles/styles.js"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
@@ -18,15 +20,15 @@ import DecadeSlider from "../charts/slider/DecadeSlider.jsx"
 const NytLongView = () => {
   const [decade, setDecade] = useState(1940)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDecade(decade => {
-        if (decade === 2010) setDecade(1940)
-        else setDecade(decade + 10)
-      })
-    }, 2000)
-    return () => clearInterval(interval)
-  }, [])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setDecade(decade => {
+  //       if (decade === 2010) setDecade(1940)
+  //       else setDecade(decade + 10)
+  //     })
+  //   }, 2000)
+  //   return () => clearInterval(interval)
+  // }, [])
 
   const allData = _.first(
     raceGenderBreakdown.filter(d => {
@@ -55,6 +57,77 @@ const NytLongView = () => {
         <DecadeSlider decade={decade} setDecade={setDecade} />
 
         <WafflesWithTitles>
+          <WaffleRow>
+            <WaffleRowItem flexBasis="50%">
+              <h2>{decade}s</h2>
+            </WaffleRowItem>
+            <WaffleRowItem flexBasis="50%">
+              <h2>2020</h2>
+            </WaffleRowItem>
+          </WaffleRow>
+
+          <h3>GENDER</h3>
+          <Line />
+
+          <WaffleRow>
+            <WaffleRowItem flexBasis="50%">
+              <WaffleChart
+                data={genderData}
+                colors={genderColors}
+                labels={genderLabels}
+                margin="10px 0px 10px 0px"
+                censusSplit={_.ceil(
+                  usCensusData.filter(d =>
+                    d.decade.includes(decade.toString())
+                  )[0].women
+                )}
+              />
+            </WaffleRowItem>
+            <WaffleRowItem flexBasis="50%">
+              <WaffleChart
+                data={gender2020Data}
+                colors={genderColors}
+                labels={genderLabels}
+                margin="10px 0px 10px 0px"
+                censusSplit={_.ceil(
+                  usCensusData.filter(d => d.decade === "2020")[0].women
+                )}
+              />
+            </WaffleRowItem>
+          </WaffleRow>
+
+          <h3>RACE {"&"} ETHNICITY</h3>
+          <Line />
+
+          <WaffleRow>
+            <WaffleRowItem flexBasis="50%">
+              <WaffleChart
+                data={raceData}
+                colors={raceColors}
+                labels={raceLabels}
+                margin="10px 0px 10px 0px"
+                censusSplit={_.ceil(
+                  usCensusData.filter(d =>
+                    d.decade.includes(decade.toString())
+                  )[0].minority
+                )}
+              />
+            </WaffleRowItem>
+            <WaffleRowItem flexBasis="50%">
+              <WaffleChart
+                data={race2020Data}
+                colors={raceColors}
+                labels={raceLabels}
+                margin="10px 0px 10px 0px"
+                censusSplit={_.ceil(
+                  usCensusData.filter(d => d.decade === "2020")[0].minority
+                )}
+              />
+            </WaffleRowItem>
+          </WaffleRow>
+        </WafflesWithTitles>
+
+        {/* <WafflesWithTitles>
           <LinedTitle top="1.5rem">
             <h3>GENDER</h3>
             <Line />
@@ -110,7 +183,7 @@ const NytLongView = () => {
               )}
             />
           </Column>
-        </WafflesWithTitles>
+        </WafflesWithTitles> */}
       </Section>
     </>
   )

@@ -1,6 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components"
 import COLORS from "./colors.js"
 
+// Waffle sizing
+const smallBlockSize = 10
+const regularBlockSize = 15
+const borderSize = 4
+
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "National 2 Web", "Helvetica Neue", sans-serif;
@@ -16,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-family: "Tiempos Headline";
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   h3 {
@@ -54,15 +59,15 @@ export const GlobalStyle = createGlobalStyle`
 export const EssayWrapper = styled.main`
   max-width: 743px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 16px;
 `
 
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   width: 100%;
 `
 
@@ -135,17 +140,22 @@ export const WaffleChartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 158px; // 150 + outline
+  width: ${props =>
+    props.small
+      ? `${smallBlockSize * 10 + 2 * borderSize}px`
+      : `${regularBlockSize * 10 + 2 * borderSize}px`};
 `
 
 export const WaffleChartBounds = styled.div`
   display: flex;
-  width: 150px;
-  height: 150px;
+  width: ${props =>
+    props.small ? `${smallBlockSize * 10}px` : `${regularBlockSize * 10}px`};
+  height: ${props =>
+    props.small ? `${smallBlockSize * 10}px` : `${regularBlockSize * 10}px`};
   flex-wrap: wrap;
   flex-direction: column;
-  outline: 4px black solid;
-  margin-left: 4px;
+  outline: ${borderSize}px black solid;
+  margin-left: ${borderSize}px;
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
@@ -153,10 +163,11 @@ export const WaffleChartBounds = styled.div`
 
 export const WafflesWithTitles = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  //justify-content: space-evenly;
   width: 100%;
   margin-top: 40px;
-  position: relative;
+  //position: relative;
 `
 
 export const LinedTitle = styled.div`
@@ -172,16 +183,18 @@ export const Column = styled.div`
 `
 
 export const Block = styled.div`
-  height: 15px;
-  width: 15px;
+  height: ${props =>
+    props.small ? `${smallBlockSize}px` : `${regularBlockSize}px`};
+  width: ${props =>
+    props.small ? `${smallBlockSize}px` : `${regularBlockSize}px`};
   border-bottom: ${props =>
-    props.borderBottom ? "4px solid black" : "1px solid black"};
+    props.borderBottom ? `${borderSize}px solid black` : "1px solid black"};
   border-right: ${props =>
-    props.borderRight ? "4px solid black" : "1px solid black"};
+    props.borderRight ? `${borderSize}px solid black` : "1px solid black"};
   border-left: ${props =>
-    props.borderLeft ? "4px solid black" : "1px solid black"};
+    props.borderLeft ? `${borderSize}px solid black` : "1px solid black"};
   border-top: ${props =>
-    props.borderTop ? "4px solid black" : "1px solid black"};
+    props.borderTop ? `${borderSize}px solid black` : "1px solid black"};
 
   background: ${props => props.color};
 `
@@ -200,8 +213,8 @@ export const WaffleLabelText = styled.div`
 
 export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
-  -webkit-text-stroke: 1.5px black;
-  font-size: 2rem;
+  -webkit-text-stroke: ${props => (props.small ? "1px black" : "1.5px black")};
+  font-size: ${props => (props.small ? "1.5rem" : "2rem")};
   color: ${props => (props.color ? props.color : "inherit")};
 `
 
@@ -250,37 +263,41 @@ export const Callout = styled.div`
   padding: 15px;
   margin-top: 50px;
 `
+export const TableWrapper = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+`
 
-// DecadeSlider
+export const TableRow = styled.div`
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`
 
-// export const SlideContainer = styled.div`
-//   width: 70%;
-// `
+export const HeadingDivider = styled.hr`
+  width: 100%;
+  background-color: black;
+  border-width: 0px;
+  height: 4px;
+`
 
-// export const Slider = styled.input`
-//   -webkit-appearance: none; /* Override default CSS styles */
-//   appearance: none;
-//   width: 70%;
-//   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-//   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
-//   transition: opacity 0.2s;
-//   height: 1px;
-//   background: black;
+export const TableDivider = styled.hr`
+  width: 100%;
+  background-color: black;
+  border-width: 0px;
+  height: 1px;
+`
+export const WaffleRow = styled.div`
+  width: 100%;
+  display: flex;
+`
 
-//   ::-webkit-slider-thumb {
-//     -webkit-appearance: none; /* Override default look */
-//     appearance: none;
-//     width: 12px; /* Set a specific slider handle width */
-//     height: 12px; /* Slider handle height */
-//     background: ${COLORS.accent};
-//     outline: 2px solid black;
-//     cursor: pointer; /* Cursor on hover */
-//   }
-
-//   ::-moz-range-thumb {
-//     width: 12px; /* Set a specific slider handle width */
-//     height: 12px; /* Slider handle height */
-//     background: ${COLORS.accent};
-//     cursor: pointer; /* Cursor on hover */
-//   }
-// `
+export const WaffleRowItem = styled.div`
+  display: flex;
+  flex-basis: ${props => (props.flexBasis ? props.flexBasis : "100%")};
+  justify-content: center;
+`

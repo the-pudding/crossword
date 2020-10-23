@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { Table } from "antd"
+import Table from "./Table.jsx"
 import _ from "lodash-contrib"
-import DecadeSlider from "../charts/slider/DecadeSlider.jsx"
+import DecadeSlider from "../../charts/slider/DecadeSlider.jsx"
 
 const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
   const [decade, setDecade] = useState(1940)
@@ -18,16 +18,17 @@ const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
       dataIndex: featuredColumn,
       key: featuredColumn,
     },
-    { title: "Appearances", dataIndex: "frequency", key: "appearances" },
+    { title: "Count", dataIndex: "frequency", key: "count" },
     { title: "Birth Year", dataIndex: "birthYear", key: "birthYear" },
   ]
   return (
     <>
-      <h3>Popular clued people in NYT by decade</h3>
       <DecadeSlider decade={decade} setDecade={setDecade} />
-      {typeof window !== "undefined" ? (
+      <Table data={dataSource} columns={columns} />
+
+      {/* {typeof window !== "undefined" ? (
         <Table dataSource={dataSource} columns={columns} pagination={false} />
-      ) : null}
+      ) : null} */}
     </>
   )
 }
