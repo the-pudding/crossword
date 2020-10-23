@@ -5,5 +5,10 @@ export default {
   woman: "#0094FF",
   nonbinary: "#8D3B72",
 
-  accent: "#FE3CB0",
+  pink: "#FE3CB0",
+  blue: "#0094FF",
+  yellow: "#FFEA2A",
+  grey: "#C9C9C9",
+  offWhite: "#F4F4F4",
+  black: "#282828",
 }

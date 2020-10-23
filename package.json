@@ -30,6 +30,7 @@
     "lodash": "^4.17.20",
     "lodash-contrib": "^4.1200.1",
     "react": "^16.12.0",
+    "react-annotation": "^2.2.1",
     "react-dom": "^16.12.0",
     "react-rough-notation": "^1.0.0",
     "react-scripts": "3.4.3",

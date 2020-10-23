@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
 
     &:hover {
-      color: ${COLORS.accent};
+      color: ${COLORS.pink};
       text-decoration: underline;
     }
   }
@@ -115,7 +115,7 @@ export const Line = styled.hr`
 `
 
 export const LineChartWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 500px;
 `
 
@@ -256,7 +256,7 @@ export const Image = styled.img`
 `
 
 export const Callout = styled.div`
-  background: ${COLORS.accent};
+  background: ${COLORS.pink};
   outline: 4px black solid;
   display: flex;
   align-items: center;
@@ -300,4 +300,12 @@ export const WaffleRowItem = styled.div`
   display: flex;
   flex-basis: ${props => (props.flexBasis ? props.flexBasis : "100%")};
   justify-content: center;
+`
+
+export const Note = styled.div`
+  color: #757575;
+  font-size: 0.7em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 `
