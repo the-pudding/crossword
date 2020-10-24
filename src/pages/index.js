@@ -4,7 +4,7 @@ import IntroPuzzle from "../components/story-sections/IntroPuzzle.jsx"
 import WhyThisMatters from "../components/story-sections/WhyThisMatters.jsx"
 import SmallMultipleWaffles from "../components/story-sections/SmallMultipleWaffles.jsx"
 import NamesInAnswers from "../components/story-sections/NamesInAnswers.jsx"
-import UsaTodayDeepDive from "../components/story-sections/UsaTodayDeepDive.jsx"
+import NamesInClues from "../components/story-sections/NamesInClues.jsx"
 import NytLongView from "../components/story-sections/NytLongView.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
 import GlobalFonts from "../styles/fonts/fonts.js"
@@ -24,7 +24,7 @@ function Home() {
         <WhyThisMatters />
         <SmallMultipleWaffles />
         <NamesInAnswers />
-        {/*<UsaTodayDeepDive /> */}
+        <NamesInClues />
       </EssayWrapper>
     </>
   )
