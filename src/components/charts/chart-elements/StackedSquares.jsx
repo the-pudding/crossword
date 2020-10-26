@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import _ from "lodash"
-
-const barPadding = 1
+import COLORS from "../../../styles/colors.js"
 
 const publicationColorLookup = {
   wsj: "red",
@@ -11,20 +10,10 @@ const publicationColorLookup = {
   latimes: "orange",
 }
 const colorLookup = {
-  above: "tomato",
-  below: "grey",
+  above: COLORS.blue,
+  below: COLORS.grey,
 }
-const StackedSquares = ({
-  data,
-  squareHeight,
-  dms,
-  bins,
-  metricAccessor,
-  yAccessor,
-  xScale,
-  yScale,
-  compare,
-}) => {
+const StackedSquares = ({ data, squareHeight, dms, bins, xScale, compare }) => {
   return (
     <>
       {bins.map((bin, i) => {
@@ -37,9 +26,7 @@ const StackedSquares = ({
         return (
           <g
             key={i}
-            transform={`translate(${xScale(bin.x0) - 0.5 * squareHeight}, ${
-              dms.boundedHeight
-            })`}
+            transform={`translate(${xScale(bin.x0)}, ${dms.boundedHeight})`}
           >
             {yearData.clues.map((squareData, clueI) => {
               const { name, binaryRace, gender, publication } = squareData
@@ -69,6 +56,8 @@ const StackedSquares = ({
                   height={squareHeight}
                   width={squareHeight}
                   fill={y < 0 ? colorLookup.above : colorLookup.below}
+                  strokeWidth="1px"
+                  stroke="black"
                 />
               )
             })}

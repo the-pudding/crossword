@@ -20,6 +20,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
     .range([0, dms.boundedWidth])
 
   const reversedKeys = keys.slice().reverse()
+  const reversedColors = keyColors.slice().reverse()
 
   return (
     <div style={{ width: "100%", marginTop: "20px" }}>
@@ -41,7 +42,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
                 key={i}
                 height={100}
                 width={width}
-                fill={_.reverse(keyColors)[i]}
+                fill={reversedColors[i]}
                 stroke="black"
                 strokeWidth={1}
               />
@@ -55,7 +56,10 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
           <Percentage color={keyColors[i]} small={true}>
             {data[key]}
           </Percentage>
-          <div style={{ fontSize: "0.8rem" }}>clues {keyLabels[i]}</div>
+          <div style={{ fontSize: "0.8rem" }}>
+            clue{data[key] === 1 ? "" : "s"} {key === "neutral" ? "do not" : ""}{" "}
+            mention{data[key] === 1 ? "s" : ""} {keyLabels[i]}
+          </div>
         </div>
       ))}
     </div>

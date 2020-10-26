@@ -8,6 +8,10 @@ import { RoughNotation } from "react-rough-notation"
 import AboveBelow from "../charts/above-below/AboveBelow.jsx"
 import poemWithNeutral from "../../data/POEM-including-neutral.json"
 import poem from "../../data/POEM.json"
+import chessWithNeutral from "../../data/CHESS-including-neutral.json"
+import chess from "../../data/CHESS.json"
+import mitWithNeutral from "../../data/MIT-including-neutral.json"
+import mit from "../../data/MIT.json"
 
 const NamesInClues = () => {
   return (
@@ -31,7 +35,24 @@ const NamesInClues = () => {
 
       {createHtmlForCopy(copy.deepDivePart2)}
 
-      <AboveBelow data={poem} overviewData={poemWithNeutral} word="poem" />
+      <AboveBelow
+        data={poem}
+        overviewData={poemWithNeutral}
+        word="poem"
+        compare="race"
+      />
+      <AboveBelow
+        data={chess}
+        overviewData={chessWithNeutral}
+        word="chess"
+        compare="race"
+      />
+      <AboveBelow
+        data={mit}
+        overviewData={mitWithNeutral}
+        word="mit"
+        compare="gender"
+      />
 
       <Callout>
         <strong>Cool article. Now take me to the puzzles.</strong>
