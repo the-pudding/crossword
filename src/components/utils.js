@@ -1,6 +1,7 @@
 import React from "react"
 import _ from "lodash"
 import COLORS from "../styles/colors.js"
+import { RoughNotation } from "react-rough-notation"
 import {
   Prose,
   SmallNote,

@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import _ from "lodash"
 import COLORS from "../../../styles/colors.js"
+import Axis from "../above-below/Axis.jsx"
 
 const publicationColorLookup = {
   wsj: "red",
@@ -13,7 +14,19 @@ const colorLookup = {
   above: COLORS.blue,
   below: COLORS.grey,
 }
-const StackedSquares = ({ data, squareHeight, dms, bins, xScale, compare }) => {
+const StackedSquares = ({
+  data,
+  squareHeight,
+  dms,
+  bins,
+  xScale,
+  compare,
+  setHoverX,
+  setHoverY,
+  setTooltipInfo,
+}) => {
+  const [hoveredSquareKey, setHoveredSquareKey] = useState(null)
+
   return (
     <>
       {bins.map((bin, i) => {
@@ -29,7 +42,14 @@ const StackedSquares = ({ data, squareHeight, dms, bins, xScale, compare }) => {
             transform={`translate(${xScale(bin.x0)}, ${dms.boundedHeight})`}
           >
             {yearData.clues.map((squareData, clueI) => {
-              const { name, binaryRace, gender, publication } = squareData
+              const {
+                name,
+                binaryRace,
+                gender,
+                publication,
+                year,
+                clue,
+              } = squareData
               let y = 0
 
               if (compare === "race") {
@@ -47,23 +67,52 @@ const StackedSquares = ({ data, squareHeight, dms, bins, xScale, compare }) => {
                   nextAboveYValue -= squareHeight
                 }
               }
+              const squareKey = `${i}-${clueI}`
 
               return (
                 <rect
-                  key={clueI}
+                  key={squareKey}
                   x={0}
                   y={y}
                   height={squareHeight}
                   width={squareHeight}
                   fill={y < 0 ? colorLookup.above : colorLookup.below}
-                  strokeWidth="1px"
-                  stroke="black"
+                  strokeWidth={squareKey === hoveredSquareKey ? "2px" : "1px"}
+                  stroke={
+                    squareKey === hoveredSquareKey ? COLORS.yellow : "black"
+                  }
+                  onMouseEnter={() => {
+                    const xOffset =
+                      xScale(bin.x0) +
+                      (parseInt(year) >= 2010
+                        ? -150 - 3 * squareHeight
+                        : squareHeight + 15)
+                    const yOffset = y + 100
+
+                    setHoverX(xOffset)
+                    setHoverY(yOffset)
+                    setTooltipInfo({ name, publication, clue, year })
+                    setHoveredSquareKey(squareKey)
+                  }}
+                  onMouseLeave={() => {
+                    setHoverX(null)
+                    setHoverY(null)
+                    setTooltipInfo(null)
+                  }}
                 />
               )
             })}
           </g>
         )
       })}
+
+      <Axis
+        dms={dms}
+        scale={xScale}
+        label={""}
+        numTicks={2}
+        squareWidth={squareHeight}
+      />
     </>
   )
 }

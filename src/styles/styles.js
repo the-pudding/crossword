@@ -238,11 +238,6 @@ export const TitledWaffle = styled.div`
   margin: 10px;
 `
 
-export const AboveBelowChartWrapper = styled.div`
-  height: 400px;
-  width: 80%;
-`
-
 export const ImageWrapper = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -308,4 +303,45 @@ export const Note = styled.div`
   width: 100%;
   margin-top: 1em;
   margin-bottom: 1em;
+`
+
+export const AboveBelowWrapper = styled.div`
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+`
+
+export const OverviewWrapper = styled.div`
+  flex-basis: 20%;
+`
+
+export const AboveBelowChartWrapper = styled.div`
+  flex-basis: 80%;
+  margin-left: 2rem;
+  margin-top: 20px;
+  position: relative;
+`
+
+export const YearLabels = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 15px;
+`
+
+export const StackedSquaresWrapper = styled.div`
+  height: 350px;
+`
+
+export const Tooltip = styled.div`
+  position: absolute;
+  top: ${props => (props.hoverY ? `${props.hoverY}px` : 0)};
+  left: ${props => (props.hoverX ? `${props.hoverX}px` : 0)};
+  background: white;
+  outline: 2px black solid;
+  width: 200px;
+  padding: 15px;
+  textoverflow: scroll;
 `

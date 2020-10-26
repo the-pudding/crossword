@@ -1,12 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import Chart from "../chart-elements/Chart.jsx"
 import * as d3 from "d3"
 import useChartDimensions from "../../../hooks/useChartDimensions.js"
 import StackedSquares from "../chart-elements/StackedSquares.jsx"
 import _ from "lodash"
-import Axis from "./Axis.jsx"
+import {
+  YearLabels,
+  StackedSquaresWrapper,
+  Tooltip,
+} from "../../../styles/styles.js"
 
 const AboveBelowChart = ({ data, compare }) => {
+  const [hoverX, setHoverX] = useState(null)
+  const [hoverY, setHoverY] = useState(null)
+  const [tooltipInfo, setTooltipInfo] = useState(null)
+
   const initialDimensions = {
     marginTop: 0,
     marginRight: 0,
@@ -30,9 +38,7 @@ const AboveBelowChart = ({ data, compare }) => {
     .nice()
 
   // including border?
-  // dms.width = numYears * squareWidth + numYears
-  const numYears = 21 //xScale.domain()[1] - xScale.domain()[0]
-  //const squareHeight = (dms.boundedWidth - numYears) / numYears
+  const numYears = 21
   const squareHeight = dms.boundedWidth / numYears
 
   const binGenerator = d3
@@ -48,24 +54,24 @@ const AboveBelowChart = ({ data, compare }) => {
   //   .range([dms.boundedHeight, 0])
   //   .nice()
 
+  const publicationNameLookup = {
+    universal: "Universal",
+    usatoday: "USA Today",
+    wsj: "WSJ",
+    nytimes: "NYTimes",
+    latimes: "LATimes",
+  }
+
   return (
-    <div style={{ width: "100%", marginTop: "20px", position: "relative" }}>
+    <>
       <h3>CLUES THAT MENTION A PERSON</h3>
-      <div
-        style={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-          fontSize: "0.8rem",
-          marginTop: "15px",
-        }}
-      >
+      <YearLabels>
         <div>2000</div>
         <div>2010</div>
         <div>2020</div>
-      </div>
-      <div style={{ height: "350px" }} ref={ref}>
+      </YearLabels>
+
+      <StackedSquaresWrapper ref={ref}>
         <Chart dms={dms}>
           <StackedSquares
             data={data}
@@ -74,17 +80,26 @@ const AboveBelowChart = ({ data, compare }) => {
             bins={bins}
             xScale={xScale}
             compare={compare}
-          />
-          <Axis
-            dms={dms}
-            scale={xScale}
-            label={""}
-            numTicks={2}
-            squareWidth={squareHeight}
+            setHoverX={setHoverX}
+            setHoverY={setHoverY}
+            setTooltipInfo={setTooltipInfo}
           />
         </Chart>
-      </div>
-    </div>
+      </StackedSquaresWrapper>
+
+      {hoverY && hoverX && tooltipInfo && (
+        <Tooltip hoverX={hoverX} hoverY={hoverY}>
+          <h3>
+            {publicationNameLookup[tooltipInfo.publication]} ({tooltipInfo.year}
+            )
+          </h3>
+          <div style={{ fontSize: "0.8rem", fontStyle: "italic" }}>
+            {tooltipInfo.clue}
+          </div>
+          <div style={{ fontSize: "0.8rem" }}>{tooltipInfo.name}</div>
+        </Tooltip>
+      )}
+    </>
   )
 }
 
