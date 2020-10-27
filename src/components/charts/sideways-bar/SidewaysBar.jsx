@@ -3,7 +3,7 @@ import _ from "lodash"
 import { BarLabels } from "../../../styles/styles.js"
 
 const borderSize = 4
-const blockSize = 30
+const blockSize = 25
 
 const SidewaysBar = ({ data, title, showLabels }) => {
   return (

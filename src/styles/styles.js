@@ -100,6 +100,11 @@ export const Section = styled.section`
   margin-top: 4rem;
   margin-bottom: 4rem;
   width: 100%;
+
+  @media ${devices.tablet} {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 `
 
 export const Prose = styled.p`
@@ -325,6 +330,10 @@ export const Callout = styled.div`
   align-items: center;
   padding: 15px;
   margin-top: 50px;
+
+  @media ${devices.tablet} {
+    width: 80%;
+  }
 `
 export const TableWrapper = styled.div`
   margin-top: 1rem;
@@ -332,7 +341,12 @@ export const TableWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
+
+  @media ${devices.tablet} {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 2rem;
+  }
 `
 
 export const TableRow = styled.div`
@@ -475,10 +489,6 @@ export const SidewaysBars = styled.div`
 export const SidewaysBarWrapper = styled.div`
   display: flex;
   width: 50%;
-
-  @media ${devices.tablet} {
-    width: 100%;
-  }
 `
 
 export const BarLabels = styled.div`
