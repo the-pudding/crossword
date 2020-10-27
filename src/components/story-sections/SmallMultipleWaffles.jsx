@@ -11,6 +11,7 @@ import {
   Section,
   Line,
   LinedTitle,
+  WafflePublicationTitle,
   WafflesWithTitles,
   Column,
   WaffleRow,
@@ -41,7 +42,9 @@ const SmallMultipleWaffles = () => {
           <WaffleRow>
             {publications.map(publication => (
               <WaffleRowItem flexBasis="20%">
-                <h2>{publication.long}</h2>
+                <WafflePublicationTitle>
+                  {publication.long}
+                </WafflePublicationTitle>
               </WaffleRowItem>
             ))}
           </WaffleRow>
@@ -62,6 +65,7 @@ const SmallMultipleWaffles = () => {
               return (
                 <WaffleRowItem flexBasis="20%">
                   <WaffleChart
+                    size="medium"
                     data={genderData}
                     colors={genderColors}
                     labels={genderLabels}
@@ -69,7 +73,6 @@ const SmallMultipleWaffles = () => {
                     censusSplit={_.ceil(
                       usCensusData.filter(d => d.decade === "2020")[0].women
                     )}
-                    small={true}
                   />
                 </WaffleRowItem>
               )
@@ -92,6 +95,7 @@ const SmallMultipleWaffles = () => {
               return (
                 <WaffleRowItem flexBasis="20%">
                   <WaffleChart
+                    size="medium"
                     data={raceData}
                     colors={raceColors}
                     labels={raceLabels}
@@ -105,56 +109,6 @@ const SmallMultipleWaffles = () => {
               )
             })}
           </WaffleRow>
-
-          {/* <LinedTitle top="1.5rem">
-            <h3>GENDER</h3>
-            <Line />
-          </LinedTitle>
-          <LinedTitle top="50%">
-            <h3>RACE {"&"} ETHNICITY</h3>
-            <Line />
-          </LinedTitle>
-
-          {publications.map(publication => {
-            const allData = _.first(
-              raceGenderBreakdown.filter(
-                d => d.decade === "2020" && d.publication === publication.short
-              )
-            )
-            const genderData = allData.genderBreakdown
-            const raceData = allData.raceBreakdown
-            const genderColors = [COLORS.woman, COLORS.man]
-            const raceColors = [COLORS.poc, COLORS.white]
-            const genderLabels = ["women", "men"]
-            const raceLabels = [
-              "under-represented minorities",
-              "non-hispanic white",
-            ]
-
-            return (
-              <Column>
-                <h2>{publication.long}</h2>
-                <WaffleChart
-                  data={genderData}
-                  colors={genderColors}
-                  labels={genderLabels}
-                  margin="0 10px 40px 10px"
-                  censusSplit={_.ceil(
-                    usCensusData.filter(d => d.decade === "2020")[0].women
-                  )}
-                />
-                <WaffleChart
-                  data={raceData}
-                  colors={raceColors}
-                  labels={raceLabels}
-                  margin="0 10px 40px 10px"
-                  censusSplit={_.ceil(
-                    usCensusData.filter(d => d.decade === "2020")[0].minority
-                  )}
-                />
-              </Column>
-            )
-          })} */}
         </WafflesWithTitles>
 
         {createHtmlForCopy(copy.introduceDeepDive)}

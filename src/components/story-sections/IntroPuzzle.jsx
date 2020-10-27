@@ -29,6 +29,7 @@ const IntroPuzzle = () => {
     <div>
       <WaffleChart
         title={"Gender"}
+        size="large"
         data={
           _.first(
             raceGenderBreakdown.filter(
@@ -44,6 +45,7 @@ const IntroPuzzle = () => {
       />
       <WaffleChart
         title={"Race & Ethnicity"}
+        size="large"
         data={
           _.first(
             raceGenderBreakdown.filter(

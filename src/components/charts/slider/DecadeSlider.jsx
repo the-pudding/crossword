@@ -22,7 +22,6 @@ const DecadeSlider = ({ decade, setDecade }) => {
           max={2010}
           step={10}
           defaultValue={1940}
-          style={{ width: "500px", margin: "50px" }}
           tooltipVisible={false}
           value={decade}
           onChange={value => setDecade(value)}

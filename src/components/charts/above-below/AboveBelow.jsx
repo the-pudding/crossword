@@ -3,6 +3,7 @@ import {
   Line,
   OverviewWrapper,
   AboveBelowWrapper,
+  BothChartsWrapper,
   AboveBelowChartWrapper,
 } from "../../../styles/styles.js"
 import Overview from "./Overview.jsx"
@@ -28,7 +29,7 @@ const AboveBelow = ({ data, overviewData, word, compare }) => {
       </h2>
       <Line />
 
-      <div style={{ display: "flex" }}>
+      <BothChartsWrapper>
         <OverviewWrapper>
           <Overview
             data={overviewData}
@@ -41,7 +42,7 @@ const AboveBelow = ({ data, overviewData, word, compare }) => {
         <AboveBelowChartWrapper>
           <AboveBelowChart data={data} compare={compare} />
         </AboveBelowChartWrapper>
-      </div>
+      </BothChartsWrapper>
     </AboveBelowWrapper>
   )
 }

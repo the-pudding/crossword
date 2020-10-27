@@ -3,7 +3,12 @@ import * as d3 from "d3"
 import Chart from "../chart-elements/Chart.jsx"
 import useChartDimensions from "../../../hooks/useChartDimensions.js"
 import _ from "lodash"
-import { Percentage } from "../../../styles/styles.js"
+import {
+  Percentage,
+  OverviewRow,
+  Labels,
+  CluesChart,
+} from "../../../styles/styles.js"
 
 const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
   const initialDimensions = {
@@ -23,46 +28,53 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
   const reversedColors = keyColors.slice().reverse()
 
   return (
-    <div style={{ width: "100%", marginTop: "20px" }}>
-      <h3>ALL CLUES</h3>
-      <div style={{ height: "108px", width: "108px" }} ref={ref}>
-        <Chart dms={dms}>
-          <rect
-            height={100}
-            width={100}
-            fill="none"
-            stroke="black"
-            strokeWidth={4}
-          />
-          {reversedKeys.map((key, i) => {
-            const width = scale(_.sum(reversedKeys.map(k => data[k]).slice(i)))
+    <>
+      <CluesChart>
+        <h3>ALL CLUES</h3>
+        <div style={{ height: "108px", width: "108px" }} ref={ref}>
+          <Chart dms={dms}>
+            <rect
+              height={100}
+              width={100}
+              fill="none"
+              stroke="black"
+              strokeWidth={4}
+            />
+            {reversedKeys.map((key, i) => {
+              const width = scale(
+                _.sum(reversedKeys.map(k => data[k]).slice(i))
+              )
 
-            return (
-              <rect
-                key={i}
-                height={100}
-                width={width}
-                fill={reversedColors[i]}
-                stroke="black"
-                strokeWidth={1}
-              />
-            )
-          })}
-        </Chart>
-      </div>
-
-      {keys.map((key, i) => (
-        <div>
-          <Percentage color={keyColors[i]} small={true}>
-            {data[key]}
-          </Percentage>
-          <div style={{ fontSize: "0.8rem" }}>
-            clue{data[key] === 1 ? "" : "s"} {key === "neutral" ? "do not" : ""}{" "}
-            mention{data[key] === 1 ? "s" : ""} {keyLabels[i]}
-          </div>
+              return (
+                <rect
+                  key={i}
+                  height={100}
+                  width={width}
+                  fill={reversedColors[i]}
+                  stroke="black"
+                  strokeWidth={1}
+                />
+              )
+            })}
+          </Chart>
         </div>
-      ))}
-    </div>
+      </CluesChart>
+
+      <Labels>
+        {keys.map((key, i) => (
+          <OverviewRow>
+            <Percentage color={keyColors[i]} size={"medium"}>
+              {data[key]}
+            </Percentage>
+            <div style={{ fontSize: "0.8rem" }}>
+              clue{data[key] === 1 ? "" : "s"}{" "}
+              {key === "neutral" ? "do not" : ""} mention
+              {data[key] === 1 ? "s" : ""} {keyLabels[i]}
+            </div>
+          </OverviewRow>
+        ))}
+      </Labels>
+    </>
   )
 }
 

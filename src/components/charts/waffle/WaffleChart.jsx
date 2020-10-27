@@ -20,7 +20,7 @@ const WaffleChart = ({
   changeMetric = null,
   censusSplit,
   margin,
-  small = false,
+  size,
 }) => {
   const roundedData = roundData(data).filter(d => d.percent >= 1)
 
@@ -40,7 +40,7 @@ const WaffleChart = ({
   })
 
   return (
-    <WaffleChartWrapper margin={margin} small={small}>
+    <WaffleChartWrapper margin={margin} size={size}>
       {title && (
         <>
           <h3 style={{ alignSelf: "flex-start", margin: "0" }}>
@@ -54,7 +54,7 @@ const WaffleChart = ({
       <WaffleChartBounds
         onClick={changeMetric}
         clickable={clickable}
-        small={small}
+        size={size}
       >
         {_.range(0, 100).map(i => {
           if (censusSplit) {
@@ -75,11 +75,11 @@ const WaffleChart = ({
                 borderRight={borderRight}
                 borderTop={borderTop}
                 borderLeft={borderLeft}
-                small={small}
+                size={size}
               />
             )
           }
-          return <Block key={i} color={colorLookup[i]} small={small} />
+          return <Block key={i} color={colorLookup[i]} size={size} />
         })}
       </WaffleChartBounds>
 
@@ -91,7 +91,7 @@ const WaffleChart = ({
               <Percentage
                 numLabels={roundedData.length}
                 color={colors[i]}
-                small={small}
+                size={size}
               >
                 {percent}%
               </Percentage>

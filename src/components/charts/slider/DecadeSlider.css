@@ -1,3 +1,8 @@
+.ant-slider {
+  width: 500px;
+  margin: 50px;
+}
+
 .ant-slider-handle {
   display: none !important;
 }
@@ -23,4 +28,13 @@
 
 .ant-slider-mark-text-active {
   font-family: "National 2 Web Bold";
+}
+
+@media only screen and (max-width: 768px) {
+  .ant-slider {
+    width: 350px;
+  }
+  .ant-slider-mark-text {
+    font-size: 0.8rem;
+  }
 }

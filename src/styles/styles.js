@@ -1,9 +1,37 @@
 import styled, { createGlobalStyle } from "styled-components"
 import COLORS from "./colors.js"
 
+const maxSizes = {
+  mobile: "480px",
+  tablet: "768px",
+  laptop: "1024px",
+  desktop: "2560px",
+}
+const devices = {
+  mobile: `(max-width: ${maxSizes.mobile})`,
+  tablet: `(max-width: ${maxSizes.tablet})`,
+  laptop: `(max-width: ${maxSizes.laptop})`,
+  desktop: `(max-width: ${maxSizes.desktop})`,
+}
+
 // Waffle sizing
-const smallBlockSize = 10
-const regularBlockSize = 15
+const waffleBlockSize = {
+  small: 5,
+  medium: 10,
+  large: 15,
+}
+const percentSize = {
+  small: "1rem",
+  medium: "1.5rem",
+  large: "2rem",
+}
+const strokeSize = {
+  small: "0.5px black",
+  medium: "1px black",
+  large: "1.5px black",
+}
+// const smallBlockSize = 10
+// const regularBlockSize = 15
 const borderSize = 4
 
 export const GlobalStyle = createGlobalStyle`
@@ -57,6 +85,9 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const EssayWrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 768px;
   margin: 0 auto;
   font-size: 16px;
@@ -140,18 +171,21 @@ export const WaffleChartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: ${props =>
-    props.small
-      ? `${smallBlockSize * 10 + 2 * borderSize}px`
-      : `${regularBlockSize * 10 + 2 * borderSize}px`};
+  width: ${props => `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
+
+  @media ${devices.tablet} {
+    width: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small * 10 + 2 * borderSize}px`
+        : `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
+    margin: 0;
+  }
 `
 
 export const WaffleChartBounds = styled.div`
   display: flex;
-  width: ${props =>
-    props.small ? `${smallBlockSize * 10}px` : `${regularBlockSize * 10}px`};
-  height: ${props =>
-    props.small ? `${smallBlockSize * 10}px` : `${regularBlockSize * 10}px`};
+  width: ${props => `${waffleBlockSize[props.size] * 10}px`};
+  height: ${props => `${waffleBlockSize[props.size] * 10}px`};
   flex-wrap: wrap;
   flex-direction: column;
   outline: ${borderSize}px black solid;
@@ -159,15 +193,24 @@ export const WaffleChartBounds = styled.div`
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
+
+  @media ${devices.tablet} {
+    width: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small * 10}px`
+        : `${waffleBlockSize[props.size] * 10}px`};
+    height: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small * 10}px`
+        : `${waffleBlockSize[props.size] * 10}px`};
+  }
 `
 
 export const WafflesWithTitles = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: space-evenly;
   width: 100%;
   margin-top: 40px;
-  //position: relative;
 `
 
 export const LinedTitle = styled.div`
@@ -183,10 +226,8 @@ export const Column = styled.div`
 `
 
 export const Block = styled.div`
-  height: ${props =>
-    props.small ? `${smallBlockSize}px` : `${regularBlockSize}px`};
-  width: ${props =>
-    props.small ? `${smallBlockSize}px` : `${regularBlockSize}px`};
+  height: ${props => `${waffleBlockSize[props.size]}px`};
+  width: ${props => `${waffleBlockSize[props.size]}px`}
   border-bottom: ${props =>
     props.borderBottom ? `${borderSize}px solid black` : "1px solid black"};
   border-right: ${props =>
@@ -195,8 +236,24 @@ export const Block = styled.div`
     props.borderLeft ? `${borderSize}px solid black` : "1px solid black"};
   border-top: ${props =>
     props.borderTop ? `${borderSize}px solid black` : "1px solid black"};
-
   background: ${props => props.color};
+
+  @media ${devices.tablet} {
+    height: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small}px`
+        : `${waffleBlockSize[props.size]}px`};
+    width: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small}px`
+        : `${waffleBlockSize[props.size]}px`}
+  }
+`
+
+export const WafflePublicationTitle = styled.h2`
+  @media ${devices.tablet} {
+    font-size: 0.8rem;
+  }
 `
 
 export const WaffleChartLabel = styled.div`
@@ -209,13 +266,24 @@ export const WaffleChartLabel = styled.div`
 export const WaffleLabelText = styled.div`
   font-size: 0.8rem;
   text-align: ${props => (props.i === 0 ? "start" : "end")};
+
+  @media ${devices.tablet} {
+    font-size: 0.5rem;
+  }
 `
 
 export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
-  -webkit-text-stroke: ${props => (props.small ? "1px black" : "1.5px black")};
-  font-size: ${props => (props.small ? "1.5rem" : "2rem")};
+  font-size: ${props => percentSize[props.size]};
+  -webkit-text-stroke: ${props => strokeSize[props.size]};
   color: ${props => (props.color ? props.color : "inherit")};
+
+  @media ${devices.tablet} {
+    font-size: ${props =>
+      props.size === "medium" ? percentSize.small : percentSize[props.size]};
+    -webkit-text-stroke: ${props =>
+      props.size === "medium" ? strokeSize.small : strokeSize[props.size]};
+  }
 `
 
 export const WaffleTitle = styled.div`
@@ -311,8 +379,50 @@ export const AboveBelowWrapper = styled.div`
   margin-bottom: 3rem;
 `
 
+export const BothChartsWrapper = styled.div`
+  display: flex;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
+`
+
 export const OverviewWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   flex-basis: 20%;
+  margin-top: 20px;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    width: 100%;
+  }
+`
+
+export const Labels = styled.div`
+  width: 100%;
+
+  @media ${devices.tablet} {
+    width: 70%;
+  }
+`
+export const CluesChart = styled.div`
+  width: 100%;
+
+  @media ${devices.tablet} {
+    width: 30%;
+  }
+`
+
+export const OverviewRow = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 `
 
 export const AboveBelowChartWrapper = styled.div`
@@ -320,6 +430,11 @@ export const AboveBelowChartWrapper = styled.div`
   margin-left: 2rem;
   margin-top: 20px;
   position: relative;
+
+  @media ${devices.tablet} {
+    width: 100%;
+    margin-left: 0;
+  }
 `
 
 export const YearLabels = styled.div`
@@ -344,4 +459,31 @@ export const Tooltip = styled.div`
   width: 200px;
   padding: 15px;
   textoverflow: scroll;
+`
+
+export const SidewaysBars = styled.div`
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+export const SidewaysBarWrapper = styled.div`
+  display: flex;
+  width: 50%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
+`
+
+export const BarLabels = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  margin-right: 10px;
 `

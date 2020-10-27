@@ -1,6 +1,11 @@
 import React from "react"
 import copy from "../../data/copy.json"
-import { Section, Note } from "../../styles/styles.js"
+import {
+  Section,
+  Note,
+  SidewaysBars,
+  SidewaysBarWrapper,
+} from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import popularAnswerNames from "../../data/topPeopleNytAnswersOnly.json"
 import PopularNamesTable from "../charts/table/PopularNamesTable.jsx"
@@ -92,22 +97,22 @@ const NamesInAnswers = () => {
         </Note>
       </div>
 
-      <div style={{ width: "100%", display: "flex", marginTop: "2em" }}>
-        <div style={{ width: "60%" }}>
+      <SidewaysBars>
+        <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedModern}
             title="Modern AVAs in 2020"
             showLabels={true}
           />
-        </div>
-        <div style={{ width: "40%" }}>
+        </SidewaysBarWrapper>
+        <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedHistoric}
             title="Historic AVAs in 2020"
-            showLabels={false}
+            showLabels={true}
           />
-        </div>
-      </div>
+        </SidewaysBarWrapper>
+      </SidewaysBars>
     </Section>
   )
 }
