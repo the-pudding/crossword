@@ -98,6 +98,7 @@ const StackedSquares = ({
                     setHoverX(null)
                     setHoverY(null)
                     setTooltipInfo(null)
+                    setHoveredSquareKey(null)
                   }}
                 />
               )

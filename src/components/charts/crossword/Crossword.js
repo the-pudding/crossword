@@ -15,6 +15,7 @@ import styled, { ThemeContext, ThemeProvider } from "styled-components"
 
 import Cell from "./Cell"
 import DirectionClues from "./DirectionClues"
+import MobileClues from "./MobileClues.jsx"
 
 import {
   bothDirections,
@@ -59,6 +60,7 @@ const OuterWrapper = styled.div.attrs(props => ({
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -69,7 +71,7 @@ const GridWrapper = styled.div.attrs(props => ({
   // min-width: 20rem;
   // max-width: 60rem; /* Should the size matter? */
 
-  width: 100%;
+  width: 60%;
 
   // flex: 2 1 50%;
 `
@@ -86,9 +88,25 @@ const CluesWrapper = styled.div.attrs(props => ({
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
     margin-top: 2em;
+    width: 40%;
+  }
+
+  .mobile {
+    display: none;
+
+    @media (max-width: ${props => props.theme.columnBreakpoint}) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+    }
   }
 
   .direction {
+    @media (max-width: ${props => props.theme.columnBreakpoint}) {
+      display: none;
+    }
+
     margin-bottom: 2em;
     /* padding: 0 1em;
     flex: 1 1 20%; */
@@ -137,14 +155,23 @@ const Crossword = React.forwardRef(
     const [gridData, setGridData] = useState(startingGridData)
     const [clues, setClues] = useState(startingClues)
 
-    const [focused, setFocused] = useState(false)
-    const [focusedRow, setFocusedRow] = useState(0)
-    const [focusedCol, setFocusedCol] = useState(0)
+    const [focused, setFocused] = useState(true)
+    const [focusedRow, setFocusedRow] = useState(1) // hard-coded
+    const [focusedCol, setFocusedCol] = useState(3)
     const [currentDirection, setCurrentDirection] = useState("across")
-    const [currentNumber, setCurrentNumber] = useState("1")
+    const [currentNumber, setCurrentNumber] = useState("3") // hard-coded, that's the first across (happens below too)
     const [bulkChange, setBulkChange] = useState(null)
     const [checkQueue, setCheckQueue] = useState([])
     const [crosswordCorrect, setCrosswordCorrect] = useState(false)
+
+    console.log({
+      focused,
+      focusedRow,
+      focusedCol,
+      currentDirection,
+      currentNumber,
+      data,
+    })
 
     const inputRef = useRef()
 
@@ -510,10 +537,10 @@ const Crossword = React.forwardRef(
 
       // TODO: track input-field focus so we don't draw highlight when we're not
       // really focused, *and* use first actual clue (whether across or down?)
-      setFocusedRow(0)
-      setFocusedCol(0)
+      setFocusedRow(1)
+      setFocusedCol(3)
       setCurrentDirection("across")
-      setCurrentNumber("1")
+      setCurrentNumber("3")
 
       setBulkChange(null)
 
@@ -816,6 +843,19 @@ const Crossword = React.forwardRef(
                       clues={clues[direction]}
                     />
                   ))}
+
+                {!colorCode && clues && (
+                  <MobileClues
+                    currentDirection={currentDirection}
+                    currentNumber={currentNumber}
+                    setFocusedRow={setFocusedRow}
+                    setFocusedCol={setFocusedCol}
+                    setCurrentDirection={setCurrentDirection}
+                    setCurrentNumber={setCurrentNumber}
+                    clues={clues}
+                    data={data}
+                  />
+                )}
 
                 {colorCode ? waffles : null}
               </CluesWrapper>

@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const EssayWrapper = styled.main`
-  max-width: 743px;
+  max-width: 768px;
   margin: 0 auto;
   font-size: 16px;
 `
