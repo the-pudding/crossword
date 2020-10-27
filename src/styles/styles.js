@@ -510,6 +510,10 @@ export const SidewaysBars = styled.div`
 export const SidewaysBarWrapper = styled.div`
   display: flex;
   width: 50%;
+
+  @media ${devices.tablet} {
+    width: auto;
+  }
 `
 
 export const BarLabels = styled.div`
