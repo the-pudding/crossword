@@ -5,7 +5,6 @@ import { RoughNotation } from "react-rough-notation"
 import {
   Prose,
   SmallNote,
-  Heading,
   Image,
   ImageWrapper,
   Emphasis,
@@ -46,8 +45,6 @@ export const createHtmlForCopy = copy => {
             <TwitterTweetEmbed tweetId={"1303360662450601986"} />
           </div>
         )
-      } else if (type === "header") {
-        return <Heading key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       }
       return ""
     }

@@ -1,7 +1,7 @@
 import React from "react"
 import * as d3 from "d3"
 import useChartDimensions from "../../../hooks/useChartDimensions.js"
-import Chart from "../chart-elements/Chart.jsx"
+import Chart from "../Chart.jsx"
 import Line from "./Line.jsx"
 import Axis from "./Axis.jsx"
 import { LineChartWrapper } from "../../../styles/styles.js"

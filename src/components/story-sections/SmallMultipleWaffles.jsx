@@ -6,14 +6,10 @@ import { createHtmlForCopy } from "../utils.js"
 import usCensusData from "../../data/usCensusData.json"
 import _ from "lodash"
 import {
-  WaffleMultiplesWrapper,
-  TitledWaffle,
   Section,
   Line,
-  LinedTitle,
   WafflePublicationTitle,
   WafflesWithTitles,
-  Column,
   WaffleRow,
   WaffleRowItem,
 } from "../../styles/styles.js"

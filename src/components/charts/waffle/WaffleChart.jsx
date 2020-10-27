@@ -3,6 +3,7 @@ import {
   WaffleChartWrapper,
   WaffleChartBounds,
   WaffleLabelText,
+  WaffleChartLabels,
   WaffleChartLabel,
   Block,
   Percentage,
@@ -83,7 +84,7 @@ const WaffleChart = ({
         })}
       </WaffleChartBounds>
 
-      <div style={{ display: "flex", width: "100%" }}>
+      <WaffleChartLabels size={size}>
         {roundedData
           .filter(d => d.percent !== 0)
           .map(({ percent }, i) => (
@@ -98,7 +99,7 @@ const WaffleChart = ({
               <WaffleLabelText i={i}>{labels[i]}</WaffleLabelText>
             </WaffleChartLabel>
           ))}
-      </div>
+      </WaffleChartLabels>
     </WaffleChartWrapper>
   )
 }

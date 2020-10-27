@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import Chart from "../chart-elements/Chart.jsx"
+import Chart from "../Chart.jsx"
 import * as d3 from "d3"
 import useChartDimensions from "../../../hooks/useChartDimensions.js"
-import StackedSquares from "../chart-elements/StackedSquares.jsx"
+import StackedSquares from "./StackedSquares.jsx"
 import _ from "lodash"
 import {
   YearLabels,

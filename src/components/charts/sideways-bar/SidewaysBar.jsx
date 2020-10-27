@@ -1,9 +1,11 @@
 import React from "react"
 import _ from "lodash"
-import { BarLabels } from "../../../styles/styles.js"
-
-const borderSize = 4
-const blockSize = 25
+import {
+  BarLabels,
+  SidewaysBarBounds,
+  SidewaysBarBlock,
+  BarLabel,
+} from "../../../styles/styles.js"
 
 const SidewaysBar = ({ data, title, showLabels }) => {
   return (
@@ -12,14 +14,9 @@ const SidewaysBar = ({ data, title, showLabels }) => {
         <BarLabels>
           <h2 style={{ visibility: "hidden" }}>fake</h2>
           {data.map(d => (
-            <div
-              style={{
-                height: blockSize,
-                textAlign: "end",
-              }}
-            >
+            <BarLabel>
               <strong>{d.publication.long}</strong>
-            </div>
+            </BarLabel>
           ))}
         </BarLabels>
       )}
@@ -32,29 +29,17 @@ const SidewaysBar = ({ data, title, showLabels }) => {
         }}
       >
         <h2>{title}</h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            outline: `${borderSize}px black solid`,
-            width: 10 * blockSize,
-            height: 5 * blockSize,
-          }}
-        >
+        <SidewaysBarBounds>
           {_.range(0, 50).map(i => (
-            <div
-              style={{
-                height: blockSize,
-                width: blockSize,
-                border: "1px black solid",
-                background:
-                  data[_.floor(i / 10)].count > i % 10
-                    ? data[_.floor(i / 10)].color
-                    : "null",
-              }}
-            ></div>
+            <SidewaysBarBlock
+              color={
+                data[_.floor(i / 10)].count > i % 10
+                  ? data[_.floor(i / 10)].color
+                  : "white"
+              }
+            />
           ))}
-        </div>
+        </SidewaysBarBounds>
       </div>
     </>
   )

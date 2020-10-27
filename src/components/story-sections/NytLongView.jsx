@@ -4,7 +4,6 @@ import _ from "lodash"
 import {
   Section,
   Line,
-  LinedTitle,
   WafflesWithTitles,
   Column,
   WaffleRow,

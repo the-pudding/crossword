@@ -1,6 +1,6 @@
 import React from "react"
 import * as d3 from "d3"
-import Chart from "../chart-elements/Chart.jsx"
+import Chart from "../Chart.jsx"
 import useChartDimensions from "../../../hooks/useChartDimensions.js"
 import _ from "lodash"
 import {

@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components"
 import COLORS from "./colors.js"
 
+// Device sizing
 const maxSizes = {
   mobile: "480px",
   tablet: "768px",
@@ -21,7 +22,7 @@ const waffleBlockSize = {
   large: 15,
 }
 const percentSize = {
-  small: "1rem",
+  small: "0.8rem",
   medium: "1.5rem",
   large: "2rem",
 }
@@ -30,9 +31,11 @@ const strokeSize = {
   medium: "1px black",
   large: "1.5px black",
 }
-// const smallBlockSize = 10
-// const regularBlockSize = 15
-const borderSize = 4
+const borderSize = {
+  small: 1,
+  medium: 3,
+  large: 4,
+}
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -104,6 +107,8 @@ export const Section = styled.section`
   @media ${devices.tablet} {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `
 
@@ -121,12 +126,45 @@ export const Emphasis = styled.div`
   margin: 2rem auto;
 `
 
+export const ImageWrapper = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const Image = styled.img`
+  height: 450px;
+`
+
+export const Callout = styled.div`
+  background: ${COLORS.pink};
+  outline: 4px black solid;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-top: 50px;
+
+  @media ${devices.tablet} {
+    width: 80%;
+  }
+`
+
 export const SmallNote = styled.p`
   font-size: 0.8rem;
   max-width: 620px;
   margin: 1rem auto;
   padding: 0 1rem;
   width: 100%;
+`
+
+export const Note = styled.div`
+  color: #757575;
+  font-size: 0.7em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 `
 
 export const Fade = styled.div`
@@ -150,27 +188,13 @@ export const Line = styled.hr`
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
 `
 
+// LineChart
 export const LineChartWrapper = styled.div`
   width: 100%;
   height: 500px;
 `
 
-export const Heading = styled.h2`
-  width: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
-`
-
-export const ScrollyStep = styled.div`
-  margin: 50vh 0;
-  border: 1px solid gray;
-  padding: 15px;
-  z-index: 1000;
-  background: white;
-  width: 600px;
-  text-align: center;
-`
-
+// WaffleChart
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
@@ -181,8 +205,8 @@ export const WaffleChartWrapper = styled.div`
   @media ${devices.tablet} {
     width: ${props =>
       props.size === "medium"
-        ? `${waffleBlockSize.small * 10 + 2 * borderSize}px`
-        : `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
+        ? `${waffleBlockSize.small * 10 + 2 * borderSize[props.size]}px`
+        : `${waffleBlockSize[props.size] * 10 + 2 * borderSize[props.size]}px`};
     margin: 0;
   }
 `
@@ -193,8 +217,8 @@ export const WaffleChartBounds = styled.div`
   height: ${props => `${waffleBlockSize[props.size] * 10}px`};
   flex-wrap: wrap;
   flex-direction: column;
-  outline: ${borderSize}px black solid;
-  margin-left: ${borderSize}px;
+  outline: ${props => `${borderSize[props.size]}px black solid`};
+  margin-left: ${props => `${borderSize[props.size]}px`};
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
@@ -211,6 +235,18 @@ export const WaffleChartBounds = styled.div`
   }
 `
 
+export const WaffleChartLabels = styled.div`
+  display: flex;
+  width: ${props => `${waffleBlockSize[props.size] * 10}px`};
+
+  @media ${devices.tablet} {
+    width: ${props =>
+      props.size === "medium"
+        ? `${waffleBlockSize.small * 10}px`
+        : `${waffleBlockSize[props.size] * 10}px`};
+  }
+`
+
 export const WafflesWithTitles = styled.div`
   display: flex;
   flex-direction: column;
@@ -218,29 +254,20 @@ export const WafflesWithTitles = styled.div`
   margin-top: 40px;
 `
 
-export const LinedTitle = styled.div`
-  position: absolute;
-  width: 100%;
-  top: ${props => (props.top ? props.top : "0")};
-`
-
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 export const Block = styled.div`
   height: ${props => `${waffleBlockSize[props.size]}px`};
-  width: ${props => `${waffleBlockSize[props.size]}px`}
+  width: ${props => `${waffleBlockSize[props.size]}px`};
   border-bottom: ${props =>
-    props.borderBottom ? `${borderSize}px solid black` : "1px solid black"};
+    props.borderBottom ? `${borderSize[props.size]}px solid black` : "0px"};
   border-right: ${props =>
-    props.borderRight ? `${borderSize}px solid black` : "1px solid black"};
+    props.borderRight ? `${borderSize[props.size]}px solid black` : "0px"};
   border-left: ${props =>
-    props.borderLeft ? `${borderSize}px solid black` : "1px solid black"};
+    props.borderLeft ? `${borderSize[props.size]}px solid black` : "0px"};
   border-top: ${props =>
-    props.borderTop ? `${borderSize}px solid black` : "1px solid black"};
+    props.borderTop ? `${borderSize[props.size]}px solid black` : "0px"};
+
+  outline: 1px solid black;
+
   background: ${props => props.color};
 
   @media ${devices.tablet} {
@@ -251,7 +278,7 @@ export const Block = styled.div`
     width: ${props =>
       props.size === "medium"
         ? `${waffleBlockSize.small}px`
-        : `${waffleBlockSize[props.size]}px`}
+        : `${waffleBlockSize[props.size]}px`};
   }
 `
 
@@ -291,50 +318,18 @@ export const Percentage = styled.div`
   }
 `
 
-export const WaffleTitle = styled.div`
-  //margin-bottom: 10px;
-`
-
-export const SlopeChartWrapper = styled.div`
-  height: 80vh;
-`
-
-export const WaffleMultiplesWrapper = styled.div`
+export const WaffleRow = styled.div`
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+`
+
+export const WaffleRowItem = styled.div`
+  display: flex;
+  flex-basis: ${props => (props.flexBasis ? props.flexBasis : "100%")};
   justify-content: center;
-  margin-left: 15px;
-  margin-right: 15px;
 `
 
-export const TitledWaffle = styled.div`
-  margin: 10px;
-`
-
-export const ImageWrapper = styled.div`
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const Image = styled.img`
-  height: 450px;
-`
-
-export const Callout = styled.div`
-  background: ${COLORS.pink};
-  outline: 4px black solid;
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  margin-top: 50px;
-
-  @media ${devices.tablet} {
-    width: 80%;
-  }
-`
+// Table
 export const TableWrapper = styled.div`
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -368,25 +363,8 @@ export const TableDivider = styled.hr`
   border-width: 0px;
   height: 1px;
 `
-export const WaffleRow = styled.div`
-  width: 100%;
-  display: flex;
-`
 
-export const WaffleRowItem = styled.div`
-  display: flex;
-  flex-basis: ${props => (props.flexBasis ? props.flexBasis : "100%")};
-  justify-content: center;
-`
-
-export const Note = styled.div`
-  color: #757575;
-  font-size: 0.7em;
-  width: 100%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-`
-
+// AboveBelow
 export const AboveBelowWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
@@ -401,6 +379,32 @@ export const BothChartsWrapper = styled.div`
   }
 `
 
+// AboveBelowChart
+export const YearLabels = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 15px;
+`
+
+export const StackedSquaresWrapper = styled.div`
+  height: 350px;
+`
+
+export const Tooltip = styled.div`
+  position: absolute;
+  top: ${props => (props.hoverY ? `${props.hoverY}px` : 0)};
+  left: ${props => (props.hoverX ? `${props.hoverX}px` : 0)};
+  background: white;
+  outline: 2px black solid;
+  width: 200px;
+  padding: 15px;
+  textoverflow: scroll;
+`
+
+// Overview
 export const OverviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -451,29 +455,9 @@ export const AboveBelowChartWrapper = styled.div`
   }
 `
 
-export const YearLabels = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.8rem;
-  margin-top: 15px;
-`
-
-export const StackedSquaresWrapper = styled.div`
-  height: 350px;
-`
-
-export const Tooltip = styled.div`
-  position: absolute;
-  top: ${props => (props.hoverY ? `${props.hoverY}px` : 0)};
-  left: ${props => (props.hoverX ? `${props.hoverX}px` : 0)};
-  background: white;
-  outline: 2px black solid;
-  width: 200px;
-  padding: 15px;
-  textoverflow: scroll;
-`
+// SidewaysBar
+const sidewaysBarBorder = 4
+const sidewaysBarBlock = 25
 
 export const SidewaysBars = styled.div`
   width: 100%;
@@ -496,4 +480,24 @@ export const BarLabels = styled.div`
   flex-direction: column;
   width: 100px;
   margin-right: 10px;
+`
+
+export const BarLabel = styled.div`
+  height: ${sidewaysBarBlock}px;
+  text-align: end;
+`
+
+export const SidewaysBarBounds = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  outline: ${sidewaysBarBorder}px black solid;
+  width: ${10 * sidewaysBarBlock}px;
+  height: ${5 * sidewaysBarBlock}px;
+`
+
+export const SidewaysBarBlock = styled.div`
+  height: ${sidewaysBarBlock}px;
+  width: ${sidewaysBarBlock}px;
+  outline: 1px black solid;
+  background: ${props => props.color};
 `
