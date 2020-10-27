@@ -4,7 +4,7 @@ import COLORS from "../styles/colors.js"
 import { RoughNotation } from "react-rough-notation"
 import {
   Prose,
-  SmallNote,
+  TextNote,
   Image,
   ImageWrapper,
   Emphasis,
@@ -19,7 +19,7 @@ export const createMarkup = content => {
 
 export const createHtmlForCopy = copy => {
   return copy.map(
-    ({ step, text, type, value, source, caption, tweetId }, i) => {
+    ({ step, text, type, value, source, caption, tweetId, clues }, i) => {
       if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       } else if (type === "emphasized-text") {
@@ -30,7 +30,7 @@ export const createHtmlForCopy = copy => {
         )
       } else if (type === "small") {
         return (
-          <SmallNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+          <TextNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
         )
       } else if (type === "image") {
         return (
@@ -43,6 +43,14 @@ export const createHtmlForCopy = copy => {
         return (
           <div style={{ width: "500px" }}>
             <TwitterTweetEmbed tweetId={"1303360662450601986"} />
+          </div>
+        )
+      } else if (type === "clues") {
+        return (
+          <div>
+            {clues.map(clue => (
+              <div>{clue}</div>
+            ))}
           </div>
         )
       }

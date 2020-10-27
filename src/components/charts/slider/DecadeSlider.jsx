@@ -1,6 +1,7 @@
 import React from "react"
 import { Slider as AntSlider } from "antd"
 import "./DecadeSlider.css"
+import { DecadeSliderWrapper } from "../../../styles/styles.js"
 
 const DecadeSlider = ({ decade, setDecade }) => {
   const sliderMarks = {
@@ -14,7 +15,7 @@ const DecadeSlider = ({ decade, setDecade }) => {
     2010: "2010s",
   }
   return (
-    <div>
+    <DecadeSliderWrapper>
       {typeof window !== "undefined" ? (
         <AntSlider
           marks={sliderMarks}
@@ -28,7 +29,7 @@ const DecadeSlider = ({ decade, setDecade }) => {
           included={false}
         />
       ) : null}
-    </div>
+    </DecadeSliderWrapper>
   )
 }
 

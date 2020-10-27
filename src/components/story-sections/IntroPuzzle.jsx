@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react"
 import copy from "../../data/copy.json"
-import { Section, SmallNote, Callout } from "../../styles/styles.js"
+import {
+  Section,
+  TextNote,
+  Callout,
+  CrosswordChartWrapper,
+  PuzzleWaffles,
+} from "../../styles/styles.js"
 import _ from "lodash"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
@@ -26,7 +32,7 @@ const IntroPuzzle = () => {
   const [metric, setMetric] = useState("gender")
 
   const waffles = (
-    <div>
+    <PuzzleWaffles>
       <WaffleChart
         title={"Gender"}
         size="large"
@@ -59,7 +65,7 @@ const IntroPuzzle = () => {
         clickable={true}
         margin="0"
       />
-    </div>
+    </PuzzleWaffles>
   )
 
   const data = addColorsToData(prepareCrosswordData(crosswordData), metric)
@@ -72,7 +78,7 @@ const IntroPuzzle = () => {
         <>
           {createHtmlForCopy(copy.introPuzzleBefore)}
 
-          <SmallNote>
+          <TextNote>
             If you're stumped or don't want to play, you can{" "}
             <button
               onClick={() => {
@@ -82,11 +88,11 @@ const IntroPuzzle = () => {
             >
               Skip to results
             </button>
-          </SmallNote>
+          </TextNote>
         </>
       )}
 
-      <div style={{ height: "600px", width: "100%", marginTop: "100px" }}>
+      <CrosswordChartWrapper>
         <Crossword
           ref={crosswordRef}
           useStorage={false}
@@ -117,7 +123,7 @@ const IntroPuzzle = () => {
         >
           clear
         </button> */}
-      </div>
+      </CrosswordChartWrapper>
 
       <Callout>
         <svg
@@ -133,10 +139,12 @@ const IntroPuzzle = () => {
             fill="black"
           />
         </svg>
-        <strong style={{ marginRight: "0.3rem" }}>
-          Want some more puzzles?
-        </strong>
-        Check out the others we've generated with our data.
+        <div>
+          <strong style={{ marginRight: "0.3rem" }}>
+            Want some more puzzles?
+          </strong>
+          Check out the others we've generated with our data.
+        </div>
       </Callout>
     </Section>
   )

@@ -8,6 +8,7 @@ import {
   Block,
   Percentage,
   Line,
+  CensusSplit,
 } from "../../../styles/styles.js"
 import _ from "lodash"
 import { roundData } from "../../utils.js"
@@ -50,7 +51,7 @@ const WaffleChart = ({
           <Line marginBottom="20px" />
         </>
       )}
-      {censusSplit && <h3>U.S. Census split</h3>}
+      {censusSplit && <CensusSplit>U.S. Census split</CensusSplit>}
 
       <WaffleChartBounds
         onClick={changeMetric}
@@ -96,7 +97,9 @@ const WaffleChart = ({
               >
                 {percent}%
               </Percentage>
-              <WaffleLabelText i={i}>{labels[i]}</WaffleLabelText>
+              <WaffleLabelText i={i} size={size}>
+                {labels[i]}
+              </WaffleLabelText>
             </WaffleChartLabel>
           ))}
       </WaffleChartLabels>

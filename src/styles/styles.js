@@ -26,6 +26,11 @@ const percentSize = {
   medium: "1.5rem",
   large: "2rem",
 }
+const labelTextSize = {
+  small: "0.5rem",
+  medium: "0.8rem",
+  large: "0.8rem",
+}
 const strokeSize = {
   small: "0.5px black",
   medium: "1px black",
@@ -151,7 +156,7 @@ export const Callout = styled.div`
   }
 `
 
-export const SmallNote = styled.p`
+export const TextNote = styled.p`
   font-size: 0.8rem;
   max-width: 620px;
   margin: 1rem auto;
@@ -159,7 +164,7 @@ export const SmallNote = styled.p`
   width: 100%;
 `
 
-export const Note = styled.div`
+export const ChartNote = styled.div`
   color: #757575;
   font-size: 0.7em;
   width: 100%;
@@ -186,6 +191,24 @@ export const Line = styled.hr`
   border-width: 0px;
   height: 1px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
+`
+
+// Crossword
+export const CrosswordChartWrapper = styled.div`
+  height: 600px;
+  width: 100%;
+  margin-top: 100px;
+
+  @media ${devices.tablet} {
+    height: auto;
+  }
+`
+
+export const PuzzleWaffles = styled.div`
+  @media ${devices.tablet} {
+    display: flex;
+    justify-content: space-evenly;
+  }
 `
 
 // LineChart
@@ -251,7 +274,7 @@ export const WafflesWithTitles = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 40px;
+  margin: ${props => (props.margin ? props.margin : 0)};
 `
 
 export const Block = styled.div`
@@ -296,11 +319,14 @@ export const WaffleChartLabel = styled.div`
 `
 
 export const WaffleLabelText = styled.div`
-  font-size: 0.8rem;
+  font-size: ${props => labelTextSize[props.size]};
   text-align: ${props => (props.i === 0 ? "start" : "end")};
 
   @media ${devices.tablet} {
-    font-size: 0.5rem;
+    font-size: ${props =>
+      props.size === "medium"
+        ? labelTextSize.small
+        : labelTextSize[props.size]};
   }
 `
 
@@ -318,9 +344,20 @@ export const Percentage = styled.div`
   }
 `
 
+export const CensusSplit = styled.h3`
+  @media ${devices.tablet} {
+    display: none;
+  }
+`
+
 export const WaffleRow = styled.div`
   width: 100%;
   display: flex;
+
+  @media ${devices.tablet} {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 `
 
 export const WaffleRowItem = styled.div`
@@ -380,6 +417,18 @@ export const BothChartsWrapper = styled.div`
 `
 
 // AboveBelowChart
+export const AboveBelowChartWrapper = styled.div`
+  flex-basis: 80%;
+  margin-left: 2rem;
+  margin-top: 20px;
+  position: relative;
+
+  @media ${devices.tablet} {
+    width: 100%;
+    margin-left: 0;
+  }
+`
+
 export const YearLabels = styled.div`
   position: absolute;
   display: flex;
@@ -443,18 +492,6 @@ export const OverviewRow = styled.div`
   }
 `
 
-export const AboveBelowChartWrapper = styled.div`
-  flex-basis: 80%;
-  margin-left: 2rem;
-  margin-top: 20px;
-  position: relative;
-
-  @media ${devices.tablet} {
-    width: 100%;
-    margin-left: 0;
-  }
-`
-
 // SidewaysBar
 const sidewaysBarBorder = 4
 const sidewaysBarBlock = 25
@@ -500,4 +537,10 @@ export const SidewaysBarBlock = styled.div`
   width: ${sidewaysBarBlock}px;
   outline: 1px black solid;
   background: ${props => props.color};
+`
+
+// DecadeSlider
+
+export const DecadeSliderWrapper = styled.div`
+  margin: 3rem 0 3rem 0;
 `

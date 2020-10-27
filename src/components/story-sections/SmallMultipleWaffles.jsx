@@ -12,6 +12,8 @@ import {
   WafflesWithTitles,
   WaffleRow,
   WaffleRowItem,
+  ChartNote,
+  TextNote,
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
@@ -27,14 +29,14 @@ const SmallMultipleWaffles = () => {
   const genderColors = [COLORS.woman, COLORS.man]
   const raceColors = [COLORS.poc, COLORS.white]
   const genderLabels = ["women", "men"]
-  const raceLabels = ["under-represented minorities", "non-hispanic white"]
+  const raceLabels = ["URM", "non-hispanic white"]
 
   return (
     <>
       <Section>
         {createHtmlForCopy(copy.introduceWaffles)}
 
-        <WafflesWithTitles>
+        <WafflesWithTitles margin="4rem 0 4rem 0">
           <WaffleRow>
             {publications.map(publication => (
               <WaffleRowItem flexBasis="20%">
@@ -65,7 +67,7 @@ const SmallMultipleWaffles = () => {
                     data={genderData}
                     colors={genderColors}
                     labels={genderLabels}
-                    margin="0 10px 40px 10px"
+                    margin="0 10px 20px 10px"
                     censusSplit={_.ceil(
                       usCensusData.filter(d => d.decade === "2020")[0].women
                     )}
@@ -95,7 +97,7 @@ const SmallMultipleWaffles = () => {
                     data={raceData}
                     colors={raceColors}
                     labels={raceLabels}
-                    margin="0 10px 40px 10px"
+                    margin="0 10px 20px 10px"
                     censusSplit={_.ceil(
                       usCensusData.filter(d => d.decade === "2020")[0].minority
                     )}
@@ -105,6 +107,7 @@ const SmallMultipleWaffles = () => {
               )
             })}
           </WaffleRow>
+          <ChartNote>URM = under-represented minority</ChartNote>
         </WafflesWithTitles>
 
         {createHtmlForCopy(copy.introduceDeepDive)}

@@ -37,9 +37,7 @@ const AboveBelowChart = ({ data, compare }) => {
     .range([0, dms.boundedWidth])
     .nice()
 
-  // including border?
-  const numYears = 21
-  const squareHeight = dms.boundedWidth / numYears
+  const squareHeight = dms.boundedWidth / 22
 
   const binGenerator = d3
     .histogram()

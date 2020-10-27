@@ -2,7 +2,7 @@ import React from "react"
 import copy from "../../data/copy.json"
 import {
   Section,
-  Note,
+  ChartNote,
   SidewaysBars,
   SidewaysBarWrapper,
 } from "../../styles/styles.js"
@@ -92,9 +92,9 @@ const NamesInAnswers = () => {
           metrics={["AvaGardner", "AvaDuVernay", "Other Avas"]}
           colors={[COLORS.blue, COLORS.pink, COLORS.grey]}
         />
-        <Note>
+        <ChartNote>
           *Note: 2020 is projected for the full year using the first 10 months.
-        </Note>
+        </ChartNote>
       </div>
 
       <SidewaysBars>
