@@ -8,6 +8,7 @@ import {
   OverviewRow,
   Labels,
   CluesChart,
+  OverviewLabel,
 } from "../../../styles/styles.js"
 
 const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
@@ -66,11 +67,11 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
             <Percentage color={keyColors[i]} size={"medium"}>
               {data[key]}
             </Percentage>
-            <div style={{ fontSize: "0.8rem" }}>
+            <OverviewLabel>
               clue{data[key] === 1 ? "" : "s"}{" "}
               {key === "neutral" ? "do not" : ""} mention
               {data[key] === 1 ? "s" : ""} {keyLabels[i]}
-            </div>
+            </OverviewLabel>
           </OverviewRow>
         ))}
       </Labels>

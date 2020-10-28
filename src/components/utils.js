@@ -48,9 +48,29 @@ export const createHtmlForCopy = copy => {
       } else if (type === "clues") {
         return (
           <div>
-            {clues.map(clue => (
-              <div>{clue}</div>
-            ))}
+            {clues.map(clue => {
+              const clueText = _.trim(clue.split("=")[0])
+              const answerText = _.trim(clue.split("=")[1])
+              return (
+                <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                  <div>{clueText}</div>
+                  <div style={{ display: "flex" }}>
+                    {answerText.split("").map(character => (
+                      <div
+                        style={{
+                          height: "25px",
+                          width: "25px",
+                          outline: "1px solid black",
+                          textAlign: "center",
+                        }}
+                      >
+                        {character}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         )
       }

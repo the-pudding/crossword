@@ -53,6 +53,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Tiempos Headline";
     font-size: 4rem;
     text-align: center;
+
+    @media ${devices.tablet} {
+      font-size: 3rem;
+    }
   }
 
   h2 {
@@ -151,8 +155,8 @@ export const Callout = styled.div`
   padding: 15px;
   margin-top: 50px;
 
-  @media ${devices.tablet} {
-    width: 80%;
+  @media ${devices.mobile} {
+    font-size: 0.8rem;
   }
 `
 
@@ -162,6 +166,10 @@ export const TextNote = styled.p`
   margin: 1rem auto;
   padding: 0 1rem;
   width: 100%;
+
+  @media ${devices.mobile} {
+    text-align: center;
+  }
 `
 
 export const ChartNote = styled.div`
@@ -225,7 +233,7 @@ export const WaffleChartWrapper = styled.div`
   align-items: center;
   width: ${props => `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: ${props =>
       props.size === "medium"
         ? `${waffleBlockSize.small * 10 + 2 * borderSize[props.size]}px`
@@ -246,7 +254,7 @@ export const WaffleChartBounds = styled.div`
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: ${props =>
       props.size === "medium"
         ? `${waffleBlockSize.small * 10}px`
@@ -262,7 +270,7 @@ export const WaffleChartLabels = styled.div`
   display: flex;
   width: ${props => `${waffleBlockSize[props.size] * 10}px`};
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: ${props =>
       props.size === "medium"
         ? `${waffleBlockSize.small * 10}px`
@@ -293,7 +301,7 @@ export const Block = styled.div`
 
   background: ${props => props.color};
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     height: ${props =>
       props.size === "medium"
         ? `${waffleBlockSize.small}px`
@@ -306,7 +314,7 @@ export const Block = styled.div`
 `
 
 export const WafflePublicationTitle = styled.h2`
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     font-size: 0.8rem;
   }
 `
@@ -322,7 +330,7 @@ export const WaffleLabelText = styled.div`
   font-size: ${props => labelTextSize[props.size]};
   text-align: ${props => (props.i === 0 ? "start" : "end")};
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     font-size: ${props =>
       props.size === "medium"
         ? labelTextSize.small
@@ -336,7 +344,7 @@ export const Percentage = styled.div`
   -webkit-text-stroke: ${props => strokeSize[props.size]};
   color: ${props => (props.color ? props.color : "inherit")};
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     font-size: ${props =>
       props.size === "medium" ? percentSize.small : percentSize[props.size]};
     -webkit-text-stroke: ${props =>
@@ -345,7 +353,7 @@ export const Percentage = styled.div`
 `
 
 export const CensusSplit = styled.h3`
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     display: none;
   }
 `
@@ -379,6 +387,10 @@ export const TableWrapper = styled.div`
     padding-right: 20px;
     margin-top: 2rem;
   }
+
+  @media ${devices.mobile} {
+    font-size: 0.7rem;
+  }
 `
 
 export const TableRow = styled.div`
@@ -406,12 +418,17 @@ export const AboveBelowWrapper = styled.div`
   width: 100%;
   margin-top: 4rem;
   margin-bottom: 3rem;
+
+  @media ${devices.mobile} {
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
 `
 
 export const BothChartsWrapper = styled.div`
   display: flex;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     flex-direction: column;
   }
 `
@@ -423,7 +440,7 @@ export const AboveBelowChartWrapper = styled.div`
   margin-top: 20px;
   position: relative;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: 100%;
     margin-left: 0;
   }
@@ -460,8 +477,9 @@ export const OverviewWrapper = styled.div`
   flex-basis: 20%;
   margin-top: 20px;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     flex-direction: row;
+    align-items: center;
     width: 100%;
   }
 `
@@ -469,14 +487,18 @@ export const OverviewWrapper = styled.div`
 export const Labels = styled.div`
   width: 100%;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
   }
 `
 export const CluesChart = styled.div`
   width: 100%;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     width: 30%;
   }
 `
@@ -485,10 +507,19 @@ export const OverviewRow = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+  }
+`
+
+export const OverviewLabel = styled.div`
+  font-size: 0.8rem;
+
+  @media ${devices.mobile} {
+    font-size: 0.7rem;
+    margin-left: 10px;
   }
 `
 
@@ -501,7 +532,7 @@ export const SidewaysBars = styled.div`
   display: flex;
   margin-top: 2rem;
 
-  @media ${devices.tablet} {
+  @media ${devices.mobile} {
     flex-direction: column;
     align-items: center;
   }
