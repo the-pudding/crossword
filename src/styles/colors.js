@@ -1,8 +1,8 @@
 export default {
-  white: "#FFEA2A",
-  poc: "#0094FF",
-  man: "#FFEA2A",
-  woman: "#0094FF",
+  white: "#E6E6E6",
+  poc: "#C63DA3",
+  man: "#E6E6E6",
+  woman: "#4864FE",
   nonbinary: "#8D3B72",
 
   uni: "#FE3CB0",
@@ -10,6 +10,8 @@ export default {
   lat: "#FFEA2A",
   wsj: "#C9C9C9",
   nyt: "#282828",
+
+  darkGrey: "#757575",
 
   pink: "#FE3CB0",
   blue: "#0094FF",

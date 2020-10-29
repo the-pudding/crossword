@@ -20,7 +20,7 @@ function Home() {
         <Header />
 
         <IntroPuzzle />
-        <NytLongView />
+        {/* <NytLongView /> */}
         <WhyThisMatters />
         <SmallMultipleWaffles />
         <NamesInAnswers />

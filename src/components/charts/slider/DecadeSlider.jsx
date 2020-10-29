@@ -25,7 +25,7 @@ const DecadeSlider = ({ decade, setDecade }) => {
           defaultValue={1940}
           tooltipVisible={false}
           value={decade}
-          onChange={value => setDecade(value)}
+          onChange={setDecade ? value => setDecade(value) : null}
           included={false}
         />
       ) : null}

@@ -12,6 +12,7 @@ import {
 } from "../../../styles/styles.js"
 import _ from "lodash"
 import { roundData } from "../../utils.js"
+import COLORS from "../../../styles/colors.js"
 
 const WaffleChart = ({
   title,
@@ -51,7 +52,7 @@ const WaffleChart = ({
           <Line marginBottom="20px" />
         </>
       )}
-      {censusSplit && <CensusSplit>U.S. Census split</CensusSplit>}
+      {/* {censusSplit && <CensusSplit>U.S. Census split</CensusSplit>} */}
 
       <WaffleChartBounds
         onClick={changeMetric}
@@ -60,14 +61,15 @@ const WaffleChart = ({
       >
         {_.range(0, 100).map(i => {
           if (censusSplit) {
-            const borderBottom = false
-            const borderRight =
-              _.floor(i / 10) === _.floor(censusSplit / 10) && i < censusSplit
-            const borderTop = i === censusSplit && i % 10 !== 0
-            const borderLeft =
+            const borderTop =
               i === censusSplit ||
               (_.floor(i / 10) === _.floor(censusSplit / 10) &&
-                i % 10 > censusSplit % 10)
+                i % 10 > censusSplit % 10) ||
+              (_.floor(i / 10) === _.floor(censusSplit / 10) + 1 &&
+                i % 10 < censusSplit % 10)
+            const borderLeft = i === censusSplit && i % 10 !== 0
+            const borderBottom = false
+            const borderRight = false
 
             return (
               <Block
@@ -92,7 +94,11 @@ const WaffleChart = ({
             <WaffleChartLabel key={i} i={i}>
               <Percentage
                 numLabels={roundedData.length}
-                color={colors[i]}
+                color={
+                  colors[i] === COLORS.man || colors[i] === COLORS.white
+                    ? COLORS.darkGrey
+                    : colors[i]
+                }
                 size={size}
               >
                 {percent}%

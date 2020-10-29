@@ -229,8 +229,8 @@ export const LineChartWrapper = styled.div`
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  // flex-direction: column;
+  // align-items: center;
   width: ${props => `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
 
   @media ${devices.mobile} {
@@ -247,7 +247,6 @@ export const WaffleChartBounds = styled.div`
   width: ${props => `${waffleBlockSize[props.size] * 10}px`};
   height: ${props => `${waffleBlockSize[props.size] * 10}px`};
   flex-wrap: wrap;
-  flex-direction: column;
   outline: ${props => `${borderSize[props.size]}px black solid`};
   margin-left: ${props => `${borderSize[props.size]}px`};
   &:hover {
@@ -268,14 +267,12 @@ export const WaffleChartBounds = styled.div`
 
 export const WaffleChartLabels = styled.div`
   display: flex;
-  width: ${props => `${waffleBlockSize[props.size] * 10}px`};
-
-  @media ${devices.mobile} {
-    width: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small * 10}px`
-        : `${waffleBlockSize[props.size] * 10}px`};
-  }
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 10px;
+  width: 30%;
+  flex-wrap: wrap;
 `
 
 export const WafflesWithTitles = styled.div`
@@ -289,13 +286,21 @@ export const Block = styled.div`
   height: ${props => `${waffleBlockSize[props.size]}px`};
   width: ${props => `${waffleBlockSize[props.size]}px`};
   border-bottom: ${props =>
-    props.borderBottom ? `${borderSize[props.size]}px solid black` : "0px"};
+    props.borderBottom
+      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      : "0px"};
   border-right: ${props =>
-    props.borderRight ? `${borderSize[props.size]}px solid black` : "0px"};
+    props.borderRight
+      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      : "0px"};
   border-left: ${props =>
-    props.borderLeft ? `${borderSize[props.size]}px solid black` : "0px"};
+    props.borderLeft
+      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      : "0px"};
   border-top: ${props =>
-    props.borderTop ? `${borderSize[props.size]}px solid black` : "0px"};
+    props.borderTop
+      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      : "0px"};
 
   outline: 1px solid black;
 
@@ -320,15 +325,15 @@ export const WafflePublicationTitle = styled.h2`
 `
 
 export const WaffleChartLabel = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: ${props => (props.i === 0 ? "flex-start" : "flex-end")};
+  align-items: flex-start;
 `
 
 export const WaffleLabelText = styled.div`
+  font-family: "National 2 Web Bold";
   font-size: ${props => labelTextSize[props.size]};
-  text-align: ${props => (props.i === 0 ? "start" : "end")};
+  line-height: ${props => labelTextSize[props.size]};
 
   @media ${devices.mobile} {
     font-size: ${props =>
@@ -341,14 +346,12 @@ export const WaffleLabelText = styled.div`
 export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
   font-size: ${props => percentSize[props.size]};
-  -webkit-text-stroke: ${props => strokeSize[props.size]};
+  line-height: ${props => percentSize[props.size]};
   color: ${props => (props.color ? props.color : "inherit")};
 
   @media ${devices.mobile} {
     font-size: ${props =>
       props.size === "medium" ? percentSize.small : percentSize[props.size]};
-    -webkit-text-stroke: ${props =>
-      props.size === "medium" ? strokeSize.small : strokeSize[props.size]};
   }
 `
 

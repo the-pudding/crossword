@@ -164,15 +164,6 @@ const Crossword = React.forwardRef(
     const [checkQueue, setCheckQueue] = useState([])
     const [crosswordCorrect, setCrosswordCorrect] = useState(false)
 
-    console.log({
-      focused,
-      focusedRow,
-      focusedCol,
-      currentDirection,
-      currentNumber,
-      data,
-    })
-
     const inputRef = useRef()
 
     const contextTheme = useContext(ThemeContext)
