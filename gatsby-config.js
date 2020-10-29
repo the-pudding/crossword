@@ -4,5 +4,20 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 module.exports = {
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/, // See below to configure properly
+        },
+      },
+    },
+  ],
 }

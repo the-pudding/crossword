@@ -10,7 +10,6 @@ import {
   Emphasis,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
-import twitter from "../images/twitter.png"
 
 // workaround for react so links work
 export const createMarkup = content => {
@@ -32,19 +31,19 @@ export const createHtmlForCopy = copy => {
         return (
           <TextNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
         )
-      } else if (type === "image") {
-        return (
-          <ImageWrapper key={i}>
-            <Image src={twitter} />
-            <p style={{ fontSize: "12px" }}>{caption}</p>
-          </ImageWrapper>
-        )
-      } else if (type === "tweet") {
-        return (
-          <div style={{ width: "500px" }}>
-            <TwitterTweetEmbed tweetId={"1303360662450601986"} />
-          </div>
-        )
+        // } else if (type === "image") {
+        //   return (
+        //     <ImageWrapper key={i}>
+        //       <Image src={twitter} />
+        //       <p style={{ fontSize: "12px" }}>{caption}</p>
+        //     </ImageWrapper>
+        //   )
+        // } else if (type === "tweet") {
+        //   return (
+        //     <div style={{ width: "500px" }}>
+        //       <TwitterTweetEmbed tweetId={"1303360662450601986"} />
+        //     </div>
+        //   )
       } else if (type === "clues") {
         return (
           <div>

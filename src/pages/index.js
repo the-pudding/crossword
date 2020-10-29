@@ -9,6 +9,7 @@ import NytLongView from "../components/story-sections/NytLongView.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
 import GlobalFonts from "../styles/fonts/fonts.js"
 import "../styles/index.css"
+import Logo from "../svg/pudding-logo.svg"
 
 function Home() {
   return (
@@ -17,6 +18,8 @@ function Home() {
       <GlobalFonts />
 
       <EssayWrapper>
+        <Logo style={{ height: "50px", marginTop: "25px" }} />
+
         <Header />
 
         <IntroPuzzle />
