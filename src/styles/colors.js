@@ -5,18 +5,18 @@ export default {
   woman: "#4864FE",
   nonbinary: "#8D3B72",
 
-  uni: "#FE3CB0",
-  usa: "#0074FF",
+  uni: "#C63DA3",
+  usa: "#4864FE",
   lat: "#FFEA2A",
   wsj: "#C9C9C9",
   nyt: "#282828",
 
   darkGrey: "#757575",
 
-  pink: "#FE3CB0",
-  blue: "#0094FF",
+  pink: "#C63DA3",
+  blue: "#4864FE",
   yellow: "#FFEA2A",
   grey: "#C9C9C9",
-  offWhite: "#F4F4F4",
+  offWhite: "#E6E6E6",
   black: "#282828",
 }

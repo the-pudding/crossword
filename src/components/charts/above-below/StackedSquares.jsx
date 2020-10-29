@@ -10,10 +10,7 @@ const publicationColorLookup = {
   nytimes: "purple",
   latimes: "orange",
 }
-const colorLookup = {
-  above: COLORS.blue,
-  below: COLORS.grey,
-}
+
 const StackedSquares = ({
   data,
   squareHeight,
@@ -25,6 +22,10 @@ const StackedSquares = ({
   setHoverY,
   setTooltipInfo,
 }) => {
+  const colorLookup = {
+    above: compare === "gender" ? COLORS.blue : COLORS.pink,
+    below: COLORS.offWhite,
+  }
   const [hoveredSquareKey, setHoveredSquareKey] = useState(null)
 
   return (

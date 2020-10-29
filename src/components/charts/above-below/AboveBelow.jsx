@@ -36,7 +36,11 @@ const AboveBelow = ({ data, overviewData, word, compare }) => {
             totalClues={totalClues}
             keys={keys}
             keyLabels={keyLabels}
-            keyColors={["white", COLORS.grey, COLORS.blue]}
+            keyColors={[
+              "white",
+              COLORS.offWhite,
+              compare === "gender" ? COLORS.blue : COLORS.pink,
+            ]}
           />
         </OverviewWrapper>
         <AboveBelowChartWrapper>

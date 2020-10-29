@@ -148,7 +148,7 @@ export const Image = styled.img`
 `
 
 export const Callout = styled.div`
-  background: ${COLORS.pink};
+  background: ${COLORS.yellow};
   outline: 4px black solid;
   display: flex;
   align-items: center;
@@ -348,6 +348,8 @@ export const Percentage = styled.div`
   font-size: ${props => percentSize[props.size]};
   line-height: ${props => percentSize[props.size]};
   color: ${props => (props.color ? props.color : "inherit")};
+  -webkit-text-stroke: ${props =>
+    props.color === "white" ? "1px black" : "0px"};
 
   @media ${devices.mobile} {
     font-size: ${props =>
