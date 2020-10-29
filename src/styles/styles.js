@@ -102,7 +102,7 @@ export const EssayWrapper = styled.main`
   align-items: center;
   max-width: 768px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 18px;
 `
 
 export const Section = styled.section`
