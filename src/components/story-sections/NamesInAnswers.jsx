@@ -73,7 +73,7 @@ const NamesInAnswers = () => {
           animate={false}
           color="lightgrey"
         >
-          <span>answers</span>
+          answers
         </RoughNotation>
       </h1>
       <PopularNamesTable

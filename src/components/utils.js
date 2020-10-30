@@ -19,7 +19,9 @@ export const createMarkup = content => {
 export const createHtmlForCopy = copy => {
   return copy.map(
     ({ step, text, type, value, source, caption, tweetId, clues }, i) => {
-      if (type === "text") {
+      if (type === "text" && value.includes("<span class=highlighted>")) {
+        return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+      } else if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       } else if (type === "emphasized-text") {
         return (

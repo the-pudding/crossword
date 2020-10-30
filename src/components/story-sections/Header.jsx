@@ -1,6 +1,6 @@
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
-import { Section } from "../../styles/styles.js"
+import { Section, Prose } from "../../styles/styles.js"
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
           color="lightgrey"
         >
           {" "}
-          <span>Who's</span>{" "}
+          Who's{" "}
         </RoughNotation>
         in the crossword?
       </h1>

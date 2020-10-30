@@ -127,6 +127,10 @@ export const Prose = styled.p`
   margin: 1rem auto;
   padding: 0 1rem;
   width: 100%;
+
+  span.highlighted {
+    background: yellow;
+  }
 `
 
 export const Emphasis = styled.div`

@@ -25,7 +25,7 @@ const NamesInClues = () => {
           animate={false}
           color="lightgrey"
         >
-          <span>clues</span>
+          clues
         </RoughNotation>
       </h1>
       <PopularNamesTable

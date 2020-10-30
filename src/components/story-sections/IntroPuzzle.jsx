@@ -32,54 +32,55 @@ const IntroPuzzle = () => {
   const data = prepareCrosswordData(crosswordData)
 
   return (
-    <Section>
-      {createHtmlForCopy(copy.introPuzzleBefore)}
+    <>
+      <Section>
+        {createHtmlForCopy(copy.introPuzzleBefore)}
 
-      <TextNote>
-        If you're stumped or don't want to play, you can{" "}
-        <button
-          onClick={() => {
-            crosswordRef.current.fillAllAnswers()
-          }}
-        >
-          Skip to results
-        </button>
-        <button onClick={() => crosswordRef.current.reset()}>Clear</button>
-      </TextNote>
+        <TextNote>
+          If you're stumped or don't want to play, you can{" "}
+          <button
+            onClick={() => {
+              crosswordRef.current.fillAllAnswers()
+            }}
+          >
+            Skip to results
+          </button>
+          <button onClick={() => crosswordRef.current.reset()}>Clear</button>
+        </TextNote>
 
-      <CrosswordChartWrapper>
-        <Crossword
-          ref={crosswordRef}
-          useStorage={false}
-          theme={{
-            numberColor: "black",
-            focusBackground: "gold",
-            highlightBackground: "#72cefc",
-          }}
-          data={data}
-          onCorrect={() => {
-            if (
-              crosswordRef.current.isCrosswordCorrect() &&
-              typeof window !== "undefined"
-            ) {
-              confetti()
-            }
-          }}
-        />
-      </CrosswordChartWrapper>
+        <CrosswordChartWrapper>
+          <Crossword
+            ref={crosswordRef}
+            useStorage={false}
+            theme={{
+              numberColor: "black",
+              focusBackground: "gold",
+              highlightBackground: "#72cefc",
+            }}
+            data={data}
+            onCorrect={() => {
+              if (
+                crosswordRef.current.isCrosswordCorrect() &&
+                typeof window !== "undefined"
+              ) {
+                confetti()
+              }
+            }}
+          />
+        </CrosswordChartWrapper>
 
-      <Callout>
-        <Edit />
-        <div style={{ marginLeft: "10px" }}>
-          <strong style={{ marginRight: "0.3rem" }}>
-            Want some more puzzles?
-          </strong>
-          Check out the others we've generated with our data.
-        </div>
-      </Callout>
-
-      {createHtmlForCopy(copy.introPuzzleAfter)}
-    </Section>
+        <Callout>
+          <Edit />
+          <div style={{ marginLeft: "10px" }}>
+            <strong style={{ marginRight: "0.3rem" }}>
+              Want some more puzzles?
+            </strong>
+            Check out the others we've generated with our data.
+          </div>
+        </Callout>
+      </Section>
+      <Section>{createHtmlForCopy(copy.introPuzzleAfter)}</Section>
+    </>
   )
 }
 
