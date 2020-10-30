@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "../components/story-sections/Header.jsx"
+import Intro from "../components/story-sections/Intro.jsx"
 import IntroPuzzle from "../components/story-sections/IntroPuzzle.jsx"
 import WhyThisMatters from "../components/story-sections/WhyThisMatters.jsx"
 import SmallMultipleWaffles from "../components/story-sections/SmallMultipleWaffles.jsx"
@@ -18,14 +19,17 @@ function Home() {
       <GlobalFonts />
 
       <EssayWrapper>
-        <Logo style={{ height: "50px", marginTop: "25px" }} />
+        <div>
+          <Logo style={{ height: "50px", marginTop: "25px" }} />
+        </div>
 
         <Header />
-
+        <Intro />
         <IntroPuzzle />
-        {/* <NytLongView /> */}
-        <WhyThisMatters />
+
         <SmallMultipleWaffles />
+        {/* <WhyThisMatters /> */}
+
         <NamesInAnswers />
         <NamesInClues />
       </EssayWrapper>

@@ -16,7 +16,7 @@ import {
   prepareCrosswordData,
 } from "../utils.js"
 import COLORS from "../../styles/colors.js"
-import crosswordData from "../../data/nyt-2020-with-pos.json"
+import crosswordData from "../../data/double-clues-3.json"
 import Crossword from "../charts/crossword/Crossword.js"
 import confetti from "canvas-confetti"
 import Edit from "../../svg/mdi-edit.svg"
@@ -69,7 +69,9 @@ const IntroPuzzle = () => {
     </PuzzleWaffles>
   )
 
-  const data = addColorsToData(prepareCrosswordData(crosswordData), metric)
+  //const data = addColorsToData(prepareCrosswordData(crosswordData), metric)
+  const data = prepareCrosswordData(crosswordData)
+  console.log({ data })
 
   return (
     <Section>
@@ -115,15 +117,6 @@ const IntroPuzzle = () => {
           colorCode={showAnswers}
           waffles={showAnswers ? waffles : null}
         />
-
-        {/* <button
-          onClick={() => {
-            crosswordRef.current.reset()
-            setShowAnswers(false)
-          }}
-        >
-          clear
-        </button> */}
       </CrosswordChartWrapper>
 
       <Callout>
@@ -135,6 +128,8 @@ const IntroPuzzle = () => {
           Check out the others we've generated with our data.
         </div>
       </Callout>
+
+      {createHtmlForCopy(copy.introPuzzleAfter)}
     </Section>
   )
 }

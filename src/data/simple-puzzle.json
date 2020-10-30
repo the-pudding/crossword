@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "col": 0,
+    "row": 2,
+    "answer": "SWEETCAROLINE",
+    "dir": "across",
+    "clue": "1969 hit for Neil Diamond",
+    "binaryRace": "white",
+    "gender": "man"
+  },
+  {
+    "id": 2,
+    "col": 11,
+    "row": 0,
+    "answer": "TINA",
+    "dir": "down",
+    "clue": "Funny Fey",
+    "binaryRace": "white",
+    "gender": "woman"
+  }
+]

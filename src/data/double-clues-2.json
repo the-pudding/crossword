@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "col": 0,
+    "row": 0,
+    "answer": "NORAH",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 6,
+    "col": 2,
+    "row": 0,
+    "answer": "ROMAN",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 7,
+    "col": 3,
+    "row": 0,
+    "answer": "ANA",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 8,
+    "col": 4,
+    "row": 0,
+    "answer": "HER",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 2,
+    "col": 2,
+    "row": 1,
+    "answer": "ONE",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 3,
+    "col": 0,
+    "row": 2,
+    "answer": "LAMAR",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 9,
+    "col": 0,
+    "row": 2,
+    "answer": "LIL",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 10,
+    "col": 1,
+    "row": 2,
+    "answer": "ARI",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 4,
+    "col": 0,
+    "row": 3,
+    "answer": "IRA",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 5,
+    "col": 0,
+    "row": 4,
+    "answer": "LINDA",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  }
+]

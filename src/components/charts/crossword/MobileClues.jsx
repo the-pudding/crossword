@@ -11,6 +11,8 @@ const MobileClues = ({
   clues,
   data,
 }) => {
+  console.log({ clues })
+  console.log({ currentNumber })
   const currentClueText = clues[currentDirection].filter(
     d => d.number === currentNumber
   )[0].clue

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "col": 0,
+    "row": 0,
+    "answer": "TENOR",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 6,
+    "col": 2,
+    "row": 0,
+    "answer": "NOLAN",
+    "dir": "down",
+    "clue": "'Interstellar' director Christopher / Many-time M.L.B. All-Star Arenado",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 7,
+    "col": 3,
+    "row": 0,
+    "answer": "ONE",
+    "dir": "down",
+    "clue": "I was this for Nero / 'You da ___' (Rihanna song)",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 8,
+    "col": 4,
+    "row": 0,
+    "answer": "ROY",
+    "dir": "down",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 2,
+    "col": 2,
+    "row": 1,
+    "answer": "ONO",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 3,
+    "col": 0,
+    "row": 2,
+    "answer": "HALEY",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 9,
+    "col": 0,
+    "row": 2,
+    "answer": "HER",
+    "dir": "down",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 10,
+    "col": 1,
+    "row": 2,
+    "answer": "AVA",
+    "dir": "down",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 4,
+    "col": 0,
+    "row": 3,
+    "answer": "EVA",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 5,
+    "col": 0,
+    "row": 4,
+    "answer": "RANEE",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  }
+]

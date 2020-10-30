@@ -71,7 +71,8 @@ const GridWrapper = styled.div.attrs(props => ({
   // min-width: 20rem;
   // max-width: 60rem; /* Should the size matter? */
 
-  width: 85%;
+  //width: 50%;
+  width: 80%;
 
   // flex: 2 1 50%;
 `
@@ -159,7 +160,7 @@ const Crossword = React.forwardRef(
     const [focusedRow, setFocusedRow] = useState(1) // hard-coded
     const [focusedCol, setFocusedCol] = useState(3)
     const [currentDirection, setCurrentDirection] = useState("across")
-    const [currentNumber, setCurrentNumber] = useState("3") // hard-coded, that's the first across (happens below too)
+    const [currentNumber, setCurrentNumber] = useState("1") // hard-coded, that's the first across (happens below too)
     const [bulkChange, setBulkChange] = useState(null)
     const [checkQueue, setCheckQueue] = useState([])
     const [crosswordCorrect, setCrosswordCorrect] = useState(false)
@@ -531,7 +532,7 @@ const Crossword = React.forwardRef(
       setFocusedRow(1)
       setFocusedCol(3)
       setCurrentDirection("across")
-      setCurrentNumber("3")
+      setCurrentNumber("1")
 
       setBulkChange(null)
 
@@ -770,6 +771,18 @@ const Crossword = React.forwardRef(
         >
           <ThemeProvider theme={finalTheme}>
             <OuterWrapper correct={crosswordCorrect}>
+              {/* <CluesWrapper>
+                {!colorCode &&
+                  clues &&
+                  bothDirections.map(direction => (
+                    <DirectionClues
+                      key={direction}
+                      direction={direction}
+                      clues={clues[direction]}
+                    />
+                  ))}
+              </CluesWrapper> */}
+
               <GridWrapper>
                 {/*
                 This div is hard-coded because we *need* a zero-padded,

@@ -31,7 +31,7 @@ const NamesInClues = () => {
       <PopularNamesTable
         data={popularClueNames}
         featuredColumn="randomClue"
-        columnTitle="Random clue"
+        columnTitle="Sample clue"
       />
 
       {createHtmlForCopy(copy.deepDivePart2)}

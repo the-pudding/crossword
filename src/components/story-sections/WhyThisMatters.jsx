@@ -5,7 +5,7 @@ import { Section } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 
 const WhyThisMatters = () => {
-  return <Section>{createHtmlForCopy(copy.introProse)}</Section>
+  return <Section>{createHtmlForCopy(copy.introProse3)}</Section>
 }
 
 export default WhyThisMatters

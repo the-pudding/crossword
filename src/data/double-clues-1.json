@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "col": 1,
+    "row": 0,
+    "answer": "ELI",
+    "dir": "across",
+    "clue": "Nutmeg State Ivy Leaguer / Title role for Denzel Washington",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 5,
+    "col": 1,
+    "row": 0,
+    "answer": "EMIR",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 6,
+    "col": 2,
+    "row": 0,
+    "answer": "LOTT",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 7,
+    "col": 3,
+    "row": 0,
+    "answer": "IRA",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 2,
+    "col": 0,
+    "row": 1,
+    "answer": "AMOR",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 8,
+    "col": 0,
+    "row": 1,
+    "answer": "ANA",
+    "dir": "down",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 3,
+    "col": 0,
+    "row": 2,
+    "answer": "NITA",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 4,
+    "col": 0,
+    "row": 3,
+    "answer": "ART",
+    "dir": "across",
+    "clue": "",
+    "binaryRace": "white",
+    "gender": "woman"
+  }
+]

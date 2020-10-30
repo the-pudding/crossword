@@ -128,8 +128,10 @@ export const prepareCrosswordData = data => {
       result.across[id] = {
         clue,
         answer,
-        row: row - 1,
-        col: col - 1,
+        // row: row - 1,
+        // col: col - 1,
+        row,
+        col,
         race: binaryRace,
         gender,
       }
@@ -137,8 +139,10 @@ export const prepareCrosswordData = data => {
       result.down[id] = {
         clue,
         answer,
-        row: row - 1,
-        col: col - 1,
+        // row: row - 1,
+        // col: col - 1,
+        row,
+        col,
         race: binaryRace,
         gender,
       }

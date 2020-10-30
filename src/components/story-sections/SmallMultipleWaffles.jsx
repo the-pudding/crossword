@@ -35,7 +35,7 @@ const SmallMultipleWaffles = () => {
   return (
     <>
       <Section>
-        {createHtmlForCopy(copy.introduceWaffles)}
+        {/* {createHtmlForCopy(copy.introduceWaffles)} */}
 
         <div style={{ width: "100%", display: "flex" }}>
           <div style={{ flexBasis: "20%", visibility: "hidden" }} />

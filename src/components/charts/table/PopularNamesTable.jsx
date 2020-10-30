@@ -9,7 +9,7 @@ const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
   const dataSource = _.take(
     data.filter(d => d.decade.includes(decade.toString()))[0].topPeople,
     5
-  ).map(d => ({ ...d, answers: d.answers.join(" | ") }))
+  ).map(d => ({ ...d, answers: d.answers[0] }))
 
   const columns = [
     { title: "Name", dataIndex: "name", key: "name" },
@@ -25,10 +25,6 @@ const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
     <>
       <DecadeSlider decade={decade} setDecade={setDecade} />
       <Table data={dataSource} columns={columns} />
-
-      {/* {typeof window !== "undefined" ? (
-        <Table dataSource={dataSource} columns={columns} pagination={false} />
-      ) : null} */}
     </>
   )
 }

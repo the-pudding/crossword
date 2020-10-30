@@ -79,7 +79,7 @@ const NamesInAnswers = () => {
       <PopularNamesTable
         data={popularAnswerNames}
         featuredColumn="answers"
-        columnTitle="Common Answers"
+        columnTitle="Most Common Answer"
       />
       {createHtmlForCopy(copy.deepDivePart1)}
 
