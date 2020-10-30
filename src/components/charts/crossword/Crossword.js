@@ -71,8 +71,8 @@ const GridWrapper = styled.div.attrs(props => ({
   // min-width: 20rem;
   // max-width: 60rem; /* Should the size matter? */
 
-  //width: 50%;
-  width: 80%;
+  width: 50%;
+  //width: 80%;
 
   // flex: 2 1 50%;
 `
@@ -97,8 +97,8 @@ const CluesWrapper = styled.div.attrs(props => ({
 
     @media (max-width: ${props => props.theme.columnBreakpoint}) {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       height: 50px;
     }
   }
@@ -112,8 +112,6 @@ const CluesWrapper = styled.div.attrs(props => ({
     /* padding: 0 1em;
     flex: 1 1 20%; */
 
-    height: 45%;
-    overflow: scroll;
     position: relative;
 
     .header {
@@ -124,6 +122,35 @@ const CluesWrapper = styled.div.attrs(props => ({
     div {
       margin-top: 0.5em;
     }
+  }
+`
+
+// In order to ensure the top/left positioning makes sense,
+// there is an absolutely-positioned <div> with no
+// margin/padding that we *don't* expose to consumers.  This
+// keeps the math much more reliable.  (But we're still
+// seeing a slight vertical deviation towards the bottom of
+// the grid!  The "* 0.995" seems to help.)
+const CrosswordInput = styled.input`
+  position: absolute;
+
+  top: ${props => `calc(${props.focusedRow * props.cellSize * 0.995}% + 2px)`};
+
+  left: ${props => `calc(${props.focusedCol * props.cellSize}% + 2px)`};
+  width: ${props => `calc(${props.cellSize}% - 4px)`};
+  height: ${props => `calc(${props.cellSize}% - 4px)`};
+  font-size: ${props => `${props.fontSize * 6}px`};
+  text-align: center;
+  text-anchor: middle;
+  background-color: transparent;
+  caret-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: default;
+
+  &:focus {
+    outline: 0px;
   }
 `
 
@@ -142,7 +169,6 @@ const Crossword = React.forwardRef(
       useStorage,
       theme,
       colorCode,
-      waffles,
     },
     ref
   ) => {
@@ -157,8 +183,8 @@ const Crossword = React.forwardRef(
     const [clues, setClues] = useState(startingClues)
 
     const [focused, setFocused] = useState(true)
-    const [focusedRow, setFocusedRow] = useState(1) // hard-coded
-    const [focusedCol, setFocusedCol] = useState(3)
+    const [focusedRow, setFocusedRow] = useState(0) // hard-coded
+    const [focusedCol, setFocusedCol] = useState(0)
     const [currentDirection, setCurrentDirection] = useState("across")
     const [currentNumber, setCurrentNumber] = useState("1") // hard-coded, that's the first across (happens below too)
     const [bulkChange, setBulkChange] = useState(null)
@@ -529,8 +555,8 @@ const Crossword = React.forwardRef(
 
       // TODO: track input-field focus so we don't draw highlight when we're not
       // really focused, *and* use first actual clue (whether across or down?)
-      setFocusedRow(1)
-      setFocusedCol(3)
+      setFocusedRow(0)
+      setFocusedCol(0)
       setCurrentDirection("across")
       setCurrentNumber("1")
 
@@ -771,17 +797,17 @@ const Crossword = React.forwardRef(
         >
           <ThemeProvider theme={finalTheme}>
             <OuterWrapper correct={crosswordCorrect}>
-              {/* <CluesWrapper>
-                {!colorCode &&
-                  clues &&
+              <CluesWrapper>
+                {clues &&
                   bothDirections.map(direction => (
                     <DirectionClues
                       key={direction}
                       direction={direction}
                       clues={clues[direction]}
+                      clueIndex={0}
                     />
                   ))}
-              </CluesWrapper> */}
+              </CluesWrapper>
 
               <GridWrapper>
                 {/*
@@ -800,7 +826,7 @@ const Crossword = React.forwardRef(
                     />
                     {cells}
                   </svg>
-                  <input
+                  <CrosswordInput
                     ref={inputRef}
                     aria-label="crossword-input"
                     type="text"
@@ -812,43 +838,25 @@ const Crossword = React.forwardRef(
                     autoComplete="off"
                     spellCheck="false"
                     autoCorrect="off"
-                    style={{
-                      position: "absolute",
-                      // In order to ensure the top/left positioning makes sense,
-                      // there is an absolutely-positioned <div> with no
-                      // margin/padding that we *don't* expose to consumers.  This
-                      // keeps the math much more reliable.  (But we're still
-                      // seeing a slight vertical deviation towards the bottom of
-                      // the grid!  The "* 0.995" seems to help.)
-                      top: `calc(${focusedRow * cellSize * 0.995}% + 2px)`,
-                      left: `calc(${focusedCol * cellSize}% + 2px)`,
-                      width: `calc(${cellSize}% - 4px)`,
-                      height: `calc(${cellSize}% - 4px)`,
-                      fontSize: `${fontSize * 6}px`, // waaay too small...?
-                      textAlign: "center",
-                      textAnchor: "middle",
-                      backgroundColor: "transparent",
-                      caretColor: "transparent",
-                      margin: 0,
-                      padding: 0,
-                      border: 0,
-                      cursor: "default",
-                    }}
+                    cellSize={cellSize}
+                    fontSize={fontSize}
+                    focusedCol={focusedCol}
+                    focusedRow={focusedRow}
                   />
                 </div>
               </GridWrapper>
               <CluesWrapper>
-                {!colorCode &&
-                  clues &&
+                {clues &&
                   bothDirections.map(direction => (
                     <DirectionClues
                       key={direction}
                       direction={direction}
                       clues={clues[direction]}
+                      clueIndex={1}
                     />
                   ))}
 
-                {!colorCode && clues && (
+                {clues && (
                   <MobileClues
                     currentDirection={currentDirection}
                     currentNumber={currentNumber}
@@ -860,8 +868,6 @@ const Crossword = React.forwardRef(
                     data={data}
                   />
                 )}
-
-                {colorCode ? waffles : null}
               </CluesWrapper>
             </OuterWrapper>
           </ThemeProvider>
@@ -933,7 +939,6 @@ Crossword.propTypes = {
   onCellChange: PropTypes.func,
 
   colorCode: PropTypes.bool,
-  waffles: PropTypes.instanceOf(Object),
 }
 
 Crossword.defaultProps = {
@@ -945,7 +950,6 @@ Crossword.defaultProps = {
   onCrosswordCorrect: null,
   onCellChange: null,
   colorCode: false,
-  waffles: null,
 }
 
 export default Crossword

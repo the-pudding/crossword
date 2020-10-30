@@ -29,71 +29,23 @@ const IntroPuzzle = () => {
     crosswordRef.current.reset()
   }, [])
 
-  const [showAnswers, setShowAnswers] = useState(false)
-  const [metric, setMetric] = useState("gender")
-
-  const waffles = (
-    <PuzzleWaffles>
-      <WaffleChart
-        title={"Gender"}
-        size="large"
-        data={
-          _.first(
-            raceGenderBreakdown.filter(
-              d => d.decade === "2020" && d.publication === "nyt"
-            )
-          ).genderBreakdown
-        }
-        colors={[COLORS.woman, COLORS.man]}
-        labels={["women", "men"]}
-        changeMetric={() => setMetric("gender")}
-        clickable={true}
-        margin="0 0 3rem 0"
-      />
-      <WaffleChart
-        title={"Race & Ethnicity"}
-        size="large"
-        data={
-          _.first(
-            raceGenderBreakdown.filter(
-              d => d.decade === "2020" && d.publication === "nyt"
-            )
-          ).raceBreakdown
-        }
-        colors={[COLORS.poc, COLORS.white]}
-        labels={["under-represented minorities", "non-Hispanic white"]}
-        changeMetric={() => setMetric("race")}
-        clickable={true}
-        margin="0"
-      />
-    </PuzzleWaffles>
-  )
-
-  //const data = addColorsToData(prepareCrosswordData(crosswordData), metric)
   const data = prepareCrosswordData(crosswordData)
-  console.log({ data })
 
   return (
     <Section>
-      {showAnswers ? (
-        createHtmlForCopy(copy.introPuzzleAfter)
-      ) : (
-        <>
-          {createHtmlForCopy(copy.introPuzzleBefore)}
+      {createHtmlForCopy(copy.introPuzzleBefore)}
 
-          <TextNote>
-            If you're stumped or don't want to play, you can{" "}
-            <button
-              onClick={() => {
-                crosswordRef.current.fillAllAnswers()
-                setShowAnswers(true)
-              }}
-            >
-              Skip to results
-            </button>
-          </TextNote>
-        </>
-      )}
+      <TextNote>
+        If you're stumped or don't want to play, you can{" "}
+        <button
+          onClick={() => {
+            crosswordRef.current.fillAllAnswers()
+          }}
+        >
+          Skip to results
+        </button>
+        <button onClick={() => crosswordRef.current.reset()}>Clear</button>
+      </TextNote>
 
       <CrosswordChartWrapper>
         <Crossword
@@ -111,11 +63,8 @@ const IntroPuzzle = () => {
               typeof window !== "undefined"
             ) {
               confetti()
-              setShowAnswers(true)
             }
           }}
-          colorCode={showAnswers}
-          waffles={showAnswers ? waffles : null}
         />
       </CrosswordChartWrapper>
 

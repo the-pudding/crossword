@@ -11,11 +11,10 @@ const MobileClues = ({
   clues,
   data,
 }) => {
-  console.log({ clues })
-  console.log({ currentNumber })
-  const currentClueText = clues[currentDirection].filter(
-    d => d.number === currentNumber
-  )[0].clue
+  const currentClues = clues[currentDirection]
+    .filter(d => d.number === currentNumber)[0]
+    .clue.split("|")
+    .map(d => _.trim(d))
 
   const previousClue = () => {
     const currentIndex = _.findIndex(
@@ -97,7 +96,17 @@ const MobileClues = ({
   return (
     <div className="mobile">
       <button onClick={previousClue}>{"<"}</button>
-      <div style={{ textAlign: "center" }}>{currentClueText}</div>
+      <div style={{ textAlign: "center", flexBasis: "50%" }}>
+        {currentClues[0]}
+      </div>
+
+      <div style={{ marginLeft: "10px", marginRight: "10px" }}>
+        <strong>or</strong>
+      </div>
+
+      <div style={{ textAlign: "center", flexBasis: "50%" }}>
+        {currentClues[1]}
+      </div>
       <button onClick={nextClue}>{">"}</button>
     </div>
   )

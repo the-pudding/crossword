@@ -5,97 +5,97 @@
     "row": 0,
     "answer": "NORAH",
     "dir": "across",
-    "clue": "English author Lofts / Jones with nine Grammys",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 6,
-    "col": 2,
-    "row": 0,
-    "answer": "ROMAN",
-    "dir": "down",
-    "clue": "Caesar, for one / TV star Tami ___",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 7,
-    "col": 3,
-    "row": 0,
-    "answer": "ANA",
-    "dir": "down",
-    "clue": "Ivanovic who won the 2008 French Open / 'Devious Maids' star Ortiz",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 8,
-    "col": 4,
-    "row": 0,
-    "answer": "HER",
-    "dir": "down",
-    "clue": "Ferlinghetti novel / 2020 Grammy nominee whose name looks like a pronoun",
+    "clue": "English author Lofts | Jones with nine Grammys",
     "binaryRace": "white",
     "gender": "woman"
   },
   {
     "id": 2,
     "col": 2,
-    "row": 1,
-    "answer": "ONE",
-    "dir": "across",
-    "clue": "I was this for Nero / 'You da ___' (Rihanna song)",
+    "row": 0,
+    "answer": "ROMAN",
+    "dir": "down",
+    "clue": "Caesar, for one | TV star Tami ___",
     "binaryRace": "white",
     "gender": "woman"
   },
   {
     "id": 3,
+    "col": 3,
+    "row": 0,
+    "answer": "ANA",
+    "dir": "down",
+    "clue": "Ivanovic who won the 2008 French Open | 'Devious Maids' star Ortiz",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 4,
+    "col": 4,
+    "row": 0,
+    "answer": "HER",
+    "dir": "down",
+    "clue": "Ferlinghetti novel | 2020 Grammy nominee whose name looks like a pronoun",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 5,
+    "col": 2,
+    "row": 1,
+    "answer": "ONE",
+    "dir": "across",
+    "clue": "I was this for Nero | 'You da ___' (Rihanna song)",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 6,
     "col": 0,
     "row": 2,
     "answer": "LAMAR",
     "dir": "across",
-    "clue": "Truman's Missouri birthplace / Pulitzer-winning rapper Kendrick",
+    "clue": "Truman's Missouri birthplace | Pulitzer-winning rapper Kendrick",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 6,
+    "col": 0,
+    "row": 2,
+    "answer": "LIL",
+    "dir": "down",
+    "clue": "Mae West character. | Rap's ___ Kim",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 7,
+    "col": 1,
+    "row": 2,
+    "answer": "ARE",
+    "dir": "down",
+    "clue": "Second note of Guido's scale. | 'We ___ Never Meeting in Real Life' (Samantha Irby book)",
+    "binaryRace": "white",
+    "gender": "woman"
+  },
+  {
+    "id": 8,
+    "col": 0,
+    "row": 3,
+    "answer": "IRA",
+    "dir": "across",
+    "clue": "George Gershwin's brother/partner | Stage actor Aldridge",
     "binaryRace": "white",
     "gender": "woman"
   },
   {
     "id": 9,
     "col": 0,
-    "row": 2,
-    "answer": "LIL",
-    "dir": "down",
-    "clue": "Mae West character. / Rap's ___ Kim",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 10,
-    "col": 1,
-    "row": 2,
-    "answer": "ARE",
-    "dir": "down",
-    "clue": "Second note of Guido's scale. / 'We ___ Never Meeting in Real Life' (Samantha Irby book)",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 4,
-    "col": 0,
-    "row": 3,
-    "answer": "IRA",
-    "dir": "across",
-    "clue": "George Gershwin's brother/partner / Stage actor Aldridge",
-    "binaryRace": "white",
-    "gender": "woman"
-  },
-  {
-    "id": 5,
-    "col": 0,
     "row": 4,
     "answer": "LENNY",
     "dir": "across",
-    "clue": "Comedian Bruce / NFL Hall of Famer Moore",
+    "clue": "Comedian Bruce | NFL Hall of Famer Moore",
     "binaryRace": "white",
     "gender": "woman"
   }

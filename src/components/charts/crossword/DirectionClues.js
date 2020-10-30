@@ -2,12 +2,13 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Fade, Line } from "../../../styles/styles.js"
+import { Line } from "../../../styles/styles.js"
+import _ from "lodash"
 // import styled from 'styled-components';
 
 import Clue from "./Clue"
 
-export default function DirectionClues({ direction, clues }) {
+export default function DirectionClues({ direction, clues, clueIndex }) {
   return (
     <div className="direction">
       {/* use something other than h3? */}
@@ -15,17 +16,20 @@ export default function DirectionClues({ direction, clues }) {
         <strong>{direction.toUpperCase()}</strong>
       </h3>
       <Line />
-      {clues.map(({ number, clue, correct }) => (
-        <Clue
-          key={number}
-          direction={direction}
-          number={number}
-          correct={correct}
-        >
-          {clue}
-        </Clue>
-      ))}
-      <Fade />
+      {clues.map(({ number, clue, correct }) => {
+        const displayClue = clue.split("|").map(d => _.trim(d))[clueIndex]
+
+        return (
+          <Clue
+            key={number}
+            direction={direction}
+            number={number}
+            correct={correct}
+          >
+            {displayClue}
+          </Clue>
+        )
+      })}
     </div>
   )
 }
