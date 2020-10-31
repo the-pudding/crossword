@@ -17,29 +17,20 @@ const devices = {
 
 // Waffle sizing
 const waffleBlockSize = {
-  small: 5,
-  medium: 10,
-  large: 15,
+  normal: 15,
+  mobile: 8,
 }
 const percentSize = {
-  small: "0.8rem",
-  medium: "1.5rem",
-  large: "2rem",
+  normal: "2rem",
+  mobile: "1rem"
 }
 const labelTextSize = {
-  small: "0.5rem",
-  medium: "0.8rem",
-  large: "0.8rem",
-}
-const strokeSize = {
-  small: "0.5px black",
-  medium: "1px black",
-  large: "1.5px black",
+  normal: "0.8rem",
+  mobile: "0.5rem"
 }
 const borderSize = {
-  small: 1,
-  medium: 3,
-  large: 4,
+  normal: 4,
+  mobile: 2
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -213,6 +204,7 @@ export const CrosswordChartWrapper = styled.div`
 
   @media ${devices.tablet} {
     height: auto;
+    margin-top: 25px;
   }
 `
 
@@ -233,39 +225,28 @@ export const LineChartWrapper = styled.div`
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  width: ${props => `${waffleBlockSize[props.size] * 10 + 2 * borderSize}px`};
+  width: ${waffleBlockSize.normal * 10 + 2 * borderSize.normal + 60}px;
 
   @media ${devices.mobile} {
-    width: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small * 10 + 2 * borderSize[props.size]}px`
-        : `${waffleBlockSize[props.size] * 10 + 2 * borderSize[props.size]}px`};
+    width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
     margin: 0;
   }
 `
 
 export const WaffleChartBounds = styled.div`
   display: flex;
-  width: ${props => `${waffleBlockSize[props.size] * 10}px`};
-  height: ${props => `${waffleBlockSize[props.size] * 10}px`};
+  width: ${waffleBlockSize.normal * 10}px;
+  height: ${waffleBlockSize.normal * 10}px;
   flex-wrap: wrap;
-  outline: ${props => `${borderSize[props.size]}px black solid`};
-  margin-left: ${props => `${borderSize[props.size]}px`};
+  outline: ${borderSize.normal}px black solid;
+  margin-left: ${borderSize.normal}px;
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
 
   @media ${devices.mobile} {
-    width: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small * 10}px`
-        : `${waffleBlockSize[props.size] * 10}px`};
-    height: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small * 10}px`
-        : `${waffleBlockSize[props.size] * 10}px`};
+    width: ${waffleBlockSize.mobile * 10}px;
+    height: ${waffleBlockSize.mobile * 10}px;
   }
 `
 
@@ -274,36 +255,34 @@ export const WaffleChartLabels = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  height: ${waffleBlockSize.normal * 10}px;
   margin-left: 10px;
-  width: 30%;
+  width: 50px;
   flex-wrap: wrap;
-`
 
-export const WafflesWithTitles = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: ${props => (props.margin ? props.margin : 0)};
+  @media ${devices.mobile} {
+    height: ${waffleBlockSize.mobile * 10}px;s
+  }
 `
 
 export const Block = styled.div`
-  height: ${props => `${waffleBlockSize[props.size]}px`};
-  width: ${props => `${waffleBlockSize[props.size]}px`};
+width: ${waffleBlockSize.normal}px;
+  height: ${waffleBlockSize.normal}px;
   border-bottom: ${props =>
     props.borderBottom
-      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      ? `${borderSize.normal}px solid ${COLORS.yellow}`
       : "0px"};
   border-right: ${props =>
     props.borderRight
-      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      ? `${borderSize.normal}px solid ${COLORS.yellow}`
       : "0px"};
   border-left: ${props =>
     props.borderLeft
-      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      ? `${borderSize.normal}px solid ${COLORS.yellow}`
       : "0px"};
   border-top: ${props =>
     props.borderTop
-      ? `${borderSize[props.size]}px solid ${COLORS.yellow}`
+      ? `${borderSize.normal}px solid ${COLORS.yellow}`
       : "0px"};
 
   outline: 1px solid black;
@@ -311,20 +290,8 @@ export const Block = styled.div`
   background: ${props => props.color};
 
   @media ${devices.mobile} {
-    height: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small}px`
-        : `${waffleBlockSize[props.size]}px`};
-    width: ${props =>
-      props.size === "medium"
-        ? `${waffleBlockSize.small}px`
-        : `${waffleBlockSize[props.size]}px`};
-  }
-`
-
-export const WafflePublicationTitle = styled.h2`
-  @media ${devices.mobile} {
-    font-size: 0.8rem;
+    width: ${waffleBlockSize.mobile}px;
+    height: ${waffleBlockSize.mobile}px;
   }
 `
 
@@ -336,28 +303,26 @@ export const WaffleChartLabel = styled.div`
 
 export const WaffleLabelText = styled.div`
   font-family: "National 2 Web Bold";
-  font-size: ${props => labelTextSize[props.size]};
-  line-height: ${props => labelTextSize[props.size]};
+  font-size: ${labelTextSize.normal};
+  line-height: ${labelTextSize.normal};
 
   @media ${devices.mobile} {
-    font-size: ${props =>
-      props.size === "medium"
-        ? labelTextSize.small
-        : labelTextSize[props.size]};
+    font-size: ${labelTextSize.mobile};
+  line-height: ${labelTextSize.mobile};
   }
 `
 
 export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
-  font-size: ${props => percentSize[props.size]};
-  line-height: ${props => percentSize[props.size]};
+  font-size: ${percentSize.normal};
+  line-height: ${percentSize.normal};
   color: ${props => (props.color ? props.color : "inherit")};
   -webkit-text-stroke: ${props =>
     props.color === "white" ? "1px black" : "0px"};
 
   @media ${devices.mobile} {
-    font-size: ${props =>
-      props.size === "medium" ? percentSize.small : percentSize[props.size]};
+    font-size: ${percentSize.mobile};
+  line-height: ${percentSize.mobile};
   }
 `
 
@@ -368,19 +333,23 @@ export const CensusSplit = styled.h3`
 `
 
 export const WaffleRow = styled.div`
-  width: 100%;
-  display: flex;
-
-  @media ${devices.tablet} {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+display: flex;
+margin-bottom: 20px;
 `
 
-export const WaffleRowItem = styled.div`
-  display: flex;
-  flex-basis: ${props => (props.flexBasis ? props.flexBasis : "100%")};
-  justify-content: center;
+export const PublicationTitle = styled.h2`
+@media ${devices.mobile} {
+  font-size: 1rem;
+}
+`
+
+export const WaffleYearLabel = styled.div`
+color: #757575;
+font-size: 0.8rem;
+
+@media ${devices.mobile} {
+  font-size: 0.5rem;
+}
 `
 
 // Table
