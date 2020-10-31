@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 module.exports = {
+  pathPrefix: `/crossword`,
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
