@@ -88,8 +88,7 @@ const CluesWrapper = styled.div.attrs(props => ({
   width: 16rem;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
-    margin-top: 2em;
-    width: 75%;
+    display: ${props => props.noMobile ? "none" : "block"};
   }
 
   .mobile {
@@ -797,7 +796,7 @@ const Crossword = React.forwardRef(
         >
           <ThemeProvider theme={finalTheme}>
             <OuterWrapper correct={crosswordCorrect}>
-              <CluesWrapper>
+              <CluesWrapper noMobile={true}>
                 {clues &&
                   bothDirections.map(direction => (
                     <DirectionClues

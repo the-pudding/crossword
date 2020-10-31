@@ -43,6 +43,7 @@ const WaffleChart = ({
   })
 
   return (
+    <>
     <WaffleChartWrapper margin={margin} size={size}>
       {title && (
         <>
@@ -88,28 +89,30 @@ const WaffleChart = ({
       </WaffleChartBounds>
 
       <WaffleChartLabels size={size}>
-        {roundedData
-          .filter(d => d.percent !== 0)
-          .map(({ percent }, i) => (
-            <WaffleChartLabel key={i} i={i}>
-              <Percentage
-                numLabels={roundedData.length}
-                color={
-                  colors[i] === COLORS.man || colors[i] === COLORS.white
-                    ? COLORS.darkGrey
-                    : colors[i]
-                }
-                size={size}
-              >
-                {percent}%
-              </Percentage>
-              <WaffleLabelText i={i} size={size}>
-                {labels[i]}
-              </WaffleLabelText>
-            </WaffleChartLabel>
-          ))}
-      </WaffleChartLabels>
+    {roundedData
+      .filter(d => d.percent !== 0)
+      .map(({ percent }, i) => (
+        <WaffleChartLabel key={i} i={i}>
+          <Percentage
+            numLabels={roundedData.length}
+            color={
+              colors[i] === COLORS.man || colors[i] === COLORS.white
+                ? COLORS.darkGrey
+                : colors[i]
+            }
+            size={size}
+          >
+            {percent}%
+          </Percentage>
+          <WaffleLabelText i={i} size={size}>
+            {labels[i]}
+          </WaffleLabelText>
+        </WaffleChartLabel>
+      ))}
+  </WaffleChartLabels>
     </WaffleChartWrapper>
+    
+  </>
   )
 }
 

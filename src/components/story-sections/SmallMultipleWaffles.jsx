@@ -8,12 +8,9 @@ import _ from "lodash"
 import {
   Section,
   Line,
-  WafflePublicationTitle,
-  WafflesWithTitles,
   WaffleRow,
-  WaffleRowItem,
-  ChartNote,
-  TextNote,
+  WaffleYearLabel,
+  PublicationTitle,
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
@@ -35,8 +32,6 @@ const SmallMultipleWaffles = () => {
   return (
     <>
       <Section>
-        {/* {createHtmlForCopy(copy.introduceWaffles)} */}
-
         <div style={{ width: "100%", display: "flex" }}>
           <div style={{ flexBasis: "20%", visibility: "hidden" }} />
           <h3 style={{ flexBasis: "40%" }}>GENDER</h3>
@@ -94,9 +89,9 @@ const SmallMultipleWaffles = () => {
             return (
               <>
                 <Line marginBottom="20px" />
-                <div style={{ display: "flex", marginBottom: "20px" }}>
+                <WaffleRow>
                   <div style={{ flexBasis: "20%" }}>
-                    <h2 style={{ marginBottom: 0 }}>{publication.long}</h2>
+                    <PublicationTitle>{publication.long}</PublicationTitle>
 
                     {publication.short === "nyt" ? (
                       <div style={{ paddingRight: "20px" }}>
@@ -113,24 +108,22 @@ const SmallMultipleWaffles = () => {
                             </option>
                           ))}
                         </select>
-                        <p
+                        <WaffleYearLabel
                           style={{
-                            color: "#757575",
-                            fontSize: "0.8rem",
                             padding: "10px 0 10px 0",
                           }}
                         >
                           We have data from each decade since 1940 from the
                           Times' crossword. Use the dropdown to see more.
-                        </p>
+                        </WaffleYearLabel>
                       </div>
                     ) : (
-                      <div style={{ color: "#757575", fontSize: "0.8rem" }}>
+                      <WaffleYearLabel>
                         2020
-                      </div>
+                      </WaffleYearLabel>
                     )}
                   </div>
-                  <div style={{ flexBasis: "40%" }}>
+                  <div style={{ flexBasis: "40%", display: "flex" }}>
                     <WaffleChart
                       size="large"
                       data={genderData}
@@ -140,7 +133,7 @@ const SmallMultipleWaffles = () => {
                       censusSplit={genderCensusSplit}
                     />
                   </div>
-                  <div style={{ flexBasis: "40%" }}>
+                  <div style={{ flexBasis: "40%", display: "flex" }}>
                     <WaffleChart
                       size="large"
                       data={raceData}
@@ -151,86 +144,11 @@ const SmallMultipleWaffles = () => {
                       small={true}
                     />
                   </div>
-                </div>
+                </WaffleRow>
               </>
             )
           })}
         </div>
-
-        {/* <WafflesWithTitles margin="4rem 0 4rem 0">
-          <WaffleRow>
-            {publications.map(publication => (
-              <WaffleRowItem flexBasis="20%">
-                <WafflePublicationTitle>
-                  {publication.long}
-                </WafflePublicationTitle>
-              </WaffleRowItem>
-            ))}
-          </WaffleRow>
-
-          <h3>GENDER</h3>
-          <Line />
-
-          <WaffleRow>
-            {publications.map(publication => {
-              const allData = _.first(
-                raceGenderBreakdown.filter(
-                  d =>
-                    d.decade === "2020" && d.publication === publication.short
-                )
-              )
-              const genderData = allData.genderBreakdown
-
-              return (
-                <WaffleRowItem flexBasis="20%">
-                  <WaffleChart
-                    size="medium"
-                    data={genderData}
-                    colors={genderColors}
-                    labels={genderLabels}
-                    margin="0 10px 20px 10px"
-                    censusSplit={_.ceil(
-                      usCensusData.filter(d => d.decade === "2020")[0].women
-                    )}
-                  />
-                </WaffleRowItem>
-              )
-            })}
-          </WaffleRow>
-
-          <h3>RACE {"&"} ETHNICITY</h3>
-          <Line />
-
-          <WaffleRow>
-            {publications.map(publication => {
-              const allData = _.first(
-                raceGenderBreakdown.filter(
-                  d =>
-                    d.decade === "2020" && d.publication === publication.short
-                )
-              )
-              const raceData = allData.raceBreakdown
-
-              return (
-                <WaffleRowItem flexBasis="20%">
-                  <WaffleChart
-                    size="medium"
-                    data={raceData}
-                    colors={raceColors}
-                    labels={raceLabels}
-                    margin="0 10px 20px 10px"
-                    censusSplit={_.ceil(
-                      usCensusData.filter(d => d.decade === "2020")[0].minority
-                    )}
-                    small={true}
-                  />
-                </WaffleRowItem>
-              )
-            })}
-          </WaffleRow>
-          <ChartNote>URM = under-represented minority</ChartNote>
-        </WafflesWithTitles> */}
-
         {createHtmlForCopy(copy.introduceDeepDive)}
       </Section>
     </>
