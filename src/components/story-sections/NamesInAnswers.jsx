@@ -66,15 +66,16 @@ const NamesInAnswers = () => {
   return (
     <Section>
       <h1>
-        2. Names in{" "}
+        2.{" "}
         <RoughNotation
           type="underline"
           show={true}
           animate={false}
           color="lightgrey"
         >
-          answers
-        </RoughNotation>
+          Modernizing
+        </RoughNotation>{" "}
+        old names
       </h1>
       <PopularNamesTable
         data={popularAnswerNames}
@@ -83,7 +84,14 @@ const NamesInAnswers = () => {
       />
       {createHtmlForCopy(copy.deepDivePart1)}
 
-      <div style={{ marginTop: "40px", width: "100%", display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          marginTop: "40px",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <h2 style={{ textAlign: "center" }}>
           <strong>AVA</strong> across all publications
         </h2>
@@ -109,7 +117,7 @@ const NamesInAnswers = () => {
           <SidewaysBar
             data={sortedHistoric}
             title="Historic AVAs in 2020"
-            showLabels={true}
+            showLabels={false}
           />
         </SidewaysBarWrapper>
       </SidewaysBars>

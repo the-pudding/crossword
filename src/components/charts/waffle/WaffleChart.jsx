@@ -1,4 +1,5 @@
 import React from "react"
+import { RoughNotation } from "react-rough-notation"
 import {
   WaffleChartWrapper,
   WaffleChartBounds,
@@ -8,7 +9,7 @@ import {
   Block,
   Percentage,
   Line,
-  CensusSplitLabel
+  CensusSplitLabel,
 } from "../../../styles/styles.js"
 import _ from "lodash"
 import { roundData } from "../../utils.js"
@@ -23,6 +24,7 @@ const WaffleChart = ({
   changeMetric = null,
   censusSplit,
   showCensusSplitLabel,
+  circlePercentage,
   margin,
   size,
 }) => {
@@ -45,77 +47,101 @@ const WaffleChart = ({
 
   return (
     <>
-    <WaffleChartWrapper margin={margin} size={size}>
-      {title && (
-        <>
-          <h3 style={{ alignSelf: "flex-start", margin: "0" }}>
-            {title.toUpperCase()}
-          </h3>
-          <Line marginBottom="20px" />
-        </>
-      )}
+      <WaffleChartWrapper margin={margin} size={size}>
+        {title && (
+          <>
+            <h3 style={{ alignSelf: "flex-start", margin: "0" }}>
+              {title.toUpperCase()}
+            </h3>
+            <Line marginBottom="20px" />
+          </>
+        )}
 
-      <WaffleChartBounds
-        onClick={changeMetric}
-        clickable={clickable}
-        size={size}
-      >
-        {_.range(0, 100).map(i => {
-          if (censusSplit) {
-            const borderTop =
-              i === censusSplit ||
-              (_.floor(i / 10) === _.floor(censusSplit / 10) &&
-                i % 10 > censusSplit % 10) ||
-              (_.floor(i / 10) === _.floor(censusSplit / 10) + 1 &&
-                i % 10 < censusSplit % 10)
-            const borderLeft = i === censusSplit && i % 10 !== 0
-            const borderBottom = false
-            const borderRight = false
+        <WaffleChartBounds
+          onClick={changeMetric}
+          clickable={clickable}
+          size={size}
+        >
+          {_.range(0, 100).map(i => {
+            if (censusSplit) {
+              const borderTop =
+                i === censusSplit ||
+                (_.floor(i / 10) === _.floor(censusSplit / 10) &&
+                  i % 10 > censusSplit % 10) ||
+                (_.floor(i / 10) === _.floor(censusSplit / 10) + 1 &&
+                  i % 10 < censusSplit % 10)
+              const borderLeft = i === censusSplit && i % 10 !== 0
+              const borderBottom = false
+              const borderRight = false
 
-            return (
-              <Block
-                key={i}
-                color={colorLookup[i]}
-                borderBottom={borderBottom}
-                borderRight={borderRight}
-                borderTop={borderTop}
-                borderLeft={borderLeft}
-                size={size}
-              />
-            )
-          }
-          return <Block key={i} color={colorLookup[i]} size={size} />
-        })}
-      </WaffleChartBounds>
+              return (
+                <Block
+                  key={i}
+                  color={colorLookup[i]}
+                  borderBottom={borderBottom}
+                  borderRight={borderRight}
+                  borderTop={borderTop}
+                  borderLeft={borderLeft}
+                  size={size}
+                />
+              )
+            }
+            return <Block key={i} color={colorLookup[i]} size={size} />
+          })}
+        </WaffleChartBounds>
 
-      <WaffleChartLabels size={size}>
-        {roundedData
-          .filter(d => d.percent !== 0)
-          .map(({ percent }, i) => (
-            <>
-            <WaffleChartLabel key={i} i={i}>
-              <Percentage
-                numLabels={roundedData.length}
-                color={
-                  colors[i] === COLORS.man || colors[i] === COLORS.white
-                    ? COLORS.darkGrey
-                    : colors[i]
-                }
-                size={size}
-              >
-                {percent}%
-              </Percentage>
-              <WaffleLabelText i={i} size={size}>
-                {labels[i]}
-              </WaffleLabelText>
-            </WaffleChartLabel>
+        <WaffleChartLabels size={size}>
+          {roundedData
+            .filter(d => d.percent !== 0)
+            .map(({ percent }, i) => (
+              <>
+                <WaffleChartLabel key={i} i={i}>
+                  {circlePercentage && i === 1 ? (
+                    <RoughNotation
+                      type="highlight"
+                      show={true}
+                      animate={false}
+                      color={COLORS.yellow}
+                    >
+                      <Percentage
+                        numLabels={roundedData.length}
+                        color={
+                          colors[i] === COLORS.man || colors[i] === COLORS.white
+                            ? COLORS.darkGrey
+                            : colors[i]
+                        }
+                        size={size}
+                      >
+                        {percent}%
+                      </Percentage>
+                    </RoughNotation>
+                  ) : (
+                    <Percentage
+                      numLabels={roundedData.length}
+                      color={
+                        colors[i] === COLORS.man || colors[i] === COLORS.white
+                          ? COLORS.darkGrey
+                          : colors[i]
+                      }
+                      size={size}
+                    >
+                      {percent}%
+                    </Percentage>
+                  )}
 
-            {i === 0 && showCensusSplitLabel && <CensusSplitLabel>US census split</CensusSplitLabel>}
-            </>
-          ))}
-      </WaffleChartLabels>
-    </WaffleChartWrapper>
-  </>
+                  <WaffleLabelText i={i} size={size}>
+                    {labels[i]}
+                  </WaffleLabelText>
+                </WaffleChartLabel>
+
+                {i === 0 && showCensusSplitLabel && (
+                  <CensusSplitLabel>US census split</CensusSplitLabel>
+                )}
+              </>
+            ))}
+        </WaffleChartLabels>
+      </WaffleChartWrapper>
+    </>
   )
 }
 

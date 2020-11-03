@@ -87,6 +87,13 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
+
+  #blue {
+    color: ${COLORS.blue};
+  }
+  #pink {
+    color: ${COLORS.pink};
+  }
 `
 
 export const EssayWrapper = styled.main`
@@ -615,14 +622,18 @@ export const OverviewLabel = styled.div`
 
 // SidewaysBar
 const sidewaysBarBorder = 4
-const sidewaysBarBlock = 25
+// const sidewaysBarBlock = 25
+const sidewaysBarBlock = {
+  normal: 25,
+  mobile: 15,
+}
 
 export const SidewaysBars = styled.div`
   width: 100%;
   display: flex;
   margin-top: 2rem;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: column;
     align-items: center;
   }
@@ -631,41 +642,88 @@ export const SidewaysBars = styled.div`
 export const SidewaysBarWrapper = styled.div`
   display: flex;
   width: 50%;
+  justify-content: center;
 
   @media ${devices.tablet} {
     width: auto;
+    position: relative;
+    margin-bottom: 20px;
   }
 `
 
 export const BarLabels = styled.div`
-  display: flex;
+  display: ${props => (props.showLabels ? "flex" : "none")};
   flex-direction: column;
   width: 100px;
   margin-right: 10px;
+
+  @media ${devices.tablet} {
+    display: flex;
+    position: absolute;
+    left: -115px;
+    font-size: 0.8rem;
+  }
+  @media ${devices.mobile} {
+    left: -85px;
+  }
 `
 
 export const BarLabel = styled.div`
-  height: ${sidewaysBarBlock}px;
+  height: ${sidewaysBarBlock.normal}px;
   text-align: end;
+
+  @media ${devices.mobile} {
+    height: ${sidewaysBarBlock.mobile}px;
+  }
 `
 
 export const SidewaysBarBounds = styled.div`
   display: flex;
   flex-wrap: wrap;
   outline: ${sidewaysBarBorder}px black solid;
-  width: ${10 * sidewaysBarBlock}px;
-  height: ${5 * sidewaysBarBlock}px;
+  width: ${10 * sidewaysBarBlock.normal}px;
+  height: ${5 * sidewaysBarBlock.normal}px;
+
+  @media ${devices.mobile} {
+    width: ${10 * sidewaysBarBlock.mobile}px;
+    height: ${5 * sidewaysBarBlock.mobile}px;
+  }
 `
 
 export const SidewaysBarBlock = styled.div`
-  height: ${sidewaysBarBlock}px;
-  width: ${sidewaysBarBlock}px;
+  height: ${sidewaysBarBlock.normal}px;
+  width: ${sidewaysBarBlock.normal}px;
   outline: 1px black solid;
   background: ${props => props.color};
+
+  @media ${devices.mobile} {
+    height: ${sidewaysBarBlock.mobile}px;
+    width: ${sidewaysBarBlock.mobile}px;
+  }
 `
 
 // DecadeSlider
 
 export const DecadeSliderWrapper = styled.div`
   margin: 3rem 0 3rem 0;
+`
+
+// Clues in text
+export const ClueExamplesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+`
+
+export const ClueAnswerPair = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-self: ${props => props.alignSelf};
+`
+
+export const AnswerBox = styled.div`
+  height: 25px;
+  width: 25px;
+  outline: 1px solid black;
+  text-align: center;
 `

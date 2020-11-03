@@ -10,16 +10,14 @@ import {
 const SidewaysBar = ({ data, title, showLabels }) => {
   return (
     <>
-      {showLabels && (
-        <BarLabels>
-          <h2 style={{ visibility: "hidden" }}>fake</h2>
-          {data.map(d => (
-            <BarLabel>
-              <strong>{d.publication.long}</strong>
-            </BarLabel>
-          ))}
-        </BarLabels>
-      )}
+      <BarLabels showLabels={showLabels}>
+        <h2 style={{ visibility: "hidden" }}>fake</h2>
+        {data.map(d => (
+          <BarLabel>
+            <strong>{d.publication.long}</strong>
+          </BarLabel>
+        ))}
+      </BarLabels>
 
       <div
         style={{

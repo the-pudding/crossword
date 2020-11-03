@@ -17,15 +17,15 @@ import Edit from "../../svg/mdi-edit.svg"
 const NamesInClues = () => {
   return (
     <Section>
-      <h1>
-        3. Names in{" "}
+      <h1 style={{ fontSize: "3rem" }}>
+        3. Redefining{" "}
         <RoughNotation
           type="underline"
           show={true}
           animate={false}
           color="lightgrey"
         >
-          clues
+          "common knowledge"
         </RoughNotation>
       </h1>
       <PopularNamesTable

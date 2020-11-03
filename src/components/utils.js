@@ -9,6 +9,9 @@ import {
   ImageWrapper,
   Emphasis,
   Section,
+  ClueExamplesWrapper,
+  ClueAnswerPair,
+  AnswerBox,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 
@@ -49,31 +52,24 @@ export const createHtmlForCopy = copy => {
         //   )
       } else if (type === "clues") {
         return (
-          <div>
-            {clues.map(clue => {
+          <ClueExamplesWrapper>
+            {clues.map((clue, i) => {
               const clueText = _.trim(clue.split("=")[0])
               const answerText = _.trim(clue.split("=")[1])
               return (
-                <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                <ClueAnswerPair
+                  alignSelf={i % 2 === 0 ? "flex-start" : "flex-end"}
+                >
                   <div>{clueText}</div>
                   <div style={{ display: "flex" }}>
                     {answerText.split("").map(character => (
-                      <div
-                        style={{
-                          height: "25px",
-                          width: "25px",
-                          outline: "1px solid black",
-                          textAlign: "center",
-                        }}
-                      >
-                        {character}
-                      </div>
+                      <AnswerBox>{character}</AnswerBox>
                     ))}
                   </div>
-                </div>
+                </ClueAnswerPair>
               )
             })}
-          </div>
+          </ClueExamplesWrapper>
         )
       }
       return ""

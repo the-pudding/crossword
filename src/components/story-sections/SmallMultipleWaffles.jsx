@@ -118,9 +118,7 @@ const SmallMultipleWaffles = () => {
                         </WaffleYearLabel>
                       </div>
                     ) : (
-                      <WaffleYearLabel>
-                        2020
-                      </WaffleYearLabel>
+                      <WaffleYearLabel>2020</WaffleYearLabel>
                     )}
                   </div>
                   <div style={{ flexBasis: "40%", display: "flex" }}>
@@ -132,6 +130,7 @@ const SmallMultipleWaffles = () => {
                       margin="0 10px 20px 10px"
                       censusSplit={genderCensusSplit}
                       showCensusSplitLabel={publication.short === "wsj"}
+                      circlePercentage={publication.short === "usa"}
                     />
                   </div>
                   <div style={{ flexBasis: "40%", display: "flex" }}>
@@ -144,6 +143,7 @@ const SmallMultipleWaffles = () => {
                       censusSplit={raceCensusSplit}
                       small={true}
                       showCensusSplitLabel={publication.short === "wsj"}
+                      circlePercentage={publication.short === "usa"}
                     />
                   </div>
                 </WaffleRow>
