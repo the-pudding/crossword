@@ -334,7 +334,7 @@ export const WaffleChartWrapper = styled.div`
   width: 100%;
 
   @media ${devices.mobile} {
-    width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
+    //width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
     margin: 0;
   }
 `
@@ -361,13 +361,13 @@ export const WaffleChartLabels = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: ${waffleBlockSize.normal * 10}px;
+  height: ${waffleBlockSize.normal * 10 + 5}px;
   margin-left: 10px;
   width: 100px;
-  flex-wrap: wrap;
 
   @media ${devices.mobile} {
-    height: ${waffleBlockSize.mobile * 10}px;s
+    height: ${waffleBlockSize.mobile * 10 + 5}px;
+    width: 40px;
   }
 `
 
@@ -375,6 +375,10 @@ export const CensusSplitLabel = styled.div`
   font-size: 0.8rem;
   line-height: 0.8rem;
   color: #757575;
+
+  @media ${devices.mobile} {
+    display: none;
+  }
 `
 
 export const Block = styled.div`
