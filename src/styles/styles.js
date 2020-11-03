@@ -3,12 +3,14 @@ import COLORS from "./colors.js"
 
 // Device sizing
 const maxSizes = {
+  smallMobile: "320px",
   mobile: "480px",
   tablet: "768px",
   laptop: "1024px",
   desktop: "2560px",
 }
 const devices = {
+  smallMobile: `(max-width: ${maxSizes.smallMobile})`,
   mobile: `(max-width: ${maxSizes.mobile})`,
   tablet: `(max-width: ${maxSizes.tablet})`,
   laptop: `(max-width: ${maxSizes.laptop})`,
@@ -22,15 +24,15 @@ const waffleBlockSize = {
 }
 const percentSize = {
   normal: "2rem",
-  mobile: "1rem"
+  mobile: "1rem",
 }
 const labelTextSize = {
   normal: "0.8rem",
-  mobile: "0.5rem"
+  mobile: "0.5rem",
 }
 const borderSize = {
   normal: 4,
-  mobile: 2
+  mobile: 2,
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -170,7 +172,7 @@ export const TextNote = styled.p`
 export const ChartNote = styled.div`
   color: #757575;
   font-size: 0.7em;
-  width: 100%;
+  width: 80%;
   margin-top: 1em;
   margin-bottom: 1em;
 `
@@ -217,15 +219,119 @@ export const PuzzleWaffles = styled.div`
 
 // LineChart
 export const LineChartWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   height: 500px;
+  position: relative;
+
+  @media ${devices.mobile} {
+    height: 350px;
+    width: 100%;
+  }
+`
+
+const annotationLocations = {
+  gardner: {
+    normal: {
+      x: "30%",
+      y: "52%",
+    },
+    tablet: {
+      x: "30%",
+      y: "52%",
+    },
+    mobile: {
+      x: "30%",
+      y: "52%",
+    },
+    smallMobile: {
+      x: "26%",
+      y: "50%",
+    },
+  },
+  duVernay: {
+    normal: {
+      x: "75%",
+      y: "39%",
+    },
+    tablet: {
+      x: "77%",
+      y: "39%",
+    },
+    mobile: {
+      x: "71%",
+      y: "39%",
+    },
+    smallMobile: {
+      x: "69%",
+      y: "39%",
+    },
+  },
+  otherAvas: {
+    normal: {
+      x: "43%",
+      y: "81%",
+    },
+    tablet: {
+      x: "43%",
+      y: "81%",
+    },
+    mobile: {
+      x: "43%",
+      y: "81%",
+    },
+    smallMobile: {
+      x: "40%",
+      y: "80%",
+    },
+  },
+}
+
+export const AnnotationText = styled.div`
+  position: absolute;
+  font-family: "National 2 Web Bold";
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  stroke-width: 1px;
+  color: ${props => props.color};
+  background: white;
+  top: ${props => annotationLocations[props.labelKey].normal.y};
+  left: ${props => annotationLocations[props.labelKey].normal.x};
+
+  @media ${devices.tablet} {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    top: ${props => annotationLocations[props.labelKey].tablet.y};
+    left: ${props => annotationLocations[props.labelKey].tablet.x};
+  }
+  @media ${devices.mobile} {
+    font-size: 1rem;
+    line-height: 1rem;
+    top: ${props => annotationLocations[props.labelKey].mobile.y};
+    left: ${props => annotationLocations[props.labelKey].mobile.x};
+  }
+  @media ${devices.smallMobile} {
+    font-size: 1rem;
+    line-height: 1rem;
+    top: ${props => annotationLocations[props.labelKey].smallMobile.y};
+    left: ${props => annotationLocations[props.labelKey].smallMobile.x};
+  }
+`
+
+export const AnnotationEvent = styled.text`
+  font-family: "National 2 Web Bold";
+  text-anchor: middle;
+
+  @media ${devices.mobile} {
+    font-size: 0.9rem;
+  }
 `
 
 // WaffleChart
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
-  width: ${waffleBlockSize.normal * 10 + 2 * borderSize.normal + 60}px;
+  //width: ${waffleBlockSize.normal * 10 + 2 * borderSize.normal + 60}px;
+  width: 100%;
 
   @media ${devices.mobile} {
     width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
@@ -257,7 +363,7 @@ export const WaffleChartLabels = styled.div`
   justify-content: space-between;
   height: ${waffleBlockSize.normal * 10}px;
   margin-left: 10px;
-  width: 50px;
+  width: 100px;
   flex-wrap: wrap;
 
   @media ${devices.mobile} {
@@ -265,8 +371,14 @@ export const WaffleChartLabels = styled.div`
   }
 `
 
+export const CensusSplitLabel = styled.div`
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: #757575;
+`
+
 export const Block = styled.div`
-width: ${waffleBlockSize.normal}px;
+  width: ${waffleBlockSize.normal}px;
   height: ${waffleBlockSize.normal}px;
   border-bottom: ${props =>
     props.borderBottom
@@ -277,13 +389,9 @@ width: ${waffleBlockSize.normal}px;
       ? `${borderSize.normal}px solid ${COLORS.yellow}`
       : "0px"};
   border-left: ${props =>
-    props.borderLeft
-      ? `${borderSize.normal}px solid ${COLORS.yellow}`
-      : "0px"};
+    props.borderLeft ? `${borderSize.normal}px solid ${COLORS.yellow}` : "0px"};
   border-top: ${props =>
-    props.borderTop
-      ? `${borderSize.normal}px solid ${COLORS.yellow}`
-      : "0px"};
+    props.borderTop ? `${borderSize.normal}px solid ${COLORS.yellow}` : "0px"};
 
   outline: 1px solid black;
 
@@ -308,7 +416,7 @@ export const WaffleLabelText = styled.div`
 
   @media ${devices.mobile} {
     font-size: ${labelTextSize.mobile};
-  line-height: ${labelTextSize.mobile};
+    line-height: ${labelTextSize.mobile};
   }
 `
 
@@ -322,7 +430,7 @@ export const Percentage = styled.div`
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
-  line-height: ${percentSize.mobile};
+    line-height: ${percentSize.mobile};
   }
 `
 
@@ -333,23 +441,23 @@ export const CensusSplit = styled.h3`
 `
 
 export const WaffleRow = styled.div`
-display: flex;
-margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 20px;
 `
 
 export const PublicationTitle = styled.h2`
-@media ${devices.mobile} {
-  font-size: 1rem;
-}
+  @media ${devices.mobile} {
+    font-size: 1rem;
+  }
 `
 
 export const WaffleYearLabel = styled.div`
-color: #757575;
-font-size: 0.8rem;
+  color: #757575;
+  font-size: 0.8rem;
 
-@media ${devices.mobile} {
-  font-size: 0.5rem;
-}
+  @media ${devices.mobile} {
+    font-size: 0.5rem;
+  }
 `
 
 // Table

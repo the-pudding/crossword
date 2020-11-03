@@ -83,7 +83,7 @@ const NamesInAnswers = () => {
       />
       {createHtmlForCopy(copy.deepDivePart1)}
 
-      <div style={{ marginTop: "40px", width: "100%" }}>
+      <div style={{ marginTop: "40px", width: "100%", display: "flex", flexDirection: "column" }}>
         <h2 style={{ textAlign: "center" }}>
           <strong>AVA</strong> across all publications
         </h2>

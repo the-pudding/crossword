@@ -8,6 +8,7 @@ import {
   Image,
   ImageWrapper,
   Emphasis,
+  Section,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 

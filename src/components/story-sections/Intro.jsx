@@ -14,6 +14,9 @@ const Intro = () => {
           width: "100%",
           display: "flex",
           justifyContent: "space-evenly",
+          maxWidth: "620px",
+          margin: "1rem auto",
+          padding: "0 1rem"
         }}
       >
         <div

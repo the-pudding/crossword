@@ -1,5 +1,7 @@
 import React from "react"
 import _ from "lodash"
+import { AnnotationEvent } from "../../../styles/styles.js"
+import COLORS from "../../../styles/colors.js"
 
 const Axis = ({
   dms,
@@ -53,7 +55,7 @@ const AxisHorizontal = ({
             y1={0}
             y2={-dms.boundedHeight}
             stroke="black"
-            strokeWidth={annotationYear && value === 2014 ? "4px" : "1px"}
+            strokeWidth="1px"
           />
           <text
             key={i}
@@ -65,28 +67,34 @@ const AxisHorizontal = ({
           >
             {labelAccessor ? labelAccessor(value) : value}
           </text>
-
-          {/* Annotation */}
-          {annotation &&
-            value === 2014 &&
-            _.reverse(annotation.split(" ")).map((word, i) => (
-              <text
-                x={0}
-                y={-dms.boundedHeight - 15 - i * 20}
-                style={{
-                  fontFamily: "'National 2 Web Bold'",
-                  textAnchor: "middle",
-                }}
-              >
-                {word}
-              </text>
-            ))}
         </g>
       ))}
       {label && (
         <text x={dms.boundedWidth / 2} y={dms.marginBottom - 50}>
           {label}
         </text>
+      )}
+
+      {/* Annotation */}
+      {annotation && (
+        <>
+          <line
+            x1={scale(2014)}
+            x2={scale(2014)}
+            y1={0}
+            y2={-dms.boundedHeight}
+            stroke={COLORS.yellow}
+            strokeWidth="4px"
+          />
+          {_.reverse(annotation.split(" ")).map((word, i) => (
+            <AnnotationEvent
+              x={scale(2014)}
+              y={-dms.boundedHeight - 15 - i * 20}
+            >
+              {word}
+            </AnnotationEvent>
+          ))}
+        </>
       )}
     </g>
   )

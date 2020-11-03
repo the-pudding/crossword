@@ -8,7 +8,7 @@ import {
   Block,
   Percentage,
   Line,
-  CensusSplit,
+  CensusSplitLabel
 } from "../../../styles/styles.js"
 import _ from "lodash"
 import { roundData } from "../../utils.js"
@@ -22,6 +22,7 @@ const WaffleChart = ({
   clickable = false,
   changeMetric = null,
   censusSplit,
+  showCensusSplitLabel,
   margin,
   size,
 }) => {
@@ -53,7 +54,6 @@ const WaffleChart = ({
           <Line marginBottom="20px" />
         </>
       )}
-      {/* {censusSplit && <CensusSplit>U.S. Census split</CensusSplit>} */}
 
       <WaffleChartBounds
         onClick={changeMetric}
@@ -89,29 +89,32 @@ const WaffleChart = ({
       </WaffleChartBounds>
 
       <WaffleChartLabels size={size}>
-    {roundedData
-      .filter(d => d.percent !== 0)
-      .map(({ percent }, i) => (
-        <WaffleChartLabel key={i} i={i}>
-          <Percentage
-            numLabels={roundedData.length}
-            color={
-              colors[i] === COLORS.man || colors[i] === COLORS.white
-                ? COLORS.darkGrey
-                : colors[i]
-            }
-            size={size}
-          >
-            {percent}%
-          </Percentage>
-          <WaffleLabelText i={i} size={size}>
-            {labels[i]}
-          </WaffleLabelText>
-        </WaffleChartLabel>
-      ))}
-  </WaffleChartLabels>
+        {roundedData
+          .filter(d => d.percent !== 0)
+          .map(({ percent }, i) => (
+            <>
+            <WaffleChartLabel key={i} i={i}>
+              <Percentage
+                numLabels={roundedData.length}
+                color={
+                  colors[i] === COLORS.man || colors[i] === COLORS.white
+                    ? COLORS.darkGrey
+                    : colors[i]
+                }
+                size={size}
+              >
+                {percent}%
+              </Percentage>
+              <WaffleLabelText i={i} size={size}>
+                {labels[i]}
+              </WaffleLabelText>
+            </WaffleChartLabel>
+
+            {i === 0 && showCensusSplitLabel && <CensusSplitLabel>US census split</CensusSplitLabel>}
+            </>
+          ))}
+      </WaffleChartLabels>
     </WaffleChartWrapper>
-    
   </>
   )
 }

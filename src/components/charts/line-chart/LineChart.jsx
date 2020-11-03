@@ -6,6 +6,7 @@ import Line from "./Line.jsx"
 import Axis from "./Axis.jsx"
 import { LineChartWrapper } from "../../../styles/styles.js"
 import NameAnnotation from "./NameAnnotation.jsx"
+import COLORS from "../../../styles/colors.js"
 import _ from "lodash"
 
 const LineChart = ({ data, metrics, colors }) => {
@@ -95,12 +96,12 @@ const LineChart = ({ data, metrics, colors }) => {
             strokeWidth="4px"
             fill="none"
           />
-
-          {/* Annotations */}
-          <NameAnnotation x={150} y={200} fill={colors[0]} label="Gardner" />
-          <NameAnnotation x={530} y={100} fill={colors[1]} label="DuVernay" />
-          <NameAnnotation x={260} y={345} fill={colors[2]} label="Other Avas" />
         </Chart>
+
+        {/* Annotations */}
+        <NameAnnotation fill={colors[0]} label="Gardner" />
+        <NameAnnotation fill={colors[1]} label="DuVernay" />
+        <NameAnnotation fill={COLORS.darkGrey} label="Other Avas" />
       </LineChartWrapper>
     </>
   )

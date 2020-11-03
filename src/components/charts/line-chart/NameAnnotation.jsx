@@ -1,20 +1,13 @@
 import React from "react"
+import _ from "lodash"
+import { AnnotationText } from "../../../styles/styles.js"
 
-const NameAnnotation = ({ x, y, fill, label }) => {
+const NameAnnotation = ({ fill, label }) => {
+  console.log(_.camelCase(label))
   return (
-    <text
-      x={x}
-      y={y}
-      fill={fill}
-      style={{
-        fontFamily: "'National 2 Web Bold'",
-        fontSize: "1.5em",
-        stroke: "black",
-        strokeWidth: "1px",
-      }}
-    >
+    <AnnotationText labelKey={_.camelCase(label)} color={fill}>
       {label}
-    </text>
+    </AnnotationText>
   )
 }
 

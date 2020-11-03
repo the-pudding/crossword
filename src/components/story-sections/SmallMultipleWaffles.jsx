@@ -131,6 +131,7 @@ const SmallMultipleWaffles = () => {
                       labels={genderLabels}
                       margin="0 10px 20px 10px"
                       censusSplit={genderCensusSplit}
+                      showCensusSplitLabel={publication.short === "wsj"}
                     />
                   </div>
                   <div style={{ flexBasis: "40%", display: "flex" }}>
@@ -142,6 +143,7 @@ const SmallMultipleWaffles = () => {
                       margin="0 10px 20px 10px"
                       censusSplit={raceCensusSplit}
                       small={true}
+                      showCensusSplitLabel={publication.short === "wsj"}
                     />
                   </div>
                 </WaffleRow>
