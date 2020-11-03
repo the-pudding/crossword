@@ -124,7 +124,7 @@ export const Section = styled.section`
 export const Prose = styled.p`
   font-family: "Tiempos Text";
   max-width: 620px;
-  margin: 1rem auto;
+  margin: ${props => (props.margin ? props.margin : "1rem auto")};
   padding: 0 1rem;
   width: 100%;
 
