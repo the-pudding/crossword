@@ -1,5 +1,5 @@
 import React from "react"
-import { Section } from "../../styles/styles.js"
+import { Section, AnswerBox } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import copy from "../../data/copy.json"
 import { RoughNotation } from "react-rough-notation"
@@ -16,7 +16,7 @@ const Intro = () => {
           justifyContent: "space-evenly",
           maxWidth: "620px",
           margin: "1rem auto",
-          padding: "0 1rem"
+          padding: "0 1rem",
         }}
       >
         <div
@@ -26,7 +26,7 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             A 1969 hit for{" "}
             <RoughNotation
               type="box"
@@ -37,7 +37,11 @@ const Intro = () => {
               Neil Diamond
             </RoughNotation>
           </div>
-          <div>SWEETCAROLINE</div>
+          <div style={{ display: "flex" }}>
+            {"SWEETCAROLINE".split("").map(character => (
+              <AnswerBox>{character}</AnswerBox>
+            ))}
+          </div>
           <div
             style={{ color: "#757575", marginTop: "20px", fontSize: "0.9rem" }}
           >
@@ -52,7 +56,7 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div>Funny Fey</div>
+          <div style={{ marginBottom: "10px" }}>Funny Fey</div>
           <div>
             <RoughNotation
               type="box"
@@ -60,7 +64,11 @@ const Intro = () => {
               animate={false}
               color="lightgrey"
             >
-              TINA
+              <div style={{ display: "flex" }}>
+                {"TINA".split("").map(character => (
+                  <AnswerBox>{character}</AnswerBox>
+                ))}
+              </div>
             </RoughNotation>
           </div>
           <div

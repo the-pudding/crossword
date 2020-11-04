@@ -697,10 +697,16 @@ export const ClueAnswerPair = styled.div`
 `
 
 export const AnswerBox = styled.div`
-  height: 25px;
-  width: 25px;
-  outline: 1px solid black;
+  height: 30px;
+  width: 30px;
   text-align: center;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+
+  &:last-of-type {
+    border-right: 1px black solid;
+  }
 `
 
 export const WrittenNote = styled.div`
