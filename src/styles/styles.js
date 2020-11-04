@@ -83,7 +83,7 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
 
     &:hover {
-      color: ${COLORS.pink};
+      color: ${COLORS.blue};
       text-decoration: underline;
     }
   }

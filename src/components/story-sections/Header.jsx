@@ -19,10 +19,23 @@ const Header = () => {
         in the crossword?
       </h1>
       <div>
-        By <strong>Michelle McGhee</strong>
+        By{" "}
+        <a href="https://pudding.cool/author/michelle-mcghee" target="_blank">
+          <strong>Michelle McGhee</strong>
+        </a>
       </div>
       <div style={{ fontSize: "0.8rem", color: "grey" }}>
-        with <strong>Russell Goldenberg</strong> and <strong>Jan Diehm</strong>
+        with{" "}
+        <a
+          href="https://pudding.cool/author/russell-goldenberg/"
+          target="_blank"
+        >
+          <strong>Russell Goldenberg</strong>
+        </a>{" "}
+        and{" "}
+        <a href="https://pudding.cool/author/jan-diehm/" target="_blank">
+          <strong>Jan Diehm</strong>
+        </a>
       </div>
     </Section>
   )
