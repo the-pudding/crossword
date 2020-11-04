@@ -713,6 +713,7 @@ export const ClueExamplesWrapper = styled.div`
 
   @media ${devices.tablet} {
     width: 100%;
+    align-items: center;
   }
 `
 
