@@ -1,45 +1,49 @@
 import React from "react"
-import {
-  TableWrapper,
-  TableRow,
-  TableDivider,
-  HeadingDivider,
-} from "../../../styles/styles.js"
+import { TableWrapper, HeaderRow, TableRow } from "../../../styles/styles.js"
+
+const columnWidths = {
+  0: "25%",
+  1: "45%",
+  2: "15%",
+  3: "15%",
+}
 
 const Table = ({ data, columns }) => {
   return (
     <TableWrapper>
-      <div style={{ display: "flex" }}>
+      <HeaderRow>
         {columns.map((column, i) => (
-          <h3
-            style={{
-              flexBasis: "25%",
-              margin: 0,
-              textAlign: i < 2 ? "left" : "right",
-            }}
-          >
-            {column.title.toUpperCase()}
-          </h3>
+          <th style={{ width: columnWidths[i] }}>
+            <h3
+              style={{
+                textAlign: i < 2 ? "left" : "right",
+                marginRight: i < 2 ? "10px" : "0px",
+                marginLeft: i >= 2 ? "10px" : "0px",
+              }}
+            >
+              {column.title.toUpperCase()}
+            </h3>
+          </th>
         ))}
-      </div>
+      </HeaderRow>
 
-      <HeadingDivider />
-
-      {data.map((d, rowNum) => (
+      {data.map(d => (
         <>
           <TableRow>
             {columns.map((column, i) => (
-              <div
-                style={{
-                  flexBasis: "25%",
-                  textAlign: i < 2 ? "left" : "right",
-                }}
-              >
-                {d[column.dataIndex]}
-              </div>
+              <td style={{ width: columnWidths[i] }}>
+                <div
+                  style={{
+                    textAlign: i < 2 ? "left" : "right",
+                    marginRight: i < 2 ? "10px" : "0px",
+                    marginLeft: i >= 2 ? "10px" : "0px",
+                  }}
+                >
+                  {d[column.dataIndex]}
+                </div>
+              </td>
             ))}
           </TableRow>
-          {rowNum < data.length - 1 && <TableDivider />}
         </>
       ))}
     </TableWrapper>

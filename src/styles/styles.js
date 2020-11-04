@@ -472,42 +472,17 @@ export const WaffleYearLabel = styled.div`
 `
 
 // Table
-export const TableWrapper = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media ${devices.tablet} {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 2rem;
-  }
-
-  @media ${devices.mobile} {
-    font-size: 0.7rem;
-  }
+export const TableWrapper = styled.table`
+  width: 80%;
 `
 
-export const TableRow = styled.div`
-  display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
+export const HeaderRow = styled.tr`
+  border-bottom: 4px solid black;
 `
 
-export const HeadingDivider = styled.hr`
-  width: 100%;
-  background-color: black;
-  border-width: 0px;
-  height: 4px;
-`
-
-export const TableDivider = styled.hr`
-  width: 100%;
-  background-color: black;
-  border-width: 0px;
-  height: 1px;
+export const TableRow = styled.tr`
+  height: 3.5rem;
+  border-top: 1px solid black;
 `
 
 // AboveBelow
