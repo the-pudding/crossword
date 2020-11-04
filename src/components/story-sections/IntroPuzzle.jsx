@@ -40,7 +40,7 @@ const IntroPuzzle = () => {
           onClick={() => {
             crosswordRef.current.fillAllAnswers()
             window.scrollTo({
-              top: 3072,
+              top: 3700,
               left: 0,
               behavior: "smooth",
             })
