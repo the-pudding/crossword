@@ -84,7 +84,7 @@ const CluesWrapper = styled.div.attrs(props => ({
   // flex: 1 2 25%;
 
   height: 100%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   width: 16rem;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {

@@ -17,7 +17,7 @@ import Edit from "../../svg/mdi-edit.svg"
 const NamesInClues = () => {
   return (
     <Section>
-      <h1 style={{ fontSize: "3rem" }}>
+      <h1 style={{ fontSize: "2.5rem" }}>
         3. Redefining{" "}
         <RoughNotation
           type="underline"

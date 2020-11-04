@@ -23,11 +23,11 @@ const waffleBlockSize = {
   mobile: 8,
 }
 const percentSize = {
-  normal: "2rem",
+  normal: "1.5rem",
   mobile: "1rem",
 }
 const labelTextSize = {
-  normal: "0.8rem",
+  normal: "0.7rem",
   mobile: "0.5rem",
 }
 const borderSize = {
@@ -36,20 +36,25 @@ const borderSize = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 20px;
+
+    @media ${devices.mobile} {
+      font-size: 18px;
+    }
+  }
+
   body {
     font-family: "National 2 Web", "Helvetica Neue", sans-serif;
     background-color: white;
     color: black;
+    font-size: inherit;
   }  
 
   h1 {
     font-family: "Tiempos Headline";
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
-
-    @media ${devices.tablet} {
-      font-size: 3rem;
-    }
   }
 
   h2 {
@@ -102,7 +107,6 @@ export const EssayWrapper = styled.main`
   align-items: center;
   max-width: 768px;
   margin: 0 auto;
-  font-size: 18px;
 `
 
 export const Section = styled.section`
@@ -379,8 +383,8 @@ export const WaffleChartLabels = styled.div`
 `
 
 export const CensusSplitLabel = styled.div`
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
   color: #757575;
 
   @media ${devices.mobile} {
@@ -428,6 +432,7 @@ export const WaffleLabelText = styled.div`
   @media ${devices.mobile} {
     font-size: ${labelTextSize.mobile};
     line-height: ${labelTextSize.mobile};
+    overflow-wrap: anywhere;
   }
 `
 
@@ -474,6 +479,10 @@ export const WaffleYearLabel = styled.div`
 // Table
 export const TableWrapper = styled.table`
   width: 80%;
+
+  @media ${devices.mobile} {
+    font-size: 0.8rem;
+  }
 `
 
 export const HeaderRow = styled.tr`
@@ -629,7 +638,7 @@ export const SidewaysBarWrapper = styled.div`
 export const BarLabels = styled.div`
   display: ${props => (props.showLabels ? "flex" : "none")};
   flex-direction: column;
-  width: 100px;
+  width: 105px;
   margin-right: 10px;
 
   @media ${devices.tablet} {
@@ -684,10 +693,27 @@ export const DecadeSliderWrapper = styled.div`
 `
 
 // Clues in text
+export const IntroCluesExample = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 620px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
+`
+
 export const ClueExamplesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 45%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+  }
 `
 
 export const ClueAnswerPair = styled.div`
@@ -699,13 +725,20 @@ export const ClueAnswerPair = styled.div`
 export const AnswerBox = styled.div`
   height: 30px;
   width: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-top: 1px black solid;
   border-bottom: 1px black solid;
   border-left: 1px black solid;
 
   &:last-of-type {
     border-right: 1px black solid;
+  }
+
+  @media ${devices.mobile} {
+    height: 25px;
+    width: 25px;
   }
 `
 
@@ -718,6 +751,12 @@ export const WrittenNote = styled.div`
   color: lightgrey;
 `
 
+export const AnswerCaption = styled.div`
+  color: #757575;
+  margin-top: 20px;
+  font-size: 0.8rem;
+`
+
 export const QuestionCircle = styled.div`
   width: 16px;
   height: 16px;
@@ -726,7 +765,7 @@ export const QuestionCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   line-height: 0.9rem;
   align-self: center;
   margin-right: 20px;
