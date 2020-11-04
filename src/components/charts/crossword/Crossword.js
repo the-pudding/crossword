@@ -88,7 +88,7 @@ const CluesWrapper = styled.div.attrs(props => ({
   width: 16rem;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
-    display: ${props => props.noMobile ? "none" : "block"};
+    display: ${props => (props.noMobile ? "none" : "block")};
   }
 
   .mobile {
@@ -789,6 +789,35 @@ const Crossword = React.forwardRef(
       })
     }
 
+    // Expose these internally
+    const clear = () => {
+      setGridData(
+        produce(draft => {
+          draft.forEach(rowData => {
+            rowData.forEach(cellData => {
+              if (cellData.used) {
+                cellData.guess = ""
+              }
+            })
+          })
+        })
+      )
+    }
+
+    const reveal = () => {
+      setGridData(
+        produce(draft => {
+          draft.forEach(rowData => {
+            rowData.forEach(cellData => {
+              if (cellData.used) {
+                cellData.guess = cellData.answer
+              }
+            })
+          })
+        })
+      )
+    }
+
     return (
       <CrosswordContext.Provider value={context}>
         <CrosswordSizeContext.Provider
@@ -809,6 +838,10 @@ const Crossword = React.forwardRef(
               </CluesWrapper>
 
               <GridWrapper>
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <button onClick={() => clear()}>Clear</button>
+                  <button onClick={() => reveal()}>Reveal</button>
+                </div>
                 {/*
                 This div is hard-coded because we *need* a zero-padded,
                 relative-positioned element for aligning the <input> with the

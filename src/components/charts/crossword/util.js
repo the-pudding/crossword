@@ -110,7 +110,6 @@ export function fillClues(gridData, clues, data, direction) {
 // Given the "nice format" for a crossword, generate the usable data optimized
 // for rendering and our interactivity.
 export function createGridData(data) {
-  console.log({ data })
   const acrossMax = calculateExtents(data, "across")
   const downMax = calculateExtents(data, "down")
 

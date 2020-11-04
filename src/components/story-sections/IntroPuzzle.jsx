@@ -36,17 +36,18 @@ const IntroPuzzle = () => {
       <Section>
         {createHtmlForCopy(copy.introPuzzleBefore)}
 
-        <TextNote>
-          If you're stumped or don't want to play, you can{" "}
-          <button
-            onClick={() => {
-              crosswordRef.current.fillAllAnswers()
-            }}
-          >
-            Skip to results
-          </button>
-          <button onClick={() => crosswordRef.current.reset()}>Clear</button>
-        </TextNote>
+        <button
+          onClick={() => {
+            crosswordRef.current.fillAllAnswers()
+            window.scrollTo({
+              top: 3072,
+              left: 0,
+              behavior: "smooth",
+            })
+          }}
+        >
+          Skip to analysis
+        </button>
 
         <CrosswordChartWrapper>
           <Crossword
