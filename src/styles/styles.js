@@ -718,7 +718,7 @@ export const ClueExamplesWrapper = styled.div`
 export const ClueAnswerPair = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
-  align-self: ${props => props.alignSelf};
+  position: relative;
 `
 
 export const AnswerBox = styled.div`
@@ -726,4 +726,33 @@ export const AnswerBox = styled.div`
   width: 25px;
   outline: 1px solid black;
   text-align: center;
+`
+
+export const WrittenNote = styled.div`
+  font-family: "Mansalva";
+  position: absolute;
+  top: 0px;
+  left: ${props => (props.left ? "-225px" : null)};
+  right: ${props => (props.left ? "0px" : "-250px")};
+  color: lightgrey;
+`
+
+export const QuestionCircle = styled.div`
+  width: 16px;
+  height: 16px;
+  border: 1px black solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  align-self: center;
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+    color: ${COLORS.blue};
+    border-color: ${COLORS.blue};
+  }
 `

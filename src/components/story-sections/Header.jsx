@@ -10,7 +10,7 @@ const Header = () => {
         <RoughNotation
           type="circle"
           show={true}
-          animate={false}
+          animate={true}
           color="lightgrey"
         >
           {" "}

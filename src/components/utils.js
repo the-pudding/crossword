@@ -12,8 +12,10 @@ import {
   ClueExamplesWrapper,
   ClueAnswerPair,
   AnswerBox,
+  WrittenNote,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
+import ClueExamples from "./ClueExamples.jsx"
 
 // workaround for react so links work
 export const createMarkup = content => {
@@ -37,40 +39,8 @@ export const createHtmlForCopy = copy => {
         return (
           <TextNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
         )
-        // } else if (type === "image") {
-        //   return (
-        //     <ImageWrapper key={i}>
-        //       <Image src={twitter} />
-        //       <p style={{ fontSize: "12px" }}>{caption}</p>
-        //     </ImageWrapper>
-        //   )
-        // } else if (type === "tweet") {
-        //   return (
-        //     <div style={{ width: "500px" }}>
-        //       <TwitterTweetEmbed tweetId={"1303360662450601986"} />
-        //     </div>
-        //   )
       } else if (type === "clues") {
-        return (
-          <ClueExamplesWrapper>
-            {clues.map((clue, i) => {
-              const clueText = _.trim(clue.split("=")[0])
-              const answerText = _.trim(clue.split("=")[1])
-              return (
-                <ClueAnswerPair
-                  alignSelf={i % 2 === 0 ? "flex-start" : "flex-end"}
-                >
-                  <div>{clueText}</div>
-                  <div style={{ display: "flex" }}>
-                    {answerText.split("").map(character => (
-                      <AnswerBox>{character}</AnswerBox>
-                    ))}
-                  </div>
-                </ClueAnswerPair>
-              )
-            })}
-          </ClueExamplesWrapper>
-        )
+        return <ClueExamples clues={clues} />
       }
       return ""
     }
