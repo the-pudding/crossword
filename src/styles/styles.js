@@ -471,11 +471,13 @@ export const Percentage = styled.div`
   line-height: ${percentSize.normal};
   color: ${props => (props.color ? props.color : "inherit")};
   -webkit-text-stroke: ${props =>
-    props.color === "white" ? "1px ${COLORS.mainColor}" : "0px"};
+    props.outline ? `1px ${COLORS.mainColor}` : "0px"};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
     line-height: ${percentSize.mobile};
+    width: ${props => (props.outline ? "15%" : null)};
+    text-align: ${props => (props.outline ? "right" : null)};
   }
 `
 
@@ -589,7 +591,6 @@ export const OverviewWrapper = styled.div`
 
   @media ${devices.mobile} {
     flex-direction: row;
-    align-items: center;
     width: 100%;
   }
 `
@@ -607,8 +608,10 @@ export const Labels = styled.div`
 `
 export const CluesChart = styled.div`
   width: 100%;
+  margin-bottom: 20px;
 
   @media ${devices.mobile} {
+    margin-bottom: 0px;
     width: 30%;
   }
 `
@@ -616,6 +619,12 @@ export const CluesChart = styled.div`
 export const OverviewRow = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
 
   @media ${devices.mobile} {
     flex-direction: row;
@@ -626,10 +635,22 @@ export const OverviewRow = styled.div`
 
 export const OverviewLabel = styled.div`
   font-size: 0.8rem;
+  line-height: 0.8rem;
 
   @media ${devices.mobile} {
     font-size: 0.7rem;
-    margin-left: 10px;
+    line-height: 0.7rem;
+    margin-left: 7px;
+    width: 85%;
+  }
+`
+
+export const FakeFiller = styled.h3`
+  display: none;
+
+  @media ${devices.mobile} {
+    display: flex;
+    visibility: hidden;
   }
 `
 

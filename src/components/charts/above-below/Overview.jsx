@@ -9,6 +9,7 @@ import {
   Labels,
   CluesChart,
   OverviewLabel,
+  FakeFiller,
 } from "../../../styles/styles.js"
 
 const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
@@ -62,9 +63,10 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
       </CluesChart>
 
       <Labels>
+        <FakeFiller>ALL CLUES</FakeFiller>
         {keys.map((key, i) => (
           <OverviewRow>
-            <Percentage color={keyColors[i]} size={"medium"}>
+            <Percentage color={keyColors[i]} size={"medium"} outline={true}>
               {data[key]}
             </Percentage>
             <OverviewLabel>
