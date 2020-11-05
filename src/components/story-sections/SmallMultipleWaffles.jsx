@@ -11,6 +11,12 @@ import {
   WaffleRow,
   WaffleYearLabel,
   PublicationTitle,
+  WaffleSections,
+  TitleSection,
+  WaffleYearSelect,
+  GroupHeading,
+  GroupHeadingWrapper,
+  FakePubTitle,
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
@@ -33,9 +39,13 @@ const SmallMultipleWaffles = () => {
     <>
       <Section>
         <div style={{ width: "100%", display: "flex" }}>
-          <div style={{ flexBasis: "20%", visibility: "hidden" }} />
-          <h3 style={{ flexBasis: "40%" }}>GENDER</h3>
-          <h3 style={{ flexBasis: "40%" }}>RACE {"&"} ETHNICITY</h3>
+          <FakePubTitle />
+          <GroupHeadingWrapper>
+            <GroupHeading>GENDER</GroupHeading>
+          </GroupHeadingWrapper>
+          <GroupHeadingWrapper>
+            <GroupHeading>RACE {"&"} ETHNICITY</GroupHeading>
+          </GroupHeadingWrapper>
         </div>
 
         <div style={{ width: "100%" }}>
@@ -71,48 +81,54 @@ const SmallMultipleWaffles = () => {
                 ? _.ceil(
                     usCensusData.filter(d =>
                       d.decade.includes(decade.toString())
-                    )[0].men
+                    )[0].women
                   )
-                : _.ceil(usCensusData.filter(d => d.decade === "2020")[0].men)
+                : _.ceil(usCensusData.filter(d => d.decade === "2020")[0].women)
             const raceCensusSplit =
               publication.short === "nyt"
                 ? _.ceil(
                     usCensusData.filter(d =>
                       d.decade.includes(decade.toString())
-                    )[0].whiteNonHispanic
+                    )[0].minority
                   )
                 : _.ceil(
-                    usCensusData.filter(d => d.decade === "2020")[0]
-                      .whiteNonHispanic
+                    usCensusData.filter(d => d.decade === "2020")[0].minority
                   )
 
             return (
               <>
                 <Line marginBottom="20px" />
                 <WaffleRow>
-                  <div style={{ flexBasis: "20%" }}>
-                    <PublicationTitle>{publication.long}</PublicationTitle>
+                  <TitleSection>
+                    <PublicationTitle
+                      style={
+                        publication.short === "nyt"
+                          ? { marginBottom: "0" }
+                          : null
+                      }
+                    >
+                      {publication.long}
+                    </PublicationTitle>
 
                     {publication.short === "nyt" ? (
-                      <div style={{ paddingRight: "20px" }}>
-                        <select
-                          name="cars"
-                          id="cars"
-                          style={{ fontSize: "0.8rem" }}
-                          value={decade}
-                          onChange={e => setDecade(e.target.value)}
-                        >
-                          {_.range(1940, 2030, 10).map((d, i) => (
-                            <option value={d} key={i}>
-                              {d}
-                            </option>
-                          ))}
-                        </select>
+                      <div>
                         <WaffleYearLabel
                           style={{
-                            padding: "10px 0 10px 0",
+                            padding: "10px 20px 10px 0",
                           }}
                         >
+                          <WaffleYearSelect
+                            name="year-select"
+                            id="year-select"
+                            value={decade}
+                            onChange={e => setDecade(e.target.value)}
+                          >
+                            {_.range(1940, 2030, 10).map((d, i) => (
+                              <option value={d} key={i}>
+                                {d}
+                              </option>
+                            ))}
+                          </WaffleYearSelect>
                           We have data from each decade since 1940 from the
                           Times' crossword. Use the dropdown to see more.
                         </WaffleYearLabel>
@@ -120,32 +136,32 @@ const SmallMultipleWaffles = () => {
                     ) : (
                       <WaffleYearLabel>2020</WaffleYearLabel>
                     )}
-                  </div>
-                  <div style={{ flexBasis: "40%", display: "flex" }}>
-                    <WaffleChart
-                      size="large"
-                      data={genderData}
-                      colors={genderColors}
-                      labels={genderLabels}
-                      margin="0 10px 20px 10px"
-                      censusSplit={genderCensusSplit}
-                      showCensusSplitLabel={publication.short === "wsj"}
-                      circlePercentage={publication.short === "usa"}
-                    />
-                  </div>
-                  <div style={{ flexBasis: "40%", display: "flex" }}>
-                    <WaffleChart
-                      size="large"
-                      data={raceData}
-                      colors={raceColors}
-                      labels={raceLabels}
-                      margin="0 10px 20px 10px"
-                      censusSplit={raceCensusSplit}
-                      small={true}
-                      showCensusSplitLabel={publication.short === "wsj"}
-                      circlePercentage={publication.short === "usa"}
-                    />
-                  </div>
+                  </TitleSection>
+                  <WaffleSections>
+                    <div style={{ width: "50%" }}>
+                      <WaffleChart
+                        size="large"
+                        data={genderData}
+                        colors={genderColors}
+                        labels={genderLabels}
+                        censusSplit={genderCensusSplit}
+                        showCensusSplitLabel={publication.short === "wsj"}
+                        circlePercentage={publication.short === "usa"}
+                      />
+                    </div>
+                    <div style={{ width: "50%" }}>
+                      <WaffleChart
+                        size="large"
+                        data={raceData}
+                        colors={raceColors}
+                        labels={raceLabels}
+                        censusSplit={raceCensusSplit}
+                        small={true}
+                        showCensusSplitLabel={publication.short === "wsj"}
+                        circlePercentage={publication.short === "usa"}
+                      />
+                    </div>
+                  </WaffleSections>
                 </WaffleRow>
               </>
             )

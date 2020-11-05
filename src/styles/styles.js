@@ -104,9 +104,11 @@ export const GlobalStyle = createGlobalStyle`
 
   #blue {
     color: ${COLORS.blue};
+    font-size: 1.3rem;
   }
   #pink {
     color: ${COLORS.pink};
+    font-size: 1.3rem;
   }
 `
 
@@ -370,22 +372,23 @@ export const AnnotationEvent = styled.text`
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
-  //width: ${waffleBlockSize.normal * 10 + 2 * borderSize.normal + 60}px;
   width: 100%;
 
   @media ${devices.mobile} {
-    //width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
     margin: 0;
   }
 `
 
 export const WaffleChartBounds = styled.div`
   display: flex;
+  position: relative;
   width: ${waffleBlockSize.normal * 10}px;
   height: ${waffleBlockSize.normal * 10}px;
   flex-wrap: wrap;
   outline: ${borderSize.normal}px ${COLORS.mainColor} solid;
   margin-left: ${borderSize.normal}px;
+  flex-shrink: 0;
+
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
@@ -402,12 +405,32 @@ export const WaffleChartLabels = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   height: ${waffleBlockSize.normal * 10 + 5}px;
-  margin-left: 10px;
-  width: 100px;
+  margin-left: 17px;
+  width: auto;
 
   @media ${devices.mobile} {
     height: ${waffleBlockSize.mobile * 10 + 5}px;
-    width: 40px;
+    margin-left: 10px;
+  }
+`
+
+export const GroupHeadingWrapper = styled.div`
+  width: 40%;
+
+  @media ${devices.mobile} {
+    width: 50%;
+  }
+`
+
+export const GroupHeading = styled.h3`
+  width: ${waffleBlockSize.normal * 10}px;
+  padding-left: ${borderSize.normal}px;
+  text-align: center;
+
+  @media ${devices.mobile} {
+    text-align: start;
+    padding-left: 0px;
+    margin-bottom: 0px;
   }
 `
 
@@ -461,7 +484,6 @@ export const WaffleLabelText = styled.div`
   @media ${devices.mobile} {
     font-size: ${labelTextSize.mobile};
     line-height: ${labelTextSize.mobile};
-    overflow-wrap: anywhere;
   }
 `
 
@@ -487,23 +509,79 @@ export const CensusSplit = styled.h3`
   }
 `
 
+export const FakePubTitle = styled.div`
+  width: 20%;
+  visibility: hidden;
+
+  @media ${devices.mobile} {
+    display: none;
+  }
+`
+
 export const WaffleRow = styled.div`
   display: flex;
   margin-bottom: 20px;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
+`
+
+export const TitleSection = styled.div`
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+
+  @media ${devices.mobile} {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+`
+
+export const WaffleSections = styled.div`
+  display: flex;
+  width: 80%;
+
+  @media ${devices.mobile} {
+    width: 100%;
+  }
 `
 
 export const PublicationTitle = styled.h2`
   @media ${devices.mobile} {
     font-size: 1rem;
+    margin: 0;
+    flex-shrink: 0;
   }
 `
 
 export const WaffleYearLabel = styled.div`
+  display: flex;
+  flex-direction: column;
   color: #757575;
   font-size: 0.8rem;
+  line-height: 0.9rem;
 
   @media ${devices.mobile} {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    margin-left: 10px;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 0px !important;
+  }
+`
+
+export const WaffleYearSelect = styled.select`
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+    margin-bottom: 0px;
+    margin-right: 10px;
   }
 `
 
