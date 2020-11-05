@@ -33,9 +33,9 @@ const ClueExample = ({ i, clueText, answerText }) => {
       brackets={i % 2 === 0 ? "left" : "right"}
     >
       <div style={{ display: "flex" }}>
-        <QuestionCircle onClick={() => setShowAnnotations(!showAnnotations)}>
+        {/* <QuestionCircle onClick={() => setShowAnnotations(!showAnnotations)}>
           ?
-        </QuestionCircle>
+        </QuestionCircle> */}
 
         <ClueAnswerPair>
           <div>{clueText}</div>

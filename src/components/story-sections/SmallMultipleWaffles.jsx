@@ -48,7 +48,7 @@ const SmallMultipleWaffles = () => {
           </GroupHeadingWrapper>
         </div>
 
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", marginBottom: "50px" }}>
           {publications.map(publication => {
             const allData =
               publication.short === "nyt"
