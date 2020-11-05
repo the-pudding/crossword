@@ -56,8 +56,8 @@ const IntroPuzzle = () => {
             useStorage={false}
             theme={{
               numberColor: COLORS.mainColor,
-              focusBackground: "#ffcc00",
-              highlightBackground: "#ffec99",
+              focusBackground: COLORS.crosswordYellowDark,
+              highlightBackground: COLORS.crosswordYellowLight,
               cellBorder: COLORS.mainColor,
             }}
             data={data}
@@ -72,7 +72,10 @@ const IntroPuzzle = () => {
           />
         </CrosswordChartWrapper>
 
-        <Callout>
+        <Callout
+          href="https://pudding.cool/2020/11/crossword-puzzles"
+          target="_blank"
+        >
           <Edit />
           <div style={{ marginLeft: "10px" }}>
             <strong style={{ marginRight: "0.3rem" }}>

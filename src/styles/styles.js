@@ -85,6 +85,7 @@ export const GlobalStyle = createGlobalStyle`
 
     &:hover {
       cursor: pointer;
+      background: ${COLORS.crosswordYellowLight};
     }
     &:last-of-type {
       margin-right: 0px;
@@ -163,14 +164,23 @@ export const Image = styled.img`
   height: 450px;
 `
 
-export const Callout = styled.div`
-  background: ${COLORS.yellow};
-  outline: 4px ${COLORS.mainColor} solid;
+export const Callout = styled.a`
+  text-decoration: none;
+  background: ${COLORS.crosswordYellowLight};
+  border: 4px ${COLORS.mainColor} solid;
   display: flex;
   align-items: center;
   padding: 15px;
   margin-top: 50px;
   font-size: 0.9rem;
+
+  transition: background 0.5s ease;
+
+  &:hover {
+    text-decoration: none;
+    color: ${COLORS.mainColor};
+    background: ${COLORS.crosswordYellowDark};
+  }
 
   @media ${devices.mobile} {
     font-size: 0.8rem;
