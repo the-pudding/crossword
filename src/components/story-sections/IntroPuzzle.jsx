@@ -56,7 +56,7 @@ const IntroPuzzle = () => {
             useStorage={false}
             theme={{
               numberColor: COLORS.mainColor,
-              focusBackground: COLORS.crosswordYellowDark,
+              focusBackground: COLORS.yellow,
               highlightBackground: COLORS.crosswordYellowLight,
               cellBorder: COLORS.mainColor,
             }}

@@ -166,7 +166,7 @@ export const Image = styled.img`
 
 export const Callout = styled.a`
   text-decoration: none;
-  background: ${COLORS.crosswordYellowLight};
+  background: ${COLORS.yellow};
   border: 4px ${COLORS.mainColor} solid;
   display: flex;
   align-items: center;
@@ -201,10 +201,13 @@ export const TextNote = styled.p`
 
 export const ChartNote = styled.div`
   color: #757575;
-  font-size: 0.7em;
-  width: 80%;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+  }
 `
 
 export const Fade = styled.div`
@@ -355,11 +358,11 @@ export const AnnotationText = styled.div`
 `
 
 export const AnnotationEvent = styled.text`
-  font-family: "National 2 Web Bold";
   text-anchor: middle;
+  font-size: 0.9rem;
 
   @media ${devices.mobile} {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `
 

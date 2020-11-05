@@ -20,8 +20,8 @@ const NamesInAnswers = () => {
   const publications = [
     { short: "usa", long: "USA Today" },
     { short: "uni", long: "Universal" },
-    { short: "nyt", long: "NYTimes" },
-    { short: "lat", long: "LATimes" },
+    { short: "nyt", long: "NY Times" },
+    { short: "lat", long: "LA Times" },
     { short: "wsj", long: "WSJ" },
   ]
   const data2020 = ava.filter(d => d.year === "2020")[0]
@@ -90,10 +90,11 @@ const NamesInAnswers = () => {
           width: "100%",
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <h2 style={{ textAlign: "center" }}>
-          <strong>AVA</strong> across all publications
+          Use of the answer <strong>AVA</strong> across all publications
         </h2>
         <LineChart
           data={ava.filter(d => parseInt(d.year) >= 2000)}

@@ -19,8 +19,8 @@ const SmallMultipleWaffles = () => {
 
   const publications = [
     { short: "wsj", long: "WSJ" },
-    { short: "lat", long: "LATimes" },
-    { short: "nyt", long: "NYTimes" },
+    { short: "lat", long: "LA Times" },
+    { short: "nyt", long: "NY Times" },
     { short: "up", long: "Universal" },
     { short: "usa", long: "USA Today" },
   ]
