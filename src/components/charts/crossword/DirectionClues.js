@@ -12,10 +12,10 @@ export default function DirectionClues({ direction, clues, clueIndex }) {
   return (
     <div className="direction">
       {/* use something other than h3? */}
-      <h3 className="header">
+      <div className="header">
         <strong>{direction.toUpperCase()}</strong>
-      </h3>
-      <Line />
+      </div>
+      <Line color={"#efefef"} />
       {clues.map(({ number, clue, correct }) => {
         const displayClue = clue.split("|").map(d => _.trim(d))[clueIndex]
 

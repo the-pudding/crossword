@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "National 2 Web", "Helvetica Neue", sans-serif;
     background-color: white;
-    color: black;
+    color: ${COLORS.mainColor};
     font-size: inherit;
   }  
 
@@ -55,16 +55,20 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Tiempos Headline";
     font-size: 3rem;
     text-align: center;
+    color: ${COLORS.mainColor};
   }
 
   h2 {
     font-family: "Tiempos Headline";
     font-size: 1.5rem;
+    color: ${COLORS.mainColor};
   }
 
   h3 {
     font-family: "National 2 Web Bold";
     font-size: 0.8em;
+    color: ${COLORS.mainColor};
+
   }
 
   strong {
@@ -73,13 +77,17 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     font-size: 0.8rem;
-    padding: 5px;
-    margin: 5px;
-    background: white;
-    border: 1px black solid;
-    border-radius: 5px;
+    padding: 0.3rem;
+    background: #efefef;
+    border-radius: 4px;
+    border: none;
+    margin-right: 10px;
+
     &:hover {
       cursor: pointer;
+    }
+    &:last-of-type {
+      margin-right: 0px;
     }
   }
 
@@ -139,7 +147,7 @@ export const Prose = styled.p`
 
 export const Emphasis = styled.div`
   width: 100%;
-  border: 4px solid black;
+  border: 4px solid ${COLORS.mainColor};
   margin: 2rem auto;
 `
 
@@ -157,7 +165,7 @@ export const Image = styled.img`
 
 export const Callout = styled.div`
   background: ${COLORS.yellow};
-  outline: 4px black solid;
+  outline: 4px ${COLORS.mainColor} solid;
   display: flex;
   align-items: center;
   padding: 15px;
@@ -203,7 +211,7 @@ export const Fade = styled.div`
 
 export const Line = styled.hr`
   width: 100%;
-  background-color: black;
+  background-color: ${props => (props.color ? props.color : COLORS.mainColor)};
   border-width: 0px;
   height: 1px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
@@ -217,7 +225,7 @@ export const CrosswordChartWrapper = styled.div`
 
   @media ${devices.tablet} {
     height: auto;
-    margin-top: 25px;
+    margin-top: 45px;
   }
 `
 
@@ -355,7 +363,7 @@ export const WaffleChartBounds = styled.div`
   width: ${waffleBlockSize.normal * 10}px;
   height: ${waffleBlockSize.normal * 10}px;
   flex-wrap: wrap;
-  outline: ${borderSize.normal}px black solid;
+  outline: ${borderSize.normal}px ${COLORS.mainColor} solid;
   margin-left: ${borderSize.normal}px;
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
@@ -408,7 +416,7 @@ export const Block = styled.div`
   border-top: ${props =>
     props.borderTop ? `${borderSize.normal}px solid ${COLORS.yellow}` : "0px"};
 
-  outline: 1px solid black;
+  outline: 1px solid ${COLORS.mainColor};
 
   background: ${props => props.color};
 
@@ -442,7 +450,7 @@ export const Percentage = styled.div`
   line-height: ${percentSize.normal};
   color: ${props => (props.color ? props.color : "inherit")};
   -webkit-text-stroke: ${props =>
-    props.color === "white" ? "1px black" : "0px"};
+    props.color === "white" ? "1px ${COLORS.mainColor}" : "0px"};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
@@ -486,12 +494,12 @@ export const TableWrapper = styled.table`
 `
 
 export const HeaderRow = styled.tr`
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid ${COLORS.mainColor};
 `
 
 export const TableRow = styled.tr`
   height: 3.5rem;
-  border-top: 1px solid black;
+  border-top: 1px solid ${COLORS.mainColor};
 `
 
 // AboveBelow
@@ -545,7 +553,7 @@ export const Tooltip = styled.div`
   top: ${props => (props.hoverY ? `${props.hoverY}px` : 0)};
   left: ${props => (props.hoverX ? `${props.hoverX}px` : 0)};
   background: white;
-  outline: 2px black solid;
+  outline: 2px ${COLORS.mainColor} solid;
   width: 200px;
   padding: 15px;
   textoverflow: scroll;
@@ -664,7 +672,7 @@ export const BarLabel = styled.div`
 export const SidewaysBarBounds = styled.div`
   display: flex;
   flex-wrap: wrap;
-  outline: ${sidewaysBarBorder}px black solid;
+  outline: ${sidewaysBarBorder}px ${COLORS.mainColor} solid;
   width: ${10 * sidewaysBarBlock.normal}px;
   height: ${5 * sidewaysBarBlock.normal}px;
 
@@ -677,7 +685,7 @@ export const SidewaysBarBounds = styled.div`
 export const SidewaysBarBlock = styled.div`
   height: ${sidewaysBarBlock.normal}px;
   width: ${sidewaysBarBlock.normal}px;
-  outline: 1px black solid;
+  outline: 1px ${COLORS.mainColor} solid;
   background: ${props => props.color};
 
   @media ${devices.mobile} {
@@ -729,12 +737,12 @@ export const AnswerBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px black solid;
-  border-bottom: 1px black solid;
-  border-left: 1px black solid;
+  border-top: 1px ${COLORS.mainColor} solid;
+  border-bottom: 1px ${COLORS.mainColor} solid;
+  border-left: 1px ${COLORS.mainColor} solid;
 
   &:last-of-type {
-    border-right: 1px black solid;
+    border-right: 1px ${COLORS.mainColor} solid;
   }
 
   @media ${devices.mobile} {
@@ -761,7 +769,7 @@ export const AnswerCaption = styled.div`
 export const QuestionCircle = styled.div`
   width: 16px;
   height: 16px;
-  border: 1px black solid;
+  border: 1px ${COLORS.mainColor} solid;
   border-radius: 8px;
   display: flex;
   align-items: center;

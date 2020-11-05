@@ -54,9 +54,10 @@ const IntroPuzzle = () => {
             ref={crosswordRef}
             useStorage={false}
             theme={{
-              numberColor: "black",
-              focusBackground: "gold",
-              highlightBackground: "#72cefc",
+              numberColor: COLORS.mainColor,
+              focusBackground: "#ffcc00",
+              highlightBackground: "#ffec99",
+              cellBorder: COLORS.mainColor,
             }}
             data={data}
             onCorrect={() => {

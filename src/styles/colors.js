@@ -1,4 +1,6 @@
 export default {
+  mainColor: "#1A1A1A",
+
   white: "#E6E6E6",
   poc: "#C63DA3",
   man: "#E6E6E6",
