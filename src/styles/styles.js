@@ -181,7 +181,7 @@ export const Callout = styled.a`
   &:hover {
     text-decoration: none;
     color: ${COLORS.mainColor};
-    background: ${COLORS.crosswordYellowDark};
+    background: ${COLORS.crosswordYellowLight};
   }
 
   @media ${devices.mobile} {
