@@ -170,6 +170,7 @@ export const Callout = styled.div`
   align-items: center;
   padding: 15px;
   margin-top: 50px;
+  font-size: 0.9rem;
 
   @media ${devices.mobile} {
     font-size: 0.8rem;
@@ -215,6 +216,13 @@ export const Line = styled.hr`
   border-width: 0px;
   height: 1px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
+`
+
+export const SkipButtonWrapper = styled.div`
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  max-width: 620px;
 `
 
 // Crossword

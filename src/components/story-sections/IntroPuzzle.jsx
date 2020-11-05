@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import copy from "../../data/copy.json"
 import {
   Section,
-  TextNote,
   Callout,
   CrosswordChartWrapper,
-  PuzzleWaffles,
+  SkipButtonWrapper,
 } from "../../styles/styles.js"
 import _ from "lodash"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
@@ -36,18 +35,20 @@ const IntroPuzzle = () => {
       <Section>
         {createHtmlForCopy(copy.introPuzzleBefore)}
 
-        <button
-          onClick={() => {
-            crosswordRef.current.fillAllAnswers()
-            window.scrollTo({
-              top: 3700,
-              left: 0,
-              behavior: "smooth",
-            })
-          }}
-        >
-          Skip to analysis
-        </button>
+        <SkipButtonWrapper>
+          <button
+            onClick={() => {
+              crosswordRef.current.fillAllAnswers()
+              window.scrollTo({
+                top: 3700,
+                left: 0,
+                behavior: "smooth",
+              })
+            }}
+          >
+            Skip to analysis
+          </button>
+        </SkipButtonWrapper>
 
         <CrosswordChartWrapper>
           <Crossword

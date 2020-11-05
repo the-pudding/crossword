@@ -71,9 +71,11 @@ const GridWrapper = styled.div.attrs(props => ({
   // min-width: 20rem;
   // max-width: 60rem; /* Should the size matter? */
 
-  width: 60%;
+  width: 100%;
 
-  // flex: 2 1 50%;
+  @media (max-width: ${props => props.theme.columnBreakpoint}) {
+    width: 65%;
+  }
 `
 
 const CluesWrapper = styled.div.attrs(props => ({
@@ -98,6 +100,11 @@ const CluesWrapper = styled.div.attrs(props => ({
       align-items: center;
       justify-content: space-between;
       height: 50px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
     }
   }
 
