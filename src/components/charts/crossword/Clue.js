@@ -14,6 +14,10 @@ const ClueWrapper = styled.div.attrs(props => ({
   background-color: ${props =>
     props.highlight ? props.highlightBackground : "transparent"};
   display: flex;
+
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  padding: 0.5em;
 `
 
 export default function Clue({
@@ -52,9 +56,7 @@ export default function Clue({
       onClick={handleClick}
       aria-label={`clue-${number}-${direction}`}
     >
-      <div style={{ marginRight: "10px" }}>
-        <strong>{number}</strong>
-      </div>
+      <div style={{ marginRight: "10px" }}>{number}</div>
       <div>{children}</div>
     </ClueWrapper>
   )

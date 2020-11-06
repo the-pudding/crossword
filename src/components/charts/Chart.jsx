@@ -1,8 +1,8 @@
 import React from "react"
 
-const Chart = ({ dms, children }) => {
+const Chart = ({ dms, svgStyle, children }) => {
   return (
-    <svg height={dms.height} width={dms.width}>
+    <svg height={dms.height} width={dms.width} style={svgStyle}>
       <g transform={`translate(${dms.marginLeft}, ${dms.marginTop})`}>
         {children}
       </g>

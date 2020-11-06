@@ -98,11 +98,11 @@ export default function Cell({
       )}
       {number && (
         <text
-          x={x + cellPadding * 4}
-          y={y + cellPadding * 4}
+          x={x + cellPadding * 4 + 1}
+          y={y + cellPadding * 4 + 1}
           textAnchor="start"
           dominantBaseline="hanging"
-          style={{ fontSize: "50%", fill: numberColor }}
+          style={{ fontSize: "50%", fill: numberColor, opacity: 0.5 }}
         >
           {number}
         </text>

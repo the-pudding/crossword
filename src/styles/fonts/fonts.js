@@ -7,6 +7,7 @@ import TiemposText from "./tiempos/TiemposTextWeb-Regular.woff"
 import TiemposText2 from "./tiempos/TiemposTextWeb-Regular.woff2"
 import TiemposHeadline from "./tiempos/TiemposHeadlineWeb-Regular.woff"
 import TiemposHeadline2 from "./tiempos/TiemposHeadlineWeb-Regular.woff2"
+import Mansalva from "./mansalva/Mansalva-Regular.ttf"
 
 export default createGlobalStyle`
   @font-face {
@@ -30,6 +31,12 @@ export default createGlobalStyle`
   @font-face {
     font-family: "Tiempos Text";
     src: url(${TiemposText}) format("woff), url(${TiemposText2}) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Mansalva";
+    src: url(${Mansalva}) format("truetype");
     font-weight: normal;
     font-style: normal;
   }

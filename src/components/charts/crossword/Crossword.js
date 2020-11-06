@@ -71,10 +71,11 @@ const GridWrapper = styled.div.attrs(props => ({
   // min-width: 20rem;
   // max-width: 60rem; /* Should the size matter? */
 
-  width: 50%;
-  //width: 80%;
+  width: 100%;
 
-  // flex: 2 1 50%;
+  @media (max-width: ${props => props.theme.columnBreakpoint}) {
+    width: 65%;
+  }
 `
 
 const CluesWrapper = styled.div.attrs(props => ({
@@ -84,11 +85,11 @@ const CluesWrapper = styled.div.attrs(props => ({
   // flex: 1 2 25%;
 
   height: 100%;
-  font-size: 0.8rem;
-  width: 16rem;
+  font-size: 0.7rem;
+  width: 70%;
 
   @media (max-width: ${props => props.theme.columnBreakpoint}) {
-    display: ${props => props.noMobile ? "none" : "block"};
+    display: ${props => (props.noMobile ? "none" : "block")};
   }
 
   .mobile {
@@ -99,6 +100,11 @@ const CluesWrapper = styled.div.attrs(props => ({
       align-items: center;
       justify-content: space-between;
       height: 50px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
     }
   }
 
@@ -114,12 +120,7 @@ const CluesWrapper = styled.div.attrs(props => ({
     position: relative;
 
     .header {
-      margin-top: 0;
-      margin-bottom: 0.5em;
-    }
-
-    div {
-      margin-top: 0.5em;
+      padding-left: calc(0.5em + 6px);
     }
   }
 `
@@ -789,6 +790,35 @@ const Crossword = React.forwardRef(
       })
     }
 
+    // Expose these internally
+    const clear = () => {
+      setGridData(
+        produce(draft => {
+          draft.forEach(rowData => {
+            rowData.forEach(cellData => {
+              if (cellData.used) {
+                cellData.guess = ""
+              }
+            })
+          })
+        })
+      )
+    }
+
+    const reveal = () => {
+      setGridData(
+        produce(draft => {
+          draft.forEach(rowData => {
+            rowData.forEach(cellData => {
+              if (cellData.used) {
+                cellData.guess = cellData.answer
+              }
+            })
+          })
+        })
+      )
+    }
+
     return (
       <CrosswordContext.Provider value={context}>
         <CrosswordSizeContext.Provider
@@ -809,13 +839,26 @@ const Crossword = React.forwardRef(
               </CluesWrapper>
 
               <GridWrapper>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <button onClick={() => clear()}>Clear</button>
+                  <button onClick={() => reveal()}>Reveal</button>
+                </div>
                 {/*
                 This div is hard-coded because we *need* a zero-padded,
                 relative-positioned element for aligning the <input> with the
                 cells in the <svg>.
               */}
                 <div style={{ margin: 0, padding: 0, position: "relative" }}>
-                  <svg viewBox="0 0 100 100">
+                  <svg
+                    viewBox="0 0 100 100"
+                    style={{ border: `4px solid ${finalTheme.cellBorder}` }}
+                  >
                     <rect
                       x={0}
                       y={0}

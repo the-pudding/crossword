@@ -1,5 +1,6 @@
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
+import useChartDimensions from "../../../hooks/useChartDimensions.js"
 import {
   WaffleChartWrapper,
   WaffleChartBounds,
@@ -14,6 +15,7 @@ import {
 import _ from "lodash"
 import { roundData } from "../../utils.js"
 import COLORS from "../../../styles/colors.js"
+import Chart from "../Chart.jsx"
 
 const WaffleChart = ({
   title,
@@ -28,6 +30,9 @@ const WaffleChart = ({
   margin,
   size,
 }) => {
+  const [ref, dms] = useChartDimensions({})
+  const blockSize = dms.width / 10
+
   const roundedData = roundData(data).filter(d => d.percent >= 1)
 
   const colorOptions = colors
@@ -61,33 +66,40 @@ const WaffleChart = ({
           onClick={changeMetric}
           clickable={clickable}
           size={size}
+          ref={ref}
         >
-          {_.range(0, 100).map(i => {
-            if (censusSplit) {
-              const borderTop =
-                i === censusSplit ||
-                (_.floor(i / 10) === _.floor(censusSplit / 10) &&
-                  i % 10 > censusSplit % 10) ||
-                (_.floor(i / 10) === _.floor(censusSplit / 10) + 1 &&
-                  i % 10 < censusSplit % 10)
-              const borderLeft = i === censusSplit && i % 10 !== 0
-              const borderBottom = false
-              const borderRight = false
+          {_.range(0, 100).map(i => (
+            <Block key={i} color={colorLookup[i]} size={size} />
+          ))}
 
-              return (
-                <Block
-                  key={i}
-                  color={colorLookup[i]}
-                  borderBottom={borderBottom}
-                  borderRight={borderRight}
-                  borderTop={borderTop}
-                  borderLeft={borderLeft}
-                  size={size}
-                />
-              )
-            }
-            return <Block key={i} color={colorLookup[i]} size={size} />
-          })}
+          {/* Census split line */}
+          <Chart dms={dms} svgStyle={{ position: "absolute" }}>
+            {censusSplit % 10 === 0 ? (
+              <path
+                d={`M ${dms.width} ${
+                  (10 - censusSplit / 10) * blockSize
+                } h ${-dms.width} 0`}
+                stroke={COLORS.yellow}
+                strokeWidth={dms.width === 150 ? "4px" : "3px"}
+                fill="none"
+              />
+            ) : (
+              <path
+                d={`M ${dms.width} ${
+                  blockSize * (10 - _.ceil(censusSplit / 10))
+                } h ${-(
+                  blockSize *
+                  (censusSplit % 10)
+                )} 0 v 0 ${blockSize} h ${-(
+                  blockSize *
+                  (10 - (censusSplit % 10))
+                )} 0`}
+                stroke={COLORS.yellow}
+                strokeWidth={dms.width === 150 ? "4px" : "2px"}
+                fill="none"
+              />
+            )}
+          </Chart>
         </WaffleChartBounds>
 
         <WaffleChartLabels size={size}>

@@ -77,11 +77,16 @@ const StackedSquares = ({
                   y={y}
                   height={squareHeight}
                   width={squareHeight}
-                  fill={y < 0 ? colorLookup.above : colorLookup.below}
-                  strokeWidth={"1px"}
-                  stroke={
-                    squareKey === hoveredSquareKey ? COLORS.yellow : "black"
+                  fill={
+                    squareKey === hoveredSquareKey
+                      ? COLORS.yellow
+                      : y < 0
+                      ? colorLookup.above
+                      : colorLookup.below
                   }
+                  // strokeWidth={squareKey === hoveredSquareKey ? "5px" : "1px"}
+                  strokeWidth="1px"
+                  stroke={COLORS.mainColor}
                   onMouseEnter={() => {
                     // positioning the tooltip
                     const xOffset =

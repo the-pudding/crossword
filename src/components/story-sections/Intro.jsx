@@ -1,5 +1,10 @@
 import React from "react"
-import { Section } from "../../styles/styles.js"
+import {
+  Section,
+  AnswerBox,
+  AnswerCaption,
+  IntroCluesExample,
+} from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import copy from "../../data/copy.json"
 import { RoughNotation } from "react-rough-notation"
@@ -9,16 +14,7 @@ const Intro = () => {
     <>
       <Section>{createHtmlForCopy(copy.introProse)}</Section>
 
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-evenly",
-          maxWidth: "620px",
-          margin: "1rem auto",
-          padding: "0 1rem"
-        }}
-      >
+      <IntroCluesExample>
         <div
           style={{
             display: "flex",
@@ -26,7 +22,7 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             A 1969 hit for{" "}
             <RoughNotation
               type="box"
@@ -37,12 +33,14 @@ const Intro = () => {
               Neil Diamond
             </RoughNotation>
           </div>
-          <div>SWEETCAROLINE</div>
-          <div
-            style={{ color: "#757575", marginTop: "20px", fontSize: "0.9rem" }}
-          >
-            A person in the <strong>clue</strong>
+          <div style={{ display: "flex" }}>
+            {"SWEETCAROLINE".split("").map(character => (
+              <AnswerBox>{character}</AnswerBox>
+            ))}
           </div>
+          <AnswerCaption>
+            A person in the <strong>clue</strong>
+          </AnswerCaption>
         </div>
 
         <div
@@ -52,7 +50,7 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div>Funny Fey</div>
+          <div style={{ marginBottom: "10px" }}>Funny Fey</div>
           <div>
             <RoughNotation
               type="box"
@@ -60,16 +58,18 @@ const Intro = () => {
               animate={false}
               color="lightgrey"
             >
-              TINA
+              <div style={{ display: "flex" }}>
+                {"TINA".split("").map(character => (
+                  <AnswerBox>{character}</AnswerBox>
+                ))}
+              </div>
             </RoughNotation>
           </div>
-          <div
-            style={{ color: "#757575", marginTop: "20px", fontSize: "0.9rem" }}
-          >
+          <AnswerCaption>
             A person in the <strong>answer</strong>
-          </div>
+          </AnswerCaption>
         </div>
-      </div>
+      </IntroCluesExample>
     </>
   )
 }

@@ -23,11 +23,11 @@ const waffleBlockSize = {
   mobile: 8,
 }
 const percentSize = {
-  normal: "2rem",
+  normal: "1.5rem",
   mobile: "1rem",
 }
 const labelTextSize = {
-  normal: "0.8rem",
+  normal: "0.7rem",
   mobile: "0.5rem",
 }
 const borderSize = {
@@ -36,30 +36,39 @@ const borderSize = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 20px;
+
+    @media ${devices.mobile} {
+      font-size: 18px;
+    }
+  }
+
   body {
     font-family: "National 2 Web", "Helvetica Neue", sans-serif;
     background-color: white;
-    color: black;
+    color: ${COLORS.mainColor};
+    font-size: inherit;
   }  
 
   h1 {
     font-family: "Tiempos Headline";
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
-
-    @media ${devices.tablet} {
-      font-size: 3rem;
-    }
+    color: ${COLORS.mainColor};
   }
 
   h2 {
     font-family: "Tiempos Headline";
     font-size: 1.5rem;
+    color: ${COLORS.mainColor};
   }
 
   h3 {
     font-family: "National 2 Web Bold";
     font-size: 0.8em;
+    color: ${COLORS.mainColor};
+
   }
 
   strong {
@@ -68,13 +77,18 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     font-size: 0.8rem;
-    padding: 5px;
-    margin: 5px;
-    background: white;
-    border: 1px black solid;
-    border-radius: 5px;
+    padding: 0.3rem;
+    background: #efefef;
+    border-radius: 4px;
+    border: none;
+    margin-right: 10px;
+
     &:hover {
       cursor: pointer;
+      background: ${COLORS.crosswordYellowLight};
+    }
+    &:last-of-type {
+      margin-right: 0px;
     }
   }
 
@@ -83,16 +97,18 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
 
     &:hover {
-      color: ${COLORS.pink};
+      color: ${COLORS.blue};
       text-decoration: underline;
     }
   }
 
   #blue {
     color: ${COLORS.blue};
+    font-size: 1.3rem;
   }
   #pink {
     color: ${COLORS.pink};
+    font-size: 1.3rem;
   }
 `
 
@@ -102,7 +118,6 @@ export const EssayWrapper = styled.main`
   align-items: center;
   max-width: 768px;
   margin: 0 auto;
-  font-size: 18px;
 `
 
 export const Section = styled.section`
@@ -135,7 +150,7 @@ export const Prose = styled.p`
 
 export const Emphasis = styled.div`
   width: 100%;
-  border: 4px solid black;
+  border: 4px solid ${COLORS.mainColor};
   margin: 2rem auto;
 `
 
@@ -151,13 +166,23 @@ export const Image = styled.img`
   height: 450px;
 `
 
-export const Callout = styled.div`
+export const Callout = styled.a`
+  text-decoration: none;
   background: ${COLORS.yellow};
-  outline: 4px black solid;
+  border: 4px ${COLORS.mainColor} solid;
   display: flex;
   align-items: center;
   padding: 15px;
   margin-top: 50px;
+  font-size: 0.9rem;
+
+  transition: background 0.5s ease;
+
+  &:hover {
+    text-decoration: none;
+    color: ${COLORS.mainColor};
+    background: ${COLORS.crosswordYellowLight};
+  }
 
   @media ${devices.mobile} {
     font-size: 0.8rem;
@@ -178,10 +203,13 @@ export const TextNote = styled.p`
 
 export const ChartNote = styled.div`
   color: #757575;
-  font-size: 0.7em;
-  width: 80%;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+  }
 `
 
 export const Fade = styled.div`
@@ -199,10 +227,17 @@ export const Fade = styled.div`
 
 export const Line = styled.hr`
   width: 100%;
-  background-color: black;
+  background-color: ${props => (props.color ? props.color : COLORS.mainColor)};
   border-width: 0px;
   height: 1px;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "0px")};
+`
+
+export const SkipButtonWrapper = styled.div`
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  max-width: 620px;
 `
 
 // Crossword
@@ -213,7 +248,7 @@ export const CrosswordChartWrapper = styled.div`
 
   @media ${devices.tablet} {
     height: auto;
-    margin-top: 25px;
+    margin-top: 45px;
   }
 `
 
@@ -325,11 +360,11 @@ export const AnnotationText = styled.div`
 `
 
 export const AnnotationEvent = styled.text`
-  font-family: "National 2 Web Bold";
   text-anchor: middle;
+  font-size: 0.9rem;
 
   @media ${devices.mobile} {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `
 
@@ -337,22 +372,23 @@ export const AnnotationEvent = styled.text`
 export const WaffleChartWrapper = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   display: flex;
-  //width: ${waffleBlockSize.normal * 10 + 2 * borderSize.normal + 60}px;
   width: 100%;
 
   @media ${devices.mobile} {
-    //width: ${waffleBlockSize.mobile * 10 + 2 * borderSize.mobile + 60}px;
     margin: 0;
   }
 `
 
 export const WaffleChartBounds = styled.div`
   display: flex;
+  position: relative;
   width: ${waffleBlockSize.normal * 10}px;
   height: ${waffleBlockSize.normal * 10}px;
   flex-wrap: wrap;
-  outline: ${borderSize.normal}px black solid;
+  outline: ${borderSize.normal}px ${COLORS.mainColor} solid;
   margin-left: ${borderSize.normal}px;
+  flex-shrink: 0;
+
   &:hover {
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
@@ -369,18 +405,38 @@ export const WaffleChartLabels = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   height: ${waffleBlockSize.normal * 10 + 5}px;
-  margin-left: 10px;
-  width: 100px;
+  margin-left: 17px;
+  width: auto;
 
   @media ${devices.mobile} {
     height: ${waffleBlockSize.mobile * 10 + 5}px;
-    width: 40px;
+    margin-left: 10px;
+  }
+`
+
+export const GroupHeadingWrapper = styled.div`
+  width: 40%;
+
+  @media ${devices.mobile} {
+    width: 50%;
+  }
+`
+
+export const GroupHeading = styled.h3`
+  width: ${waffleBlockSize.normal * 10}px;
+  padding-left: ${borderSize.normal}px;
+  text-align: center;
+
+  @media ${devices.mobile} {
+    text-align: start;
+    padding-left: 0px;
+    margin-bottom: 0px;
   }
 `
 
 export const CensusSplitLabel = styled.div`
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 0.7rem;
+  line-height: 0.7rem;
   color: #757575;
 
   @media ${devices.mobile} {
@@ -404,7 +460,7 @@ export const Block = styled.div`
   border-top: ${props =>
     props.borderTop ? `${borderSize.normal}px solid ${COLORS.yellow}` : "0px"};
 
-  outline: 1px solid black;
+  outline: 1px solid ${COLORS.mainColor};
 
   background: ${props => props.color};
 
@@ -437,11 +493,13 @@ export const Percentage = styled.div`
   line-height: ${percentSize.normal};
   color: ${props => (props.color ? props.color : "inherit")};
   -webkit-text-stroke: ${props =>
-    props.color === "white" ? "1px black" : "0px"};
+    props.outline ? `1px ${COLORS.mainColor}` : "0px"};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
     line-height: ${percentSize.mobile};
+    width: ${props => (props.outline ? "15%" : null)};
+    text-align: ${props => (props.outline ? "right" : null)};
   }
 `
 
@@ -451,63 +509,102 @@ export const CensusSplit = styled.h3`
   }
 `
 
+export const FakePubTitle = styled.div`
+  width: 20%;
+  visibility: hidden;
+
+  @media ${devices.mobile} {
+    display: none;
+  }
+`
+
 export const WaffleRow = styled.div`
   display: flex;
   margin-bottom: 20px;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
+`
+
+export const TitleSection = styled.div`
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+
+  @media ${devices.mobile} {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+`
+
+export const WaffleSections = styled.div`
+  display: flex;
+  width: 80%;
+
+  @media ${devices.mobile} {
+    width: 100%;
+  }
 `
 
 export const PublicationTitle = styled.h2`
   @media ${devices.mobile} {
     font-size: 1rem;
+    margin: 0;
+    flex-shrink: 0;
   }
 `
 
 export const WaffleYearLabel = styled.div`
+  display: flex;
+  flex-direction: column;
   color: #757575;
   font-size: 0.8rem;
+  line-height: 0.9rem;
 
   @media ${devices.mobile} {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    margin-left: 10px;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 0px !important;
+  }
+`
+
+export const WaffleYearSelect = styled.select`
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  width: 66px;
+  border: 1px solid #c9c9c9;
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+    margin-bottom: 0px;
+    margin-right: 10px;
   }
 `
 
 // Table
-export const TableWrapper = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media ${devices.tablet} {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 2rem;
-  }
+export const TableWrapper = styled.table`
+  width: 80%;
 
   @media ${devices.mobile} {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 `
 
-export const TableRow = styled.div`
-  display: flex;
-  padding-top: 5px;
-  padding-bottom: 5px;
+export const HeaderRow = styled.tr`
+  border-bottom: 4px solid ${COLORS.mainColor};
 `
 
-export const HeadingDivider = styled.hr`
-  width: 100%;
-  background-color: black;
-  border-width: 0px;
-  height: 4px;
-`
-
-export const TableDivider = styled.hr`
-  width: 100%;
-  background-color: black;
-  border-width: 0px;
-  height: 1px;
+export const TableRow = styled.tr`
+  height: 3.5rem;
+  border-top: 1px solid ${COLORS.mainColor};
 `
 
 // AboveBelow
@@ -561,7 +658,7 @@ export const Tooltip = styled.div`
   top: ${props => (props.hoverY ? `${props.hoverY}px` : 0)};
   left: ${props => (props.hoverX ? `${props.hoverX}px` : 0)};
   background: white;
-  outline: 2px black solid;
+  outline: 2px ${COLORS.mainColor} solid;
   width: 200px;
   padding: 15px;
   textoverflow: scroll;
@@ -576,7 +673,6 @@ export const OverviewWrapper = styled.div`
 
   @media ${devices.mobile} {
     flex-direction: row;
-    align-items: center;
     width: 100%;
   }
 `
@@ -594,8 +690,10 @@ export const Labels = styled.div`
 `
 export const CluesChart = styled.div`
   width: 100%;
+  margin-bottom: 20px;
 
   @media ${devices.mobile} {
+    margin-bottom: 0px;
     width: 30%;
   }
 `
@@ -603,6 +701,12 @@ export const CluesChart = styled.div`
 export const OverviewRow = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
 
   @media ${devices.mobile} {
     flex-direction: row;
@@ -613,10 +717,22 @@ export const OverviewRow = styled.div`
 
 export const OverviewLabel = styled.div`
   font-size: 0.8rem;
+  line-height: 0.8rem;
 
   @media ${devices.mobile} {
     font-size: 0.7rem;
-    margin-left: 10px;
+    line-height: 0.7rem;
+    margin-left: 7px;
+    width: 85%;
+  }
+`
+
+export const FakeFiller = styled.h3`
+  display: none;
+
+  @media ${devices.mobile} {
+    display: flex;
+    visibility: hidden;
   }
 `
 
@@ -654,7 +770,7 @@ export const SidewaysBarWrapper = styled.div`
 export const BarLabels = styled.div`
   display: ${props => (props.showLabels ? "flex" : "none")};
   flex-direction: column;
-  width: 100px;
+  width: 105px;
   margin-right: 10px;
 
   @media ${devices.tablet} {
@@ -680,7 +796,7 @@ export const BarLabel = styled.div`
 export const SidewaysBarBounds = styled.div`
   display: flex;
   flex-wrap: wrap;
-  outline: ${sidewaysBarBorder}px black solid;
+  outline: ${sidewaysBarBorder}px ${COLORS.mainColor} solid;
   width: ${10 * sidewaysBarBlock.normal}px;
   height: ${5 * sidewaysBarBlock.normal}px;
 
@@ -693,7 +809,7 @@ export const SidewaysBarBounds = styled.div`
 export const SidewaysBarBlock = styled.div`
   height: ${sidewaysBarBlock.normal}px;
   width: ${sidewaysBarBlock.normal}px;
-  outline: 1px black solid;
+  outline: 1px ${COLORS.mainColor} solid;
   background: ${props => props.color};
 
   @media ${devices.mobile} {
@@ -709,21 +825,87 @@ export const DecadeSliderWrapper = styled.div`
 `
 
 // Clues in text
+export const IntroCluesExample = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 620px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
+`
+
 export const ClueExamplesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 45%;
+
+  @media ${devices.tablet} {
+    width: 100%;
+    align-items: center;
+  }
 `
 
 export const ClueAnswerPair = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
-  align-self: ${props => props.alignSelf};
+  position: relative;
 `
 
 export const AnswerBox = styled.div`
-  height: 25px;
-  width: 25px;
-  outline: 1px solid black;
-  text-align: center;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px ${COLORS.mainColor} solid;
+  border-bottom: 1px ${COLORS.mainColor} solid;
+  border-left: 1px ${COLORS.mainColor} solid;
+
+  &:last-of-type {
+    border-right: 1px ${COLORS.mainColor} solid;
+  }
+
+  @media ${devices.mobile} {
+    height: 25px;
+    width: 25px;
+  }
+`
+
+export const WrittenNote = styled.div`
+  font-family: "Mansalva";
+  position: absolute;
+  top: 0px;
+  left: ${props => (props.left ? "-225px" : null)};
+  right: ${props => (props.left ? "0px" : "-250px")};
+  color: lightgrey;
+`
+
+export const AnswerCaption = styled.div`
+  color: #757575;
+  margin-top: 20px;
+  font-size: 0.8rem;
+`
+
+export const QuestionCircle = styled.div`
+  width: 16px;
+  height: 16px;
+  border: 1px ${COLORS.mainColor} solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  line-height: 0.9rem;
+  align-self: center;
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+    color: ${COLORS.blue};
+    border-color: ${COLORS.blue};
+  }
 `

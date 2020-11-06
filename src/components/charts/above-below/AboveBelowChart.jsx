@@ -56,8 +56,8 @@ const AboveBelowChart = ({ data, compare }) => {
     universal: "Universal",
     usatoday: "USA Today",
     wsj: "WSJ",
-    nytimes: "NYTimes",
-    latimes: "LATimes",
+    nytimes: "NY Times",
+    latimes: "LA Times",
   }
 
   return (

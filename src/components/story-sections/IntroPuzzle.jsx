@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import copy from "../../data/copy.json"
 import {
   Section,
-  TextNote,
   Callout,
   CrosswordChartWrapper,
-  PuzzleWaffles,
+  SkipButtonWrapper,
 } from "../../styles/styles.js"
 import _ from "lodash"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
@@ -36,26 +35,30 @@ const IntroPuzzle = () => {
       <Section>
         {createHtmlForCopy(copy.introPuzzleBefore)}
 
-        <TextNote>
-          If you're stumped or don't want to play, you can{" "}
+        <SkipButtonWrapper>
           <button
             onClick={() => {
               crosswordRef.current.fillAllAnswers()
+              window.scrollTo({
+                top: 3610,
+                left: 0,
+                behavior: "smooth",
+              })
             }}
           >
-            Skip to results
+            Skip to analysis
           </button>
-          <button onClick={() => crosswordRef.current.reset()}>Clear</button>
-        </TextNote>
+        </SkipButtonWrapper>
 
         <CrosswordChartWrapper>
           <Crossword
             ref={crosswordRef}
             useStorage={false}
             theme={{
-              numberColor: "black",
-              focusBackground: "gold",
-              highlightBackground: "#72cefc",
+              numberColor: COLORS.mainColor,
+              focusBackground: COLORS.yellow,
+              highlightBackground: COLORS.crosswordYellowLight,
+              cellBorder: COLORS.mainColor,
             }}
             data={data}
             onCorrect={() => {
@@ -69,7 +72,10 @@ const IntroPuzzle = () => {
           />
         </CrosswordChartWrapper>
 
-        <Callout>
+        <Callout
+          href="https://pudding.cool/2020/11/crossword-puzzles"
+          target="_blank"
+        >
           <Edit />
           <div style={{ marginLeft: "10px" }}>
             <strong style={{ marginRight: "0.3rem" }}>

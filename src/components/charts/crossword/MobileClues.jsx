@@ -95,7 +95,9 @@ const MobileClues = ({
 
   return (
     <div className="mobile">
-      <button onClick={previousClue}>{"<"}</button>
+      <button onClick={previousClue} style={{ marginRight: "10px" }}>
+        {"<"}
+      </button>
       <div style={{ textAlign: "center", flexBasis: "50%" }}>
         {currentClues[0]}
       </div>
@@ -107,7 +109,9 @@ const MobileClues = ({
       <div style={{ textAlign: "center", flexBasis: "50%" }}>
         {currentClues[1]}
       </div>
-      <button onClick={nextClue}>{">"}</button>
+      <button onClick={nextClue} style={{ marginLeft: "10px" }}>
+        {">"}
+      </button>
     </div>
   )
 }
