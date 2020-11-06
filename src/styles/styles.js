@@ -577,6 +577,10 @@ export const WaffleYearLabel = styled.div`
 export const WaffleYearSelect = styled.select`
   font-size: 0.8rem;
   margin-bottom: 10px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  width: 66px;
+  border: 1px solid #c9c9c9;
 
   @media ${devices.mobile} {
     font-size: 0.6rem;
