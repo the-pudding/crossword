@@ -6,6 +6,7 @@ import SmallMultipleWaffles from "../components/story-sections/SmallMultipleWaff
 import NamesInAnswers from "../components/story-sections/NamesInAnswers.jsx"
 import NamesInClues from "../components/story-sections/NamesInClues.jsx"
 import Methods from "../components/story-sections/Methods.jsx"
+import Meta from "../components/Meta.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
 import GlobalFonts from "../styles/fonts/fonts.js"
 import "../styles/index.css"
@@ -14,6 +15,7 @@ import Logo from "../svg/pudding-logo.svg"
 function Home() {
   return (
     <>
+      <Meta />
       <GlobalStyle />
       <GlobalFonts />
 
