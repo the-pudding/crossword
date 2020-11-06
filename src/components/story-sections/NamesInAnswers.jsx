@@ -110,14 +110,22 @@ const NamesInAnswers = () => {
         <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedModern}
-            title="Modern AVAs in 2020"
+            title={
+              <>
+                <strong>AVA DUVERNAY</strong> in 2020
+              </>
+            }
             showLabels={true}
           />
         </SidewaysBarWrapper>
         <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedHistoric}
-            title="Historic AVAs in 2020"
+            title={
+              <>
+                <strong>AVA GARDNER</strong> in 2020
+              </>
+            }
             showLabels={false}
           />
         </SidewaysBarWrapper>

@@ -19,7 +19,7 @@ function Home() {
 
       <EssayWrapper>
         <div>
-          <Logo style={{ height: "50px", marginTop: "25px" }} />
+          <Logo style={{ width: "150px", marginTop: "25px" }} />
         </div>
 
         <Header />

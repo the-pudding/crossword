@@ -11,7 +11,7 @@ const SidewaysBar = ({ data, title, showLabels }) => {
   return (
     <>
       <BarLabels showLabels={showLabels}>
-        <h2 style={{ visibility: "hidden" }}>fake</h2>
+        <h2 style={{ visibility: "hidden", fontSize: "1.2rem" }}>fake</h2>
         {data.map(d => (
           <BarLabel>
             <strong>{d.publication.long}</strong>
@@ -26,7 +26,7 @@ const SidewaysBar = ({ data, title, showLabels }) => {
           alignItems: "center",
         }}
       >
-        <h2>{title}</h2>
+        <h2 style={{ fontSize: "1.2rem" }}>{title}</h2>
         <SidewaysBarBounds>
           {_.range(0, 50).map(i => (
             <SidewaysBarBlock

@@ -104,11 +104,9 @@ export const GlobalStyle = createGlobalStyle`
 
   #blue {
     color: ${COLORS.blue};
-    font-size: 1.3rem;
   }
   #pink {
     color: ${COLORS.pink};
-    font-size: 1.3rem;
   }
 `
 
@@ -738,7 +736,6 @@ export const FakeFiller = styled.h3`
 
 // SidewaysBar
 const sidewaysBarBorder = 4
-// const sidewaysBarBlock = 25
 const sidewaysBarBlock = {
   normal: 25,
   mobile: 15,
@@ -780,16 +777,20 @@ export const BarLabels = styled.div`
     font-size: 0.8rem;
   }
   @media ${devices.mobile} {
-    left: -85px;
+    left: -78px;
   }
 `
 
 export const BarLabel = styled.div`
   height: ${sidewaysBarBlock.normal}px;
-  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
     height: ${sidewaysBarBlock.mobile}px;
+    font-size: 0.6rem;
   }
 `
 
