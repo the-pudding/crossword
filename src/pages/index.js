@@ -14,17 +14,18 @@ import Logo from "../svg/pudding-logo.svg"
 import { annotate, annotationGroup } from "rough-notation"
 import COLORS from "../styles/colors.js"
 import _ from "lodash"
+import copy from "../data/copy.json"
 
 function Home() {
   // Adding RoughNotations to html elements from copy
   useEffect(() => {
-    const numUnderlines = 5
-    const underlinedElements = _.range(1, numUnderlines + 1).map(n =>
-      annotate(document.querySelector(`#underline-${n}`), {
-        type: "underline",
-        color: COLORS.grey,
-        animate: false,
-      })
+    const underlinedElements = _.range(1, parseInt(copy.numUnderlines) + 1).map(
+      n =>
+        annotate(document.querySelector(`#underline-${n}`), {
+          type: "underline",
+          color: COLORS.grey,
+          animate: false,
+        })
     )
     const ag = annotationGroup(underlinedElements)
     ag.show()
