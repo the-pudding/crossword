@@ -25,10 +25,6 @@ const AboveBelowChart = ({ data, compare }) => {
   const [ref, dms] = useChartDimensions(initialDimensions)
 
   const xAccessor = d => parseInt(d.year)
-  const yAccessor = d => {
-    if (d.length === 0) return 0
-    return d[0].clues.length
-  }
 
   // Scales
   const xScale = d3
@@ -46,12 +42,6 @@ const AboveBelowChart = ({ data, compare }) => {
     .thresholds(_.range(2000, 2021))
   const bins = binGenerator(data)
 
-  // const yScale = d3
-  //   .scaleLinear()
-  //   .domain([0, d3.max(bins, yAccessor) * squareHeight])
-  //   .range([dms.boundedHeight, 0])
-  //   .nice()
-
   const publicationNameLookup = {
     universal: "Universal",
     usatoday: "USA Today",
@@ -62,7 +52,7 @@ const AboveBelowChart = ({ data, compare }) => {
 
   return (
     <>
-      <h3>CLUES THAT MENTION A PERSON</h3>
+      <h3>Clues that mention a person</h3>
       <YearLabels>
         <div>2000</div>
         <div>2010</div>

@@ -13,6 +13,7 @@ import chess from "../../data/CHESS.json"
 import mitWithNeutral from "../../data/MIT-including-neutral.json"
 import mit from "../../data/MIT.json"
 import Edit from "../../svg/mdi-edit.svg"
+import COLORS from "../../styles/colors.js"
 
 const NamesInClues = () => {
   return (
@@ -23,7 +24,7 @@ const NamesInClues = () => {
           type="underline"
           show={true}
           animate={false}
-          color="lightgrey"
+          color={COLORS.grey}
         >
           “common knowledge”
         </RoughNotation>

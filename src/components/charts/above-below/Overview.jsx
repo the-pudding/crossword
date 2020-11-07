@@ -32,7 +32,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
   return (
     <>
       <CluesChart>
-        <h3>ALL CLUES</h3>
+        <h3>All clues</h3>
         <div style={{ height: "108px", width: "108px" }} ref={ref}>
           <Chart dms={dms}>
             <rect

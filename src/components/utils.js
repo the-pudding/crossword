@@ -25,9 +25,31 @@ export const createMarkup = content => {
 export const createHtmlForCopy = copy => {
   return copy.map(
     ({ step, text, type, value, source, caption, tweetId, clues }, i) => {
-      if (type === "text" && value.includes("<span class=highlighted>")) {
-        return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
-      } else if (type === "text") {
+      /*if (type === "text" && value.includes("<span className=underline>")) {
+        const re = /<span className=underline>.+<\/span>/g
+        const matches = [...value.matchAll(re)][0]
+        const word = matches[1]
+
+        const contents = value.replaceAll(re, "REPLACE")
+
+        return (
+          <Prose>{contents}</Prose>
+          // <Prose key={i}>
+          //   {value.slice(0, value.indexOf("<"))}
+          //   <RoughNotation
+          //     type="underline"
+          //     show={true}
+          //     animate={false}
+          //     color={COLORS.grey}
+          //   >
+          //     {word}
+          //   </RoughNotation>
+          //   {value.slice(value.indexOf("</span>") + 7)}
+          // </Prose>
+        )
+      } else*/ if (
+        type === "text"
+      ) {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       } else if (type === "emphasized-text") {
         return (

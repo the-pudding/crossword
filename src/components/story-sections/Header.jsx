@@ -1,6 +1,7 @@
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
 import { Section } from "../../styles/styles.js"
+import COLORS from "../../styles/colors.js"
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
           type="circle"
           show={true}
           animate={true}
-          color="lightgrey"
+          color={COLORS.grey}
         >
           {" "}
           Who’s{" "}

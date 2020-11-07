@@ -1,5 +1,6 @@
 import React from "react"
 import { TableWrapper, HeaderRow, TableRow } from "../../../styles/styles.js"
+import _ from "lodash"
 
 const columnWidths = {
   0: "25%",
@@ -21,7 +22,7 @@ const Table = ({ data, columns }) => {
                 marginLeft: i >= 2 ? "10px" : "0px",
               }}
             >
-              {column.title.toUpperCase()}
+              {_.capitalize(column.title)}
             </h3>
           </th>
         ))}

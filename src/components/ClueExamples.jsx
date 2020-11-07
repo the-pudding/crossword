@@ -8,6 +8,7 @@ import {
 } from "../styles/styles.js"
 import { RoughNotation } from "react-rough-notation"
 import _ from "lodash"
+import COLORS from "../styles/colors.js"
 
 const ClueExamples = ({ clues }) => {
   return (
@@ -29,7 +30,7 @@ const ClueExample = ({ i, clueText, answerText }) => {
       type="bracket"
       show={showAnnotations}
       animate={true}
-      color="lightgrey"
+      color={COLORS.grey}
       brackets={i % 2 === 0 ? "left" : "right"}
     >
       <div style={{ display: "flex" }}>

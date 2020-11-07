@@ -8,6 +8,7 @@ import {
 import { createHtmlForCopy } from "../utils.js"
 import copy from "../../data/copy.json"
 import { RoughNotation } from "react-rough-notation"
+import COLORS from "../../styles/colors.js"
 
 const Intro = () => {
   return (
@@ -28,9 +29,9 @@ const Intro = () => {
               type="box"
               show={true}
               animate={false}
-              color="lightgrey"
+              color={COLORS.grey}
             >
-              Neil Diamond
+              <strong>Neil Diamond</strong>
             </RoughNotation>
           </div>
           <div style={{ display: "flex" }}>
@@ -50,17 +51,21 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>Funny Fey</div>
+          <div style={{ marginBottom: "10px" }}>
+            Funny <strong>FEY</strong>
+          </div>
           <div>
             <RoughNotation
               type="box"
               show={true}
               animate={false}
-              color="lightgrey"
+              color={COLORS.grey}
             >
               <div style={{ display: "flex" }}>
                 {"TINA".split("").map(character => (
-                  <AnswerBox>{character}</AnswerBox>
+                  <AnswerBox style={{ fontFamily: "'National 2 Web Bold'" }}>
+                    {character}
+                  </AnswerBox>
                 ))}
               </div>
             </RoughNotation>

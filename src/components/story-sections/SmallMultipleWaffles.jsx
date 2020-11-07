@@ -41,10 +41,10 @@ const SmallMultipleWaffles = () => {
         <div style={{ width: "100%", display: "flex" }}>
           <FakePubTitle />
           <GroupHeadingWrapper>
-            <GroupHeading>GENDER</GroupHeading>
+            <GroupHeading>Gender</GroupHeading>
           </GroupHeadingWrapper>
           <GroupHeadingWrapper>
-            <GroupHeading>RACE {"&"} ETHNICITY</GroupHeading>
+            <GroupHeading>Race {"&"} Ethnicity</GroupHeading>
           </GroupHeadingWrapper>
         </div>
 

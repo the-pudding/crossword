@@ -110,10 +110,10 @@ const WaffleChart = ({
                 <WaffleChartLabel key={i} i={i}>
                   {circlePercentage && i === 1 ? (
                     <RoughNotation
-                      type="highlight"
+                      type="box"
                       show={true}
                       animate={false}
-                      color={COLORS.yellow}
+                      color={COLORS.grey}
                     >
                       <Percentage
                         numLabels={roundedData.length}
@@ -126,24 +126,28 @@ const WaffleChart = ({
                       >
                         {percent}%
                       </Percentage>
+                      <WaffleLabelText i={i} size={size}>
+                        {labels[i]}
+                      </WaffleLabelText>
                     </RoughNotation>
                   ) : (
-                    <Percentage
-                      numLabels={roundedData.length}
-                      color={
-                        colors[i] === COLORS.man || colors[i] === COLORS.white
-                          ? COLORS.darkGrey
-                          : colors[i]
-                      }
-                      size={size}
-                    >
-                      {percent}%
-                    </Percentage>
+                    <>
+                      <Percentage
+                        numLabels={roundedData.length}
+                        color={
+                          colors[i] === COLORS.man || colors[i] === COLORS.white
+                            ? COLORS.darkGrey
+                            : colors[i]
+                        }
+                        size={size}
+                      >
+                        {percent}%
+                      </Percentage>
+                      <WaffleLabelText i={i} size={size}>
+                        {labels[i]}
+                      </WaffleLabelText>
+                    </>
                   )}
-
-                  <WaffleLabelText i={i} size={size}>
-                    {labels[i]}
-                  </WaffleLabelText>
                 </WaffleChartLabel>
 
                 {i === 0 && showCensusSplitLabel && (
