@@ -489,9 +489,14 @@ export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
   font-size: ${percentSize.normal};
   line-height: ${percentSize.normal};
-  color: ${props => (props.color ? props.color : "inherit")};
+  color: ${props =>
+    props.color === COLORS.offWhite
+      ? COLORS.darkGrey
+      : props.color
+      ? props.color
+      : "inherit"};
   -webkit-text-stroke: ${props =>
-    props.outline ? `1px ${COLORS.mainColor}` : "0px"};
+    props.color === "white" ? `1px ${COLORS.mainColor}` : "0px"};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
@@ -882,7 +887,7 @@ export const WrittenNote = styled.div`
   top: 0px;
   left: ${props => (props.left ? "-225px" : null)};
   right: ${props => (props.left ? "0px" : "-250px")};
-  color: lightgrey;
+  color: ${COLORS.grey};
 `
 
 export const AnswerCaption = styled.div`

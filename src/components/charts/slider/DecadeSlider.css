@@ -11,7 +11,7 @@
   border-radius: 0 !important;
   height: 13px !important;
   width: 13px !important;
-  border: solid 2px black !important;
+  border: solid 2px #1a1a1a !important;
   top: -5px !important;
 }
 
@@ -20,11 +20,13 @@
   height: 18px !important;
   width: 18px !important;
   top: -7px !important;
+  color: #1a1a1a !important;
 }
 
 .ant-slider-mark-text {
   margin-top: 12px !important;
   font-size: 0.8rem !important;
+  color: #757575 !important;
 }
 
 .ant-slider-mark-text-active {

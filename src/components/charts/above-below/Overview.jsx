@@ -66,7 +66,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
         <FakeFiller>ALL CLUES</FakeFiller>
         {keys.map((key, i) => (
           <OverviewRow>
-            <Percentage color={keyColors[i]} size={"medium"} outline={true}>
+            <Percentage color={keyColors[i]} size={"medium"}>
               {data[key]}
             </Percentage>
             <OverviewLabel>
