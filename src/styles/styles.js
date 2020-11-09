@@ -152,9 +152,12 @@ export const Emphasis = styled.div`
 `
 
 export const HowWeDidIt = styled.div`
+  font-family: "Tiempos Text";
   background-color: #efefef;
-  padding: 0.25em 1em;
+  padding: 1rem 0;
+  max-width: 620px;
   margin: ${props => (props.margin ? props.margin : "1rem auto")};
+  width: 100%;
 `
 
 export const ImageWrapper = styled.div`
