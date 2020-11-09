@@ -37,9 +37,7 @@ export const createHtmlForCopy = copy => {
       } else if (type === "how-we-did-it") {
         return (
           <HowWeDidIt>
-            <Prose>
-              <h3>How we did it</h3>
-            </Prose>
+            <h3 style={{ padding: "0 1rem" }}>How we did it</h3>
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </HowWeDidIt>
         )
