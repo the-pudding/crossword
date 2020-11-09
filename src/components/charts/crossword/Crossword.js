@@ -92,6 +92,10 @@ const CluesWrapper = styled.div.attrs(props => ({
     display: ${props => (props.noMobile ? "none" : "block")};
   }
 
+  @media (max-width: 480px) {
+    width: 95%;
+  }
+
   .mobile {
     display: none;
 
@@ -100,6 +104,7 @@ const CluesWrapper = styled.div.attrs(props => ({
       align-items: center;
       justify-content: space-between;
       height: 50px;
+      margin-top: 40px;
       font-size: 1rem;
     }
 

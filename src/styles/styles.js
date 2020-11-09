@@ -151,6 +151,12 @@ export const Emphasis = styled.div`
   margin: 2rem auto;
 `
 
+export const HowWeDidIt = styled.div`
+  background-color: #efefef;
+  padding: 0.25em 1em;
+  margin: ${props => (props.margin ? props.margin : "1rem auto")};
+`
+
 export const ImageWrapper = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;

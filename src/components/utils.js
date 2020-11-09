@@ -13,6 +13,7 @@ import {
   ClueAnswerPair,
   AnswerBox,
   WrittenNote,
+  HowWeDidIt,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import ClueExamples from "./ClueExamples.jsx"
@@ -32,6 +33,12 @@ export const createHtmlForCopy = copy => {
           <Emphasis>
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </Emphasis>
+        )
+      } else if (type === "how-we-did-it") {
+        return (
+          <HowWeDidIt>
+            <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+          </HowWeDidIt>
         )
       } else if (type === "small") {
         return (
