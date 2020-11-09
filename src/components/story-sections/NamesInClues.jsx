@@ -42,16 +42,6 @@ const NamesInClues = () => {
         word="mit"
         compare="gender"
       />
-
-      <Callout
-        href="https://pudding.cool/2020/11/crossword-puzzles"
-        target="_blank"
-      >
-        <Edit />
-        <strong style={{ marginLeft: "10px" }}>
-          Cool article. Now take me to the puzzles.
-        </strong>
-      </Callout>
     </Section>
   )
 }

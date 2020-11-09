@@ -121,13 +121,11 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 100%;
 
   @media ${devices.tablet} {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -152,12 +150,28 @@ export const Emphasis = styled.div`
 `
 
 export const HowWeDidIt = styled.div`
-  font-family: "Tiempos Text";
+  font-size: 0.7rem;
   background-color: #efefef;
   padding: 1rem 0;
   max-width: 620px;
   margin: ${props => (props.margin ? props.margin : "1rem auto")};
   width: 100%;
+`
+
+export const Method = styled.div`
+  max-width: 620px;
+  margin: ${props => (props.margin ? props.margin : "0.4rem auto")};
+  padding: 0 1rem;
+  width: 100%;
+  font-size: 0.7rem;
+`
+
+export const MethodNote = styled.div`
+  max-width: 620px;
+  margin: ${props => (props.margin ? props.margin : "0.4rem auto")};
+  padding: 0 1rem;
+  width: 100%;
+  font-size: 0.5rem;
 `
 
 export const ImageWrapper = styled.div`
@@ -901,8 +915,9 @@ export const ClueExample = styled.div`
 `
 
 export const AnswerBox = styled.div`
-  height: 30px;
-  width: 30px;
+  height: ${props => (props.boxSize ? `${props.boxSize}px` : "30px")};
+  width: ${props => (props.boxSize ? `${props.boxSize}px` : "30px")};
+  background: ${props => (props.color ? props.color : null)};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -5,6 +5,7 @@ import IntroPuzzle from "../components/story-sections/IntroPuzzle.jsx"
 import SmallMultipleWaffles from "../components/story-sections/SmallMultipleWaffles.jsx"
 import NamesInAnswers from "../components/story-sections/NamesInAnswers.jsx"
 import NamesInClues from "../components/story-sections/NamesInClues.jsx"
+import Conclusion from "../components/story-sections/Conclusion.jsx"
 import Methods from "../components/story-sections/Methods.jsx"
 import Meta from "../components/Meta.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
@@ -51,6 +52,7 @@ function Home() {
         <NamesInAnswers />
         <NamesInClues />
 
+        <Conclusion />
         <Methods />
       </EssayWrapper>
     </>

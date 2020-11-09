@@ -14,6 +14,8 @@ import {
   AnswerBox,
   WrittenNote,
   HowWeDidIt,
+  Method,
+  MethodNote,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import ClueExamples from "./ClueExamples.jsx"
@@ -38,7 +40,11 @@ export const createHtmlForCopy = copy => {
         return (
           <HowWeDidIt>
             <h3 style={{ padding: "0 1rem" }}>How we did it</h3>
-            <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+            <Prose
+              key={i}
+              dangerouslySetInnerHTML={createMarkup(value)}
+              style={{ fontFamily: "'National 2 Web'" }}
+            />
           </HowWeDidIt>
         )
       } else if (type === "small") {
@@ -47,6 +53,12 @@ export const createHtmlForCopy = copy => {
         )
       } else if (type === "clues") {
         return <ClueExamples clues={clues} />
+      } else if (type === "method") {
+        return <Method key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+      } else if (type === "method-note") {
+        return (
+          <MethodNote key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+        )
       }
       return ""
     }
