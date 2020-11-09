@@ -12,6 +12,7 @@ export default {
 
   crosswordYellowDark: "#ffcc00",
   crosswordYellowLight: "#ffec99",
+  crosswordBlue: "#CFD9FF",
 
   white: "#E6E6E6",
   poc: "#C63DA3",

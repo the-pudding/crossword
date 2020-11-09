@@ -66,9 +66,8 @@ export const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-family: "National 2 Web Bold";
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: ${COLORS.mainColor};
-
   }
 
   strong {
@@ -280,8 +279,8 @@ const annotationLocations = {
       y: "52%",
     },
     mobile: {
-      x: "30%",
-      y: "52%",
+      x: "28%",
+      y: "55%",
     },
     smallMobile: {
       x: "26%",
@@ -290,20 +289,20 @@ const annotationLocations = {
   },
   duVernay: {
     normal: {
-      x: "75%",
+      x: "73%",
       y: "39%",
     },
     tablet: {
-      x: "77%",
+      x: "73%",
       y: "39%",
     },
     mobile: {
-      x: "71%",
-      y: "39%",
+      x: "68%",
+      y: "34%",
     },
     smallMobile: {
-      x: "69%",
-      y: "39%",
+      x: "67%",
+      y: "32%",
     },
   },
   otherAvas: {
@@ -317,11 +316,11 @@ const annotationLocations = {
     },
     mobile: {
       x: "43%",
-      y: "81%",
+      y: "80%",
     },
     smallMobile: {
       x: "40%",
-      y: "80%",
+      y: "78%",
     },
   },
 }
@@ -329,8 +328,8 @@ const annotationLocations = {
 export const AnnotationText = styled.div`
   position: absolute;
   font-family: "National 2 Web Bold";
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   stroke-width: 1px;
   color: ${props => props.color};
   background: white;
@@ -338,20 +337,20 @@ export const AnnotationText = styled.div`
   left: ${props => annotationLocations[props.labelKey].normal.x};
 
   @media ${devices.tablet} {
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
     top: ${props => annotationLocations[props.labelKey].tablet.y};
     left: ${props => annotationLocations[props.labelKey].tablet.x};
   }
   @media ${devices.mobile} {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
     top: ${props => annotationLocations[props.labelKey].mobile.y};
     left: ${props => annotationLocations[props.labelKey].mobile.x};
   }
   @media ${devices.smallMobile} {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
     top: ${props => annotationLocations[props.labelKey].smallMobile.y};
     left: ${props => annotationLocations[props.labelKey].smallMobile.x};
   }
@@ -359,10 +358,30 @@ export const AnnotationText = styled.div`
 
 export const AnnotationEvent = styled.text`
   text-anchor: middle;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+  }
+`
+
+export const HorizontalTickLabel = styled.text`
+  font-size: 0.8rem;
+  text-anchor: middle;
+  transform: translateY(20px);
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+  }
+`
+
+export const VerticalTickLabel = styled.text`
+  font-size: 0.8rem;
+  alignment-baseline: middle;
+  transform: translate(-25px, -10px);
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
   }
 `
 
@@ -595,9 +614,10 @@ export const WaffleYearSelect = styled.select`
 // Table
 export const TableWrapper = styled.table`
   width: 80%;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 `
 
@@ -859,6 +879,11 @@ export const ClueAnswerPair = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+`
+
+export const ClueExample = styled.div`
+  margin-bottom: 10px;
+  font-style: italic;
 `
 
 export const AnswerBox = styled.div`

@@ -4,6 +4,7 @@ import {
   AnswerBox,
   AnswerCaption,
   IntroCluesExample,
+  ClueExample,
 } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import copy from "../../data/copy.json"
@@ -23,7 +24,7 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>
+          <ClueExample>
             A 1969 hit for{" "}
             <RoughNotation
               type="box"
@@ -33,7 +34,7 @@ const Intro = () => {
             >
               <strong>Neil Diamond</strong>
             </RoughNotation>
-          </div>
+          </ClueExample>
           <div style={{ display: "flex" }}>
             {"SWEETCAROLINE".split("").map(character => (
               <AnswerBox>{character}</AnswerBox>
@@ -51,9 +52,9 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>
+          <ClueExample>
             Funny <strong>FEY</strong>
-          </div>
+          </ClueExample>
           <div>
             <RoughNotation
               type="box"

@@ -1,6 +1,10 @@
 import React from "react"
 import _ from "lodash"
-import { AnnotationEvent } from "../../../styles/styles.js"
+import {
+  AnnotationEvent,
+  HorizontalTickLabel,
+  VerticalTickLabel,
+} from "../../../styles/styles.js"
 import COLORS from "../../../styles/colors.js"
 
 const Axis = ({
@@ -57,16 +61,9 @@ const AxisHorizontal = ({
             stroke="black"
             strokeWidth="1px"
           />
-          <text
-            key={i}
-            style={{
-              fontSize: "10px",
-              textAnchor: "middle",
-              transform: "translateY(20px)",
-            }}
-          >
+          <HorizontalTickLabel key={i}>
             {labelAccessor ? labelAccessor(value) : value}
-          </text>
+          </HorizontalTickLabel>
         </g>
       ))}
       {label && (
@@ -113,16 +110,9 @@ const AxisVertical = ({ dms, scale, label, labelAccessor }) => {
       {ticks.map(({ value, yOffset }, i) => (
         <g key={i} transform={`translate(0, ${yOffset})`}>
           <line x1={0} x2={dms.boundedWidth} stroke="black" />
-          <text
-            key={i}
-            style={{
-              fontSize: "10px",
-              alignmentBaseline: "middle",
-              transform: "translate(-25px, -9px)",
-            }}
-          >
+          <VerticalTickLabel key={i}>
             {labelAccessor ? labelAccessor(value) : value}
-          </text>
+          </VerticalTickLabel>
         </g>
       ))}
       {label && (

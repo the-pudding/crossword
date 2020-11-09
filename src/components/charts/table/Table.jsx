@@ -14,8 +14,9 @@ const Table = ({ data, columns }) => {
     <TableWrapper>
       <HeaderRow>
         {columns.map((column, i) => (
-          <th style={{ width: columnWidths[i] }}>
+          <th key={i} style={{ width: columnWidths[i] }}>
             <h3
+              key={i}
               style={{
                 textAlign: i < 2 ? "left" : "right",
                 marginRight: i < 2 ? "10px" : "0px",
@@ -28,16 +29,18 @@ const Table = ({ data, columns }) => {
         ))}
       </HeaderRow>
 
-      {data.map(d => (
+      {data.map((d, rowNumber) => (
         <>
-          <TableRow>
+          <TableRow key={rowNumber}>
             {columns.map((column, i) => (
               <td style={{ width: columnWidths[i] }}>
                 <div
+                  key={`${rowNumber}-${i}`}
                   style={{
                     textAlign: i < 2 ? "left" : "right",
                     marginRight: i < 2 ? "10px" : "0px",
                     marginLeft: i >= 2 ? "10px" : "0px",
+                    fontStyle: column.key === "randomClue" ? "italic" : null,
                   }}
                 >
                   {d[column.dataIndex]}

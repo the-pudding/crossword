@@ -43,12 +43,6 @@ const NamesInClues = () => {
         word="poem"
         compare="race"
       />
-      {/* <AboveBelow
-        data={chess}
-        overviewData={chessWithNeutral}
-        word="chess"
-        compare="race"
-      /> */}
       <AboveBelow
         data={mit}
         overviewData={mitWithNeutral}

@@ -39,7 +39,7 @@ const ClueExample = ({ i, clueText, answerText }) => {
         </QuestionCircle> */}
 
         <ClueAnswerPair>
-          <div>{clueText}</div>
+          <div style={{ fontStyle: "italic" }}>{clueText}</div>
           <div style={{ display: "flex" }}>
             {answerText.split("").map(character => (
               <AnswerBox>{character}</AnswerBox>
