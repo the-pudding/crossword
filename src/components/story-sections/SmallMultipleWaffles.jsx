@@ -39,7 +39,9 @@ const SmallMultipleWaffles = () => {
   return (
     <>
       <Section>
-        <h2>Representation in Major Crosswords</h2>
+        <h2 style={{ textAlign: "center" }}>
+          Representation in Major Crosswords
+        </h2>
         <ChartNote>
           Note:{" "}
           <span style={{ borderBottom: `4px solid ${COLORS.yellow}` }}>
@@ -139,8 +141,8 @@ const SmallMultipleWaffles = () => {
                               </option>
                             ))}
                           </WaffleYearSelect>
-                          We have data from each decade since 1940 from the
-                          Times' crossword. Use the dropdown to see more.
+                          Use the dropdown to see data from every decade since
+                          1940.
                         </WaffleYearLabel>
                       </div>
                     ) : (
