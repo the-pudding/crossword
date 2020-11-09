@@ -24,7 +24,7 @@ const NamesInClues = () => {
           type="underline"
           show={true}
           animate={false}
-          color={COLORS.grey}
+          color={COLORS.pencilGrey}
         >
           “common knowledge”
         </RoughNotation>

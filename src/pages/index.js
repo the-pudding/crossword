@@ -23,7 +23,7 @@ function Home() {
       n =>
         annotate(document.querySelector(`#underline-${n}`), {
           type: "underline",
-          color: COLORS.grey,
+          color: COLORS.pencilGrey,
           animate: false,
         })
     )

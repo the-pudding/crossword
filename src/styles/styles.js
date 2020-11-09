@@ -496,7 +496,7 @@ export const Percentage = styled.div`
       ? props.color
       : "inherit"};
   -webkit-text-stroke: ${props =>
-    props.color === "white" ? `1px ${COLORS.mainColor}` : "0px"};
+    props.color === "white" ? `1px ${COLORS.mainColor}` : null};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
@@ -891,7 +891,7 @@ export const WrittenNote = styled.div`
 `
 
 export const AnswerCaption = styled.div`
-  color: #757575;
+  color: ${COLORS.darkGrey};
   margin-top: 20px;
   font-size: 0.8rem;
 `

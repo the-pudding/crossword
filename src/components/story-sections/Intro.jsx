@@ -29,7 +29,7 @@ const Intro = () => {
               type="box"
               show={true}
               animate={false}
-              color={COLORS.grey}
+              color={COLORS.pencilGrey}
             >
               <strong>Neil Diamond</strong>
             </RoughNotation>
@@ -59,7 +59,7 @@ const Intro = () => {
               type="box"
               show={true}
               animate={false}
-              color={COLORS.grey}
+              color={COLORS.pencilGrey}
             >
               <div style={{ display: "flex" }}>
                 {"TINA".split("").map(character => (

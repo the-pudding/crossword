@@ -30,7 +30,7 @@ const ClueExample = ({ i, clueText, answerText }) => {
       type="bracket"
       show={showAnnotations}
       animate={true}
-      color={COLORS.grey}
+      color={COLORS.pencilGrey}
       brackets={i % 2 === 0 ? "left" : "right"}
     >
       <div style={{ display: "flex" }}>

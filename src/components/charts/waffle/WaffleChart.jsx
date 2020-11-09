@@ -113,7 +113,7 @@ const WaffleChart = ({
                       type="box"
                       show={true}
                       animate={false}
-                      color={COLORS.grey}
+                      color={COLORS.pencilGrey}
                     >
                       <Percentage
                         numLabels={roundedData.length}

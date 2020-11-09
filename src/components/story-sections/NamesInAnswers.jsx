@@ -71,7 +71,7 @@ const NamesInAnswers = () => {
           type="underline"
           show={true}
           animate={false}
-          color={COLORS.grey}
+          color={COLORS.pencilGrey}
         >
           Modernizing
         </RoughNotation>{" "}

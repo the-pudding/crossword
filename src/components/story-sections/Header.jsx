@@ -12,7 +12,7 @@ const Header = () => {
           type="circle"
           show={true}
           animate={true}
-          color={COLORS.grey}
+          color={COLORS.pencilGrey}
         >
           {" "}
           Who’s{" "}
@@ -25,7 +25,7 @@ const Header = () => {
           <strong>Michelle McGhee</strong>
         </a>
       </div>
-      <div style={{ fontSize: "0.8rem", color: "grey" }}>
+      <div style={{ fontSize: "0.8rem", color: COLORS.darkGrey }}>
         with{" "}
         <a
           href="https://pudding.cool/author/russell-goldenberg/"
