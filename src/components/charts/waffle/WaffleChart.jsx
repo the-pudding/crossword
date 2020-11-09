@@ -151,7 +151,9 @@ const WaffleChart = ({
                 </WaffleChartLabel>
 
                 {i === 0 && showCensusSplitLabel && (
-                  <CensusSplitLabel>US census split</CensusSplitLabel>
+                  <CensusSplitLabel splitRow={10 - _.ceil(censusSplit / 10)}>
+                    US census split
+                  </CensusSplitLabel>
                 )}
               </>
             ))}

@@ -17,6 +17,7 @@ import {
   GroupHeading,
   GroupHeadingWrapper,
   FakePubTitle,
+  ChartNote,
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
@@ -38,6 +39,14 @@ const SmallMultipleWaffles = () => {
   return (
     <>
       <Section>
+        <ChartNote>
+          Note:{" "}
+          <span style={{ borderBottom: `4px solid ${COLORS.yellow}` }}>
+            The yellow line
+          </span>{" "}
+          marks the split of the US population according to the Census.
+        </ChartNote>
+
         <div style={{ width: "100%", display: "flex" }}>
           <FakePubTitle />
           <GroupHeadingWrapper>

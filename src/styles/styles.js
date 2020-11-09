@@ -203,6 +203,7 @@ export const ChartNote = styled.div`
   font-size: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: center;
 
   @media ${devices.mobile} {
     font-size: 0.6rem;
@@ -424,6 +425,7 @@ export const WaffleChartLabels = styled.div`
   height: ${waffleBlockSize.normal * 10 + 5}px;
   margin-left: 17px;
   width: auto;
+  position: relative;
 
   @media ${devices.mobile} {
     height: ${waffleBlockSize.mobile * 10 + 5}px;
@@ -455,6 +457,9 @@ export const CensusSplitLabel = styled.div`
   font-size: 0.7rem;
   line-height: 0.7rem;
   color: #757575;
+  position: absolute;
+  top: ${props => props.splitRow * waffleBlockSize.normal - 8}px;
+  width: 100px;
 
   @media ${devices.mobile} {
     display: none;
