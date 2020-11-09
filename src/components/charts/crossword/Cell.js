@@ -102,7 +102,7 @@ export default function Cell({
           y={y + cellPadding * 4 + 1}
           textAnchor="start"
           dominantBaseline="hanging"
-          style={{ fontSize: "50%", fill: numberColor, opacity: 0.5 }}
+          style={{ fontSize: "0.3rem", fill: numberColor, opacity: 0.5 }}
         >
           {number}
         </text>

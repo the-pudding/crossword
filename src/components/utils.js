@@ -13,6 +13,7 @@ import {
   ClueAnswerPair,
   AnswerBox,
   WrittenNote,
+  HowWeDidIt,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import ClueExamples from "./ClueExamples.jsx"
@@ -25,15 +26,19 @@ export const createMarkup = content => {
 export const createHtmlForCopy = copy => {
   return copy.map(
     ({ step, text, type, value, source, caption, tweetId, clues }, i) => {
-      if (type === "text" && value.includes("<span class=highlighted>")) {
-        return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
-      } else if (type === "text") {
+      if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       } else if (type === "emphasized-text") {
         return (
           <Emphasis>
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </Emphasis>
+        )
+      } else if (type === "how-we-did-it") {
+        return (
+          <HowWeDidIt>
+            <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+          </HowWeDidIt>
         )
       } else if (type === "small") {
         return (

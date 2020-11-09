@@ -32,7 +32,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
   return (
     <>
       <CluesChart>
-        <h3>ALL CLUES</h3>
+        <h3>All clues</h3>
         <div style={{ height: "108px", width: "108px" }} ref={ref}>
           <Chart dms={dms}>
             <rect
@@ -66,7 +66,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
         <FakeFiller>ALL CLUES</FakeFiller>
         {keys.map((key, i) => (
           <OverviewRow>
-            <Percentage color={keyColors[i]} size={"medium"} outline={true}>
+            <Percentage color={keyColors[i]} size={"medium"}>
               {data[key]}
             </Percentage>
             <OverviewLabel>

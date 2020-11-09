@@ -8,8 +8,11 @@ export default {
   black: "#282828",
   darkGrey: "#757575",
 
+  pencilGrey: "#D3D3D3",
+
   crosswordYellowDark: "#ffcc00",
   crosswordYellowLight: "#ffec99",
+  crosswordBlue: "#CFD9FF",
 
   white: "#E6E6E6",
   poc: "#C63DA3",

@@ -66,9 +66,8 @@ export const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-family: "National 2 Web Bold";
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: ${COLORS.mainColor};
-
   }
 
   strong {
@@ -104,11 +103,9 @@ export const GlobalStyle = createGlobalStyle`
 
   #blue {
     color: ${COLORS.blue};
-    font-size: 1.3rem;
   }
   #pink {
     color: ${COLORS.pink};
-    font-size: 1.3rem;
   }
 `
 
@@ -152,6 +149,12 @@ export const Emphasis = styled.div`
   width: 100%;
   border: 4px solid ${COLORS.mainColor};
   margin: 2rem auto;
+`
+
+export const HowWeDidIt = styled.div`
+  background-color: #efefef;
+  padding: 0.25em 1em;
+  margin: ${props => (props.margin ? props.margin : "1rem auto")};
 `
 
 export const ImageWrapper = styled.div`
@@ -206,6 +209,7 @@ export const ChartNote = styled.div`
   font-size: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: center;
 
   @media ${devices.mobile} {
     font-size: 0.6rem;
@@ -282,8 +286,8 @@ const annotationLocations = {
       y: "52%",
     },
     mobile: {
-      x: "30%",
-      y: "52%",
+      x: "28%",
+      y: "55%",
     },
     smallMobile: {
       x: "26%",
@@ -292,20 +296,20 @@ const annotationLocations = {
   },
   duVernay: {
     normal: {
-      x: "75%",
+      x: "73%",
       y: "39%",
     },
     tablet: {
-      x: "77%",
+      x: "73%",
       y: "39%",
     },
     mobile: {
-      x: "71%",
-      y: "39%",
+      x: "68%",
+      y: "34%",
     },
     smallMobile: {
-      x: "69%",
-      y: "39%",
+      x: "67%",
+      y: "32%",
     },
   },
   otherAvas: {
@@ -319,11 +323,11 @@ const annotationLocations = {
     },
     mobile: {
       x: "43%",
-      y: "81%",
+      y: "80%",
     },
     smallMobile: {
       x: "40%",
-      y: "80%",
+      y: "78%",
     },
   },
 }
@@ -331,8 +335,8 @@ const annotationLocations = {
 export const AnnotationText = styled.div`
   position: absolute;
   font-family: "National 2 Web Bold";
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
   stroke-width: 1px;
   color: ${props => props.color};
   background: white;
@@ -340,20 +344,20 @@ export const AnnotationText = styled.div`
   left: ${props => annotationLocations[props.labelKey].normal.x};
 
   @media ${devices.tablet} {
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
     top: ${props => annotationLocations[props.labelKey].tablet.y};
     left: ${props => annotationLocations[props.labelKey].tablet.x};
   }
   @media ${devices.mobile} {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
     top: ${props => annotationLocations[props.labelKey].mobile.y};
     left: ${props => annotationLocations[props.labelKey].mobile.x};
   }
   @media ${devices.smallMobile} {
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
     top: ${props => annotationLocations[props.labelKey].smallMobile.y};
     left: ${props => annotationLocations[props.labelKey].smallMobile.x};
   }
@@ -361,10 +365,30 @@ export const AnnotationText = styled.div`
 
 export const AnnotationEvent = styled.text`
   text-anchor: middle;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+  }
+`
+
+export const HorizontalTickLabel = styled.text`
+  font-size: 0.8rem;
+  text-anchor: middle;
+  transform: translateY(20px);
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
+  }
+`
+
+export const VerticalTickLabel = styled.text`
+  font-size: 0.8rem;
+  alignment-baseline: middle;
+  transform: translate(-25px, -10px);
+
+  @media ${devices.mobile} {
+    font-size: 0.6rem;
   }
 `
 
@@ -407,6 +431,7 @@ export const WaffleChartLabels = styled.div`
   height: ${waffleBlockSize.normal * 10 + 5}px;
   margin-left: 17px;
   width: auto;
+  position: relative;
 
   @media ${devices.mobile} {
     height: ${waffleBlockSize.mobile * 10 + 5}px;
@@ -438,6 +463,9 @@ export const CensusSplitLabel = styled.div`
   font-size: 0.7rem;
   line-height: 0.7rem;
   color: #757575;
+  position: absolute;
+  top: ${props => props.splitRow * waffleBlockSize.normal - 8}px;
+  width: 100px;
 
   @media ${devices.mobile} {
     display: none;
@@ -491,9 +519,14 @@ export const Percentage = styled.div`
   font-family: "National 2 Web Bold";
   font-size: ${percentSize.normal};
   line-height: ${percentSize.normal};
-  color: ${props => (props.color ? props.color : "inherit")};
+  color: ${props =>
+    props.color === COLORS.offWhite
+      ? COLORS.darkGrey
+      : props.color
+      ? props.color
+      : "inherit"};
   -webkit-text-stroke: ${props =>
-    props.outline ? `1px ${COLORS.mainColor}` : "0px"};
+    props.color === "white" ? `1px ${COLORS.mainColor}` : null};
 
   @media ${devices.mobile} {
     font-size: ${percentSize.mobile};
@@ -592,9 +625,10 @@ export const WaffleYearSelect = styled.select`
 // Table
 export const TableWrapper = styled.table`
   width: 80%;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 `
 
@@ -738,7 +772,6 @@ export const FakeFiller = styled.h3`
 
 // SidewaysBar
 const sidewaysBarBorder = 4
-// const sidewaysBarBlock = 25
 const sidewaysBarBlock = {
   normal: 25,
   mobile: 15,
@@ -780,16 +813,20 @@ export const BarLabels = styled.div`
     font-size: 0.8rem;
   }
   @media ${devices.mobile} {
-    left: -85px;
+    left: -78px;
   }
 `
 
 export const BarLabel = styled.div`
   height: ${sidewaysBarBlock.normal}px;
-  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.8rem;
 
   @media ${devices.mobile} {
     height: ${sidewaysBarBlock.mobile}px;
+    font-size: 0.6rem;
   }
 `
 
@@ -855,6 +892,11 @@ export const ClueAnswerPair = styled.div`
   position: relative;
 `
 
+export const ClueExample = styled.div`
+  margin-bottom: 10px;
+  font-style: italic;
+`
+
 export const AnswerBox = styled.div`
   height: 30px;
   width: 30px;
@@ -881,11 +923,11 @@ export const WrittenNote = styled.div`
   top: 0px;
   left: ${props => (props.left ? "-225px" : null)};
   right: ${props => (props.left ? "0px" : "-250px")};
-  color: lightgrey;
+  color: ${COLORS.grey};
 `
 
 export const AnswerCaption = styled.div`
-  color: #757575;
+  color: ${COLORS.darkGrey};
   margin-top: 20px;
   font-size: 0.8rem;
 `

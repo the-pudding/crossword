@@ -8,6 +8,7 @@ import {
 } from "../styles/styles.js"
 import { RoughNotation } from "react-rough-notation"
 import _ from "lodash"
+import COLORS from "../styles/colors.js"
 
 const ClueExamples = ({ clues }) => {
   return (
@@ -29,7 +30,7 @@ const ClueExample = ({ i, clueText, answerText }) => {
       type="bracket"
       show={showAnnotations}
       animate={true}
-      color="lightgrey"
+      color={COLORS.pencilGrey}
       brackets={i % 2 === 0 ? "left" : "right"}
     >
       <div style={{ display: "flex" }}>
@@ -38,7 +39,7 @@ const ClueExample = ({ i, clueText, answerText }) => {
         </QuestionCircle> */}
 
         <ClueAnswerPair>
-          <div>{clueText}</div>
+          <div style={{ fontStyle: "italic" }}>{clueText}</div>
           <div style={{ display: "flex" }}>
             {answerText.split("").map(character => (
               <AnswerBox>{character}</AnswerBox>

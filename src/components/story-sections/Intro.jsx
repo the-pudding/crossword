@@ -4,10 +4,12 @@ import {
   AnswerBox,
   AnswerCaption,
   IntroCluesExample,
+  ClueExample,
 } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import copy from "../../data/copy.json"
 import { RoughNotation } from "react-rough-notation"
+import COLORS from "../../styles/colors.js"
 
 const Intro = () => {
   return (
@@ -22,17 +24,17 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>
+          <ClueExample>
             A 1969 hit for{" "}
             <RoughNotation
               type="box"
               show={true}
               animate={false}
-              color="lightgrey"
+              color={COLORS.pencilGrey}
             >
-              Neil Diamond
+              <strong>Neil Diamond</strong>
             </RoughNotation>
-          </div>
+          </ClueExample>
           <div style={{ display: "flex" }}>
             {"SWEETCAROLINE".split("").map(character => (
               <AnswerBox>{character}</AnswerBox>
@@ -50,17 +52,21 @@ const Intro = () => {
             alignItems: "center",
           }}
         >
-          <div style={{ marginBottom: "10px" }}>Funny Fey</div>
+          <ClueExample>
+            Funny <strong>FEY</strong>
+          </ClueExample>
           <div>
             <RoughNotation
               type="box"
               show={true}
               animate={false}
-              color="lightgrey"
+              color={COLORS.pencilGrey}
             >
               <div style={{ display: "flex" }}>
                 {"TINA".split("").map(character => (
-                  <AnswerBox>{character}</AnswerBox>
+                  <AnswerBox style={{ fontFamily: "'National 2 Web Bold'" }}>
+                    {character}
+                  </AnswerBox>
                 ))}
               </div>
             </RoughNotation>

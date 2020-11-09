@@ -65,18 +65,10 @@ const NamesInAnswers = () => {
 
   return (
     <Section>
-      <h1>
-        2.{" "}
-        <RoughNotation
-          type="underline"
-          show={true}
-          animate={false}
-          color="lightgrey"
-        >
-          Modernizing
-        </RoughNotation>{" "}
-        old names
-      </h1>
+      <h1>2. Modernizing old names</h1>
+
+      {createHtmlForCopy(copy.deepDivePart1Intro)}
+
       <PopularNamesTable
         data={popularAnswerNames}
         featuredColumn="answers"
@@ -110,14 +102,22 @@ const NamesInAnswers = () => {
         <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedModern}
-            title="Modern AVAs in 2020"
+            title={
+              <>
+                <strong>AVA DUVERNAY</strong> in 2020
+              </>
+            }
             showLabels={true}
           />
         </SidewaysBarWrapper>
         <SidewaysBarWrapper>
           <SidewaysBar
             data={sortedHistoric}
-            title="Historic AVAs in 2020"
+            title={
+              <>
+                <strong>AVA GARDNER</strong> in 2020
+              </>
+            }
             showLabels={false}
           />
         </SidewaysBarWrapper>

@@ -13,21 +13,15 @@ import chess from "../../data/CHESS.json"
 import mitWithNeutral from "../../data/MIT-including-neutral.json"
 import mit from "../../data/MIT.json"
 import Edit from "../../svg/mdi-edit.svg"
+import COLORS from "../../styles/colors.js"
 
 const NamesInClues = () => {
   return (
     <Section>
-      <h1 style={{ fontSize: "2.5rem" }}>
-        3. Redefining{" "}
-        <RoughNotation
-          type="underline"
-          show={true}
-          animate={false}
-          color="lightgrey"
-        >
-          "common knowledge"
-        </RoughNotation>
-      </h1>
+      <h1 style={{ fontSize: "2.5rem" }}>3. Redefining “common knowledge”</h1>
+
+      {createHtmlForCopy(copy.deepDivePart2Intro)}
+
       <PopularNamesTable
         data={popularClueNames}
         featuredColumn="randomClue"
@@ -42,12 +36,6 @@ const NamesInClues = () => {
         word="poem"
         compare="race"
       />
-      {/* <AboveBelow
-        data={chess}
-        overviewData={chessWithNeutral}
-        word="chess"
-        compare="race"
-      /> */}
       <AboveBelow
         data={mit}
         overviewData={mitWithNeutral}
