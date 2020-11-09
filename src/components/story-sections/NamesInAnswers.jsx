@@ -65,18 +65,10 @@ const NamesInAnswers = () => {
 
   return (
     <Section>
-      <h1>
-        2.{" "}
-        <RoughNotation
-          type="underline"
-          show={true}
-          animate={false}
-          color={COLORS.pencilGrey}
-        >
-          Modernizing
-        </RoughNotation>{" "}
-        old names
-      </h1>
+      <h1>2. Modernizing old names</h1>
+
+      {createHtmlForCopy(copy.deepDivePart1Intro)}
+
       <PopularNamesTable
         data={popularAnswerNames}
         featuredColumn="answers"

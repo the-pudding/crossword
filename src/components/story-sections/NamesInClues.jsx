@@ -18,17 +18,10 @@ import COLORS from "../../styles/colors.js"
 const NamesInClues = () => {
   return (
     <Section>
-      <h1 style={{ fontSize: "2.5rem" }}>
-        3. Redefining{" "}
-        <RoughNotation
-          type="underline"
-          show={true}
-          animate={false}
-          color={COLORS.pencilGrey}
-        >
-          “common knowledge”
-        </RoughNotation>
-      </h1>
+      <h1 style={{ fontSize: "2.5rem" }}>3. Redefining “common knowledge”</h1>
+
+      {createHtmlForCopy(copy.deepDivePart2Intro)}
+
       <PopularNamesTable
         data={popularClueNames}
         featuredColumn="randomClue"

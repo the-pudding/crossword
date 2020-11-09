@@ -39,6 +39,7 @@ const SmallMultipleWaffles = () => {
   return (
     <>
       <Section>
+        <h2>Representation in Major Crosswords</h2>
         <ChartNote>
           Note:{" "}
           <span style={{ borderBottom: `4px solid ${COLORS.yellow}` }}>
