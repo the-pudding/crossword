@@ -9,16 +9,16 @@ const PopularNamesTable = ({ data, featuredColumn, columnTitle }) => {
   const dataSource = _.take(
     data.filter(d => d.decade.includes(decade.toString()))[0].topPeople,
     5
-  ).map(d => ({ ...d, answers: d.answers[0] }))
+  ).map((d, i) => ({ ...d, answers: d.answers[0], rank: i + 1 }))
 
   const columns = [
+    { title: "Rank", dataIndex: "rank", key: "rank" },
     { title: "Name", dataIndex: "name", key: "name" },
     {
       title: columnTitle,
       dataIndex: featuredColumn,
       key: featuredColumn,
     },
-    { title: "Count", dataIndex: "frequency", key: "count" },
     { title: "Birth Year", dataIndex: "birthYear", key: "birthYear" },
   ]
   return (
