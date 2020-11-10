@@ -49,7 +49,7 @@ const IntroPuzzle = ({ scrollLocation }) => {
               }
             }}
           >
-            Skip to analysis
+            skip to analysis
           </button>
         </SkipButtonWrapper>
 

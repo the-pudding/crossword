@@ -32,7 +32,7 @@ const Intro = () => {
               animate={false}
               color={COLORS.pencilGrey}
             >
-              <strong>Neil Diamond</strong>
+              <strong>NEIL DIAMOND</strong>
             </RoughNotation>
           </ClueExample>
           <div style={{ display: "flex" }}>
