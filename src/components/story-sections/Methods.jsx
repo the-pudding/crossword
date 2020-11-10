@@ -11,6 +11,9 @@ const Methods = () => {
         <h3 style={{ fontSize: "1rem" }}>Methods</h3>
       </Prose>
       {createHtmlForCopy(copy.methodology)}
+
+      <h2>❤️</h2>
+      {createHtmlForCopy(copy.thanks)}
     </Section>
   )
 }
