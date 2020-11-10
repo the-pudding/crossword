@@ -6,7 +6,7 @@ import _ from "lodash"
 
 const Methods = () => {
   return (
-    <Section>
+    <Section id="method">
       <Prose margin="0">
         <h3 style={{ fontSize: "1rem" }}>Methods</h3>
       </Prose>

@@ -27,6 +27,7 @@ function Home() {
         color: COLORS.pencilGrey,
         animate: false,
         strokeWidth: 1,
+        multiline: true,
       })
     )
     const ag = annotationGroup(emphasizedElements)
@@ -37,11 +38,10 @@ function Home() {
     <>
       <Meta />
       <GlobalStyle />
-      {/* <GlobalFonts /> */}
 
       <EssayWrapper>
-        <div>
-          <Logo style={{ width: "150px", marginTop: "25px" }} />
+        <div style={{ marginTop: "25px" }}>
+          <Logo style={{ width: "150px" }} />
         </div>
 
         <Header />
