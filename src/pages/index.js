@@ -27,6 +27,7 @@ function Home() {
         type: "box",
         color: COLORS.pencilGrey,
         animate: false,
+        strokeWidth: 1,
       })
     )
     const ag = annotationGroup(emphasizedElements)
