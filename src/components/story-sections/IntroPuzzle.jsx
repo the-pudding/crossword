@@ -78,6 +78,7 @@ const IntroPuzzle = ({ scrollLocation }) => {
         <Callout
           href="https://pudding.cool/2020/11/crossword-puzzles"
           target="_blank"
+          style={{ marginTop: "50px" }}
         >
           <Edit />
           <div style={{ marginLeft: "10px" }}>

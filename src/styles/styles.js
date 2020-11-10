@@ -201,7 +201,6 @@ export const Callout = styled.a`
   display: flex;
   align-items: center;
   padding: 15px;
-  margin-top: 50px;
   font-size: 0.9rem;
 
   transition: background 0.5s ease;
