@@ -9,7 +9,6 @@ import Conclusion from "../components/story-sections/Conclusion.jsx"
 import Methods from "../components/story-sections/Methods.jsx"
 import Meta from "../components/Meta.jsx"
 import { GlobalStyle, EssayWrapper } from "../styles/styles.js"
-import GlobalFonts from "../styles/fonts/fonts.js"
 import "../styles/index.css"
 import Logo from "../svg/pudding-logo.svg"
 import { annotate, annotationGroup } from "rough-notation"
@@ -38,7 +37,7 @@ function Home() {
     <>
       <Meta />
       <GlobalStyle />
-      <GlobalFonts />
+      {/* <GlobalFonts /> */}
 
       <EssayWrapper>
         <div>

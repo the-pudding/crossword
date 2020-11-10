@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "National 2 Web";
+  src: url("./national/National2Web-Regular.woff") format("woff"),
+    url("./national/National2Web-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "National 2 Web Bold";
+  src: url("./national/National2Web-Bold.woff2") format("woff"),
+    url("./national/National2Web-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("./tiempos/TiemposHeadlineWeb-Regular.woff") format("woff"),
+    url("./tiempos/TiemposHeadlineWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  src: url("./tiempos/TiemposTextWeb-Regular.woff") format("woff"),
+    url("./tiempos/TiemposTextWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
