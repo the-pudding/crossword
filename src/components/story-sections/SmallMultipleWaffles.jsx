@@ -169,7 +169,7 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
                         colors={genderColors}
                         labels={genderLabels}
                         censusSplit={genderCensusSplit}
-                        showCensusSplitLabel={publication.short === "wsj"}
+                        showCensusSplitLabel={false}
                         circlePercentage={publication.short === "usa"}
                       />
                     </div>
@@ -181,7 +181,7 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
                         labels={raceLabels}
                         censusSplit={raceCensusSplit}
                         small={true}
-                        showCensusSplitLabel={publication.short === "wsj"}
+                        showCensusSplitLabel={false}
                         circlePercentage={publication.short === "usa"}
                       />
                     </div>

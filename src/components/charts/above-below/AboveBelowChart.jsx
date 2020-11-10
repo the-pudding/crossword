@@ -17,7 +17,7 @@ const AboveBelowChart = ({ data, compare }) => {
 
   const initialDimensions = {
     marginTop: 0,
-    marginRight: 0,
+    marginRight: 35,
     marginBottom: 250, // this is what's keeping the chart in place
     marginLeft: 0,
   }
@@ -53,11 +53,11 @@ const AboveBelowChart = ({ data, compare }) => {
   return (
     <>
       <h3>Clues that mention a person</h3>
-      <YearLabels>
+      {/* <YearLabels>
         <div>2000</div>
         <div>2010</div>
         <div>2020</div>
-      </YearLabels>
+      </YearLabels> */}
 
       <StackedSquaresWrapper ref={ref}>
         <Chart dms={dms}>
@@ -74,7 +74,6 @@ const AboveBelowChart = ({ data, compare }) => {
           />
         </Chart>
       </StackedSquaresWrapper>
-
       {hoverY && hoverX && tooltipInfo && (
         <Tooltip hoverX={hoverX} hoverY={hoverY}>
           <h3>

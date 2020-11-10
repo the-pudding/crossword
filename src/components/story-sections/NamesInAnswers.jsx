@@ -104,7 +104,7 @@ const NamesInAnswers = () => {
             data={sortedModern}
             title={
               <>
-                <strong>AVA DUVERNAY</strong> in 2020
+                <strong>AVA</strong> DuVernay in 2020
               </>
             }
             showLabels={true}
@@ -115,7 +115,7 @@ const NamesInAnswers = () => {
             data={sortedHistoric}
             title={
               <>
-                <strong>AVA GARDNER</strong> in 2020
+                <strong>AVA</strong> Gardner in 2020
               </>
             }
             showLabels={false}

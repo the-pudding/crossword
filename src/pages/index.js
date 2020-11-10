@@ -22,15 +22,14 @@ function Home() {
 
   // Adding RoughNotations to html elements from copy
   useEffect(() => {
-    const underlinedElements = _.range(1, parseInt(copy.numUnderlines) + 1).map(
-      n =>
-        annotate(document.querySelector(`#underline-${n}`), {
-          type: "underline",
-          color: COLORS.pencilGrey,
-          animate: false,
-        })
+    const emphasizedElements = _.range(1, parseInt(copy.numBoxes) + 1).map(n =>
+      annotate(document.querySelector(`#box-${n}`), {
+        type: "box",
+        color: COLORS.pencilGrey,
+        animate: false,
+      })
     )
-    const ag = annotationGroup(underlinedElements)
+    const ag = annotationGroup(emphasizedElements)
     ag.show()
   }, [])
 

@@ -1,6 +1,8 @@
 import React from "react"
 import _ from "lodash"
 import COLORS from "../../../styles/colors.js"
+import ChevronUp from "../../../svg/chevron-up.svg"
+import ChevronDown from "../../../svg/chevron-down.svg"
 
 const Axis = ({ dms, scale, numTicks, squareWidth }) => {
   const pixelsPerTick = 50
@@ -12,15 +14,33 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
     .map(value => ({ value, xOffset: scale(value) }))
 
   return (
-    <g transform={`translate(0, ${dms.boundedHeight})`}>
-      <line
-        x2={dms.boundedWidth - squareWidth}
-        stroke={COLORS.mainColor}
-        strokeWidth="4px"
-        fill="none"
-        strokeLinecap="butt"
-      />
-    </g>
+    <>
+      <g transform={`translate(0, ${dms.boundedHeight})`}>
+        <line
+          x2={dms.boundedWidth}
+          stroke={COLORS.mainColor}
+          strokeWidth="4px"
+          fill="none"
+          strokeLinecap="butt"
+        />
+      </g>
+      <g transform={`translate(${dms.boundedWidth - squareWidth + 5}, 100)`}>
+        <ChevronDown height={19} width={19} />
+        <text
+          style={{ fontSize: "0.6rem", transform: `translate(20px, 15px)` }}
+        >
+          White
+        </text>
+      </g>
+      <g transform={`translate(${dms.boundedWidth - squareWidth + 5}, 80)`}>
+        <ChevronUp height={19} width={19} />
+        <text
+          style={{ fontSize: "0.6rem", transform: `translate(20px, 15px)` }}
+        >
+          URM
+        </text>
+      </g>
+    </>
   )
 }
 
