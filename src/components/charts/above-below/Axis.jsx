@@ -1,5 +1,6 @@
 import React from "react"
 import _ from "lodash"
+import COLORS from "../../../styles/colors.js"
 
 const Axis = ({ dms, scale, numTicks, squareWidth }) => {
   const pixelsPerTick = 50
@@ -14,7 +15,7 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
     <g transform={`translate(0, ${dms.boundedHeight})`}>
       <line
         x2={dms.boundedWidth - squareWidth}
-        stroke="black"
+        stroke={COLORS.mainColor}
         strokeWidth="4px"
         fill="none"
         strokeLinecap="butt"

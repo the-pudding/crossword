@@ -2,12 +2,20 @@
 
 import React, { useCallback, useContext } from "react"
 import PropTypes from "prop-types"
-import { ThemeContext } from "styled-components"
+import styled, { ThemeContext } from "styled-components"
 import _ from "lodash"
 
 import { CrosswordSizeContext } from "./context"
 
 // expected props: row, col, answer, crossword, cellSize
+
+const CellRect = styled.g`
+  cursor: default;
+  font-size: ${props => `${props.fontSize}px`};
+  &:hover {
+    cursor: pointer;
+  }
+`
 
 /**
  * An individual-letter answer cell within the crossword grid.
@@ -16,13 +24,7 @@ import { CrosswordSizeContext } from "./context"
  * a location determined by the `row`, `col`, and `cellSize` properties from
  * `cellData` and `renderContext`.
  */
-export default function Cell({
-  cellData,
-  onClick,
-  focus,
-  highlight,
-  colorOverride,
-}) {
+export default function Cell({ cellData, onClick, focus, highlight }) {
   const { cellSize, cellPadding, cellInner, cellHalf, fontSize } = useContext(
     CrosswordSizeContext
   )
@@ -52,50 +54,22 @@ export default function Cell({
   const y = row * cellSize
 
   return (
-    <g
-      onClick={handleClick}
-      style={{ cursor: "default", fontSize: `${fontSize}px` }}
-    >
-      {!colorOverride ||
-      colorOverride.length === 1 ||
-      colorOverride[0] === colorOverride[1] ? (
-        <rect
-          x={x + cellPadding}
-          y={y + cellPadding}
-          width={cellInner}
-          height={cellInner}
-          fill={
-            colorOverride
-              ? colorOverride[0]
-              : focus
-              ? focusBackground
-              : highlight
-              ? highlightBackground
-              : cellBackground
-          }
-          stroke={cellBorder}
-          strokeWidth={cellSize / 50}
-        />
-      ) : (
-        <>
-          <path
-            d={`M ${x + cellPadding} ${y + cellPadding + cellInner} L ${
-              x + cellPadding + cellInner
-            } ${y + cellPadding} L ${x + cellPadding} ${y + cellPadding} L ${
-              x + cellPadding
-            } ${y + cellPadding + cellInner}`}
-            fill={colorOverride[0]}
-          />
-          <path
-            d={`M ${x + cellPadding} ${y + cellPadding + cellInner} L ${
-              x + cellPadding + cellInner
-            } ${y + cellPadding} L ${x + cellPadding + cellInner} ${
-              y + cellPadding + cellInner
-            } L ${x + cellPadding} ${y + cellPadding + cellInner}`}
-            fill={colorOverride[1]}
-          />
-        </>
-      )}
+    <CellRect onClick={handleClick} fontSize={fontSize}>
+      <rect
+        x={x + cellPadding}
+        y={y + cellPadding}
+        width={cellInner}
+        height={cellInner}
+        fill={
+          focus
+            ? focusBackground
+            : highlight
+            ? highlightBackground
+            : cellBackground
+        }
+        stroke={cellBorder}
+        strokeWidth={cellSize / 50}
+      />
       {number && (
         <text
           x={x + cellPadding * 4 + 1}
@@ -116,7 +90,7 @@ export default function Cell({
       >
         {guess}
       </text>
-    </g>
+    </CellRect>
   )
 }
 
@@ -137,9 +111,6 @@ Cell.propTypes = {
 
   /** handler called when the cell is clicked */
   onClick: PropTypes.func,
-
-  // color coding
-  colorOverride: PropTypes.array,
 }
 
 Cell.defaultProps = {

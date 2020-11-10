@@ -20,7 +20,7 @@ import Crossword from "../charts/crossword/Crossword.js"
 import confetti from "canvas-confetti"
 import Edit from "../../svg/mdi-edit.svg"
 
-const IntroPuzzle = () => {
+const IntroPuzzle = ({ scrollLocation }) => {
   const crosswordRef = useRef(null)
 
   // start puzzle blank
@@ -36,14 +36,17 @@ const IntroPuzzle = () => {
         {createHtmlForCopy(copy.introPuzzleBefore)}
 
         <SkipButtonWrapper>
+          <div>Play the puzzle or </div>
           <button
+            style={{ marginLeft: "10px" }}
             onClick={() => {
               crosswordRef.current.fillAllAnswers()
-              window.scrollTo({
-                top: 3610,
-                left: 0,
-                behavior: "smooth",
-              })
+              if (scrollLocation) {
+                window.scrollTo({
+                  ...scrollLocation,
+                  behavior: "smooth",
+                })
+              }
             }}
           >
             Skip to analysis

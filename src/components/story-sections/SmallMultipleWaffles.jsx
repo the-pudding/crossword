@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import WaffleChart from "../charts/waffle/WaffleChart.jsx"
 import raceGenderBreakdown from "../../data/raceGenderBreakdownByDecade.json"
 import copy from "../../data/copy.json"
@@ -21,8 +21,20 @@ import {
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
-const SmallMultipleWaffles = () => {
+const SmallMultipleWaffles = ({ setScrollLocation }) => {
   const [decade, setDecade] = useState(2020)
+
+  const scrollToRef = useRef(null)
+
+  // On first render, pass back up the location for the button that scrolls the user here
+  useEffect(() => {
+    const location = {
+      top: scrollToRef.current.getBoundingClientRect().top + window.pageYOffset,
+      left:
+        scrollToRef.current.getBoundingClientRect().left + window.pageXOffset,
+    }
+    setScrollLocation(location)
+  }, [])
 
   const publications = [
     { short: "wsj", long: "WSJ" },
@@ -38,7 +50,7 @@ const SmallMultipleWaffles = () => {
 
   return (
     <>
-      <Section>
+      <Section ref={scrollToRef}>
         <h2 style={{ textAlign: "center" }}>
           Representation in Major Crosswords
         </h2>

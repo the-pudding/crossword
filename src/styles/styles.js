@@ -76,6 +76,7 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     font-size: 0.8rem;
+    font-family: "National 2 Web";
     padding: 0.3rem;
     background: #efefef;
     border-radius: 4px;
@@ -255,6 +256,9 @@ export const Line = styled.hr`
 `
 
 export const SkipButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: "Tiempos Text";
   width: 100%;
   margin: 1rem auto;
   padding: 0 1rem;

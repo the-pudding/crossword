@@ -11,6 +11,7 @@ import {
   OverviewLabel,
   FakeFiller,
 } from "../../../styles/styles.js"
+import COLORS from "../../../styles/colors.js"
 
 const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
   const initialDimensions = {
@@ -39,7 +40,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
               height={100}
               width={100}
               fill="none"
-              stroke="black"
+              stroke={COLORS.mainColor}
               strokeWidth={4}
             />
             {reversedKeys.map((key, i) => {
@@ -53,7 +54,7 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
                   height={100}
                   width={width}
                   fill={reversedColors[i]}
-                  stroke="black"
+                  stroke={COLORS.mainColor}
                   strokeWidth={1}
                 />
               )

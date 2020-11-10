@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Header from "../components/story-sections/Header.jsx"
 import Intro from "../components/story-sections/Intro.jsx"
 import IntroPuzzle from "../components/story-sections/IntroPuzzle.jsx"
@@ -18,6 +18,8 @@ import _ from "lodash"
 import copy from "../data/copy.json"
 
 function Home() {
+  const [scrollLocation, setScrollLocation] = useState(null)
+
   // Adding RoughNotations to html elements from copy
   useEffect(() => {
     const underlinedElements = _.range(1, parseInt(copy.numUnderlines) + 1).map(
@@ -45,9 +47,9 @@ function Home() {
 
         <Header />
         <Intro />
-        <IntroPuzzle />
+        <IntroPuzzle scrollLocation={scrollLocation} />
 
-        <SmallMultipleWaffles />
+        <SmallMultipleWaffles setScrollLocation={setScrollLocation} />
 
         <NamesInAnswers />
         <NamesInClues />

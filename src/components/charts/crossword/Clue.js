@@ -18,6 +18,10 @@ const ClueWrapper = styled.div.attrs(props => ({
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.5em;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export default function Clue({

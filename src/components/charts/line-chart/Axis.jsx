@@ -52,13 +52,13 @@ const AxisHorizontal = ({
 
   return (
     <g transform={`translate(0, ${dms.boundedHeight})`}>
-      <line x2={dms.boundedWidth} stroke="black" fill="none" />
+      <line x2={dms.boundedWidth} stroke={COLORS.mainColor} fill="none" />
       {ticks.map(({ value, xOffset }, i) => (
         <g key={i} transform={`translate(${xOffset}, 0)`}>
           <line
             y1={0}
             y2={-dms.boundedHeight}
-            stroke="black"
+            stroke={COLORS.mainColor}
             strokeWidth="1px"
           />
           <HorizontalTickLabel key={i}>
@@ -106,10 +106,10 @@ const AxisVertical = ({ dms, scale, label, labelAccessor }) => {
 
   return (
     <g transform={`translate(0, 0)`}>
-      <line y2={dms.boundedHeight} stroke="black" fill="none" />
+      <line y2={dms.boundedHeight} stroke={COLORS.mainColor} fill="none" />
       {ticks.map(({ value, yOffset }, i) => (
         <g key={i} transform={`translate(0, ${yOffset})`}>
-          <line x1={0} x2={dms.boundedWidth} stroke="black" />
+          <line x1={0} x2={dms.boundedWidth} stroke={COLORS.mainColor} />
           <VerticalTickLabel key={i}>
             {labelAccessor ? labelAccessor(value) : value}
           </VerticalTickLabel>

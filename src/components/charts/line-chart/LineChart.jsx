@@ -92,7 +92,7 @@ const LineChart = ({ data, metrics, colors }) => {
           <rect
             width={dms.boundedWidth}
             height={dms.boundedHeight}
-            stroke="black"
+            stroke={COLORS.mainColor}
             strokeWidth="4px"
             fill="none"
           />

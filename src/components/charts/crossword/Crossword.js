@@ -788,7 +788,6 @@ const Crossword = React.forwardRef(
                 cellData[currentDirection] === currentNumber
               }
               onClick={handleCellClick}
-              colorOverride={colorCode ? cellData.color : null}
             />
           )
         })
