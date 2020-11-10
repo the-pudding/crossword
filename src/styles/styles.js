@@ -402,7 +402,7 @@ export const AnnotationEvent = styled.text`
 export const HorizontalTickLabel = styled.text`
   font-size: 0.8rem;
   text-anchor: middle;
-  transform: translateY(20px);
+  transform: translate(-3px, 20px);
 
   @media ${devices.mobile} {
     font-size: 0.6rem;
