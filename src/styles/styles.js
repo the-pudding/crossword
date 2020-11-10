@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components"
 import COLORS from "./colors.js"
+import Edit from "../svg/mdi-edit.svg"
 
 // Device sizing
 const maxSizes = {
@@ -56,6 +57,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 3rem;
     text-align: center;
     color: ${COLORS.mainColor};
+
+    @media ${devices.mobile} {
+      font-size: 2.5rem;
+    }
   }
 
   h2 {
@@ -725,6 +730,15 @@ export const Tooltip = styled.div`
   textoverflow: scroll;
 `
 
+export const SideLabel = styled.text`
+  font-size: 0.6rem;
+  transform: translate(20px, 15px);
+
+  @media ${devices.mobile} {
+    transform: translate(17px, 13px);
+  }
+`
+
 // Overview
 export const OverviewWrapper = styled.div`
   display: flex;
@@ -801,7 +815,7 @@ export const FakeFiller = styled.h3`
 const sidewaysBarBorder = 4
 const sidewaysBarBlock = {
   normal: 25,
-  mobile: 15,
+  mobile: 18,
 }
 
 export const SidewaysBars = styled.div`
@@ -821,9 +835,12 @@ export const SidewaysBarWrapper = styled.div`
   justify-content: center;
 
   @media ${devices.tablet} {
-    width: auto;
-    position: relative;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
   }
 `
 
@@ -835,12 +852,8 @@ export const BarLabels = styled.div`
 
   @media ${devices.tablet} {
     display: flex;
-    position: absolute;
-    left: -115px;
-    font-size: 0.8rem;
-  }
-  @media ${devices.mobile} {
-    left: -78px;
+    width: auto;
+    margin-right: 0px;
   }
 `
 
@@ -977,5 +990,13 @@ export const QuestionCircle = styled.div`
     cursor: pointer;
     color: ${COLORS.blue};
     border-color: ${COLORS.blue};
+  }
+`
+
+export const EditSvg = styled(Edit)`
+  width: 1rem;
+
+  @media ${devices.mobile} {
+    width: 2rem;
   }
 `

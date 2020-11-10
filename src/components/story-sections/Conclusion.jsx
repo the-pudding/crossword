@@ -1,9 +1,8 @@
 import React from "react"
-import { Section, Callout } from "../../styles/styles.js"
+import { Section, Callout, EditSvg } from "../../styles/styles.js"
 import copy from "../../data/copy.json"
 import { createHtmlForCopy } from "../utils.js"
 import _ from "lodash"
-import Edit from "../../svg/mdi-edit.svg"
 
 const Conclusion = () => {
   return (
@@ -13,7 +12,7 @@ const Conclusion = () => {
         href="https://pudding.cool/2020/11/crossword-puzzles"
         target="_blank"
       >
-        <Edit />
+        <EditSvg />
         <strong style={{ marginLeft: "10px" }}>
           Cool article. Now take me to the puzzles.
         </strong>
