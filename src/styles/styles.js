@@ -93,12 +93,19 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    text-decoration: underline;
-    color: inherit;
+    transition: background-position 80ms ease-out;
+    background-image: linear-gradient(180deg,transparent 0,${COLORS.crosswordBlue} 0);
+    background-position: 0 .9em;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    padding: 0;
+    text-decoration: none;
+    color: ${COLORS.mainColor};
+    pointer-events: all;
 
     &:hover {
-      color: ${COLORS.blue};
-      text-decoration: underline;
+      color: ${COLORS.mainColor};
+      background-position: 0 0;
     }
   }
 
@@ -202,7 +209,7 @@ export const Callout = styled.a`
   &:hover {
     text-decoration: none;
     color: ${COLORS.mainColor};
-    background: ${COLORS.crosswordYellowLight};
+    background: ${COLORS.crosswordBlue};
   }
 
   @media ${devices.mobile} {
