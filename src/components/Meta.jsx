@@ -60,56 +60,6 @@ const Meta = () => {
       />
       <meta name="msapplication-TileColor" content="#ffc40d" />
       <meta name="theme-color" content="#ffffff" />
-
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/national/National2Web-Regular.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/national/National2Web-Bold.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/national/National2NarrowWeb-Regular.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/national/National2NarrowWeb-Bold.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/tiempos/TiemposTextWeb-Regular.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/tiempos/TiemposTextWeb-Bold.woff2"
-      />
-      <link
-        rel="preload"
-        type="font/woff2"
-        as="font"
-        crossorigin
-        href="../styles/fonts/tiempos/TiemposHeadlineWeb-Regular.woff2"
-      />
     </Helmet>
   )
 }
