@@ -59,7 +59,12 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
           <span style={{ borderBottom: `4px solid ${COLORS.yellow}` }}>
             The yellow line
           </span>{" "}
-          marks the split of the US population according to the Census.
+          marks the split of the US population according to the Census (for
+          2020, we used{" "}
+          <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html#par_textimage_1537638156">
+            2019 estimates
+          </a>
+          ).
         </ChartNote>
 
         <div style={{ width: "100%", display: "flex" }}>
