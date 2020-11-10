@@ -25,7 +25,7 @@ const AboveBelow = ({ data, overviewData, word, compare }) => {
   return (
     <AboveBelowWrapper>
       <h2>
-        {totalClues} clues use the word <strong>{word.toUpperCase()}</strong>
+        {totalClues} clues for the answer <strong>{word.toUpperCase()}</strong>
       </h2>
       <Line />
 
