@@ -19,7 +19,7 @@ const AboveBelowChart = ({ data, compare }) => {
     marginTop: 0,
     marginRight: 35,
     marginBottom: 250, // this is what's keeping the chart in place
-    marginLeft: 0,
+    marginLeft: 2,
   }
 
   const [ref, dms] = useChartDimensions(initialDimensions)

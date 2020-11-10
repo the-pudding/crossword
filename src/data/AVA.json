@@ -253,5 +253,18 @@
     "nytAvaDuVernay": 5,
     "nytAvaGardner": 2,
     "nytOther": 1
+  },
+  {
+    "year": "2020-projected",
+    "usaAvaDuVernay": 9.6,
+    "usaAvaMichelle": 1.2,
+    "uniAvaDuVernay": 10.8,
+    "wsjAvaGardner": 3.6,
+    "wsjAvaDuVernay": 2.4,
+    "latAvaDuVernay": 4.8,
+    "latAvaGardner": 2.4,
+    "nytAvaDuVernay": 6,
+    "nytAvaGardner": 2.4,
+    "nytOther": 1.2
   }
 ]

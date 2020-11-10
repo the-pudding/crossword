@@ -88,7 +88,17 @@ const NamesInAnswers = () => {
           Use of the answer <strong>AVA</strong> across all publications
         </h2>
         <LineChart
-          data={ava.filter(d => parseInt(d.year) >= 2000)}
+          // use projected data
+          data={ava
+            .filter(
+              d =>
+                (parseInt(d.year) >= 2000 || d.year === "2020-projected") &&
+                d.year !== "2020"
+            )
+            .map(d => ({
+              ...d,
+              year: d.year === "2020-projected" ? "2020" : d.year,
+            }))}
           metrics={["AvaGardner", "AvaDuVernay", "Other Avas"]}
           colors={[COLORS.blue, COLORS.pink, COLORS.grey]}
         />
