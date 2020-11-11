@@ -12,7 +12,7 @@ const Methods = () => {
       </Prose>
       {createHtmlForCopy(copy.methodology)}
 
-      <h2>❤️</h2>
+      <h2 style={{ margin: "0.8rem 0" }}>❤️</h2>
       {createHtmlForCopy(copy.thanks)}
     </Section>
   )

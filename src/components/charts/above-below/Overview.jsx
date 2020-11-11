@@ -10,6 +10,9 @@ import {
   CluesChart,
   OverviewLabel,
   FakeFiller,
+  OverviewRect,
+  OverviewBoxWrapper,
+  OverviewSectionRect,
 } from "../../../styles/styles.js"
 import COLORS from "../../../styles/colors.js"
 
@@ -34,37 +37,28 @@ const Overview = ({ data, totalClues, keys, keyLabels, keyColors }) => {
     <>
       <CluesChart>
         <h3>All clues</h3>
-        <div style={{ height: "108px", width: "108px" }} ref={ref}>
+        <OverviewBoxWrapper ref={ref}>
           <Chart dms={dms}>
-            <rect
-              height={100}
-              width={100}
-              fill="none"
-              stroke={COLORS.mainColor}
-              strokeWidth={4}
-            />
+            <OverviewRect />
             {reversedKeys.map((key, i) => {
               const width = scale(
                 _.sum(reversedKeys.map(k => data[k]).slice(i))
               )
 
               return (
-                <rect
+                <OverviewSectionRect
                   key={i}
-                  height={100}
-                  width={width}
                   fill={reversedColors[i]}
-                  stroke={COLORS.mainColor}
-                  strokeWidth={1}
+                  width={width}
                 />
               )
             })}
           </Chart>
-        </div>
+        </OverviewBoxWrapper>
       </CluesChart>
 
       <Labels>
-        <FakeFiller>ALL CLUES</FakeFiller>
+        <FakeFiller>All clues</FakeFiller>
         {keys.map((key, i) => (
           <OverviewRow>
             <Percentage color={keyColors[i]} size={"medium"}>

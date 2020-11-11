@@ -61,6 +61,9 @@ export const GlobalStyle = createGlobalStyle`
     @media ${devices.mobile} {
       font-size: 2.5rem;
     }
+    @media ${devices.smallMobile} {
+      font-size: 2.2rem;
+    }
   }
 
   h2 {
@@ -811,6 +814,39 @@ export const FakeFiller = styled.h3`
   }
 `
 
+export const OverviewBoxWrapper = styled.div`
+  height: 108px;
+  width: 108px;
+
+  @media ${devices.mobile} {
+    height: 80px;
+    width: 80px;
+  }
+`
+
+export const OverviewRect = styled.rect`
+  height: 100px;
+  width: 100px;
+  fill: none;
+  stroke: ${COLORS.mainColor};
+  stroke-width: 4px;
+
+  @media ${devices.mobile} {
+    height: 72px;
+    width: 72px;
+  }
+`
+
+export const OverviewSectionRect = styled.rect`
+  height: 100px;
+  stroke: ${COLORS.mainColor};
+  stroke-width: 1px;
+
+  @media ${devices.mobile} {
+    height: 72px;
+  }
+`
+
 // SidewaysBar
 const sidewaysBarBorder = 4
 const sidewaysBarBlock = {
@@ -955,6 +991,12 @@ export const AnswerBox = styled.div`
   @media ${devices.mobile} {
     height: 25px;
     width: 25px;
+  }
+
+  @media ${devices.smallMobile} {
+    height: 20px;
+    width: 20px;
+    font-size: 0.9rem;
   }
 `
 

@@ -25,11 +25,11 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
           strokeLinecap="butt"
         />
       </g>
-      <g transform={`translate(${dms.boundedWidth - squareWidth + 4}, 100)`}>
+      <g transform={`translate(${dms.boundedWidth - squareWidth}, 100)`}>
         <ChevronDown height={19} width={19} />
         <SideLabel>White</SideLabel>
       </g>
-      <g transform={`translate(${dms.boundedWidth - squareWidth + 4}, 80)`}>
+      <g transform={`translate(${dms.boundedWidth - squareWidth}, 80)`}>
         <ChevronUp height={19} width={19} />
         <SideLabel>URM</SideLabel>
       </g>
