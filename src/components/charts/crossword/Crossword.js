@@ -34,7 +34,7 @@ import { CrosswordContext, CrosswordSizeContext } from "./context"
 const defaultStorageKey = "guesses"
 
 const defaultTheme = {
-  columnBreakpoint: "768px",
+  columnBreakpoint: "767px",
   gridBackground: "rgb(0,0,0)",
   cellBackground: "rgb(255,255,255)",
   cellBorder: "rgb(0,0,0)",

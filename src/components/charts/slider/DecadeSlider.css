@@ -33,7 +33,7 @@
   color: #1a1a1a !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .ant-slider {
     width: 350px;
   }
