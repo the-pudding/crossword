@@ -1,6 +1,6 @@
 import React from "react"
 import copy from "../../data/copy.json"
-import { Section, Callout } from "../../styles/styles.js"
+import { Section, Callout, EditSvg } from "../../styles/styles.js"
 import { createHtmlForCopy } from "../utils.js"
 import popularClueNames from "../../data/topPeopleNytCluesOnly.json"
 import PopularNamesTable from "../charts/table/PopularNamesTable.jsx"
@@ -48,6 +48,17 @@ const NamesInClues = () => {
         word="chess"
         compare="race"
       /> */}
+
+      <Callout
+        href="https://pudding.cool/2020/11/crossword-puzzles"
+        target="_blank"
+        style={{ marginBottom: "2rem" }}
+      >
+        <EditSvg />
+        <strong style={{ marginLeft: "10px" }}>
+          Cool article. Now take me to the puzzles.
+        </strong>
+      </Callout>
     </Section>
   )
 }

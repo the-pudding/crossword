@@ -13,16 +13,22 @@ import COLORS from "../styles/colors.js"
 const ClueExamples = ({ clues }) => {
   return (
     <ClueExamplesWrapper>
-      {clues.map((clue, i) => {
-        const clueText = _.trim(clue.split("=")[0])
-        const answerText = _.trim(clue.split("=")[1])
-        return <ClueExample i={i} clueText={clueText} answerText={answerText} />
+      {clues.map((d, i) => {
+        const { explanation, clue, answer } = d
+        return (
+          <ClueExample
+            i={i}
+            clueText={clue}
+            answerText={answer}
+            explanation={explanation}
+          />
+        )
       })}
     </ClueExamplesWrapper>
   )
 }
 
-const ClueExample = ({ i, clueText, answerText }) => {
+const ClueExample = ({ i, clueText, answerText, explanation }) => {
   const [showAnnotations, setShowAnnotations] = useState(false)
 
   return (
@@ -34,10 +40,6 @@ const ClueExample = ({ i, clueText, answerText }) => {
       brackets={i % 2 === 0 ? "left" : "right"}
     >
       <div style={{ display: "flex" }}>
-        {/* <QuestionCircle onClick={() => setShowAnnotations(!showAnnotations)}>
-          ?
-        </QuestionCircle> */}
-
         <ClueAnswerPair>
           <div style={{ fontStyle: "italic" }}>{clueText}</div>
           <div style={{ display: "flex" }}>
@@ -47,6 +49,11 @@ const ClueExample = ({ i, clueText, answerText }) => {
           </div>
           {showAnnotations && (
             <WrittenNote left={i % 2 === 0}>This is a written note</WrittenNote>
+          )}
+          {explanation && (
+            <div style={{ fontSize: "0.8rem", color: COLORS.darkGrey }}>
+              {explanation}
+            </div>
           )}
         </ClueAnswerPair>
       </div>

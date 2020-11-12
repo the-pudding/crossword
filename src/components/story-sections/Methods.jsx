@@ -12,8 +12,8 @@ const Methods = () => {
       </Prose>
       {createHtmlForCopy(copy.methodology)}
 
-      <h2 style={{ margin: "0.8rem 0" }}>❤️</h2>
-      {createHtmlForCopy(copy.thanks)}
+      {/* <h2 style={{ margin: "0.8rem 0" }}>❤️</h2> */}
+      <div style={{ marginTop: "2rem" }}>{createHtmlForCopy(copy.thanks)}</div>
     </Section>
   )
 }
