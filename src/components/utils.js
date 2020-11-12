@@ -36,6 +36,12 @@ export const createHtmlForCopy = copy => {
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </Emphasis>
         )
+      } else if (type === "text-with-clues") {
+        return (
+          <>
+            <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
+          </>
+        )
       } else if (type === "how-we-did-it") {
         return (
           <HowWeDidIt>

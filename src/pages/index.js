@@ -53,7 +53,7 @@ function Home() {
         <NamesInAnswers />
         <NamesInClues />
 
-        <Conclusion />
+        {/* <Conclusion /> */}
         <Methods />
       </EssayWrapper>
     </>

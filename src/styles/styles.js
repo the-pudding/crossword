@@ -1,11 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components"
 import COLORS from "./colors.js"
+import Edit from "../svg/mdi-edit.svg"
 
 // Device sizing
 const maxSizes = {
   smallMobile: "320px",
   mobile: "480px",
-  tablet: "768px",
+  tablet: "767px",
   laptop: "1024px",
   desktop: "2560px",
 }
@@ -20,6 +21,7 @@ const devices = {
 // Waffle sizing
 const waffleBlockSize = {
   normal: 15,
+  tablet: 10,
   mobile: 8,
 }
 const percentSize = {
@@ -56,6 +58,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 3rem;
     text-align: center;
     color: ${COLORS.mainColor};
+
+    @media ${devices.mobile} {
+      font-size: 2.5rem;
+    }
+    @media ${devices.smallMobile} {
+      font-size: 2.2rem;
+    }
   }
 
   h2 {
@@ -309,7 +318,7 @@ const annotationLocations = {
       y: "52%",
     },
     tablet: {
-      x: "30%",
+      x: "28%",
       y: "52%",
     },
     mobile: {
@@ -327,7 +336,7 @@ const annotationLocations = {
       y: "39%",
     },
     tablet: {
-      x: "73%",
+      x: "71%",
       y: "39%",
     },
     mobile: {
@@ -425,7 +434,7 @@ export const WaffleChartWrapper = styled.div`
   display: flex;
   width: 100%;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     margin: 0;
   }
 `
@@ -444,6 +453,10 @@ export const WaffleChartBounds = styled.div`
     cursor: ${props => (props.clickable ? "pointer" : "auto")};
   }
 
+  @media ${devices.tablet} {
+    width: ${waffleBlockSize.tablet * 10}px;
+    height: ${waffleBlockSize.tablet * 10}px;
+  }
   @media ${devices.mobile} {
     width: ${waffleBlockSize.mobile * 10}px;
     height: ${waffleBlockSize.mobile * 10}px;
@@ -460,6 +473,10 @@ export const WaffleChartLabels = styled.div`
   width: auto;
   position: relative;
 
+  @media ${devices.tablet} {
+    height: ${waffleBlockSize.tablet * 10 + 5}px;
+    margin-left: 10px;
+  }
   @media ${devices.mobile} {
     height: ${waffleBlockSize.mobile * 10 + 5}px;
     margin-left: 10px;
@@ -469,7 +486,7 @@ export const WaffleChartLabels = styled.div`
 export const GroupHeadingWrapper = styled.div`
   width: 40%;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     width: 50%;
   }
 `
@@ -479,7 +496,7 @@ export const GroupHeading = styled.h3`
   padding-left: ${borderSize.normal}px;
   text-align: center;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     text-align: start;
     padding-left: 0px;
     margin-bottom: 0px;
@@ -494,7 +511,7 @@ export const CensusSplitLabel = styled.div`
   top: ${props => props.splitRow * waffleBlockSize.normal - 8}px;
   width: 100px;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     display: none;
   }
 `
@@ -519,6 +536,10 @@ export const Block = styled.div`
 
   background: ${props => props.color};
 
+  @media ${devices.tablet} {
+    width: ${waffleBlockSize.tablet}px;
+    height: ${waffleBlockSize.tablet}px;
+  }
   @media ${devices.mobile} {
     width: ${waffleBlockSize.mobile}px;
     height: ${waffleBlockSize.mobile}px;
@@ -536,6 +557,10 @@ export const WaffleLabelText = styled.div`
   font-size: ${labelTextSize.normal};
   line-height: ${labelTextSize.normal};
 
+  @media ${devices.tablet} {
+    font-size: ${labelTextSize.tablet};
+    line-height: ${labelTextSize.tablet};
+  }
   @media ${devices.mobile} {
     font-size: ${labelTextSize.mobile};
     line-height: ${labelTextSize.mobile};
@@ -555,7 +580,7 @@ export const Percentage = styled.div`
   -webkit-text-stroke: ${props =>
     props.color === "white" ? `1px ${COLORS.mainColor}` : null};
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     font-size: ${percentSize.mobile};
     line-height: ${percentSize.mobile};
     width: ${props => (props.outline ? "15%" : null)};
@@ -564,7 +589,7 @@ export const Percentage = styled.div`
 `
 
 export const CensusSplit = styled.h3`
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     display: none;
   }
 `
@@ -573,7 +598,7 @@ export const FakePubTitle = styled.div`
   width: 20%;
   visibility: hidden;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     display: none;
   }
 `
@@ -582,7 +607,7 @@ export const WaffleRow = styled.div`
   display: flex;
   margin-bottom: 20px;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: column;
   }
 `
@@ -592,7 +617,7 @@ export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: row;
     align-items: center;
     width: 100%;
@@ -604,13 +629,13 @@ export const WaffleSections = styled.div`
   display: flex;
   width: 80%;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     width: 100%;
   }
 `
 
 export const PublicationTitle = styled.h2`
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     font-size: 1rem;
     margin: 0;
     flex-shrink: 0;
@@ -624,7 +649,7 @@ export const WaffleYearLabel = styled.div`
   font-size: 0.8rem;
   line-height: 0.9rem;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     font-size: 0.6rem;
     line-height: 0.6rem;
     margin-left: 10px;
@@ -642,7 +667,7 @@ export const WaffleYearSelect = styled.select`
   width: 66px;
   border: 1px solid #c9c9c9;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     font-size: 0.6rem;
     margin-bottom: 0px;
     margin-right: 10px;
@@ -674,7 +699,7 @@ export const AboveBelowWrapper = styled.div`
   margin-top: 4rem;
   margin-bottom: 3rem;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     margin-bottom: 0;
     margin-top: 2rem;
   }
@@ -683,7 +708,7 @@ export const AboveBelowWrapper = styled.div`
 export const BothChartsWrapper = styled.div`
   display: flex;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: column;
   }
 `
@@ -695,7 +720,7 @@ export const AboveBelowChartWrapper = styled.div`
   margin-top: 20px;
   position: relative;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     width: 100%;
     margin-left: 0;
   }
@@ -725,6 +750,15 @@ export const Tooltip = styled.div`
   textoverflow: scroll;
 `
 
+export const SideLabel = styled.text`
+  font-size: 0.6rem;
+  transform: translate(20px, 15px);
+
+  @media ${devices.tablet} {
+    transform: translate(17px, 13px);
+  }
+`
+
 // Overview
 export const OverviewWrapper = styled.div`
   display: flex;
@@ -732,7 +766,7 @@ export const OverviewWrapper = styled.div`
   flex-basis: 20%;
   margin-top: 20px;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: row;
     width: 100%;
   }
@@ -741,7 +775,7 @@ export const OverviewWrapper = styled.div`
 export const Labels = styled.div`
   width: 100%;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -753,7 +787,7 @@ export const CluesChart = styled.div`
   width: 100%;
   margin-bottom: 20px;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     margin-bottom: 0px;
     width: 30%;
   }
@@ -769,7 +803,7 @@ export const OverviewRow = styled.div`
     margin-bottom: 0px;
   }
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
@@ -780,7 +814,7 @@ export const OverviewLabel = styled.div`
   font-size: 0.8rem;
   line-height: 0.8rem;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     font-size: 0.7rem;
     line-height: 0.7rem;
     margin-left: 7px;
@@ -791,9 +825,42 @@ export const OverviewLabel = styled.div`
 export const FakeFiller = styled.h3`
   display: none;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     display: flex;
     visibility: hidden;
+  }
+`
+
+export const OverviewBoxWrapper = styled.div`
+  height: 108px;
+  width: 108px;
+
+  @media ${devices.tablet} {
+    height: 80px;
+    width: 80px;
+  }
+`
+
+export const OverviewRect = styled.rect`
+  height: 100px;
+  width: 100px;
+  fill: none;
+  stroke: ${COLORS.mainColor};
+  stroke-width: 4px;
+
+  @media ${devices.tablet} {
+    height: 72px;
+    width: 72px;
+  }
+`
+
+export const OverviewSectionRect = styled.rect`
+  height: 100px;
+  stroke: ${COLORS.mainColor};
+  stroke-width: 1px;
+
+  @media ${devices.tablet} {
+    height: 72px;
   }
 `
 
@@ -801,7 +868,7 @@ export const FakeFiller = styled.h3`
 const sidewaysBarBorder = 4
 const sidewaysBarBlock = {
   normal: 25,
-  mobile: 15,
+  mobile: 18,
 }
 
 export const SidewaysBars = styled.div`
@@ -821,9 +888,12 @@ export const SidewaysBarWrapper = styled.div`
   justify-content: center;
 
   @media ${devices.tablet} {
-    width: auto;
-    position: relative;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
   }
 `
 
@@ -835,12 +905,8 @@ export const BarLabels = styled.div`
 
   @media ${devices.tablet} {
     display: flex;
-    position: absolute;
-    left: -115px;
-    font-size: 0.8rem;
-  }
-  @media ${devices.mobile} {
-    left: -78px;
+    width: auto;
+    margin-right: 0px;
   }
 `
 
@@ -897,7 +963,7 @@ export const IntroCluesExample = styled.div`
   margin: 1rem auto;
   padding: 0 1rem;
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     flex-direction: column;
   }
 `
@@ -943,6 +1009,12 @@ export const AnswerBox = styled.div`
     height: 25px;
     width: 25px;
   }
+
+  @media ${devices.smallMobile} {
+    height: 20px;
+    width: 20px;
+    font-size: 0.9rem;
+  }
 `
 
 export const WrittenNote = styled.div`
@@ -977,5 +1049,13 @@ export const QuestionCircle = styled.div`
     cursor: pointer;
     color: ${COLORS.blue};
     border-color: ${COLORS.blue};
+  }
+`
+
+export const EditSvg = styled(Edit)`
+  width: 1rem;
+
+  @media ${devices.mobile} {
+    width: 2rem;
   }
 `

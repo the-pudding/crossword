@@ -53,12 +53,6 @@ const AboveBelowChart = ({ data, compare }) => {
   return (
     <>
       <h3>Clues that mention a person</h3>
-      {/* <YearLabels>
-        <div>2000</div>
-        <div>2010</div>
-        <div>2020</div>
-      </YearLabels> */}
-
       <StackedSquaresWrapper ref={ref}>
         <Chart dms={dms}>
           <StackedSquares
