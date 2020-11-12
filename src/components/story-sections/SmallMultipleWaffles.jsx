@@ -61,7 +61,10 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
           </span>{" "}
           marks the split of the US population according to the Census (for
           2020, we used{" "}
-          <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html#par_textimage_1537638156">
+          <a
+            href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html#par_textimage_1537638156"
+            style={{ color: COLORS.darkGrey }}
+          >
             2019 estimates
           </a>
           ).

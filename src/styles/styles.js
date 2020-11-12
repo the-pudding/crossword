@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
 
     @media ${devices.mobile} {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -56,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
     font-family: "Tiempos Headline";
     font-size: 3rem;
+    line-height: 1.2;
     text-align: center;
     color: ${COLORS.mainColor};
 
@@ -158,6 +159,10 @@ export const Prose = styled.p`
   span.highlighted {
     background: yellow;
   }
+
+  @media ${devices.mobile} {
+    padding: 0;
+  }
 `
 
 export const Emphasis = styled.div`
@@ -238,7 +243,7 @@ export const TextNote = styled.p`
 `
 
 export const ChartNote = styled.div`
-  color: #757575;
+  color: ${COLORS.darkGrey};
   font-size: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -681,6 +686,7 @@ export const TableWrapper = styled.table`
 
   @media ${devices.mobile} {
     font-size: 0.7rem;
+    width: 100%;
   }
 `
 
@@ -726,15 +732,6 @@ export const AboveBelowChartWrapper = styled.div`
   }
 `
 
-export const YearLabels = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.8rem;
-  margin-top: 15px;
-`
-
 export const StackedSquaresWrapper = styled.div`
   height: 350px;
 `
@@ -756,6 +753,7 @@ export const SideLabel = styled.text`
 
   @media ${devices.tablet} {
     transform: translate(17px, 13px);
+    font-size: 0.6rem;
   }
 `
 
@@ -906,7 +904,6 @@ export const BarLabels = styled.div`
   @media ${devices.tablet} {
     display: flex;
     width: auto;
-    margin-right: 0px;
   }
 `
 

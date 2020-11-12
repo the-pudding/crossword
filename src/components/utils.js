@@ -49,7 +49,7 @@ export const createHtmlForCopy = copy => {
             <Prose
               key={i}
               dangerouslySetInnerHTML={createMarkup(value)}
-              style={{ fontFamily: "'National 2 Web'" }}
+              style={{ fontFamily: "'National 2 Web'", padding: "0 1rem" }}
             />
           </HowWeDidIt>
         )
