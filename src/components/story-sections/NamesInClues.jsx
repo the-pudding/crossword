@@ -42,6 +42,12 @@ const NamesInClues = () => {
         word="mit"
         compare="gender"
       />
+      {/* <AboveBelow
+        data={chess}
+        overviewData={chessWithNeutral}
+        word="chess"
+        compare="race"
+      /> */}
     </Section>
   )
 }

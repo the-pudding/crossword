@@ -11,6 +11,7 @@ const Conclusion = () => {
       <Callout
         href="https://pudding.cool/2020/11/crossword-puzzles"
         target="_blank"
+        style={{ marginBottom: "2rem" }}
       >
         <EditSvg />
         <strong style={{ marginLeft: "10px" }}>

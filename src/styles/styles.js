@@ -906,6 +906,7 @@ export const BarLabels = styled.div`
   @media ${devices.tablet} {
     display: flex;
     width: auto;
+    margin-right: 0px;
   }
 `
 
