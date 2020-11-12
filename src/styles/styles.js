@@ -751,8 +751,8 @@ export const Tooltip = styled.div`
 `
 
 export const SideLabel = styled.text`
-  font-size: 0.6rem;
-  transform: translate(20px, 15px);
+  font-size: 0.8rem;
+  transform: translate(18px, 15px);
 
   @media ${devices.tablet} {
     transform: translate(17px, 13px);
