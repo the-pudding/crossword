@@ -52,7 +52,11 @@ export const createHtmlForCopy = copy => {
                 textColor="white"
               />
             </ReactTooltip>
-            <ReactTooltip id="athletes">
+            <ReactTooltip
+              id="athletes"
+              backgroundColor={COLORS.mainColor}
+              textColor="white"
+            >
               <ClueExamples
                 clues={[
                   {
@@ -64,7 +68,11 @@ export const createHtmlForCopy = copy => {
                 textColor="white"
               />
             </ReactTooltip>
-            <ReactTooltip id="queer">
+            <ReactTooltip
+              id="queer"
+              backgroundColor={COLORS.mainColor}
+              textColor="white"
+            >
               <ClueExamples
                 clues={[
                   { clue: "Ali Krieger, to Ashlyn Harris", answer: "WIFE" },
