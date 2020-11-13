@@ -48,20 +48,6 @@ const NamesInClues = () => {
         word="chess"
         compare="race"
       /> */}
-
-      <Callout
-        href="https://pudding.cool/2020/11/crossword-puzzles"
-        target="_blank"
-        style={{ marginBottom: "2rem" }}
-      >
-        <EditSvg />
-        <div style={{ marginLeft: "10px" }}>
-          <strong style={{ marginRight: "0.3rem" }}>
-            Want some more puzzles?
-          </strong>
-          Check out the others we've generated with our data.
-        </div>
-      </Callout>
     </Section>
   )
 }

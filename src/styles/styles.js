@@ -124,19 +124,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   span#engineers {
-    text-decoration-style: dotted;
-    text-decoration-color: ${COLORS.blue};
-    text-decoration-line: underline;
+    background: ${COLORS.yellow};
   }
   span#athletes{
-    text-decoration-style: dotted;
-    text-decoration-color: ${COLORS.blue};
-    text-decoration-line: underline;
+    background: ${COLORS.yellow};
   }
   span#queer{
-    text-decoration-style: dotted;
-    text-decoration-color: ${COLORS.blue};
-    text-decoration-line: underline;
+    background: ${COLORS.yellow};
   }
 `
 

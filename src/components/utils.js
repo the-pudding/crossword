@@ -28,7 +28,10 @@ export const createMarkup = content => {
 
 export const createHtmlForCopy = copy => {
   return copy.map(
-    ({ step, text, type, value, source, caption, tweetId, clues }, i) => {
+    (
+      { step, text, type, value, source, caption, tweetId, clues, bullets },
+      i
+    ) => {
       if (type === "text") {
         return <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
       } else if (type === "emphasized-text") {
@@ -94,6 +97,19 @@ export const createHtmlForCopy = copy => {
               style={{ fontFamily: "'National 2 Web'", padding: "0 1rem" }}
             />
           </HowWeDidIt>
+        )
+      } else if (type === "list" && bullets) {
+        return (
+          <Prose style={{ marginTop: 0 }}>
+            <ul>
+              {bullets.map(d => (
+                <li
+                  dangerouslySetInnerHTML={createMarkup(d)}
+                  style={{ marginBottom: "0.5rem" }}
+                />
+              ))}
+            </ul>
+          </Prose>
         )
       } else if (type === "small") {
         return (
