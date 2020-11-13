@@ -2,7 +2,7 @@ export default {
   mainColor: "#1A1A1A",
   pink: "#C63DA3",
   blue: "#4864FE",
-  yellow: "#FFEA2A",
+  yellow: "#FFDD2A",
   grey: "#C9C9C9",
   offWhite: "#E6E6E6",
   black: "#282828",
@@ -21,7 +21,7 @@ export default {
 
   uni: "#C63DA3",
   usa: "#4864FE",
-  lat: "#FFEA2A",
+  lat: "#FFDD2A",
   wsj: "#C9C9C9",
   nyt: "#282828",
 }

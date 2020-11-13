@@ -1,4 +1,32 @@
-.ant-slider {
+.rangeslider-horizontal .rangeslider__handle:after {
+  height: 0px !important;
+  width: 0px !important;
+}
+
+.rangeslider__handle {
+  background: #ffdd2a !important;
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 10px !important;
+  border: 3px solid #1a1a1a !important;
+  box-shadow: none !important;
+  z-index: 1000 !important;
+}
+
+.rangeslider {
+  background: #1a1a1a !important;
+  height: 1px !important;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  background: #1a1a1a !important;
+}
+
+/* .slider::-moz-range-thumb:hover {
+  cursor: pointer;
+} */
+
+/* .ant-slider {
   width: 500px;
   margin: 50px;
 }
@@ -55,4 +83,4 @@
   .ant-slider-mark-text {
     font-size: 0.55rem !important;
   }
-}
+} */

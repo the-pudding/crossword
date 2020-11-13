@@ -186,6 +186,10 @@ export const Method = styled.div`
   padding: 0 1rem;
   width: 100%;
   font-size: 0.7rem;
+
+  @media ${devices.mobile} {
+    padding: 0;
+  }
 `
 
 export const MethodNote = styled.div`
@@ -206,6 +210,11 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   height: 450px;
+`
+
+export const LogoWrapper = styled.a`
+  margin-top: 25px;
+  background-image: none;
 `
 
 export const Callout = styled.a`
@@ -289,11 +298,22 @@ export const SkipButtonWrapper = styled.div`
 export const CrosswordChartWrapper = styled.div`
   height: 600px;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 80px;
 
   @media ${devices.tablet} {
     height: auto;
     margin-top: 45px;
+  }
+`
+
+export const ClueLabels = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @media ${devices.tablet} {
+    display: none;
   }
 `
 
@@ -949,6 +969,28 @@ export const SidewaysBarBlock = styled.div`
 
 export const DecadeSliderWrapper = styled.div`
   margin: 3rem 0 3rem 0;
+  width: 500px;
+  // height: 100px;
+  position: relative;
+  // display: flex;
+  // justify-content: center;
+`
+
+export const SliderLabel = styled.div`
+  margin-top: 10px;
+  font-family: ${props =>
+    props.bold ? "'National 2 Web Bold'" : "'National 2 Web'"};
+  font-size: ${props => (props.bold ? "0.85rem" : "0.8rem")};
+`
+
+export const SliderTick = styled.div`
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  width: 1px;
+  height: 6px;
+  background: ${COLORS.mainColor};
+  z-index: -1000;
 `
 
 // Clues in text
