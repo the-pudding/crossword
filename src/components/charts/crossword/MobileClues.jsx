@@ -139,7 +139,9 @@ const MobileClues = ({
         >
           {"<"}
         </button>
-        <h3 style={{ width: "50%", textAlign: "center" }}>(White)</h3>
+        <h3 style={{ width: "50%", textAlign: "center" }}>
+          (Non-Hispanic white)
+        </h3>
         <h3 style={{ width: "50%", textAlign: "center" }}>(URM)</h3>
         <button
           onClick={nextClue}
