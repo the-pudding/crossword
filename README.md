@@ -1,6 +1,6 @@
 ## Development
 
-- `npm start` or `gatsby develop`
+- `npm start`
 - Site is running at `http://localhost:8000`
 
 ## Build & Deploy
