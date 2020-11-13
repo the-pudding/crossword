@@ -1,55 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import "./DecadeSlider.css"
 import {
   DecadeSliderWrapper,
   SliderTick,
   SliderLabel,
 } from "../../../styles/styles.js"
-import * as d3 from "d3"
-import COLORS from "../../../styles/colors.js"
-import Chart from "../Chart.jsx"
-import useChartDimensions from "../../../hooks/useChartDimensions.js"
 import Slider from "react-rangeslider"
 import "./DecadeSlider.css"
 import _ from "lodash"
 
 const DecadeSlider = ({ decade, setDecade }) => {
-  // const [dragLocation, setDragLocation] = useState(0)
-
-  const sliderMarks = [
-    {
-      value: 1940,
-      label: "1940s",
-    },
-    {
-      value: 1950,
-      label: "1950s",
-    },
-    {
-      value: 1960,
-      label: "1960s",
-    },
-    {
-      value: 1970,
-      label: "1970s",
-    },
-    {
-      value: 1980,
-      label: "1980s",
-    },
-    {
-      value: 1990,
-      label: "1990s",
-    },
-    {
-      value: 2000,
-      label: "2000s",
-    },
-    {
-      value: 2010,
-      label: "2010s",
-    },
-  ]
   const labels = {
     1940: (
       <>
@@ -100,18 +60,6 @@ const DecadeSlider = ({ decade, setDecade }) => {
       </>
     ),
   }
-  // const initialDimensions = {
-  //   marginTop: 0,
-  //   marginRight: 30,
-  //   marginBottom: 50,
-  //   marginLeft: 30,
-  // }
-  // const [ref, dms] = useChartDimensions(initialDimensions)
-
-  // const xScale = d3
-  //   .scaleLinear()
-  //   .domain([1940, 2010])
-  //   .range([0, dms.boundedWidth - 2])
 
   return (
     <DecadeSliderWrapper>
