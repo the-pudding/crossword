@@ -999,6 +999,10 @@ export const SliderTick = styled.div`
   height: 6px;
   background: ${COLORS.mainColor};
   z-index: -1000;
+
+  @media ${devices.mobile} {
+    top: -29px;
+  }
 `
 
 // Clues in text
