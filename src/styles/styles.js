@@ -970,10 +970,14 @@ export const SidewaysBarBlock = styled.div`
 export const DecadeSliderWrapper = styled.div`
   margin: 3rem 0 3rem 0;
   width: 500px;
-  // height: 100px;
   position: relative;
-  // display: flex;
-  // justify-content: center;
+
+  @media ${devices.tablet} {
+    width: 80%;
+  }
+  @media ${devices.mobile} {
+    width: 90%;
+  }
 `
 
 export const SliderLabel = styled.div`
@@ -981,6 +985,13 @@ export const SliderLabel = styled.div`
   font-family: ${props =>
     props.bold ? "'National 2 Web Bold'" : "'National 2 Web'"};
   font-size: ${props => (props.bold ? "0.85rem" : "0.8rem")};
+
+  @media ${devices.tablet} {
+    font-size: ${props => (props.bold ? "0.75rem" : "0.7rem")};
+  }
+  @media ${devices.mobile} {
+    font-size: ${props => (props.bold ? "0.65rem" : "0.6rem")};
+  }
 `
 
 export const SliderTick = styled.div`
