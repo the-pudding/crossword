@@ -1018,7 +1018,8 @@ export const IntroCluesExample = styled.div`
 export const ClueExamplesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: ${props => (props.textColor === "white" ? "auto" : "45%")};
+  font-size: ${props => (props.textColor === "white" ? "0.8rem" : "inherit")};
 
   @media ${devices.tablet} {
     width: 100%;
@@ -1030,6 +1031,10 @@ export const ClueAnswerPair = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: ${props =>
+    props.textColor === "white" ? "center" : "flex-start"};
 `
 
 export const ClueExample = styled.div`
@@ -1044,12 +1049,17 @@ export const AnswerBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px ${COLORS.mainColor} solid;
-  border-bottom: 1px ${COLORS.mainColor} solid;
-  border-left: 1px ${COLORS.mainColor} solid;
+  border-top: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  border-bottom: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  border-left: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  color: ${props => (props.textColor ? props.textColor : COLORS.mainColor)};
 
   &:last-of-type {
-    border-right: 1px ${COLORS.mainColor} solid;
+    border-right: ${props =>
+      `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
   }
 
   @media ${devices.mobile} {

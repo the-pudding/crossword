@@ -18,6 +18,7 @@ import {
   MethodNote,
 } from "../styles/styles.js"
 import { TwitterTweetEmbed } from "react-twitter-embed"
+import ReactTooltip from "react-tooltip"
 import ClueExamples from "./ClueExamples.jsx"
 
 // workaround for react so links work
@@ -36,9 +37,42 @@ export const createHtmlForCopy = copy => {
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </Emphasis>
         )
-      } else if (type === "text-with-clues") {
+      } else if (type === "text-with-tooltips") {
         return (
           <>
+            <ReactTooltip
+              id="engineers"
+              backgroundColor={COLORS.mainColor}
+              textColor="white"
+            >
+              <ClueExamples
+                clues={[
+                  { clue: "Shirley Ann Jackson's alma mater", answer: "MIT" },
+                ]}
+                textColor="white"
+              />
+            </ReactTooltip>
+            <ReactTooltip id="athletes">
+              <ClueExamples
+                clues={[
+                  {
+                    clue:
+                      "Williams regarded by many as the greatest athlete of all time",
+                    answer: "SERENA",
+                  },
+                ]}
+                textColor="white"
+              />
+            </ReactTooltip>
+            <ReactTooltip id="queer">
+              <ClueExamples
+                clues={[
+                  { clue: "Ali Krieger, to Ashlyn Harris", answer: "WIFE" },
+                ]}
+                textColor="white"
+              />
+            </ReactTooltip>
+
             <Prose key={i} dangerouslySetInnerHTML={createMarkup(value)} />
           </>
         )

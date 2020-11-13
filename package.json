@@ -42,6 +42,7 @@
     "react-rough-notation": "^1.0.0",
     "react-scripts": "3.4.3",
     "react-scrollama": "^2.2.12",
+    "react-tooltip": "^4.2.10",
     "react-twitter-embed": "^3.0.3",
     "request": "^2.88.2",
     "rough-notation": "^0.5.1",
