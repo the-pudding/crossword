@@ -92,8 +92,8 @@ const CluesWrapper = styled.div.attrs(props => ({
     display: ${props => (props.noMobile ? "none" : "block")};
   }
 
-  @media (max-width: 480px) {
-    width: 95%;
+  @media (max-width: ${props => props.theme.columnBreakpoint}) {
+    width: 100%;
   }
 
   .mobile {
@@ -101,11 +101,20 @@ const CluesWrapper = styled.div.attrs(props => ({
 
     @media (max-width: ${props => props.theme.columnBreakpoint}) {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+  .mobile-clues {
+    width: 100%;
+    @media (max-width: ${props => props.theme.columnBreakpoint}) {
+      display: flex;
       align-items: center;
       justify-content: space-between;
       height: 50px;
-      margin-top: 40px;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     @media (max-width: 480px) {

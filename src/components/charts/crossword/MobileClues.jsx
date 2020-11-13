@@ -95,29 +95,64 @@ const MobileClues = ({
 
   return (
     <div className="mobile">
-      <button
-        onClick={previousClue}
-        style={{ marginRight: "10px", height: "40px", width: "40px" }}
-      >
-        {"<"}
-      </button>
-      <div style={{ textAlign: "center", flexBasis: "50%" }}>
-        {currentClues[0]}
-      </div>
+      <div className="mobile-clues">
+        <button
+          onClick={previousClue}
+          style={{ marginRight: "10px", height: "40px", width: "40px" }}
+        >
+          {"<"}
+        </button>
+        <div style={{ textAlign: "center", width: "50%" }}>
+          {currentClues[0]}
+        </div>
 
-      <div style={{ marginLeft: "10px", marginRight: "10px" }}>
-        <strong>or</strong>
-      </div>
+        <div style={{ marginLeft: "10px", marginRight: "10px" }}>
+          <strong>or</strong>
+        </div>
 
-      <div style={{ textAlign: "center", flexBasis: "50%" }}>
-        {currentClues[1]}
+        <div style={{ textAlign: "center", width: "50%" }}>
+          {currentClues[1]}
+        </div>
+        <button
+          onClick={nextClue}
+          style={{ marginLeft: "10px", height: "40px", width: "40px" }}
+        >
+          {">"}
+        </button>
       </div>
-      <button
-        onClick={nextClue}
-        style={{ marginLeft: "10px", height: "40px", width: "40px" }}
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "20px",
+        }}
       >
-        {">"}
-      </button>
+        <button
+          onClick={previousClue}
+          style={{
+            marginRight: "10px",
+            height: "40px",
+            width: "40px",
+            visibility: "hidden",
+          }}
+        >
+          {"<"}
+        </button>
+        <h3 style={{ width: "50%", textAlign: "center" }}>(White)</h3>
+        <h3 style={{ width: "50%", textAlign: "center" }}>(URM)</h3>
+        <button
+          onClick={nextClue}
+          style={{
+            marginLeft: "10px",
+            height: "40px",
+            width: "40px",
+            visibility: "hidden",
+          }}
+        >
+          {">"}
+        </button>
+      </div>
     </div>
   )
 }

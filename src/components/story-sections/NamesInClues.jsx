@@ -55,9 +55,12 @@ const NamesInClues = () => {
         style={{ marginBottom: "2rem" }}
       >
         <EditSvg />
-        <strong style={{ marginLeft: "10px" }}>
-          Cool article. Now take me to the puzzles.
-        </strong>
+        <div style={{ marginLeft: "10px" }}>
+          <strong style={{ marginRight: "0.3rem" }}>
+            Want some more puzzles?
+          </strong>
+          Check out the others we've generated with our data.
+        </div>
       </Callout>
     </Section>
   )

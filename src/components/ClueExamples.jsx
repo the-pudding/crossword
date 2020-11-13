@@ -10,9 +10,9 @@ import { RoughNotation } from "react-rough-notation"
 import _ from "lodash"
 import COLORS from "../styles/colors.js"
 
-const ClueExamples = ({ clues }) => {
+const ClueExamples = ({ clues, textColor }) => {
   return (
-    <ClueExamplesWrapper>
+    <ClueExamplesWrapper textColor={textColor}>
       {clues.map((d, i) => {
         const { explanation, clue, answer } = d
         return (
@@ -21,6 +21,7 @@ const ClueExamples = ({ clues }) => {
             clueText={clue}
             answerText={answer}
             explanation={explanation}
+            textColor={textColor}
           />
         )
       })}
@@ -28,36 +29,25 @@ const ClueExamples = ({ clues }) => {
   )
 }
 
-const ClueExample = ({ i, clueText, answerText, explanation }) => {
+const ClueExample = ({ i, clueText, answerText, explanation, textColor }) => {
   const [showAnnotations, setShowAnnotations] = useState(false)
 
   return (
-    <RoughNotation
-      type="bracket"
-      show={showAnnotations}
-      animate={true}
-      color={COLORS.pencilGrey}
-      brackets={i % 2 === 0 ? "left" : "right"}
-    >
-      <div style={{ display: "flex" }}>
-        <ClueAnswerPair>
-          <div style={{ fontStyle: "italic" }}>{clueText}</div>
-          <div style={{ display: "flex" }}>
-            {answerText.split("").map(character => (
-              <AnswerBox>{character}</AnswerBox>
-            ))}
+    <div style={{ display: "flex" }}>
+      <ClueAnswerPair textColor={textColor}>
+        <div style={{ fontStyle: "italic" }}>{clueText}</div>
+        <div style={{ display: "flex" }}>
+          {answerText.split("").map(character => (
+            <AnswerBox textColor={textColor}>{character}</AnswerBox>
+          ))}
+        </div>
+        {explanation && (
+          <div style={{ fontSize: "0.8rem", color: COLORS.darkGrey }}>
+            {explanation}
           </div>
-          {showAnnotations && (
-            <WrittenNote left={i % 2 === 0}>This is a written note</WrittenNote>
-          )}
-          {explanation && (
-            <div style={{ fontSize: "0.8rem", color: COLORS.darkGrey }}>
-              {explanation}
-            </div>
-          )}
-        </ClueAnswerPair>
-      </div>
-    </RoughNotation>
+        )}
+      </ClueAnswerPair>
+    </div>
   )
 }
 

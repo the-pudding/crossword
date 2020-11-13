@@ -64,7 +64,7 @@ const NamesInAnswers = () => {
 
   return (
     <Section>
-      <h1>2. Modernizing old names</h1>
+      <h1 style={{ fontSize: "2.5rem" }}>2. Modernizing old names</h1>
 
       {createHtmlForCopy(copy.deepDivePart1Intro)}
 

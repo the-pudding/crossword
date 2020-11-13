@@ -42,8 +42,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 20px;
 
     @media ${devices.mobile} {
-      font-size: 18px;
+      font-size: 16px;
     }
+  }
+  *, *::after, *::before { 
+    box-sizing:border-box; 
   }
 
   body {
@@ -51,11 +54,13 @@ export const GlobalStyle = createGlobalStyle`
     background-color: white;
     color: ${COLORS.mainColor};
     font-size: inherit;
+    line-height: 1.5715;
   }  
 
   h1 {
     font-family: "Tiempos Headline";
     font-size: 3rem;
+    line-height: 1.2;
     text-align: center;
     color: ${COLORS.mainColor};
 
@@ -117,13 +122,6 @@ export const GlobalStyle = createGlobalStyle`
       background-position: 0 0;
     }
   }
-
-  #blue {
-    color: ${COLORS.blue};
-  }
-  #pink {
-    color: ${COLORS.pink};
-  }
 `
 
 export const EssayWrapper = styled.main`
@@ -158,6 +156,10 @@ export const Prose = styled.p`
   span.highlighted {
     background: yellow;
   }
+
+  @media ${devices.mobile} {
+    padding: 0;
+  }
 `
 
 export const Emphasis = styled.div`
@@ -181,6 +183,10 @@ export const Method = styled.div`
   padding: 0 1rem;
   width: 100%;
   font-size: 0.7rem;
+
+  @media ${devices.mobile} {
+    padding: 0;
+  }
 `
 
 export const MethodNote = styled.div`
@@ -201,6 +207,11 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   height: 450px;
+`
+
+export const LogoWrapper = styled.a`
+  margin-top: 25px;
+  background-image: none;
 `
 
 export const Callout = styled.a`
@@ -238,7 +249,7 @@ export const TextNote = styled.p`
 `
 
 export const ChartNote = styled.div`
-  color: #757575;
+  color: ${COLORS.darkGrey};
   font-size: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -284,11 +295,22 @@ export const SkipButtonWrapper = styled.div`
 export const CrosswordChartWrapper = styled.div`
   height: 600px;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 80px;
 
   @media ${devices.tablet} {
     height: auto;
     margin-top: 45px;
+  }
+`
+
+export const ClueLabels = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @media ${devices.tablet} {
+    display: none;
   }
 `
 
@@ -678,9 +700,11 @@ export const WaffleYearSelect = styled.select`
 export const TableWrapper = styled.table`
   width: 80%;
   font-size: 0.8rem;
+  border-collapse: collapse;
 
   @media ${devices.mobile} {
     font-size: 0.7rem;
+    width: 100%;
   }
 `
 
@@ -726,15 +750,6 @@ export const AboveBelowChartWrapper = styled.div`
   }
 `
 
-export const YearLabels = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.8rem;
-  margin-top: 15px;
-`
-
 export const StackedSquaresWrapper = styled.div`
   height: 350px;
 `
@@ -751,11 +766,12 @@ export const Tooltip = styled.div`
 `
 
 export const SideLabel = styled.text`
-  font-size: 0.6rem;
-  transform: translate(20px, 15px);
+  font-size: 0.8rem;
+  transform: translate(18px, 15px);
 
   @media ${devices.tablet} {
     transform: translate(17px, 13px);
+    font-size: 0.6rem;
   }
 `
 
@@ -906,7 +922,6 @@ export const BarLabels = styled.div`
   @media ${devices.tablet} {
     display: flex;
     width: auto;
-    margin-right: 0px;
   }
 `
 
@@ -952,6 +967,42 @@ export const SidewaysBarBlock = styled.div`
 
 export const DecadeSliderWrapper = styled.div`
   margin: 3rem 0 3rem 0;
+  width: 500px;
+  position: relative;
+
+  @media ${devices.tablet} {
+    width: 80%;
+  }
+  @media ${devices.mobile} {
+    width: 90%;
+  }
+`
+
+export const SliderLabel = styled.div`
+  font-family: ${props =>
+    props.bold ? "'National 2 Web Bold'" : "'National 2 Web'"};
+  font-size: ${props => (props.bold ? "0.85rem" : "0.8rem")};
+
+  @media ${devices.tablet} {
+    font-size: ${props => (props.bold ? "0.75rem" : "0.7rem")};
+  }
+  @media ${devices.mobile} {
+    font-size: ${props => (props.bold ? "0.65rem" : "0.6rem")};
+  }
+`
+
+export const SliderTick = styled.div`
+  position: absolute;
+  top: -33px;
+  left: 18px;
+  width: 1px;
+  height: 6px;
+  background: ${COLORS.mainColor};
+  z-index: -1000;
+
+  @media ${devices.mobile} {
+    top: -29px;
+  }
 `
 
 // Clues in text
@@ -971,7 +1022,8 @@ export const IntroCluesExample = styled.div`
 export const ClueExamplesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: ${props => (props.textColor === "white" ? "auto" : "45%")};
+  font-size: ${props => (props.textColor === "white" ? "0.8rem" : "inherit")};
 
   @media ${devices.tablet} {
     width: 100%;
@@ -983,6 +1035,10 @@ export const ClueAnswerPair = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: ${props =>
+    props.textColor === "white" ? "center" : "flex-start"};
 `
 
 export const ClueExample = styled.div`
@@ -997,12 +1053,17 @@ export const AnswerBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px ${COLORS.mainColor} solid;
-  border-bottom: 1px ${COLORS.mainColor} solid;
-  border-left: 1px ${COLORS.mainColor} solid;
+  border-top: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  border-bottom: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  border-left: ${props =>
+    `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
+  color: ${props => (props.textColor ? props.textColor : COLORS.mainColor)};
 
   &:last-of-type {
-    border-right: 1px ${COLORS.mainColor} solid;
+    border-right: ${props =>
+      `1px ${props.textColor ? props.textColor : COLORS.mainColor} solid`};
   }
 
   @media ${devices.mobile} {

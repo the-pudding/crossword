@@ -3,10 +3,10 @@ import { TableWrapper, HeaderRow, TableRow } from "../../../styles/styles.js"
 import _ from "lodash"
 
 const columnWidths = {
-  0: "25%",
-  1: "45%",
-  2: "15%",
-  3: "15%",
+  0: "10%",
+  1: "35%",
+  2: "35%",
+  3: "20%",
 }
 
 const Table = ({ data, columns }) => {
@@ -14,8 +14,8 @@ const Table = ({ data, columns }) => {
     <TableWrapper>
       <HeaderRow>
         {columns.map((column, i) => (
-          // <th key={i} style={{ width: columnWidths[i] }}>
-          <th key={i}>
+          <th key={i} style={{ width: columnWidths[i] }}>
+            {/* <th key={i}> */}
             <h3
               key={i}
               style={{
@@ -34,8 +34,8 @@ const Table = ({ data, columns }) => {
         <>
           <TableRow key={rowNumber}>
             {columns.map((column, i) => (
-              <td>
-                {/* <td style={{ width: columnWidths[i] }}> */}
+              // <td>
+              <td style={{ width: columnWidths[i] }}>
                 <div
                   key={`${rowNumber}-${i}`}
                   style={{

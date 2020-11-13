@@ -54,6 +54,10 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
         <h2 style={{ textAlign: "center" }}>
           Representation in Major Crosswords
         </h2>
+        <h3 style={{ textAlign: "center" }}>
+          Ratio of men vs. women and non-Hispanic whites vs. underrepresented
+          minorities found in clues and answers of major crossword publications.
+        </h3>
         <ChartNote>
           Note:{" "}
           <span style={{ borderBottom: `4px solid ${COLORS.yellow}` }}>
@@ -61,7 +65,10 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
           </span>{" "}
           marks the split of the US population according to the Census (for
           2020, we used{" "}
-          <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html#par_textimage_1537638156">
+          <a
+            href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html#par_textimage_1537638156"
+            style={{ color: COLORS.darkGrey }}
+          >
             2019 estimates
           </a>
           ).

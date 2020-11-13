@@ -25,11 +25,31 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
           strokeLinecap="butt"
         />
       </g>
-      <g transform={`translate(${dms.boundedWidth - squareWidth}, 100)`}>
+      <g transform={`translate(0, 20)`}>
+        <text
+          transform={`translate(${scale(2000)}, 0)`}
+          style={{ fontSize: "0.8rem" }}
+        >
+          2000
+        </text>
+        <text
+          transform={`translate(${scale(2010)}, 0)`}
+          style={{ fontSize: "0.8rem" }}
+        >
+          2010
+        </text>
+        <text
+          transform={`translate(${scale(2020)}, 0)`}
+          style={{ fontSize: "0.8rem" }}
+        >
+          2020
+        </text>
+      </g>
+      <g transform={`translate(${dms.boundedWidth - squareWidth}, 102)`}>
         <ChevronDown height={19} width={19} />
         <SideLabel>White</SideLabel>
       </g>
-      <g transform={`translate(${dms.boundedWidth - squareWidth}, 80)`}>
+      <g transform={`translate(${dms.boundedWidth - squareWidth}, 78)`}>
         <ChevronUp height={19} width={19} />
         <SideLabel>URM</SideLabel>
       </g>

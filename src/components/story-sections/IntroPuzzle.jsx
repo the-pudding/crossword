@@ -6,6 +6,7 @@ import {
   CrosswordChartWrapper,
   SkipButtonWrapper,
   EditSvg,
+  ClueLabels,
 } from "../../styles/styles.js"
 import _ from "lodash"
 import { createHtmlForCopy, prepareCrosswordData } from "../utils.js"
@@ -48,12 +49,16 @@ const IntroPuzzle = ({ scrollLocation }) => {
         </SkipButtonWrapper>
 
         <CrosswordChartWrapper>
+          <ClueLabels>
+            <h3 style={{ paddingLeft: "1em" }}>White people</h3>
+            <h3 style={{ paddingRight: "1em" }}>Underrepresented minorities</h3>
+          </ClueLabels>
           <Crossword
             ref={crosswordRef}
             useStorage={false}
             theme={{
               numberColor: COLORS.mainColor,
-              focusBackground: COLORS.yellow,
+              focusBackground: "#FFEB85",
               highlightBackground: COLORS.crosswordBlue,
               cellBorder: COLORS.mainColor,
             }}
@@ -72,7 +77,7 @@ const IntroPuzzle = ({ scrollLocation }) => {
         <Callout
           href="https://pudding.cool/2020/11/crossword-puzzles"
           target="_blank"
-          style={{ marginTop: "50px" }}
+          style={{ marginTop: "4.5rem" }}
         >
           <EditSvg />
           <div style={{ marginLeft: "10px" }}>
