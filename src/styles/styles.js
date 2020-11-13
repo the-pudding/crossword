@@ -45,6 +45,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 16px;
     }
   }
+  *, *::after, *::before { 
+    box-sizing:border-box; 
+  }
 
   body {
     font-family: "National 2 Web", "Helvetica Neue", sans-serif;
