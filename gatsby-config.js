@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 module.exports = {
-  pathPrefix: `/crossword`,
+  pathPrefix: `/2020/11/crossword`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
