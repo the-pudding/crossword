@@ -122,6 +122,22 @@ export const GlobalStyle = createGlobalStyle`
       background-position: 0 0;
     }
   }
+
+  span#engineers {
+    text-decoration-style: dotted;
+    text-decoration-color: ${COLORS.blue};
+    text-decoration-line: underline;
+  }
+  span#athletes{
+    text-decoration-style: dotted;
+    text-decoration-color: ${COLORS.blue};
+    text-decoration-line: underline;
+  }
+  span#queer{
+    text-decoration-style: dotted;
+    text-decoration-color: ${COLORS.blue};
+    text-decoration-line: underline;
+  }
 `
 
 export const EssayWrapper = styled.main`
@@ -657,9 +673,10 @@ export const WaffleSections = styled.div`
 `
 
 export const PublicationTitle = styled.h2`
+  margin: 0;
+
   @media ${devices.tablet} {
     font-size: 1rem;
-    margin: 0;
     flex-shrink: 0;
   }
 `
