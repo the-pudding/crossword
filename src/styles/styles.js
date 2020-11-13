@@ -51,6 +51,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: white;
     color: ${COLORS.mainColor};
     font-size: inherit;
+    line-height: 1.5715;
   }  
 
   h1 {
@@ -117,13 +118,6 @@ export const GlobalStyle = createGlobalStyle`
       color: ${COLORS.mainColor};
       background-position: 0 0;
     }
-  }
-
-  #blue {
-    color: ${COLORS.blue};
-  }
-  #pink {
-    color: ${COLORS.pink};
   }
 `
 
@@ -703,6 +697,7 @@ export const WaffleYearSelect = styled.select`
 export const TableWrapper = styled.table`
   width: 80%;
   font-size: 0.8rem;
+  border-collapse: collapse;
 
   @media ${devices.mobile} {
     font-size: 0.7rem;
@@ -981,7 +976,6 @@ export const DecadeSliderWrapper = styled.div`
 `
 
 export const SliderLabel = styled.div`
-  margin-top: 10px;
   font-family: ${props =>
     props.bold ? "'National 2 Web Bold'" : "'National 2 Web'"};
   font-size: ${props => (props.bold ? "0.85rem" : "0.8rem")};
@@ -996,7 +990,7 @@ export const SliderLabel = styled.div`
 
 export const SliderTick = styled.div`
   position: absolute;
-  top: -14px;
+  top: -33px;
   left: 18px;
   width: 1px;
   height: 6px;

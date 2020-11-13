@@ -70,7 +70,7 @@ const AboveBelowChart = ({ data, compare }) => {
       </StackedSquaresWrapper>
       {hoverY && hoverX && tooltipInfo && (
         <Tooltip hoverX={hoverX} hoverY={hoverY}>
-          <h3>
+          <h3 style={{ margin: 0 }}>
             {publicationNameLookup[tooltipInfo.publication]} ({tooltipInfo.year}
             )
           </h3>
