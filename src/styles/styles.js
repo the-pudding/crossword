@@ -122,6 +122,16 @@ export const GlobalStyle = createGlobalStyle`
       background-position: 0 0;
     }
   }
+
+  span#engineers {
+    background: ${COLORS.yellow};
+  }
+  span#athletes{
+    background: ${COLORS.yellow};
+  }
+  span#queer{
+    background: ${COLORS.yellow};
+  }
 `
 
 export const EssayWrapper = styled.main`
@@ -657,9 +667,10 @@ export const WaffleSections = styled.div`
 `
 
 export const PublicationTitle = styled.h2`
+  margin: 0;
+
   @media ${devices.tablet} {
     font-size: 1rem;
-    margin: 0;
     flex-shrink: 0;
   }
 `

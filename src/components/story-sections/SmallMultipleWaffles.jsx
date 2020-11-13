@@ -165,8 +165,7 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
                               </option>
                             ))}
                           </WaffleYearSelect>
-                          Use the dropdown to see data from every decade since
-                          1940.
+                          See data from every decade since 1940.
                         </WaffleYearLabel>
                       </div>
                     ) : (

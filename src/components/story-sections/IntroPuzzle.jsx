@@ -50,7 +50,7 @@ const IntroPuzzle = ({ scrollLocation }) => {
 
         <CrosswordChartWrapper>
           <ClueLabels>
-            <h3 style={{ paddingLeft: "1em" }}>White people</h3>
+            <h3 style={{ paddingLeft: "1em" }}>Non-Hispanic white people</h3>
             <h3 style={{ paddingRight: "1em" }}>Underrepresented minorities</h3>
           </ClueLabels>
           <Crossword
