@@ -196,6 +196,7 @@ export const Method = styled.div`
 
   @media ${devices.mobile} {
     padding: 0;
+    font-size: 0.8rem;
   }
 `
 

@@ -15,7 +15,7 @@ import crosswordData from "../../data/double-clues-3.json"
 import Crossword from "../charts/crossword/Crossword.js"
 import confetti from "canvas-confetti"
 
-const IntroPuzzle = ({ scrollLocation }) => {
+const IntroPuzzle = () => {
   const crosswordRef = useRef(null)
 
   // start puzzle blank
@@ -36,12 +36,18 @@ const IntroPuzzle = ({ scrollLocation }) => {
             style={{ marginLeft: "10px" }}
             onClick={() => {
               crosswordRef.current.fillAllAnswers()
-              if (scrollLocation) {
-                window.scrollTo({
-                  ...scrollLocation,
-                  behavior: "smooth",
-                })
-              }
+
+              const skipContainer = document.querySelector("#skip-here")
+
+              window.scrollTo({
+                top:
+                  skipContainer.getBoundingClientRect().top +
+                  window.pageYOffset,
+                lef:
+                  skipContainer.getBoundingClientRect().left +
+                  window.pageXOffset,
+                behavior: "smooth",
+              })
             }}
           >
             skip to analysis
@@ -88,7 +94,9 @@ const IntroPuzzle = ({ scrollLocation }) => {
           </div>
         </Callout>
       </Section>
-      <Section>{createHtmlForCopy(copy.introPuzzleAfter)}</Section>
+      <Section id="skip-here">
+        {createHtmlForCopy(copy.introPuzzleAfter)}
+      </Section>
     </>
   )
 }

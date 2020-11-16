@@ -18,7 +18,6 @@ import { RoughNotation } from "react-rough-notation"
 import copy from "../data/copy.json"
 
 function Home() {
-  const [scrollLocation, setScrollLocation] = useState(null)
   const [logoHovered, setLogoHovered] = useState(false)
 
   // Adding RoughNotations to html elements from copy
@@ -59,9 +58,9 @@ function Home() {
 
         <Header />
         <Intro />
-        <IntroPuzzle scrollLocation={scrollLocation} />
+        <IntroPuzzle />
 
-        <SmallMultipleWaffles setScrollLocation={setScrollLocation} />
+        <SmallMultipleWaffles />
 
         <NamesInAnswers />
         <NamesInClues />

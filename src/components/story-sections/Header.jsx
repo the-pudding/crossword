@@ -17,7 +17,7 @@ const Header = () => {
           {" "}
           Who’s{" "}
         </RoughNotation>
-        in the crossword?
+        in the Crossword?
       </h1>
       <div>
         By{" "}
