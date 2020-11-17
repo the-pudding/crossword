@@ -45,8 +45,6 @@ const Footer = () => {
     fetchData()
   }, [])
 
-  console.log({ mostRecentLinks })
-
   return (
     <FooterWrapper>
       <strong style={{ marginBottom: "32px" }}>HOT TAKES, COOL VIZ</strong>
