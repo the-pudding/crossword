@@ -84,7 +84,6 @@ const StackedSquares = ({
                       ? colorLookup.above
                       : colorLookup.below
                   }
-                  // strokeWidth={squareKey === hoveredSquareKey ? "5px" : "1px"}
                   strokeWidth="1px"
                   stroke={COLORS.mainColor}
                   onMouseEnter={() => {
@@ -120,6 +119,7 @@ const StackedSquares = ({
         label={""}
         numTicks={2}
         squareWidth={squareHeight}
+        compare={compare}
       />
     </>
   )

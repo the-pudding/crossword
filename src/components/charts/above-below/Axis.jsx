@@ -5,7 +5,7 @@ import ChevronUp from "../../../svg/chevron-up.svg"
 import ChevronDown from "../../../svg/chevron-down.svg"
 import { SideLabel } from "../../../styles/styles.js"
 
-const Axis = ({ dms, scale, numTicks, squareWidth }) => {
+const Axis = ({ dms, scale, numTicks, squareWidth, compare }) => {
   const pixelsPerTick = 50
   const numberOfTicks = numTicks
     ? numTicks
@@ -45,14 +45,14 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
           2020
         </text>
       </g>
-      {/* <g transform={`translate(${dms.boundedWidth - squareWidth}, 102)`}>
+      <g transform={`translate(${dms.boundedWidth - squareWidth}, 102)`}>
         <ChevronDown height={19} width={19} />
-        <SideLabel>White</SideLabel>
+        <SideLabel>{compare === "race" ? "White" : "Men"}</SideLabel>
       </g>
       <g transform={`translate(${dms.boundedWidth - squareWidth}, 78)`}>
         <ChevronUp height={19} width={19} />
-        <SideLabel>URM</SideLabel>
-      </g> */}
+        <SideLabel>{compare === "race" ? "MRG" : "Wom."}</SideLabel>
+      </g>
     </>
   )
 }
