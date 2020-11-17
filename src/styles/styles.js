@@ -1139,7 +1139,7 @@ export const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6rem;
+  margin-top: 3rem;
   padding-bottom: 3rem;
 `
 
@@ -1185,7 +1185,7 @@ export const FooterSquare = styled.a`
 `
 
 export const FooterTitle = styled.div`
-  padding: 30px;
+  padding: 16px;
 
   @media ${devices.tablet} {
     padding: 20px;
