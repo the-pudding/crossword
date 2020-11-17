@@ -20,7 +20,11 @@ const AboveBelow = ({ data, overviewData, word, compare }) => {
       : ["neutral", "man", "woman"]
   const keyLabels =
     compare === "race"
-      ? ["a person", "non-Hispanic white people", "minoritized racial groups"]
+      ? [
+          "a person",
+          "non-Hispanic white people",
+          "minoritized racial groups (MRG)",
+        ]
       : ["a person", "men", "women"]
   return (
     <AboveBelowWrapper>
