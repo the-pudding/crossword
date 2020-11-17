@@ -1150,7 +1150,7 @@ export const FooterCrossword = styled.div`
 
 export const SocialWrapper = styled.a`
   height: 25px;
-  margin-left: 20px;
+  margin-left: 23px;
   background-image: none;
 
   &:hover {
@@ -1158,7 +1158,8 @@ export const SocialWrapper = styled.a`
   }
 `
 
-export const FooterSquare = styled.div`
+export const FooterSquare = styled.a`
+  background-image: none;
   width: 25%;
   height: 0;
   padding-bottom: 25%;
@@ -1169,4 +1170,24 @@ export const FooterSquare = styled.div`
   border-bottom: ${props =>
     props.top ? `1px solid ${COLORS.mainColor}` : "0px"};
   background: ${props => (props.filled ? COLORS.mainColor : "none")};
+
+  &:hover {
+    background: ${props =>
+      props.filled ? COLORS.mainColor : COLORS.crosswordYellowLight};
+    cursor: ${props => (props.filled ? "default" : "pointer")};
+  }
+`
+
+export const FooterTitle = styled.div`
+  padding: 30px;
+
+  @media ${devices.tablet} {
+    padding: 20px;
+    font-size: 0.7rem;
+  }
+
+  @media ${devices.mobile} {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
 `

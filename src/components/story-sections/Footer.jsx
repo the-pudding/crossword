@@ -4,6 +4,7 @@ import {
   FooterWrapper,
   SocialWrapper,
   FooterSquare,
+  FooterTitle,
 } from "../../styles/styles.js"
 import Logo from "../../svg/pudding-logo.svg"
 import Facebook from "../../svg/facebook.svg"
@@ -11,6 +12,18 @@ import Twitter from "../../svg/twitter.svg"
 import Patreon from "../../svg/patreon.svg"
 import Instagram from "../../svg/instagram.svg"
 import _ from "lodash"
+import LinesEllipsis from "react-lines-ellipsis"
+import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC"
+
+const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis)
+
+const indexLookup = {
+  0: 0,
+  2: 1,
+  3: 2,
+  5: 3,
+  6: 4,
+}
 
 const Footer = () => {
   const [mostRecentLinks, setMostRecentLinks] = useState([])
@@ -42,13 +55,32 @@ const Footer = () => {
         {_.range(0, 8).map((d, i) => (
           <FooterSquare
             key={i}
+            href={
+              i !== 1 &&
+              i !== 4 &&
+              i !== 7 &&
+              mostRecentLinks.length > indexLookup[i]
+                ? `https://pudding.cool/${mostRecentLinks[indexLookup[i]].url}`
+                : ""
+            }
             top={i < 4}
             endOfRow={i === 3 || i === 7}
             filled={i === 1 || i === 4 || i === 7}
           >
-            {i !== 1 && i !== 4 && i !== 7 && mostRecentLinks.length > i && (
-              <div>mostRecentLinks[i]</div>
-            )}
+            {i !== 1 &&
+              i !== 4 &&
+              i !== 7 &&
+              mostRecentLinks.length > indexLookup[i] && (
+                <FooterTitle>
+                  <ResponsiveEllipsis
+                    text={mostRecentLinks[indexLookup[i]].hed}
+                    maxLine="4"
+                    ellipsis="..."
+                    trimRight
+                    basedOn="letters"
+                  />
+                </FooterTitle>
+              )}
           </FooterSquare>
         ))}
       </FooterCrossword>

@@ -142,7 +142,9 @@ const MobileClues = ({
         <h3 style={{ width: "50%", textAlign: "center" }}>
           (Non-Hispanic white)
         </h3>
-        <h3 style={{ width: "50%", textAlign: "center" }}>(URM)</h3>
+        <h3 style={{ width: "50%", textAlign: "center" }}>
+          (Minoritized racial groups)
+        </h3>
         <button
           onClick={nextClue}
           style={{
