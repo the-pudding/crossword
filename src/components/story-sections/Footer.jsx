@@ -24,7 +24,6 @@ const indexLookup = {
   5: 3,
   6: 4,
 }
-
 const Footer = () => {
   const [mostRecentLinks, setMostRecentLinks] = useState([])
 
