@@ -1158,6 +1158,10 @@ export const SocialWrapper = styled.a`
   &:hover {
     cursor: pointer;
   }
+
+  @media ${devices.smallMobile} {
+    margin-left: 10px;
+  }
 `
 
 export const FooterSquare = styled.a`
@@ -1190,6 +1194,10 @@ export const FooterTitle = styled.div`
 
   @media ${devices.mobile} {
     padding: 10px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  @media ${devices.smallMobile} {
+    font-size: 0.55rem;
   }
 `

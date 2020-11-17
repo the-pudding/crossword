@@ -49,7 +49,7 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <h3>HOT TAKES, COOL VIZ</h3>
+      <strong style={{ marginBottom: "32px" }}>HOT TAKES, COOL VIZ</strong>
 
       <FooterCrossword>
         {_.range(0, 8).map((d, i) => (
@@ -93,8 +93,11 @@ const Footer = () => {
           marginTop: "20px",
         }}
       >
-        <a href="https://pudding.cool/" style={{ backgroundImage: "none" }}>
-          <Logo style={{ height: "45px" }} />
+        <a
+          href="https://pudding.cool/"
+          style={{ backgroundImage: "none", width: "25%" }}
+        >
+          <Logo style={{ width: "100%", height: "100%" }} />
         </a>
 
         <div style={{ display: "flex", alignItems: "center" }}>
