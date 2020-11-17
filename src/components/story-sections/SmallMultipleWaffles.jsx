@@ -21,20 +21,8 @@ import {
 } from "../../styles/styles.js"
 import COLORS from "../../styles/colors.js"
 
-const SmallMultipleWaffles = ({ setScrollLocation }) => {
+const SmallMultipleWaffles = () => {
   const [decade, setDecade] = useState(2020)
-
-  const scrollToRef = useRef(null)
-
-  // On first render, pass back up the location for the button that scrolls the user here
-  useEffect(() => {
-    const location = {
-      top: scrollToRef.current.getBoundingClientRect().top + window.pageYOffset,
-      left:
-        scrollToRef.current.getBoundingClientRect().left + window.pageXOffset,
-    }
-    setScrollLocation(location)
-  }, [])
 
   const publications = [
     { short: "wsj", long: "WSJ" },
@@ -46,17 +34,17 @@ const SmallMultipleWaffles = ({ setScrollLocation }) => {
   const genderColors = [COLORS.man, COLORS.woman]
   const raceColors = [COLORS.white, COLORS.poc]
   const genderLabels = ["men", "women"]
-  const raceLabels = ["non-Hispanic white", "underrepresented minorities"]
+  const raceLabels = ["non-Hispanic white", "minoritized racial groups"]
 
   return (
     <>
-      <Section ref={scrollToRef}>
+      <Section>
         <h2 style={{ textAlign: "center" }}>
           Representation in Major Crosswords
         </h2>
         <h3 style={{ textAlign: "center" }}>
-          Ratio of men vs. women and non-Hispanic whites vs. underrepresented
-          minorities found in clues and answers of major crossword publications.
+          Ratio of men vs. women and non-Hispanic whites vs. minoritized racial
+          groups found in clues and answers of major crossword publications.
         </h3>
         <ChartNote>
           Note:{" "}

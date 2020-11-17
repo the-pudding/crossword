@@ -196,6 +196,7 @@ export const Method = styled.div`
 
   @media ${devices.mobile} {
     padding: 0;
+    font-size: 0.8rem;
   }
 `
 
@@ -1129,5 +1130,74 @@ export const EditSvg = styled(Edit)`
 
   @media ${devices.mobile} {
     width: 2rem;
+  }
+`
+
+// Footer
+export const FooterWrapper = styled.footer`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  padding-bottom: 3rem;
+`
+
+export const FooterCrossword = styled.div`
+  width: 100%;
+  border: 7px solid ${COLORS.mainColor};
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const SocialWrapper = styled.a`
+  height: 25px;
+  margin-left: 23px;
+  background-image: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media ${devices.smallMobile} {
+    margin-left: 10px;
+  }
+`
+
+export const FooterSquare = styled.a`
+  background-image: none;
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+  border-right: ${props =>
+    (props.top && !props.endOfRow) || (!props.top && !props.endOfRow)
+      ? `1px solid ${COLORS.mainColor}`
+      : "0px"};
+  border-bottom: ${props =>
+    props.top ? `1px solid ${COLORS.mainColor}` : "0px"};
+  background: ${props => (props.filled ? COLORS.mainColor : "none")};
+
+  &:hover {
+    background: ${props =>
+      props.filled ? COLORS.mainColor : COLORS.crosswordYellowLight};
+    cursor: ${props => (props.filled ? "default" : "pointer")};
+  }
+`
+
+export const FooterTitle = styled.div`
+  padding: 30px;
+
+  @media ${devices.tablet} {
+    padding: 20px;
+    font-size: 0.7rem;
+  }
+
+  @media ${devices.mobile} {
+    padding: 10px;
+    font-size: 0.7rem;
+  }
+
+  @media ${devices.smallMobile} {
+    font-size: 0.55rem;
   }
 `

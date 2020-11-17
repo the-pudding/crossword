@@ -68,9 +68,7 @@ const DecadeSlider = ({ decade, setDecade }) => {
         max={2010}
         step={10}
         value={decade}
-        onChangeStart={() => console.log("hi")}
         onChange={value => setDecade(value)}
-        onChangeComplete={() => console.log("hi")}
         style={{ width: "100%" }}
         tooltip={false}
         labels={labels}

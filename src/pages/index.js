@@ -7,6 +7,7 @@ import NamesInAnswers from "../components/story-sections/NamesInAnswers.jsx"
 import NamesInClues from "../components/story-sections/NamesInClues.jsx"
 import Conclusion from "../components/story-sections/Conclusion.jsx"
 import Methods from "../components/story-sections/Methods.jsx"
+import Footer from "../components/story-sections/Footer.jsx"
 import Meta from "../components/Meta.jsx"
 import { GlobalStyle, EssayWrapper, LogoWrapper } from "../styles/styles.js"
 import "react-rangeslider/lib/index.css"
@@ -18,7 +19,6 @@ import { RoughNotation } from "react-rough-notation"
 import copy from "../data/copy.json"
 
 function Home() {
-  const [scrollLocation, setScrollLocation] = useState(null)
   const [logoHovered, setLogoHovered] = useState(false)
 
   // Adding RoughNotations to html elements from copy
@@ -59,15 +59,16 @@ function Home() {
 
         <Header />
         <Intro />
-        <IntroPuzzle scrollLocation={scrollLocation} />
+        <IntroPuzzle />
 
-        <SmallMultipleWaffles setScrollLocation={setScrollLocation} />
+        <SmallMultipleWaffles />
 
         <NamesInAnswers />
         <NamesInClues />
 
         <Conclusion />
         <Methods />
+        <Footer />
       </EssayWrapper>
     </>
   )

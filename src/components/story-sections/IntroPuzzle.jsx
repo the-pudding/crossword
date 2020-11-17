@@ -15,7 +15,7 @@ import crosswordData from "../../data/double-clues-3.json"
 import Crossword from "../charts/crossword/Crossword.js"
 import confetti from "canvas-confetti"
 
-const IntroPuzzle = ({ scrollLocation }) => {
+const IntroPuzzle = () => {
   const crosswordRef = useRef(null)
 
   // start puzzle blank
@@ -36,12 +36,18 @@ const IntroPuzzle = ({ scrollLocation }) => {
             style={{ marginLeft: "10px" }}
             onClick={() => {
               crosswordRef.current.fillAllAnswers()
-              if (scrollLocation) {
-                window.scrollTo({
-                  ...scrollLocation,
-                  behavior: "smooth",
-                })
-              }
+
+              const skipContainer = document.querySelector("#skip-here")
+
+              window.scrollTo({
+                top:
+                  skipContainer.getBoundingClientRect().top +
+                  window.pageYOffset,
+                lef:
+                  skipContainer.getBoundingClientRect().left +
+                  window.pageXOffset,
+                behavior: "smooth",
+              })
             }}
           >
             skip to analysis
@@ -51,7 +57,7 @@ const IntroPuzzle = ({ scrollLocation }) => {
         <CrosswordChartWrapper>
           <ClueLabels>
             <h3 style={{ paddingLeft: "1em" }}>Non-Hispanic white people</h3>
-            <h3 style={{ paddingRight: "1em" }}>Underrepresented minorities</h3>
+            <h3 style={{ paddingRight: "1em" }}>Minoritized racial groups </h3>
           </ClueLabels>
           <Crossword
             ref={crosswordRef}
@@ -76,7 +82,6 @@ const IntroPuzzle = ({ scrollLocation }) => {
 
         <Callout
           href="https://pudding.cool/2020/11/crossword-puzzles"
-          target="_blank"
           style={{ marginTop: "4.5rem" }}
         >
           <EditSvg />
@@ -88,7 +93,9 @@ const IntroPuzzle = ({ scrollLocation }) => {
           </div>
         </Callout>
       </Section>
-      <Section>{createHtmlForCopy(copy.introPuzzleAfter)}</Section>
+      <Section id="skip-here">
+        {createHtmlForCopy(copy.introPuzzleAfter)}
+      </Section>
     </>
   )
 }

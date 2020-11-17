@@ -17,24 +17,21 @@ const Header = () => {
           {" "}
           Who’s{" "}
         </RoughNotation>
-        in the crossword?
+        in the Crossword?
       </h1>
       <div>
         By{" "}
-        <a href="https://pudding.cool/author/michelle-mcghee" target="_blank">
+        <a href="https://pudding.cool/author/michelle-mcghee">
           <strong>Michelle McGhee</strong>
         </a>
       </div>
       <div style={{ fontSize: "0.8rem", color: COLORS.darkGrey }}>
         with{" "}
-        <a
-          href="https://pudding.cool/author/russell-goldenberg/"
-          target="_blank"
-        >
+        <a href="https://pudding.cool/author/russell-goldenberg/">
           <strong>Russell Goldenberg</strong>
         </a>{" "}
         and{" "}
-        <a href="https://pudding.cool/author/jan-diehm/" target="_blank">
+        <a href="https://pudding.cool/author/jan-diehm/">
           <strong>Jan Diehm</strong>
         </a>
       </div>
