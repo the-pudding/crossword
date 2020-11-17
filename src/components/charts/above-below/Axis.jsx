@@ -45,14 +45,14 @@ const Axis = ({ dms, scale, numTicks, squareWidth }) => {
           2020
         </text>
       </g>
-      <g transform={`translate(${dms.boundedWidth - squareWidth}, 102)`}>
+      {/* <g transform={`translate(${dms.boundedWidth - squareWidth}, 102)`}>
         <ChevronDown height={19} width={19} />
         <SideLabel>White</SideLabel>
       </g>
       <g transform={`translate(${dms.boundedWidth - squareWidth}, 78)`}>
         <ChevronUp height={19} width={19} />
         <SideLabel>URM</SideLabel>
-      </g>
+      </g> */}
     </>
   )
 }
