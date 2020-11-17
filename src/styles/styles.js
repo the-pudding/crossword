@@ -1132,3 +1132,41 @@ export const EditSvg = styled(Edit)`
     width: 2rem;
   }
 `
+
+// Footer
+export const FooterWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+export const FooterCrossword = styled.div`
+  width: 100%;
+  border: 7px solid ${COLORS.mainColor};
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const SocialWrapper = styled.a`
+  height: 25px;
+  margin-left: 20px;
+  background-image: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const FooterSquare = styled.div`
+  width: 25%;
+  height: 0;
+  padding-bottom: 25%;
+  border-right: ${props =>
+    (props.top && !props.endOfRow) || (!props.top && !props.endOfRow)
+      ? `1px solid ${COLORS.mainColor}`
+      : "0px"};
+  border-bottom: ${props =>
+    props.top ? `1px solid ${COLORS.mainColor}` : "0px"};
+  background: ${props => (props.filled ? COLORS.mainColor : "none")};
+`

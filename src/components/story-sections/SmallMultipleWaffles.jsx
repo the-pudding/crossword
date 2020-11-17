@@ -34,7 +34,7 @@ const SmallMultipleWaffles = () => {
   const genderColors = [COLORS.man, COLORS.woman]
   const raceColors = [COLORS.white, COLORS.poc]
   const genderLabels = ["men", "women"]
-  const raceLabels = ["non-Hispanic white", "underrepresented minorities"]
+  const raceLabels = ["non-Hispanic white", "minoritized racial groups"]
 
   return (
     <>
@@ -43,8 +43,8 @@ const SmallMultipleWaffles = () => {
           Representation in Major Crosswords
         </h2>
         <h3 style={{ textAlign: "center" }}>
-          Ratio of men vs. women and non-Hispanic whites vs. underrepresented
-          minorities found in clues and answers of major crossword publications.
+          Ratio of men vs. women and non-Hispanic whites vs. minoritized racial
+          groups found in clues and answers of major crossword publications.
         </h3>
         <ChartNote>
           Note:{" "}

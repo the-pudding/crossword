@@ -40,7 +40,7 @@ const NytLongView = () => {
   const genderData = allData.genderBreakdown
   const raceColors = [COLORS.poc, COLORS.white]
   const genderColors = [COLORS.woman, COLORS.man]
-  const raceLabels = ["under-represented minorities", "non-Hispanic white"]
+  const raceLabels = ["minoritized racial groups", "non-Hispanic white"]
   const genderLabels = ["women", "men"]
 
   const race2020Data = raceGenderBreakdown.filter(d => d.decade === "2020")[0]
