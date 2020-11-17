@@ -1134,11 +1134,13 @@ export const EditSvg = styled(Edit)`
 `
 
 // Footer
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 6rem;
+  padding-bottom: 3rem;
 `
 
 export const FooterCrossword = styled.div`
